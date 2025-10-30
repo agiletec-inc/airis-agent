@@ -68,6 +68,62 @@
 => 上記 8 コマンドは「名称の偶然一致はあるが、SuperClaude 仕様として明確に強化された振る舞い」を持つ。  
    → Framework 再集約時に **すべて再収録** し、標準との違いをドキュメントに残す方針で合意したい。
 
+### 1.2 コマンド別ソースと今後の扱い案
+
+| Command | Source of truth | 推奨ハンドリング | 補足 |
+|---------|-----------------|-------------------|------|
+| `analyze` | SuperClaude オリジナル | Super Agent が自動発火（必要なら `/sc:analyze` も維持） | 調査フェーズ開始時に自動診断として呼び出し候補。 |
+| `brainstorm` | SuperClaude オリジナル | Super Agent 内部モードへ吸収 | 初動ヒアリング時に自動呼び出し、ユーザー入力は任意化。 |
+| `build` | Claude 標準名 + SuperClaude拡張 | Super Agent 内部（CI/CD 監視に連動） | 人手で呼ぶより build wave 中に自動判断させる。 |
+| `business-panel` | SuperClaude オリジナル | Super Agent から選択的に提示 | 経営観点レビューが必要なときだけ案内。 |
+| `cleanup` | Claude 標準名 + 拡張版 | Super Agent の実装後フェーズに統合 | self-review 後に必要なら自動で走らせる。 |
+| `design` | SuperClaude オリジナル | Super Agent 内の設計モードとして保持 | 明示コマンドも残し、設計特化タスクで案内。 |
+| `document` | SuperClaude オリジナル | 自動ドキュメント更新ワークフローに組み込み | 成果報告時にトリガー。 |
+| `estimate` | SuperClaude オリジナル | 明示コマンド維持 + Super Agent から提案 | 工数見積り要求時の専用エントリ。 |
+| `explain` | Claude 標準名 + 拡張版 | Super Agent が教育モードとして起動 | 学習支援目的なら明示コマンドも残す。 |
+| `git` | Claude 標準そのもの | 削除候補 | 標準 `/git` へ誘導。 |
+| `help` | SuperClaude 専用 | 維持必須 | `/sc:*` 列挙のトップレベル。 |
+| `implement` | Claude 標準名 + 拡張版 | Super Agent 実装フェーズのコアとして保持 | ユーザーにはフェーズ説明のみ提示。 |
+| `improve` | Claude 標準名 + 拡張版 | Reflexion / Self-review ループに統合 | メンテナンスモードで自動使用。 |
+| `index` | SuperClaude オリジナル | `/sc:index-repo` として維持 | インデックス生成専用。 |
+| `load` | SuperClaude オリジナル | Super Agent SessionStart に統合 | 手動コマンド不要化。 |
+| `pm` | SuperClaude オリジナル | Super Agent 起動プロトコル（非公開） | 仕様書としては保持するが slash コマンドは廃止方向。 |
+| `reflect` | SuperClaude オリジナル | Reflexion ループへ統合 | 状況に応じ自動で回す。 |
+| `research` | Claude 標準名 + 拡張版 | `/sc:research` 維持（深度指定付き） | 深堀り案件で Super Agent が推奨。 |
+| `save` | SuperClaude オリジナル | Super Agent 完了処理に統合 | 終了時に自動実行。 |
+| `select-tool` | SuperClaude オリジナル | Super Agent の MCP 選定ロジック内で活用 | 手動入力は廃止方向。 |
+| `spawn` | SuperClaude オリジナル | Super Agent のサブエージェント管理で利用 | 並列タスク時だけ内部的に使用。 |
+| `spec-panel` | SuperClaude オリジナル | エキスパートレビュー要請時に Super Agent が提示 | slash コマンドはオプションとして残す。 |
+| `task` | Claude 標準名 + 拡張版 | Super Agent の計画フェーズで利用 | 直接コマンドは軽量版に統合検討。 |
+| `test` | Claude 標準名 + 拡張版 | 実装波後に自動実行 | 明示 `/sc:test` は e2e/coverage 指定が必要な場合のみ案内。 |
+| `troubleshoot` | SuperClaude オリジナル | インシデント時の自動ハンドラー | slash コマンドも残しつつ、失敗検知で自動案内。 |
+| `workflow` | SuperClaude オリジナル | Super Agent の全体フレーム説明用に保持 | 参考ドキュメントとして提示。 |
+
+### 1.3 Agent Audit（upstream/master）
+
+| Agent | 役割 | Claude 標準重複 | 推奨ハンドリング |
+|-------|------|-----------------|-------------------|
+| backend-architect | バックエンド設計 | ❌ | Super Agent 内で必要時に招集 |
+| business-panel-experts | ビジネス視点パネル | ❌ | `/sc:business-panel` 連動 or Super Agent 推奨 |
+| deep-research-agent | 深掘り調査 | ❌ | `/sc:research` の中核（既に再配置済み） |
+| devops-architect | DevOps 専門家 | ❌ | build/CI 流れで自動呼び出し |
+| frontend-architect | フロント設計 | ❌ | UI 系タスクで Super Agent がアサイン |
+| learning-guide | 学習支援 | ❌ | `/sc:explain` の補助エージェント |
+| performance-engineer | 性能最適化 | ❌ | `/sc:analyze` / `/sc:improve` で使用 |
+| pm-agent | PM オーケストレータ | ❌ | Super Agent 自身として再定義済み |
+| python-expert | Python 専門家 | ❌ | 実装対象言語に応じ自動招集 |
+| quality-engineer | 品質管理 | ❌ | テスト/レビュー段階で起動 |
+| refactoring-expert | リファクタ専門家 | ❌ | `/sc:improve` 内部に吸収 |
+| requirements-analyst | 要件分析 | ❌ | 初期探索で自動呼び出し |
+| root-cause-analyst | 根本原因分析 | ❌ | `/sc:troubleshoot` に組み込み |
+| security-engineer | セキュリティ | ❌ | 高リスクタスクで招集 |
+| socratic-mentor | 問答法ガイド | ❌ | `/sc:brainstorm` 補助 |
+| system-architect | システム全体設計 | ❌ | 大規模設計で自動招集 |
+| technical-writer | 技術ライター | ❌ | `/sc:document` や完了報告で使用 |
+
+- 現時点で Framework 側に戻したのは `deep-research`, `repo-index`, `self-review` の 3 件のみ。  
+- 他エージェントは Super Agent のモジュール化計画と合わせて `plugins/superclaude/agents/` へ随時再配置する。
+
 ## 2. ドキュメント鮮度・外部記憶フロー骨子
 
 1. **SessionStart Hook**  
@@ -113,3 +169,20 @@
    - 旧 25 コマンドに関する説明はアーカイブへ移し、現行仕様を明確化。
 
 この整理をベースに、分類 `⚠️` の追加調査やワークフロー/ログ出力の詳細設計を次段階で実施する。
+
+## 5. 計測・検証ロードマップ
+
+1. **コマンド効果測定**  
+   - 代表タスク（軽微修正／バグ修正／大規模実装）を定義し、Super Agent のみ vs `sc:*` 併用でセッションログを取得。  
+   - 計測項目: 総トークン数、経過時間、試行回数、残タスク有無。
+2. **ビルド & 配布検証**  
+   - `make build-plugin` 実行 → `dist/plugins/superclaude/.claude-plugin/` のサイズ・構成を記録。  
+   - `make test` および `.claude-plugin/tests/` をフル実行し、失敗時ログを保存。  
+3. **SessionStart 診断ベンチ**  
+   - リポジトリの変更量を操作し、インデックス鮮度判定の挙動と出力ログ（fresh/warning/stale）の正確性を検証。  
+   - ドキュメント矛盾検出時のアナウンス内容を確認。  
+4. **トークンコスト可視化**  
+   - それぞれのコマンド・エージェントを有効／無効にしたケースで平均トークン消費を算出し、`docs/next-refactor-plan.md` にグラフ/表で追加。  
+5. **成果共有**  
+   - 上記結果をもとに「残す／統合する／削除する」の意思決定表を更新。  
+   - 変更内容をまとめたドラフト PR 用メモを作成（最終決定前に再レビューを受ける）。
