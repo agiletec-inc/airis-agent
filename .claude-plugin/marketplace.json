@@ -1,0 +1,23 @@
+{
+  "name": "superagent-marketplace",
+  "owner": "Super Agent Team",
+  "description": "Official marketplace for Super Agent plugins",
+  "version": "4.1.6",
+  "pluginRoot": "./dist/plugins",
+  "plugins": [
+    {
+      "name": "superagent",
+      "source": "./superagent",
+      "description": "Super Agent - Confidence-driven orchestrator with deep research and repository indexing",
+      "version": "4.1.6",
+      "author": {
+        "name": "Super Agent Team"
+      },
+      "homepage": "https://github.com/kazuki/superagent",
+      "repository": "https://github.com/kazuki/superagent",
+      "license": "MIT",
+      "keywords": ["superagent", "pm-agent", "deep-research", "index", "confidence-check"],
+      "category": "productivity"
+    }
+  ]
+}

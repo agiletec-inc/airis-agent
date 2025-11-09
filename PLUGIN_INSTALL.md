@@ -1,32 +1,49 @@
 # Super Agent Plugin Installation Guide
 
-## 公式インストール方法（推奨）
+This guide explains how to install and use the Super Agent plugin for Claude Code.
 
-### 前提条件
+## Installation Methods
 
-1. **ripgrep のインストール**
-   ```bash
-   brew install ripgrep
-   ```
+### Method 1: Direct Installation from GitHub (Recommended)
 
-2. **環境変数の設定**（~/.zshrc または ~/.bashrc に追加）
-   ```bash
-   export USE_BUILTIN_RIPGREP=0
-   ```
+Install from the GitHub repository marketplace:
 
-3. **シェルの再起動**
-   ```bash
-   exec $SHELL
-   ```
+```bash
+# In Claude Code, run:
+/plugin marketplace add kazuki/superagent
+/plugin install superagent
+```
 
-### インストール手順
+### Method 2: Auto-Installation for Teams
 
-#### 方法A: ローカルマーケットプレイス経由（推奨）
+Add to your project's `.claude/settings.json` to automatically install for all team members:
 
-1. Claude Code でマーケットプレイスを追加:
-   ```
-   /plugin marketplace add /Users/kazuki/github/superagent
-   ```
+```json
+{
+  "marketplaces": ["kazuki/superagent"],
+  "enabledPlugins": ["superagent"]
+}
+```
+
+When team members trust the repository folder, Claude Code will automatically:
+1. Install the Super Agent marketplace
+2. Enable the `superagent` plugin
+3. Activate all commands and agents
+
+### Method 3: Local Development
+
+For plugin development or testing:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/kazuki/superagent.git
+cd superagent
+
+# 2. Build the plugin
+make build-plugin
+
+# 3. Add local marketplace
+/plugin marketplace add /path/to/superagent
 
 2. プラグインをインストール:
    ```
