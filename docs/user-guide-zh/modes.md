@@ -1,4 +1,4 @@
-# SuperClaude 行为模式指南 🧠
+# Super Agent 行为模式指南 🧠
 
 ## ✅ 快速验证
 使用 `/sc:` 命令测试模式 - 它们会根据任务复杂性自动激活。有关完整命令参考，请参阅 [命令指南](commands.md)。
@@ -99,7 +99,7 @@ Brainstorming Approach:
 - **决策分析**：评估选择逻辑并考虑替代方案
 - **模式识别**：识别重复行为和改进机会
 - **元学习**：提取见解以持续改进框架
-- **框架合规性**：根据 SuperClaude 原则和质量门控验证行为
+- **框架合规性**：根据 Super Agent 原则和质量门控验证行为
 
 **体验示例：**
 ```
@@ -477,7 +477,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 | **O001** | 编排协调失败 | 使用 `--no-mcp` 或 `--simple` |
 | **M001** | 检测到模式冲突 | 检查标志优先级规则 |
 | **M002** | 模式切换循环 | 重启会话以重置状态 |
-| **M003** | 模式无法识别 | 更新 SuperClaude 或检查拼写 |
+| **M003** | 模式无法识别 | 更新 Super Agent 或检查拼写 |
 
 ### 渐进式支持级别
 
@@ -498,14 +498,14 @@ Standard Approach: Consistent, professional baseline for all tasks
 **级别 3：专家支持（30+ 分钟）**
 ```bash
 # 深度模式分析
-SuperClaude install --diagnose
+Super Agent install --diagnose
 # 检查模式激活模式
 # 检查行为触发器和阈值
 ```
 - 有关行为模式分析，请参阅[诊断参考指南](../reference/diagnostic-reference.md)
 
 **级别 4：社区支持**
-- 在 [GitHub Issues](https://github.com/SuperClaude-Org/SuperClaude_Framework/issues) 报告模式问题
+- 在 [GitHub Issues](https://github.com/kazuki/superagent/issues) 报告模式问题
 - 包括意外模式行为的示例
 - 描述期望与实际模式激活的差异
 
@@ -560,7 +560,7 @@ SuperClaude install --diagnose
 
 ## 总结
 
-SuperClaude 的 5 种行为模式创建了一个**智能适应系统**，自动匹配您的需求：
+Super Agent 的 5 种行为模式创建了一个**智能适应系统**，自动匹配您的需求：
 
 - **🧠 头脑风暴**：将模糊想法转化为清晰需求
 - **🔍 内省**：为学习和调试提供透明推理
@@ -569,7 +569,7 @@ SuperClaude 的 5 种行为模式创建了一个**智能适应系统**，自动�
 - **⚡ 令牌效率**：在保持清晰度的同时压缩通信
 - **🎨 标准**：为直接任务维护专业基线
 
-**关键洞察**：您无需思考模式 - 它们透明地工作以增强您的开发体验。只需描述您想要完成的任务，SuperClaude 会自动调整其方法以匹配您的需求。
+**关键洞察**：您无需思考模式 - 它们透明地工作以增强您的开发体验。只需描述您想要完成的任务，Super Agent 会自动调整其方法以匹配您的需求。
 
 ---
 

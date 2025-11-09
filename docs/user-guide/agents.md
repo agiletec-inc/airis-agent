@@ -1,6 +1,6 @@
-# SuperClaude Agents Guide 🤖
+# Super Agent Agents Guide 🤖
 
-SuperClaude provides 16 domain specialist agents that Claude Code can invoke for specialized expertise.
+Super Agent provides 16 domain specialist agents that Claude Code can invoke for specialized expertise.
 
 
 ## 🧪 Testing Agent Activation
@@ -34,8 +34,8 @@ Before using this guide, verify agent selection works:
 
 ## Core Concepts
 
-### What are SuperClaude Agents?
-**Agents** are specialized AI domain experts implemented as context instructions that modify Claude Code's behavior. Each agent is a carefully crafted `.md` file in the `superclaude/Agents/` directory containing domain-specific expertise, behavioral patterns, and problem-solving approaches.
+### What are Super Agent Agents?
+**Agents** are specialized AI domain experts implemented as context instructions that modify Claude Code's behavior. Each agent is a carefully crafted `.md` file in the `superagent/Agents/` directory containing domain-specific expertise, behavioral patterns, and problem-solving approaches.
 
 **Important**: Agents are NOT separate AI models or software - they are context configurations that Claude Code reads to adopt specialized behaviors.
 
@@ -50,7 +50,7 @@ Before using this guide, verify agent selection works:
 ```
 
 #### 2. Auto-Activation (Behavioral Routing)
-"Auto-activation" means Claude Code reads behavioral instructions to engage appropriate contexts based on keywords and patterns in your requests. SuperClaude provides behavioral guidelines that Claude follows to route to the most appropriate specialists.
+"Auto-activation" means Claude Code reads behavioral instructions to engage appropriate contexts based on keywords and patterns in your requests. Super Agent provides behavioral guidelines that Claude follows to route to the most appropriate specialists.
 
 > **📝 How Agent "Auto-Activation" Works**: 
 > Agent activation isn't automatic system logic - it's behavioral instructions in context files. 
@@ -135,7 +135,7 @@ Task Analysis →
 
 ---
 
-## The SuperClaude Agent Team 👥
+## The Super Agent Agent Team 👥
 
 ### Meta-Layer Agent 🎯
 
@@ -675,11 +675,11 @@ For troubleshooting help, see:
 - Review trigger keywords for target agents
 
 **Expert Support:**  
-- Use `SuperClaude install --diagnose`
+- Use `Super Agent install --diagnose`
 - See [Diagnostic Reference Guide](../reference/diagnostic-reference.md) for coordination analysis
 
 **Community Support:**
-- Report issues at [GitHub Issues](https://github.com/SuperClaude-Org/SuperClaude_Framework/issues)
+- Report issues at [GitHub Issues](https://github.com/kazuki/superagent/issues)
 - Include examples of expected vs actual agent activation
 
 ### Success Validation
@@ -904,7 +904,7 @@ Add "documented", "explained", or "tutorial" to requests for automatic technical
 ## Related Resources 📚
 
 ### Essential Documentation
-- **[Commands Guide](commands.md)** - Master SuperClaude commands that trigger optimal agent coordination
+- **[Commands Guide](commands.md)** - Master Super Agent commands that trigger optimal agent coordination
 - **[MCP Servers](mcp-servers.md)** - Enhanced agent capabilities through specialized tool integration  
 - **[Session Management](session-management.md)** - Long-term workflows with persistent agent context
 
@@ -914,7 +914,7 @@ Add "documented", "explained", or "tutorial" to requests for automatic technical
 - **[Examples Cookbook](../reference/examples-cookbook.md)** - Real-world agent coordination patterns
 
 ### Development Resources
-- **[Technical Architecture](../developer-guide/technical-architecture.md)** - Understanding SuperClaude's agent system design
+- **[Technical Architecture](../developer-guide/technical-architecture.md)** - Understanding Super Agent's agent system design
 - **[Contributing](../developer-guide/contributing-code.md)** - Extending agent capabilities and coordination patterns
 
 ---
@@ -930,7 +930,7 @@ Observe agent coordination patterns. Understand how complexity and domain keywor
 **Month 2+: Expert Coordination**
 Master multi-domain requests that trigger optimal agent combinations. Leverage troubleshooting techniques for effective agent selection. Use advanced patterns for complex workflows.
 
-**The SuperClaude Advantage:**
+**The Super Agent Advantage:**
 Experience the power of 14 specialized AI experts working in coordinated response, all through simple, natural language requests. No configuration, no management, just intelligent collaboration that scales with your needs.
 
 🎯 **Ready to experience intelligent agent coordination? Start with `/sc:implement` and discover the magic of specialized AI collaboration.**

@@ -36,14 +36,14 @@ $ wc -c ~/.claude/skills/*/implementation.md ~/.claude/skills/*/SKILL.md
 
 ### 新アーキテクチャ
 
-**PM Agent Core** → `src/superclaude/pm_agent/`
+**PM Agent Core** → `src/superagent/pm_agent/`
 - Python modulesとして実装
 - pytest fixturesで利用
 - `~/.claude/` 汚染なし
 
 **Skills (オプション)** → ユーザーが明示的にインストール
 ```bash
-superclaude install-skill pm-agent
+superagent install-skill pm-agent
 # → ~/.claude/skills/pm/ にコピー
 ```
 
@@ -65,7 +65,7 @@ Result: 64KB = 約15K tokens消費
 ### 影響
 
 現在のローカル環境では：
-- ✅ `src/superclaude/pm_agent/` - 新実装（使用中）
+- ✅ `src/superagent/pm_agent/` - 新実装（使用中）
 - ❌ `~/.claude/skills/pm/` - 古いSkill（残骸）
 - ❌ `~/.claude/skills/*-mode/` - 他のSkills（残骸）
 
@@ -195,7 +195,7 @@ rm -rf ~/.claude/skills/pm*
 Context consumed at startup:
 - MCP tools: 5K tokens (AIRIS Gateway)
 - Skills (全部): 15K tokens ← 削除対象
-- SuperClaude: 0K tokens (未インストール状態想定)
+- Super Agent: 0K tokens (未インストール状態想定)
 ─────────────────────────────
 Total: 20K tokens
 Available: 180K tokens
@@ -206,7 +206,7 @@ Available: 180K tokens
 Context consumed at startup:
 - MCP tools: 5K tokens (AIRIS Gateway)
 - Skills: 0K tokens ← 削除完了
-- SuperClaude pytest plugin: 0K tokens (pytestなし時)
+- Super Agent pytest plugin: 0K tokens (pytestなし時)
 ─────────────────────────────
 Total: 5K tokens
 Available: 195K tokens

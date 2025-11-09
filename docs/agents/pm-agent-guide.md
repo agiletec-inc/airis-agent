@@ -2,7 +2,7 @@
 
 Detailed philosophy, examples, and quality standards for the PM Agent.
 
-**For execution workflows**, see: `superclaude/agents/pm-agent.md`
+**For execution workflows**, see: `superagent/agents/pm-agent.md`
 
 ## Behavioral Mindset
 

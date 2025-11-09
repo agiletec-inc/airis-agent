@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "superclaude"
+name = "superagent"
 version = "0.4.0"
 description = "AI-enhanced development framework for Claude Code - pytest plugin with optional skills"
 readme = "README.md"
@@ -53,23 +53,23 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/SuperClaude-Org/SuperClaude_Framework"
-GitHub = "https://github.com/SuperClaude-Org/SuperClaude_Framework"
-"Bug Tracker" = "https://github.com/SuperClaude-Org/SuperClaude_Framework/issues"
-Documentation = "https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/main/README.md"
+Homepage = "https://github.com/kazuki/superagent"
+GitHub = "https://github.com/kazuki/superagent"
+"Bug Tracker" = "https://github.com/kazuki/superagent/issues"
+Documentation = "https://github.com/kazuki/superagent/blob/main/README.md"
 
 # ⭐ CLI commands (hatchling format)
 [project.scripts]
-superclaude = "superclaude.cli.main:main"
+superagent = "superagent.cli.main:main"
 
 # ⭐ pytest plugin auto-discovery (most important!)
 [project.entry-points.pytest11]
-superclaude = "superclaude.pytest_plugin"
+superagent = "superagent.pytest_plugin"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/superclaude"]
+packages = ["src/superagent"]
 include = [
-    "src/superclaude/skills/confidence-check/**",
+    "src/superagent/skills/confidence-check/**",
 ]
 
 [tool.hatch.build.targets.sdist]
@@ -111,7 +111,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["src/superclaude"]
+source = ["src/superagent"]
 omit = [
     "*/tests/*",
     "*/test_*",

@@ -18,11 +18,11 @@ uv pip install -e ".[dev]"
 **Result**:
 ```
 Resolved 24 packages in 4ms
-Built superclaude @ file:///Users/kazuki/github/superclaude
+Built superagent @ file:///Users/kazuki/github/superagent
 Prepared 1 package in 154ms
 Uninstalled 1 package in 0.54ms
 Installed 1 package in 1ms
- ~ superclaude==0.4.0 (from file:///Users/kazuki/github/superclaude)
+ ~ superagent==0.4.0 (from file:///Users/kazuki/github/superagent)
 ```
 
 **Status**: ✅ **Editable install working perfectly**
@@ -39,7 +39,7 @@ uv run python -m pytest --trace-config 2>&1 | grep "registered third-party plugi
 **Result**:
 ```
 registered third-party plugins:
-  superclaude-0.4.0 at /Users/kazuki/github/superclaude/src/superclaude/pytest_plugin.py
+  superagent-0.4.0 at /Users/kazuki/github/superagent/src/superagent/pytest_plugin.py
 ```
 
 **Status**: ✅ **Plugin auto-discovered via entry points**
@@ -47,7 +47,7 @@ registered third-party plugins:
 **Entry Point Configuration** (from `pyproject.toml`):
 ```toml
 [project.entry-points.pytest11]
-superclaude = "superclaude.pytest_plugin"
+superagent = "superagent.pytest_plugin"
 ```
 
 ---
@@ -59,11 +59,11 @@ superclaude = "superclaude.pytest_plugin"
 **Before (Old Architecture)**:
 ```
 ~/.claude/
-└── superclaude/                    # ❌ Framework files polluted user config
+└── superagent/                    # ❌ Framework files polluted user config
     ├── framework/
     ├── business/
     ├── modules/
-    └── .superclaude-metadata.json
+    └── .superagent-metadata.json
 ```
 
 **After (Clean Architecture)**:
@@ -73,11 +73,11 @@ superclaude = "superclaude.pytest_plugin"
 │   ├── pm/                         # Optional PM Agent skill
 │   ├── brainstorming-mode/
 │   └── ...
-└── (NO superclaude/ directory)     # ✅ Zero framework pollution
+└── (NO superagent/ directory)     # ✅ Zero framework pollution
 ```
 
 **Key Finding**:
-- Old `~/.claude/superclaude/` still exists from previous Upstream installation
+- Old `~/.claude/superagent/` still exists from previous Upstream installation
 - **NEW installation did NOT create or modify this directory** ✅
 - Skills are independent and coexist peacefully
 - Core PM Agent lives in `site-packages/` where it belongs
@@ -90,21 +90,21 @@ superclaude = "superclaude.pytest_plugin"
 
 **Command**:
 ```bash
-uv run superclaude doctor --verbose
+uv run superagent doctor --verbose
 ```
 
 **Result**:
 ```
-🔍 SuperClaude Doctor
+🔍 Super Agent Doctor
 
 ✅ pytest plugin loaded
-    SuperClaude pytest plugin is active
+    Super Agent pytest plugin is active
 ✅ Skills installed
     9 skill(s) installed: pm, token-efficiency-mode, pm.backup, ...
 ✅ Configuration
-    SuperClaude 0.4.0 installed correctly
+    Super Agent 0.4.0 installed correctly
 
-✅ SuperClaude is healthy
+✅ Super Agent is healthy
 ```
 
 **Status**: ✅ **All health checks passed**
@@ -135,7 +135,7 @@ $ uv run pytest tests/test_pytest_plugin.py -v
 
 ### Package Location
 ```
-Location: /Users/kazuki/github/superclaude/src/superclaude/__init__.py
+Location: /Users/kazuki/github/superagent/src/superagent/__init__.py
 Version: 0.4.0
 ```
 
@@ -145,10 +145,10 @@ Version: 0.4.0
 
 **Core Commands**:
 ```bash
-superclaude doctor              # Health check
-superclaude install-skill <name>  # Install Skills (optional)
-superclaude version             # Show version
-superclaude --help              # Show help
+superagent doctor              # Health check
+superagent install-skill <name>  # Install Skills (optional)
+superagent version             # Show version
+superagent --help              # Show help
 ```
 
 **Developer Makefile**:
@@ -171,7 +171,7 @@ make clean          # Clean artifacts
 
 **Core (Site Packages)**:
 ```
-src/superclaude/
+src/superagent/
 ├── pm_agent/          # Core PM Agent functionality
 ├── execution/         # Execution engine (parallel, reflection)
 ├── cli/               # CLI interface
@@ -200,7 +200,7 @@ uv pip install -e .
 
 **Skills Installation** (Optional):
 ```bash
-superclaude install-skill pm-agent
+superagent install-skill pm-agent
 # Result: Auto-activation + PDCA docs + Upstream compatibility
 ```
 
@@ -259,7 +259,7 @@ def test_example(confidence_checker, token_budget, pm_context):
 
 | Aspect | Upstream | This PR |
 |--------|----------|---------|
-| **Installation** | `superclaude install` | `pip install -e .` |
+| **Installation** | `superagent install` | `pip install -e .` |
 | **Test running** | Manual | `pytest` (auto-fixtures) |
 | **Debugging** | Markdown tracing | Python debugger |
 | **IDE support** | Limited | Full (LSP, type hints) |
@@ -309,7 +309,7 @@ def test_example(confidence_checker, token_budget, pm_context):
 **Discovery**:
 ```toml
 [project.entry-points.pytest11]
-superclaude = "superclaude.pytest_plugin"
+superagent = "superagent.pytest_plugin"
 ```
 
 **Result**: Zero-config pytest integration ✅
@@ -375,7 +375,7 @@ superclaude = "superclaude.pytest_plugin"
 - Use standard Python locations
 - Skills are optional, not mandatory
 
-**Validation**: No new files created in `~/.claude/superclaude/`
+**Validation**: No new files created in `~/.claude/superagent/`
 
 ---
 
@@ -393,7 +393,7 @@ superclaude = "superclaude.pytest_plugin"
 ## 🎯 Success Metrics
 
 ### Installation Quality
-- **Pollution**: 0 bytes in `~/.claude/superclaude/` ✅
+- **Pollution**: 0 bytes in `~/.claude/superagent/` ✅
 - **Startup cost**: 0 tokens (vs 8.2K in Upstream) ✅
 - **Configuration**: 0 files required ✅
 
@@ -460,15 +460,15 @@ def test_with_pm_agent(confidence_checker, token_budget):
 
 **Current (Upstream)**:
 ```bash
-superclaude install  # Installs to ~/.claude/superclaude/
+superagent install  # Installs to ~/.claude/superagent/
 ```
 
 **New (This PR)**:
 ```bash
-pip install superclaude  # Standard Python package
+pip install superagent  # Standard Python package
 
 # Optional: Install Skills for auto-activation
-superclaude install-skill pm-agent
+superagent install-skill pm-agent
 ```
 
 **Benefit**:

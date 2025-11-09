@@ -45,7 +45,7 @@ PM Agent Activation Layers:
 
 ### 1. Session Start Auto-Activation
 
-**File**: `~/.claude/superclaude/agents/pm-agent.md`
+**File**: `~/.claude/superagent/agents/pm-agent.md`
 
 **Trigger Detection**:
 ```yaml

@@ -1,13 +1,13 @@
-# SuperClaude Troubleshooting Guide 🔧
+# Super Agent Troubleshooting Guide 🔧
 
-Quick fixes to advanced diagnostics for SuperClaude Framework issues.
+Quick fixes to advanced diagnostics for Super Agent issues.
 
 ## Quick Fixes (90% of problems)
 
 **Installation Verification:**
 ```bash
-python3 -m SuperClaude --version    # Should show 4.1.5
-SuperClaude install --list-components
+python3 -m Super Agent --version    # Should show 4.1.5
+Super Agent install --list-components
 ```
 
 **Command Issues:**
@@ -21,7 +21,7 @@ SuperClaude install --list-components
 **Resolution Checklist:**
 - [ ] Version commands work and show 4.1.5
 - [ ] `/sc:` commands respond in Claude Code  
-- [ ] MCP servers listed: `SuperClaude install --list-components | grep mcp`
+- [ ] MCP servers listed: `Super Agent install --list-components | grep mcp`
 
 ## Common Issues
 
@@ -30,40 +30,40 @@ SuperClaude install --list-components
 **Package Installation Fails:**
 ```bash
 # For pipx users
-pipx uninstall SuperClaude
-pipx install SuperClaude
+pipx uninstall Super Agent
+pipx install Super Agent
 
 # For pip users
-pip uninstall SuperClaude
+pip uninstall Super Agent
 pip install --upgrade pip
-pip install SuperClaude
+pip install Super Agent
 ```
 
 **Permission Denied / PEP 668 Error:**
 ```bash
 # Option 1: Use pipx (recommended)
-pipx install SuperClaude
+pipx install Super Agent
 
 # Option 2: Use pip with --user flag
-pip install --user SuperClaude
+pip install --user Super Agent
 
 # Option 3: Fix permissions
 sudo chown -R $USER ~/.claude
 
 # Option 4: Force installation (use with caution)
-pip install --break-system-packages SuperClaude
+pip install --break-system-packages Super Agent
 ```
 
 **Component Missing:**
 ```bash
-python3 -m SuperClaude install --components core commands agents modes --force
+python3 -m Super Agent install --components core commands agents modes --force
 ```
 
 ### Command Issues
 
 **Commands Not Recognized:**
 1. Restart Claude Code completely
-2. Verify: `python3 -m SuperClaude --version`
+2. Verify: `python3 -m Super Agent --version`
 3. Test: `/sc:brainstorm "test"`
 
 **Agents Not Activating:**
@@ -82,7 +82,7 @@ python3 -m SuperClaude install --components core commands agents modes --force
 ```bash
 ls ~/.claude/.claude.json            # Check config exists
 node --version                       # Verify Node.js 16+
-SuperClaude install --components mcp --force
+Super Agent install --components mcp --force
 ```
 
 **API Key Required (Magic/Morphllm):**
@@ -96,8 +96,8 @@ export MORPH_API_KEY="your_key"
 
 **System Analysis:**
 ```bash
-SuperClaude install --diagnose
-cat ~/.claude/logs/superclaude.log | tail -50
+Super Agent install --diagnose
+cat ~/.claude/logs/superagent.log | tail -50
 ```
 
 **Component Analysis:**
@@ -108,9 +108,9 @@ grep -r "@" ~/.claude/CLAUDE.md      # Verify imports
 
 **Reset Installation:**
 ```bash
-SuperClaude backup --create          # Backup first
-SuperClaude uninstall
-SuperClaude install --fresh
+Super Agent backup --create          # Backup first
+Super Agent uninstall
+Super Agent install --fresh
 ```
 
 ## Get Help
@@ -120,5 +120,5 @@ SuperClaude install --fresh
 - [Commands Guide](../user-guide/commands.md) - Usage issues
 
 **Community:**
-- [GitHub Issues](https://github.com/SuperClaude-Org/SuperClaude_Framework/issues)
+- [GitHub Issues](https://github.com/kazuki/superagent/issues)
 - Include: OS, Python version, error message, steps to reproduce

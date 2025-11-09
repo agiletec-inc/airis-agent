@@ -1,15 +1,15 @@
-# SuperClaude Examples Cookbook
+# Super Agent Examples Cookbook
 
-**Status**: ✅ **Status: Current** - Comprehensive collection of practical SuperClaude usage examples organized by complexity and domain.
+**Status**: ✅ **Status: Current** - Comprehensive collection of practical Super Agent usage examples organized by complexity and domain.
 
-**Focused Recipe Collections**: The SuperClaude Examples Cookbook has been restructured into three focused collections for better usability and progressive learning.
+**Focused Recipe Collections**: The Super Agent Examples Cookbook has been restructured into three focused collections for better usability and progressive learning.
 
 ## Recipe Collections Overview
 
 ### [Basic Examples Collection](./basic-examples.md)
 **Essential commands and single-agent workflows**
 - Copy-paste ready commands for immediate use
-- Essential SuperClaude patterns and fundamentals
+- Essential Super Agent patterns and fundamentals
 - Common development tasks and troubleshooting
 - Perfect starting point for new users
 
@@ -110,11 +110,11 @@
 1. **Frameworks**: Learn [Framework Integration](./integration-patterns.md#framework-integration-patterns)
 2. **Performance**: Master [Optimization Recipes](./integration-patterns.md#performance-optimization-recipes)
 3. **Troubleshooting**: Advanced [Debugging Workflows](./integration-patterns.md#advanced-troubleshooting-workflows)
-4. **Success**: Can integrate SuperClaude with any development stack
+4. **Success**: Can integrate Super Agent with any development stack
 
 ### Phase 4: Expertise (Month 3+)
 1. **Architecture**: Design custom integration patterns
-2. **Contribution**: Contribute to SuperClaude framework
+2. **Contribution**: Contribute to Super Agent framework
 3. **Leadership**: Mentor community and solve complex problems
 4. **Success**: Framework development and community leadership
 
@@ -131,7 +131,7 @@
 ## Success Milestones
 
 ### ✅ Basic Proficiency
-- [ ] Can install and configure SuperClaude
+- [ ] Can install and configure Super Agent
 - [ ] Comfortable with 5-10 core commands
 - [ ] Can complete simple workflows independently
 - [ ] Understands basic flag usage
@@ -157,8 +157,8 @@
 - [Advanced Workflows](./advanced-workflows.md) - Complex coordination patterns
 
 **Community**:
-- [GitHub Discussions](https://github.com/SuperClaude-Org/SuperClaude_Framework/discussions) - Community support
-- [GitHub Issues](https://github.com/SuperClaude-Org/SuperClaude_Framework/issues) - Bug reports and features
+- [GitHub Discussions](https://github.com/kazuki/superagent/discussions) - Community support
+- [GitHub Issues](https://github.com/kazuki/superagent/issues) - Bug reports and features
 - [Contributing Guide](../CONTRIBUTING.md) - Framework contribution
 
 **Advanced**:
@@ -167,6 +167,6 @@
 
 ---
 
-**Your Journey**: Start with [Basic Examples](./basic-examples.md), progress through [Advanced Workflows](./advanced-workflows.md), and master [Integration Patterns](./integration-patterns.md). SuperClaude grows with you from simple commands to sophisticated development orchestration.
+**Your Journey**: Start with [Basic Examples](./basic-examples.md), progress through [Advanced Workflows](./advanced-workflows.md), and master [Integration Patterns](./integration-patterns.md). Super Agent grows with you from simple commands to sophisticated development orchestration.
 
 **Remember**: Every expert was once a beginner. Focus on practical application, experiment with different approaches, and leverage the community for support and learning.

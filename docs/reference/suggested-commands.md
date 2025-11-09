@@ -3,21 +3,21 @@
 ## インストール・セットアップ
 ```bash
 # 推奨インストール方法
-pipx install SuperClaude
-pipx upgrade SuperClaude
-SuperClaude install
+pipx install Super Agent
+pipx upgrade Super Agent
+Super Agent install
 
 # または pip
-pip install SuperClaude
-pip install --upgrade SuperClaude
-SuperClaude install
+pip install Super Agent
+pip install --upgrade Super Agent
+Super Agent install
 
 # コンポーネント一覧
-SuperClaude install --list-components
+Super Agent install --list-components
 
 # 特定コンポーネントのインストール
-SuperClaude install --components core
-SuperClaude install --components mcp --force
+Super Agent install --components core
+Super Agent install --components mcp --force
 ```
 
 ## 開発環境セットアップ
@@ -44,7 +44,7 @@ pytest
 pytest -v
 
 # カバレッジ付き
-pytest --cov=superclaude --cov=setup --cov-report=html
+pytest --cov=superagent --cov=setup --cov-report=html
 
 # 特定のテストファイル
 pytest tests/test_installer.py
@@ -68,13 +68,13 @@ black --check .
 black .
 
 # 型チェック
-mypy superclaude setup
+mypy superagent setup
 
 # リンター実行
-flake8 superclaude setup
+flake8 superagent setup
 
 # すべての品質チェックを実行
-black . && mypy superclaude setup && flake8 superclaude setup && pytest
+black . && mypy superagent setup && flake8 superagent setup && pytest
 ```
 
 ## パッケージビルド
@@ -129,7 +129,7 @@ python3 --version
 pip3 --version
 ```
 
-## SuperClaude使用例
+## Super Agent使用例
 ```bash
 # コマンド一覧表示
 /sc:help

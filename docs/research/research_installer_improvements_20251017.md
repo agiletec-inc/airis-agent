@@ -1,4 +1,4 @@
-# SuperClaude Installer Improvement Recommendations
+# Super Agent Installer Improvement Recommendations
 
 **Research Date**: 2025-10-17
 **Query**: Python CLI installer best practices 2025 - uv pip packaging, interactive installation, user experience, argparse/click/typer standards
@@ -9,9 +9,9 @@
 
 ## Executive Summary
 
-Comprehensive research into modern Python CLI installer best practices reveals significant opportunities for SuperClaude installer improvements. Key findings focus on **uv** as the emerging standard for Python packaging, **typer/rich** for enhanced interactive UX, and industry-standard validation patterns for robust error handling.
+Comprehensive research into modern Python CLI installer best practices reveals significant opportunities for Super Agent installer improvements. Key findings focus on **uv** as the emerging standard for Python packaging, **typer/rich** for enhanced interactive UX, and industry-standard validation patterns for robust error handling.
 
-**Current Status**: SuperClaude installer uses argparse with custom UI utilities, providing functional interactive installation.
+**Current Status**: Super Agent installer uses argparse with custom UI utilities, providing functional interactive installation.
 
 **Opportunity**: Modernize to 2025 standards with minimal breaking changes while significantly improving UX, performance, and maintainability.
 
@@ -27,14 +27,14 @@ Comprehensive research into modern Python CLI installer best practices reveals s
 - **Industry Momentum**: Replaces pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv
 - **Source**: [Official uv docs](https://docs.astral.sh/uv/), [Astral blog](https://astral.sh/blog/uv)
 
-**Current SuperClaude State**:
+**Current Super Agent State**:
 ```python
 # pyproject.toml exists with modern configuration
 # Installation: uv pip install -e ".[dev]"
 # ✅ Already using uv - No changes needed
 ```
 
-**Recommendation**: ✅ **No Action Required** - SuperClaude already follows 2025 best practices
+**Recommendation**: ✅ **No Action Required** - Super Agent already follows 2025 best practices
 
 ---
 
@@ -64,7 +64,7 @@ Comprehensive research into modern Python CLI installer best practices reveals s
 4. **Modern Standard**: FastAPI creator's official CLI framework (Sebastian Ramirez)
 5. **Migration Path**: Typer built on Click - can migrate incrementally
 
-**Current SuperClaude Issues This Solves**:
+**Current Super Agent Issues This Solves**:
 - **Custom UI utilities** (setup/utils/ui.py:500+ lines) → Reduce to rich native features
 - **Manual input validation** → Automatic via type hints
 - **Inconsistent prompts** → Standardized typer.prompt() API
@@ -86,7 +86,7 @@ Best Practice:
   Non-Interactive: Flags for automation (CI/CD)
   Both: Always support both modes
 
-SuperClaude Current State:
+Super Agent Current State:
   ✅ Interactive: Two-stage selection (MCP + Framework)
   ✅ Non-Interactive: --components flag support
   ✅ Automation: --yes flag for CI/CD
@@ -103,7 +103,7 @@ Best Practice:
   - Retry loop until valid
   - Don't make users restart process
 
-SuperClaude Current State:
+Super Agent Current State:
   ⚠️ Custom validation in Menu class
   ❌ No automatic retry for invalid API keys
   ❌ Manual validation code throughout
@@ -158,7 +158,7 @@ Best Practice:
   - Group related options
   - Provide context-aware help
 
-SuperClaude Current State:
+Super Agent Current State:
   ✅ Two-stage selection (simple → detailed)
   ✅ Stage 1: Optional MCP servers
   ✅ Stage 2: Framework components
@@ -177,7 +177,7 @@ Best Practice:
   - Yellow for warnings
   - Gray for secondary info
 
-SuperClaude Current State:
+Super Agent Current State:
   ✅ Colors module with semantic colors
   ✅ Header styling with cyan
   ⚠️ Custom color codes (manual ANSI)
@@ -215,7 +215,7 @@ Best Practice:
   - Avoid bare except clauses
   - Let unexpected exceptions propagate
 
-SuperClaude Current State:
+Super Agent Current State:
   ✅ Specific exception handling in installer.py
   ✅ ValueError for dependency errors
   ✅ Proper exception propagation
@@ -239,7 +239,7 @@ Best Practice:
   - Type-based validation
   - Automatic error messages
 
-SuperClaude Current State:
+Super Agent Current State:
   ❌ Manual validation throughout
   ❌ No Pydantic models for config
   🟢 Opportunity for improvement
@@ -302,7 +302,7 @@ Best Practice:
   - Ensure cleanup even on error
   - try-finally or with statements
 
-SuperClaude Current State:
+Super Agent Current State:
   ✅ tempfile.TemporaryDirectory context manager
   ✅ Proper cleanup in backup creation
 ```
@@ -342,7 +342,7 @@ with tempfile.TemporaryDirectory() as temp_dir:
    - Manual virtual environment management
    - Being replaced by uv
 
-**SuperClaude Positioning**:
+**Super Agent Positioning**:
 ```yaml
 Strength: Interactive two-stage installation (better than all three)
 Weakness: Custom UI code (300+ lines vs framework primitives)
@@ -392,8 +392,8 @@ import typer
 from rich.console import Console
 
 app = typer.Typer(
-    name="superclaude",
-    help="SuperClaude Framework CLI",
+    name="superagent",
+    help="Super Agent CLI",
     add_completion=True  # Automatic shell completion
 )
 console = Console()
@@ -407,7 +407,7 @@ def install(
     yes: bool = typer.Option(False, "--yes", "-y", help="Auto-confirm prompts"),
     verbose: bool = typer.Option(False, "--verbose", "-v", help="Verbose logging"),
 ):
-    """Install SuperClaude framework components"""
+    """Install Super Agent framework components"""
     # Implementation
 ```
 
@@ -482,7 +482,7 @@ config = InstallConfig(components=["core"], install_dir=Path("/..."))
 **Testing Strategy**:
 1. Create `setup/cli/typer_cli.py` alongside existing argparse code
 2. Test new typer CLI in isolation
-3. Add feature flag: `SUPERCLAUDE_USE_TYPER=1`
+3. Add feature flag: `SUPER_AGENT_USE_TYPER=1`
 4. Run parallel testing (both CLIs active)
 5. Deprecate argparse after validation
 6. Remove setup/utils/ui.py custom code
@@ -759,7 +759,7 @@ def prompt_api_key_with_validation(
 - [ ] Add typer + rich to pyproject.toml
 - [ ] Create setup/cli/typer_cli.py (parallel implementation)
 - [ ] Migrate `install` command to typer
-- [ ] Feature flag: `SUPERCLAUDE_USE_TYPER=1`
+- [ ] Feature flag: `SUPER_AGENT_USE_TYPER=1`
 
 ### Week 2: Core Migration
 - [ ] Add Pydantic models (setup/models/config.py)
@@ -796,7 +796,7 @@ def test_install_command():
     """Test install command with typer"""
     result = runner.invoke(app, ["install", "--help"])
     assert result.exit_code == 0
-    assert "Install SuperClaude" in result.output
+    assert "Install Super Agent" in result.output
 
 def test_install_with_components():
     """Test component selection"""
@@ -830,7 +830,7 @@ def test_pydantic_validation():
     with pytest.raises(ValidationError):
         InstallationConfig(
             components=["core"],
-            install_dir=Path("/etc/superclaude")  # ❌ Outside user home
+            install_dir=Path("/etc/superagent")  # ❌ Outside user home
         )
 ```
 
@@ -910,7 +910,7 @@ def test_api_key_validation():
 
 ## 12. Conclusion
 
-**High-Confidence Recommendation**: Migrate SuperClaude installer to typer + rich + Pydantic
+**High-Confidence Recommendation**: Migrate Super Agent installer to typer + rich + Pydantic
 
 **Rationale**:
 - **-60% code**: Remove custom UI utilities (300+ lines)
@@ -939,4 +939,4 @@ def test_api_key_validation():
 **Research Completed**: 2025-10-17
 **Research Time**: ~30 minutes (4 parallel searches + 3 deep dives)
 **Sources**: 10 official docs + 8 industry articles + 3 framework comparisons
-**Saved to**: /Users/kazuki/github/SuperClaude_Framework/claudedocs/research_installer_improvements_20251017.md
+**Saved to**: /Users/kazuki/github/superagent/claudedocs/research_installer_improvements_20251017.md

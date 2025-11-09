@@ -39,10 +39,10 @@ This PR implements **Phase 1** of the PM-as-Default architecture: **PM Mode Init
 
 ### 1. PM Mode Init Hook
 
-**Location**: `superclaude/core/pm_init/`
+**Location**: `superagent/core/pm_init/`
 
 ```python
-from superclaude.core.pm_init import initialize_pm_mode
+from superagent.core.pm_init import initialize_pm_mode
 
 # Runs automatically at session start
 init_data = initialize_pm_mode()
@@ -107,7 +107,7 @@ validators:
 
 ### 4. Validators
 
-**Location**: `superclaude/validators/`
+**Location**: `superagent/validators/`
 
 #### ContextContractValidator
 - Enforces project-specific rules
@@ -171,7 +171,7 @@ uv run pytest tests/core/pm_init/ tests/validators/ -v
 
 ```python
 # Session start (automatic)
-from superclaude.core.pm_init import initialize_pm_mode
+from superagent.core.pm_init import initialize_pm_mode
 
 init_data = initialize_pm_mode()
 
@@ -192,7 +192,7 @@ init_data = initialize_pm_mode()
 ### Manual Validation
 
 ```python
-from superclaude.validators import (
+from superagent.validators import (
     ContextContractValidator,
     SecurityRoughcheckValidator,
     ValidationStatus
@@ -218,7 +218,7 @@ if result.failed:
 ### Reflexion Memory
 
 ```python
-from superclaude.core.pm_init import ReflexionMemory, ReflexionEntry
+from superagent.core.pm_init import ReflexionMemory, ReflexionEntry
 
 memory = ReflexionMemory(git_root)
 
@@ -247,7 +247,7 @@ rules = memory.get_rules()
 ## 📁 Files Added
 
 ```
-superclaude/
+superagent/
 ├── core/pm_init/
 │   ├── __init__.py              # Exports
 │   ├── init_hook.py             # Main initialization
@@ -313,7 +313,7 @@ docs/memory/  (auto-generated)
 
 2. **Context7 MCP** - Pattern for project-specific configuration
 
-3. **SuperClaude Framework** - Behavioral Rules and Principles
+3. **Super Agent** - Behavioral Rules and Principles
 
 ---
 

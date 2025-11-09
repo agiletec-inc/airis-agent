@@ -1,8 +1,8 @@
-# SuperClaude Framework developer-guide Index
+# Super Agent developer-guide Index
 
 ## Document Navigation Guide
 
-This index provides comprehensive access to all SuperClaude Framework development documentation, organized by topic and skill level for efficient information discovery.
+This index provides comprehensive access to all Super Agent development documentation, organized by topic and skill level for efficient information discovery.
 
 ### Quick Navigation
 
@@ -30,7 +30,7 @@ This index provides comprehensive access to all SuperClaude Framework developmen
 
 ### 🏗️ [Context Architecture Guide](technical-architecture.md)
 **Purpose**: Understanding how context files work and are structured  
-**Target Audience**: Anyone wanting to understand or extend SuperClaude  
+**Target Audience**: Anyone wanting to understand or extend Super Agent  
 **Length**: ~800 lines focused on context file patterns and Claude Code integration
 
 **Key Sections**:
@@ -125,10 +125,10 @@ This index provides comprehensive access to all SuperClaude Framework developmen
 
 ## Skill Level Pathways
 
-### 🟢 Beginner Path (Understanding SuperClaude)
+### 🟢 Beginner Path (Understanding Super Agent)
 
 **Week 1: Foundation**
-1. [Architecture Overview](technical-architecture.md#overview) - What SuperClaude is
+1. [Architecture Overview](technical-architecture.md#overview) - What Super Agent is
 2. [Installation Verification](testing-debugging.md#installation-verification) - Check your setup
 3. [Context File Architecture](technical-architecture.md#context-file-architecture) - Directory structure
 
@@ -188,7 +188,7 @@ This index provides comprehensive access to all SuperClaude Framework developmen
 ## Quality Standards
 
 ### ✅ Documentation Accuracy
-- **Technical Precision**: All examples reflect SuperClaude reality (context files, not software)
+- **Technical Precision**: All examples reflect Super Agent reality (context files, not software)
 - **Command Accuracy**: Correct Python module execution paths and Claude Code context triggers
 - **No Fiction**: Removed all references to non-existent testing frameworks and performance systems
 
@@ -224,4 +224,4 @@ This index provides comprehensive access to all SuperClaude Framework developmen
 3. **Troubleshooting**: [Common Issues](testing-debugging.md#common-issues)
 4. **Diagnostics**: [Troubleshooting Commands](testing-debugging.md#troubleshooting-commands)
 
-This comprehensive index reflects the reality of SuperClaude as a context-oriented configuration framework, focusing on practical context file development and Claude Code integration.
+This comprehensive index reflects the reality of Super Agent as a context-oriented configuration framework, focusing on practical context file development and Claude Code integration.

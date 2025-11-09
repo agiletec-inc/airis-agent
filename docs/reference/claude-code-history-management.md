@@ -531,7 +531,7 @@ find ~/.claude/projects/ -name "*.jsonl" -size +1M -mtime +7
 6.3M  -Users-kazuki-github-tokium
 2.6M  -Users-kazuki-github-bunseki
 1.9M  -Users-kazuki
-1.9M  -Users-kazuki-github-superclaude
+1.9M  -Users-kazuki-github-superagent
 ---
 Total: ~62MB across all projects
 ```

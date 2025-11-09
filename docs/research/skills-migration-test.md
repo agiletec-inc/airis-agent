@@ -7,8 +7,8 @@
 
 ### Before (Current State)
 ```
-~/.claude/superclaude/agents/pm-agent.md  # 1,927 words ≈ 2,500 tokens
-~/.claude/superclaude/modules/*.md        # Always loaded
+~/.claude/superagent/agents/pm-agent.md  # 1,927 words ≈ 2,500 tokens
+~/.claude/superagent/modules/*.md        # Always loaded
 
 Claude Code startup: Reads all files automatically
 ```
@@ -45,7 +45,7 @@ Claude Code startup: Reads SKILL.md only (if at all)
 
 ### 1. Backup Current State
 ```bash
-cp -r ~/.claude/superclaude ~/.claude/superclaude.backup
+cp -r ~/.claude/superagent ~/.claude/superagent.backup
 ```
 
 ### 2. Create Skills Structure
@@ -59,7 +59,7 @@ mkdir -p ~/.claude/skills/pm
 
 ### 3. Update Slash Command
 ```bash
-# plugins/superclaude/commands/pm.md
+# plugins/superagent/commands/pm.md
 # Updated to reference skill: pm
 ```
 
@@ -104,10 +104,10 @@ If skills migration fails:
 ```bash
 # Restore backup
 rm -rf ~/.claude/skills/pm
-mv ~/.claude/superclaude.backup ~/.claude/superclaude
+mv ~/.claude/superagent.backup ~/.claude/superagent
 
 # Revert slash command
-git checkout plugins/superclaude/commands/pm.md
+git checkout plugins/superagent/commands/pm.md
 ```
 
 ## Next Steps
@@ -115,6 +115,6 @@ git checkout plugins/superclaude/commands/pm.md
 If successful:
 1. Migrate remaining agents (task, research, etc.)
 2. Migrate modes (orchestration, brainstorming, etc.)
-3. Remove ~/.claude/superclaude/ entirely
+3. Remove ~/.claude/superagent/ entirely
 4. Document Skills-based architecture
 5. Update installation system

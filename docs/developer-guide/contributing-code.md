@@ -1,8 +1,8 @@
-# Contributing Context Files to SuperClaude Framework 🛠️
+# Contributing Context Files to Super Agent 🛠️
 
-Welcome to SuperClaude Framework development! This guide provides everything you need to contribute context files and behavioral instructions that enhance Claude Code through structured prompts and MCP server integration.
+Welcome to Super Agent development! This guide provides everything you need to contribute context files and behavioral instructions that enhance Claude Code through structured prompts and MCP server integration.
 
-**Project Purpose**: SuperClaude provides Claude Code with structured context files and behavioral instructions. We're building the next generation of AI-assisted development through intelligent prompt engineering.
+**Project Purpose**: Super Agent provides Claude Code with structured context files and behavioral instructions. We're building the next generation of AI-assisted development through intelligent prompt engineering.
 
 ## Table of Contents
 
@@ -26,15 +26,15 @@ Welcome to SuperClaude Framework development! This guide provides everything you
 
 **Environment Setup:**
 ```bash
-# Fork SuperClaude_Framework on GitHub first
-git clone https://github.com/YOUR_USERNAME/SuperClaude_Framework.git
-cd SuperClaude_Framework
+# Fork superagent on GitHub first
+git clone https://github.com/YOUR_USERNAME/superagent.git
+cd superagent
 
 # Test installation system
-PYTHONPATH=/path/to/SuperClaude_Framework python3 -m setup --help
+PYTHONPATH=/path/to/superagent python3 -m setup --help
 
 # Install to development location
-PYTHONPATH=/path/to/SuperClaude_Framework python3 -m setup install --components core
+PYTHONPATH=/path/to/superagent python3 -m setup install --components core
 ```
 
 **Validation Check:**
@@ -53,11 +53,11 @@ ls ~/.claude/      # Should show Claude Code directory
 
 ### Framework Structure
 
-SuperClaude is a **Context-Oriented Configuration Framework** - not executing software, but instruction files that Claude Code reads to modify its behavior.
+Super Agent is a **Context-Oriented Configuration Framework** - not executing software, but instruction files that Claude Code reads to modify its behavior.
 
 ```
-SuperClaude_Framework/
-├── superclaude/           # Framework components (the source of truth)
+superagent/
+├── superagent/           # Framework components (the source of truth)
 │   ├── Core/             # PRINCIPLES.md, RULES.md, FLAGS.md
 │   ├── Agents/           # 15 specialized domain experts
 │   ├── Commands/         # 21 context trigger patterns (/sc: behavioral instructions)
@@ -78,11 +78,11 @@ SuperClaude_Framework/
 ### How It Works
 
 ```
-User Input → Claude Code → Reads SuperClaude Context → Modified Behavior → Enhanced Output
+User Input → Claude Code → Reads Super Agent Context → Modified Behavior → Enhanced Output
 ```
 
 1. User types `/sc:implement "auth system"` **in Claude Code conversation** (not terminal)
-2. Claude Code reads `superclaude/Commands/implement.md`
+2. Claude Code reads `superagent/Commands/implement.md`
 3. Command activates security-engineer agent context
 4. Context7 MCP provides authentication patterns
 5. Claude generates complete, secure implementation
@@ -150,9 +150,9 @@ Core philosophy and approach
 1. **Fork and Clone:**
    ```bash
    # Fork on GitHub, then:
-   git clone https://github.com/YOUR_USERNAME/SuperClaude_Framework.git
-   cd SuperClaude_Framework
-   git remote add upstream https://github.com/SuperClaude-Org/SuperClaude_Framework.git
+   git clone https://github.com/YOUR_USERNAME/superagent.git
+   cd superagent
+   git remote add upstream https://github.com/kazuki/superagent.git
    ```
 
 2. **Create Feature Branch:**
@@ -187,7 +187,7 @@ Brief description of context file changes
 - [ ] Examples validated in Claude Code conversations
 
 ## Checklist
-- [ ] Files follow SuperClaude conventions
+- [ ] Files follow Super Agent conventions
 - [ ] Self-review completed
 - [ ] Documentation updated
 - [ ] No breaking changes to existing context
@@ -208,7 +208,7 @@ Brief description of context file changes
 
 **Agent Development Process:**
 1. Identify domain expertise gap
-2. Create agent file in `superclaude/Agents/`
+2. Create agent file in `superagent/Agents/`
 3. Define triggers, behaviors, and boundaries
 4. Test with various Claude Code scenarios
 5. Document usage patterns and examples
@@ -386,16 +386,16 @@ grep "@import" ~/.claude/CLAUDE.md
 
 ## License and Attribution
 
-**MIT License**: SuperClaude Framework is licensed under the MIT License, providing maximum freedom for use, modification, and distribution.
+**MIT License**: Super Agent is licensed under the MIT License, providing maximum freedom for use, modification, and distribution.
 
-By contributing to SuperClaude Framework, you agree that your contributions will be licensed under the same MIT License. You retain copyright to your contributions while granting the project perpetual rights to use, modify, and distribute your context files.
+By contributing to Super Agent, you agree that your contributions will be licensed under the same MIT License. You retain copyright to your contributions while granting the project perpetual rights to use, modify, and distribute your context files.
 
 ## Acknowledgments
 
-SuperClaude Framework exists because of the collaborative effort of developers, users, and contributors who believe in advancing AI-assisted development. Every bug report, feature suggestion, documentation improvement, and context file contribution makes the framework better for everyone.
+Super Agent exists because of the collaborative effort of developers, users, and contributors who believe in advancing AI-assisted development. Every bug report, feature suggestion, documentation improvement, and context file contribution makes the framework better for everyone.
 
-Your expertise and perspective make SuperClaude Framework better. Whether you're improving context files, adding features, or helping other users, every contribution advances the goal of more effective AI-assisted development.
+Your expertise and perspective make Super Agent better. Whether you're improving context files, adding features, or helping other users, every contribution advances the goal of more effective AI-assisted development.
 
 ---
 
-**Welcome to the SuperClaude Framework contributor community!** Your contributions help build the future of AI-assisted development through intelligent context and behavioral programming.
+**Welcome to the Super Agent contributor community!** Your contributions help build the future of AI-assisted development through intelligent context and behavioral programming.

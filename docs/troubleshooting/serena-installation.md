@@ -11,7 +11,7 @@ Caused by: No such file or directory (os error 2)
 ```
 
 **Root Cause:**
-The SuperClaude installer was incorrectly configured to use `uv run serena` instead of `uvx` for Serena MCP server installation.
+The Super Agent installer was incorrectly configured to use `uv run serena` instead of `uvx` for Serena MCP server installation.
 
 **Solution:**
 
@@ -123,13 +123,13 @@ If issues persist:
 1. Check [Serena documentation](https://github.com/oraios/serena)
 2. Verify uvx installation: `uvx --version`
 3. Test direct installation: `uvx --from git+https://github.com/oraios/serena serena --help`
-4. Report issues to [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework/issues)
+4. Report issues to [Super Agent](https://github.com/kazuki/superagent/issues)
 
 ### Version Information
 
 This troubleshooting guide is for:
-- SuperClaude Framework v4.1.5+
+- Super Agent v4.1.5+
 - Serena MCP (latest from GitHub)
 - UV/UVX package manager
 
-For older versions, refer to legacy documentation or upgrade to latest SuperClaude Framework.
+For older versions, refer to legacy documentation or upgrade to latest Super Agent.

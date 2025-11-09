@@ -1,17 +1,17 @@
-# SuperClaude Integration Patterns Collection
+# Super Agent Integration Patterns Collection
 
 **Status**: ✅ **Status: Current** - Context patterns for framework integration and tool coordination.
 
-**Context Integration Guide**: Patterns for using SuperClaude commands effectively with different frameworks and tools. Remember: SuperClaude provides context to Claude Code - all actual work is done by Claude.
+**Context Integration Guide**: Patterns for using Super Agent commands effectively with different frameworks and tools. Remember: Super Agent provides context to Claude Code - all actual work is done by Claude.
 
 ## Overview and Usage Guide
 
-**Purpose**: Effective patterns for using SuperClaude context with various development frameworks and tools.
+**Purpose**: Effective patterns for using Super Agent context with various development frameworks and tools.
 
 **What This Is**: Command combinations and flag patterns that work well for specific technologies
 **What This Isn't**: Performance optimization or parallel execution (no code runs)
 
-**Key Principle**: SuperClaude tells Claude Code WHAT to do and HOW to think about it. Claude Code does the actual work.
+**Key Principle**: Super Agent tells Claude Code WHAT to do and HOW to think about it. Claude Code does the actual work.
 
 ## Framework Context Patterns
 
@@ -316,4 +316,4 @@
 
 ## Summary
 
-These integration patterns show how to combine SuperClaude commands, agents, and flags effectively for different development scenarios. Remember that all patterns are about providing better context to Claude Code - the actual code generation, not execution, is what Claude does based on these contexts.
+These integration patterns show how to combine Super Agent commands, agents, and flags effectively for different development scenarios. Remember that all patterns are about providing better context to Claude Code - the actual code generation, not execution, is what Claude does based on these contexts.

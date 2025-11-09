@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to SuperClaude will be documented in this file.
+All notable changes to Super Agent will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [4.1.5] - 2025-09-26
 ### Added
 - Comprehensive flag documentation integrated into `/sc:help` command
-- All 25 SuperClaude framework flags now discoverable from help system
+- All 25 Super Agent framework flags now discoverable from help system
 - Practical usage examples and flag priority rules
 
 ### Fixed
@@ -54,7 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - MCP component now supports true incremental installation
 - mcp_docs component auto-detects and installs documentation for all detected servers
 - Improved error handling and graceful fallback for corrupted config files
-- Enhanced user experience with single-source reference for all SuperClaude capabilities
+- Enhanced user experience with single-source reference for all Super Agent capabilities
 
 ## [4.1.0] - 2025-09-13
 ### Added
@@ -86,7 +86,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic update checking for PyPI and NPM packages
 - `--no-update-check` flag to skip update checks
 - `--auto-update` flag for automatic updates without prompting
-- Environment variable `SUPERCLAUDE_AUTO_UPDATE` support
+- Environment variable `SUPER_AGENT_AUTO_UPDATE` support
 - Update notifications with colored banners showing available version
 - Rate limiting to check updates once per 24 hours
 - Smart installation method detection (pip/pipx/npm/yarn)
@@ -98,7 +98,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Technical
 - Added `setup/utils/updater.py` for PyPI update checking logic
 - Added `bin/checkUpdate.js` for NPM update checking logic
-- Integrated update checks into main entry points (superclaude/__main__.py and bin/cli.js)
+- Integrated update checks into main entry points (superagent/__main__.py and bin/cli.js)
 - Non-blocking update checks with 2-second timeout to avoid delays
 
 ### Changed
@@ -123,7 +123,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved command conflict prevention
 - Better command organization and discoverability
 - Comprehensive PyPI publishing infrastructure
-- API key management during SuperClaude MCP setup
+- API key management during Super Agent MCP setup
 
 ### Removed
 - **BREAKING**: Removed Templates/ directory (legacy templates no longer needed)
@@ -139,13 +139,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Commands now accessible as `/sc:analyze`, `/sc:build`, `/sc:improve`, etc.
 - Migration preserves existing functionality while preventing naming conflicts
 - Installation process detects and migrates existing commands automatically
-- Tab completion support for `/sc:` prefix to discover all SuperClaude commands
+- Tab completion support for `/sc:` prefix to discover all Super Agent commands
 - Guides/ directory replaces docs/ for improved organization
 
 ## [4.0.6] - 2025-08-23
 
 ### Fixed
-- Component validation now correctly checks .superclaude-metadata.json instead of settings.json (#291)
+- Component validation now correctly checks .superagent-metadata.json instead of settings.json (#291)
 - Standardized version numbers across all components to 4.0.6
 - Fixed agent validation to check for correct filenames (architect vs specialist/engineer)
 - Fixed package.json version inconsistency (was 4.0.5)
@@ -186,7 +186,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [3.0.0] - 2025-07-14
 
 ### Added
-- Initial release of SuperClaude v3.0
+- Initial release of Super Agent v3.0
 - 15 specialized slash commands for development tasks
 - Smart persona auto-activation system
 - MCP server integration (Context7, Sequential, Magic, Playwright)

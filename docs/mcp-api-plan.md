@@ -6,7 +6,7 @@
 - Allow three clients to use the same surface:
   1. **Settings UI** (existing Vite app) – keep UX for beginners.
   2. **`airis-mcp-cli`** – power users / automation.
-  3. **Super Agents** (SuperClaude, Codex, others) – programmatic orchestration.
+  3. **Super Agents** (Super Agent, Codex, others) – programmatic orchestration.
 - Avoid direct database access from clients; enforce validation and auditing inside the Gateway.
 - Supply IDE-specific config renderers (Claude Code, Cursor, Windsurf, etc.) from one canonical model.
 
@@ -130,7 +130,7 @@ Each renderer must account for:
 2. Implement FastAPI routes + pydantic schemas, including validation logic.
 3. Update Settings UI to consume API.
 4. Build CLI client (Python or Node) against the new endpoints.
-5. Integrate Super Agent (SuperClaude) with the API.
+5. Integrate Super Agent (Super Agent) with the API.
 6. Extend renderers for Cursor, Windsurf, Codex.
 7. Add catalog ingestion from external registries (Docker Hub, community JSON feeds).
 8. Document API usage in `docs/api/` and generate OpenAPI spec.

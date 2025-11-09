@@ -1,6 +1,6 @@
 # MCP Integration Policy
 
-SuperClaude FrameworkにおけるMCP (Model Context Protocol) サーバーの統合ポリシーと使用ガイドライン。
+Super AgentにおけるMCP (Model Context Protocol) サーバーの統合ポリシーと使用ガイドライン。
 
 ## MCP Server Definitions
 
@@ -501,7 +501,7 @@ To New System:
 
 ## References
 
-- PM Agent: `~/.claude/superclaude/agents/pm-agent.md`
-- Modes: `~/.claude/superclaude/modes/MODE_*.md`
-- Rules: `~/.claude/superclaude/framework/rules.md`
+- PM Agent: `~/.claude/superagent/agents/pm-agent.md`
+- Modes: `~/.claude/superagent/modes/MODE_*.md`
+- Rules: `~/.claude/superagent/framework/rules.md`
 - Memory Cleanup: `docs/architecture/pm-agent-responsibility-cleanup.md`

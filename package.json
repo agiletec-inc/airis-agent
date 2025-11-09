@@ -1,7 +1,7 @@
 {
-  "name": "@bifrost_inc/superclaude",
+  "name": "@bifrost_inc/superagent",
   "version": "4.1.5",
-  "description": "SuperClaude Framework NPM wrapper - Official Node.js wrapper for the Python SuperClaude package. Enhances Claude Code with specialized commands and AI development tools.",
+  "description": "Super Agent NPM wrapper - Official Node.js wrapper for the Python Super Agent package. Enhances Claude Code with specialized commands and AI development tools.",
   "scripts": {
     "postinstall": "node ./bin/install.js",
     "update": "node ./bin/update.js",
@@ -14,20 +14,20 @@
     "LICENSE"
   ],
   "author": {
-    "name": "SuperClaude Org",
-    "url": "https://github.com/SuperClaude-Org"
+    "name": "Super Agent Org",
+    "url": "https://github.com/kazuki"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SuperClaude-Org/SuperClaude_Framework.git"
+    "url": "git+https://github.com/kazuki/superagent.git"
   },
   "bugs": {
-    "url": "https://github.com/SuperClaude-Org/SuperClaude_Framework/issues"
+    "url": "https://github.com/kazuki/superagent/issues"
   },
-  "homepage": "https://github.com/SuperClaude-Org/SuperClaude_Framework#readme",
+  "homepage": "https://github.com/kazuki/superagent#readme",
   "license": "MIT",
   "keywords": [
-    "superclaude",
+    "superagent",
     "ai",
     "cli",
     "pypi",

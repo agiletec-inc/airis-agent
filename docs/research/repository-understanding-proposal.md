@@ -1,14 +1,14 @@
 # Repository Understanding & Auto-Indexing Proposal
 
 **Date**: 2025-10-19
-**Purpose**: Measure SuperClaude effectiveness & implement intelligent documentation indexing
+**Purpose**: Measure Super Agent effectiveness & implement intelligent documentation indexing
 
 ## 🎯 3つの課題と解決策
 
 ### 課題1: リポジトリ理解度の測定
 
 **問題**:
-- SuperClaude有無でClaude Codeの理解度がどう変わるか？
+- Super Agent有無でClaude Codeの理解度がどう変わるか？
 - `/init` だけで充分か？
 
 **測定方法**:
@@ -20,8 +20,8 @@
     hard: "エラーハンドリングの統一パターンは？"
 
   測定:
-    - SuperClaude無し: Claude Code単体で回答
-    - SuperClaude有り: CLAUDE.md + framework導入後に回答
+    - Super Agent無し: Claude Code単体で回答
+    - Super Agent有り: CLAUDE.md + framework導入後に回答
     - 比較: 正解率、回答時間、詳細度
 
   期待される違い:
@@ -35,13 +35,13 @@
 class RepositoryUnderstandingTest:
     """リポジトリ理解度を測定"""
 
-    def test_with_superclaude(self):
-        # SuperClaude導入後
+    def test_with_superagent(self):
+        # Super Agent導入後
         answers = ask_claude_code(questions, with_context=True)
         score = evaluate_answers(answers, ground_truth)
         assert score > 0.8  # 80%以上
 
-    def test_without_superclaude(self):
+    def test_without_superagent(self):
         # Claude Code単体
         answers = ask_claude_code(questions, with_context=False)
         score = evaluate_answers(answers, ground_truth)
@@ -114,7 +114,7 @@ Phase 4: メタデータ保存 (10秒)
 
 ## 📁 Repository Structure
 
-### Source Code (`superclaude/`)
+### Source Code (`superagent/`)
 - **cli/**: Command-line interface (Entry: `app.py`)
   - `app.py`: Main CLI application (Typer-based)
   - `commands/`: Command handlers
@@ -137,17 +137,17 @@ Phase 4: メタデータ保存 (10秒)
 - `pyproject.toml`: Python project config (UV-based)
 - `.claude/`: Claude Code integration
   - `CLAUDE.md`: Main project instructions
-  - `superclaude/`: Framework components
+  - `superagent/`: Framework components
 
 ## 🔗 Quick Navigation
 
 ### Common Tasks
-- [Install SuperClaude](docs/user-guide/installation.md)
+- [Install Super Agent](docs/user-guide/installation.md)
 - [Architecture Overview](docs/developer-guide/architecture.md)
 - [Add New Agent](docs/developer-guide/agents.md)
 
 ### File Locations
-- Entry point: `superclaude/cli/app.py:cli_main`
+- Entry point: `superagent/cli/app.py:cli_main`
 - Tests: `tests/` (pytest-based)
 - Benchmarks: `tests/performance/`
 
@@ -173,7 +173,7 @@ Phase 4: メタデータ保存 (10秒)
 - 💡 Suggest: Move to `archive/` or delete
 
 ### Missing Documentation
-- ⚠️ `superclaude/modes/` (no overview doc)
+- ⚠️ `superagent/modes/` (no overview doc)
 - 💡 Suggest: Create `docs/modes-guide.md`
 
 ## 🎯 Recommendations
@@ -186,7 +186,7 @@ Phase 4: メタデータ保存 (10秒)
 
 **実装**:
 ```python
-# superclaude/indexing/repository_indexer.py
+# superagent/indexing/repository_indexer.py
 
 class RepositoryIndexer:
     """リポジトリ自動インデックス作成"""
@@ -343,7 +343,7 @@ uv run pytest tests/performance/test_actual_parallel_execution.py -v -s
 - ドキュメント整理の問題を根本解決
 
 **実装**:
-1. `superclaude/indexing/repository_indexer.py` 作成
+1. `superagent/indexing/repository_indexer.py` 作成
 2. PM Agent起動時に自動診断→必要ならindex作成
 3. `PROJECT_INDEX.md` をルートに生成
 
@@ -367,12 +367,12 @@ uv run pytest tests/performance/test_actual_parallel_execution.py -v -s
 ### Priority 3: 理解度測定
 
 **理由**:
-- SuperClaudeの価値を定量化
+- Super Agentの価値を定量化
 - Before/After比較で効果証明
 
 **実装**:
 1. リポジトリ理解度テスト作成
-2. SuperClaude有無で測定
+2. Super Agent有無で測定
 3. スコア比較
 
 ---
@@ -466,7 +466,7 @@ auto_indexing:
 1. **即座に実装**:
    ```bash
    # 自動インデックス作成の実装
-   # superclaude/indexing/repository_indexer.py
+   # superagent/indexing/repository_indexer.py
    ```
 
 2. **並列実行の検証**:

@@ -1,7 +1,7 @@
 """
 Skill Installation Command
 
-Installs SuperClaude skills to ~/.claude/skills/ directory.
+Installs Super Agent skills to ~/.claude/skills/ directory.
 """
 
 from pathlib import Path
@@ -59,7 +59,7 @@ def _get_skill_source(skill_name: str) -> Optional[Path]:
     Get source directory for skill
 
     Skills are stored in:
-        src/superclaude/skills/{skill_name}/
+        src/superagent/skills/{skill_name}/
 
     Args:
         skill_name: Name of skill
@@ -79,7 +79,7 @@ def _get_skill_source(skill_name: str) -> Optional[Path]:
             base / normalized,
         ]
 
-    # Packaged skills (src/superclaude/skills/…)
+    # Packaged skills (src/superagent/skills/…)
     skill_dirs.extend(_candidate_paths(package_root / "skills"))
 
     # Repository root skills/ when running from source checkout
@@ -96,7 +96,7 @@ def _get_skill_source(skill_name: str) -> Optional[Path]:
 
 
 def _is_valid_skill_dir(path: Path) -> bool:
-    """Return True if directory looks like a SuperClaude skill payload."""
+    """Return True if directory looks like a Super Agent skill payload."""
     if not path or not path.exists() or not path.is_dir():
         return False
 

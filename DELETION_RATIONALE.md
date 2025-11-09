@@ -11,7 +11,7 @@
 | Category | Deleted Files | Deleted Lines | Reason Category |
 |---------|--------------|---------------|-----------------|
 | setup/ directory | 40 | 12,289 | Architecture renovation |
-| superclaude/ (old structure) | 86 | ~8,000 | PEP 517 migration |
+| superagent/ (old structure) | 86 | ~8,000 | PEP 517 migration |
 | TypeScript implementation | 14 | 2,633 | Preserved in branch |
 | Plugin files | 9 | 494 | Repository separation |
 | bin/ + scripts/ | 8 | ~800 | CLI modernization |
@@ -43,11 +43,11 @@ Remove old installation system (setup/) that caused heavy token consumption
 
 **Evidence 2: PHASE_2_COMPLETE.md**
 ```markdown
-New architecture (src/superclaude/) is self-contained and doesn't need setup/.
+New architecture (src/superagent/) is self-contained and doesn't need setup/.
 ```
 
 **Evidence 3: Architecture Migration Rationale**
-- Old system: Copied files to `~/.claude/superclaude/` → **Polluted user environment**
+- Old system: Copied files to `~/.claude/superagent/` → **Polluted user environment**
 - New system: Installed to `site-packages/` → **Standard Python package**
 
 **Evidence 4: Token Efficiency**
@@ -62,11 +62,11 @@ New architecture (src/superclaude/) is self-contained and doesn't need setup/.
 
 ---
 
-## 2. superclaude/ Directory Deletion (Old Structure)
+## 2. superagent/ Directory Deletion (Old Structure)
 
 ### What Was Deleted
 ```
-superclaude/
+superagent/
 ├── agents/          # 20 agent definitions
 ├── commands/        # 27 slash commands
 ├── modes/           # 7 behavior modes
@@ -82,7 +82,7 @@ superclaude/
 File: docs/research/python_src_layout_research_20251021.md
 
 ## Recommendation
-Use src/ layout for SuperClaude:
+Use src/ layout for Super Agent:
 - Clear separation between package code and tests
 - Prevents accidental imports from development directory
 - Modern Python best practice
@@ -91,17 +91,17 @@ Use src/ layout for SuperClaude:
 **Evidence 2: Migration Completion Proof**
 ```bash
 # Old structure
-superclaude/pm_agent/confidence.py
+superagent/pm_agent/confidence.py
 
 # New structure (PEP 517 compliant)
-src/superclaude/pm_agent/confidence.py
+src/superagent/pm_agent/confidence.py
 ```
 
 **Evidence 3: pytest plugin auto-discovery**
 ```bash
 $ uv run python -m pytest --trace-config 2>&1 | grep "registered third-party plugins:"
 registered third-party plugins:
-  superclaude-0.4.0 at /Users/kazuki/github/superclaude/src/superclaude/pytest_plugin.py
+  superagent-0.4.0 at /Users/kazuki/github/superagent/src/superagent/pytest_plugin.py
 ```
 
 **Logical Conclusion**:
@@ -152,7 +152,7 @@ Strategy: Minimal start with PM Agent orchestration
 
 **Evidence 3: PM Agent Orchestration Strategy**
 ```markdown
-File: commands/agent.md (SuperClaude_Plugin)
+File: commands/agent.md (Super Agent_Plugin)
 
 ## Task Protocol
 1. Clarify scope
@@ -263,21 +263,21 @@ hooks/
 **Evidence 1: Commit Message**
 ```
 commit 87c80d0
-refactor: move plugin files to SuperClaude_Plugin repository
+refactor: move plugin files to Super Agent_Plugin repository
 
-Plugin files now maintained in SuperClaude_Plugin repository.
+Plugin files now maintained in Super Agent_Plugin repository.
 This repository focuses on Python package implementation.
 ```
 
 **Evidence 2: Repository Separation Rationale**
 
-**SuperClaude_Framework (this repository)**:
+**superagent (this repository)**:
 - Python package implementation
 - pytest plugin
-- CLI tools (`superclaude` command)
+- CLI tools (`superagent` command)
 - Documentation
 
-**SuperClaude_Plugin (separate repository)**:
+**Super Agent_Plugin (separate repository)**:
 - Claude Code plugin
 - Slash command definitions
 - Agent definitions
@@ -285,14 +285,14 @@ This repository focuses on Python package implementation.
 
 **Evidence 3: Clear Responsibility Separation**
 ```
-SuperClaude_Framework:
+superagent:
   Purpose: Distributed as Python library
-  Install: `uv pip install superclaude`
+  Install: `uv pip install superagent`
   Target: pytest + CLI users
 
-SuperClaude_Plugin:
+Super Agent_Plugin:
   Purpose: Distributed as Claude Code plugin
-  Install: `/plugin install sc@SuperClaude-Org`
+  Install: `/plugin install sc@kazuki`
   Target: Claude Code users
 ```
 
@@ -336,7 +336,7 @@ feat: migrate CLI to typer + rich for modern UX
 - Complex dependency checking
 - Auto-update functionality
 
-**New CLI (src/superclaude/cli/main.py)**:
+**New CLI (src/superagent/cli/main.py)**:
 ```python
 # Modern Python CLI with typer + rich
 @app.command()
@@ -362,14 +362,14 @@ def doctor(verbose: bool = False):
 
 ### Before (master)
 - **Total lines**: ~45,000 lines
-- **Directories**: setup/, superclaude/, bin/, scripts/, .claude-plugin/
+- **Directories**: setup/, superagent/, bin/, scripts/, .claude-plugin/
 - **Installation**: Complex `setup/` system
 - **Distribution**: npm + PyPI
 - **Dependencies**: Node.js + Python
 
 ### After (next)
 - **Total lines**: ~22,500 lines (**50% reduction**)
-- **Directories**: src/superclaude/, docs/, tests/
+- **Directories**: src/superagent/, docs/, tests/
 - **Installation**: `uv pip install -e ".[dev]"`
 - **Distribution**: PyPI (plugin in separate repo)
 - **Dependencies**: Python only

@@ -1,5 +1,5 @@
 """
-SuperClaude Execution Engine
+Super Agent Execution Engine
 
 Integrates three execution engines:
 1. Reflection Engine: Think × 3 before execution
@@ -7,7 +7,7 @@ Integrates three execution engines:
 3. Self-Correction Engine: Learn from mistakes
 
 Usage:
-    from superclaude.execution import intelligent_execute
+    from superagent.execution import intelligent_execute
 
     result = intelligent_execute(
         task="Create user authentication system",

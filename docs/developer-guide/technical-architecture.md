@@ -1,10 +1,10 @@
-# SuperClaude Context Architecture Guide
+# Super Agent Context Architecture Guide
 
 ## Overview
 
-This guide documents how SuperClaude's Context-Oriented Configuration Framework is structured and how Claude Code interprets these context files to modify its behavior.
+This guide documents how Super Agent's Context-Oriented Configuration Framework is structured and how Claude Code interprets these context files to modify its behavior.
 
-**Important**: SuperClaude is NOT standalone software with running processes, execution layers, or performance systems. It is a collection of `.md` instruction files that Claude Code reads to adopt specialized behaviors.
+**Important**: Super Agent is NOT standalone software with running processes, execution layers, or performance systems. It is a collection of `.md` instruction files that Claude Code reads to adopt specialized behaviors.
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ This guide documents how SuperClaude's Context-Oriented Configuration Framework 
 ### Directory Structure
 
 ```
-~/.claude/ (SuperClaude Framework Files Only)
+~/.claude/ (Super Agent Files Only)
 ├── CLAUDE.md                       # Main context file with imports
 ├── FLAGS.md                        # Flag definitions and triggers
 ├── RULES.md                        # Core behavioral rules
@@ -64,7 +64,7 @@ This guide documents how SuperClaude's Context-Oriented Configuration Framework 
 │   ├── test-runner.md              # Test execution expertise
 │   └── wave-orchestrator.md        # Wave orchestration patterns
 └── commands/                       # Workflow pattern contexts
-    └── sc/                         # SuperClaude command namespace (25 total)
+    └── sc/                         # Super Agent command namespace (25 total)
         ├── analyze.md              # Analysis patterns
         ├── brainstorm.md           # Discovery patterns
         ├── build.md                # Build patterns
@@ -92,7 +92,7 @@ This guide documents how SuperClaude's Context-Oriented Configuration Framework 
         └── workflow.md             # Workflow planning patterns
 
 Note: Other directories (backups/, logs/, projects/, serena/, etc.) are Claude Code
-operational directories, not part of SuperClaude framework content.
+operational directories, not part of Super Agent framework content.
 ```
 
 ### Context File Types
@@ -252,7 +252,7 @@ Modes modify Claude's interaction style:
 
 ### Configuration Location
 
-MCP servers are configured in `~/.claude.json` (NOT part of SuperClaude context):
+MCP servers are configured in `~/.claude.json` (NOT part of Super Agent context):
 
 ```json
 {
@@ -272,7 +272,7 @@ MCP servers are configured in `~/.claude.json` (NOT part of SuperClaude context)
 ### MCP Integration
 
 - **MCP Servers**: Actual software providing tools
-- **SuperClaude**: Context that tells Claude when to use them
+- **Super Agent**: Context that tells Claude when to use them
 - **Activation**: Flags or keywords trigger MCP usage
 
 ## How Claude Code Reads Context
@@ -333,7 +333,7 @@ User Input (in Claude Code): "/sc:analyze src/ --focus security"
 
 ## Important Clarifications
 
-### What SuperClaude Is NOT
+### What Super Agent Is NOT
 
 - ❌ **No Execution Engine**: No code runs, no processes execute
 - ❌ **No Performance System**: No optimization possible (it's just text)
@@ -341,7 +341,7 @@ User Input (in Claude Code): "/sc:analyze src/ --focus security"
 - ❌ **No Orchestration Layer**: Context files guide, not control
 - ❌ **No Quality Gates**: Just instructional patterns
 
-### What SuperClaude IS
+### What Super Agent IS
 
 - ✅ **Context Files**: `.md` instructions for Claude Code
 - ✅ **Behavioral Patterns**: Workflows and approaches
@@ -351,6 +351,6 @@ User Input (in Claude Code): "/sc:analyze src/ --focus security"
 
 ## Summary
 
-SuperClaude's architecture is intentionally simple: it's a well-organized collection of context files that Claude Code reads to modify its behavior. The power comes from the careful crafting of these contexts and their systematic organization, not from any executing code or running processes.
+Super Agent's architecture is intentionally simple: it's a well-organized collection of context files that Claude Code reads to modify its behavior. The power comes from the careful crafting of these contexts and their systematic organization, not from any executing code or running processes.
 
 The framework's elegance lies in its simplicity - by providing Claude Code with structured instructions through context files, we can achieve sophisticated behavioral modifications without any software complexity.

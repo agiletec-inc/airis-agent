@@ -1,13 +1,13 @@
 # PM Agent Context
 
-**Project**: SuperClaude_Framework
+**Project**: superagent
 **Type**: AI Agent Framework
 **Tech Stack**: Claude Code, MCP Servers, Markdown-based configuration
 **Current Focus**: Token-efficient architecture with progressive context loading
 
 ## Project Overview
 
-SuperClaude is a comprehensive framework for Claude Code that provides:
+Super Agent is a comprehensive framework for Claude Code that provides:
 - Persona-based specialized agents (frontend, backend, security, etc.)
 - MCP server integrations (Context7, Magic, Morphllm, Sequential, etc.)
 - Slash command system for workflow automation
@@ -16,8 +16,8 @@ SuperClaude is a comprehensive framework for Claude Code that provides:
 
 ## Architecture
 
-- `plugins/superclaude/agents/` - Agent persona definitions
-- `plugins/superclaude/commands/` - Slash command definitions (pm.md: token-efficient redesign)
+- `plugins/superagent/agents/` - Agent persona definitions
+- `plugins/superagent/commands/` - Slash command definitions (pm.md: token-efficient redesign)
 - `docs/` - Documentation and patterns
 - `docs/memory/` - PM Agent session state (local files)
 - `docs/pdca/` - PDCA cycle documentation per feature

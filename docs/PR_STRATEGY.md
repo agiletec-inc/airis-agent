@@ -1,7 +1,7 @@
 # PR Strategy for Clean Architecture Migration
 
 **Date**: 2025-10-21
-**Target**: SuperClaude-Org/SuperClaude_Framework
+**Target**: kazuki/superagent
 **Branch**: `feature/clean-architecture` → `master`
 
 ---
@@ -36,7 +36,7 @@
 
 **現在のUpstream構造**:
 ```
-SuperClaude_Framework/
+superagent/
 ├── setup/                    # カスタムインストーラー（468行のComponent）
 │   ├── core/
 │   │   ├── installer.py
@@ -47,7 +47,7 @@ SuperClaude_Framework/
 │       ├── agent_personas.py
 │       ├── slash_commands.py
 │       └── mcp_integration.py
-├── superclaude/              # パッケージソース（フラット）
+├── superagent/              # パッケージソース（フラット）
 │   ├── agents/
 │   ├── commands/
 │   ├── modes/
@@ -58,7 +58,7 @@ SuperClaude_Framework/
 ```
 
 **問題**:
-1. ❌ `~/.claude/superclaude/` にインストール → Claude Code汚染
+1. ❌ `~/.claude/superagent/` にインストール → Claude Code汚染
 2. ❌ 複雑なインストーラー → 保守コスト高
 3. ❌ フラット構造 → PyPA非推奨
 4. ❌ setup.py → 非推奨（PEP 517違反）
@@ -71,7 +71,7 @@ SuperClaude_Framework/
 
 | 項目 | Upstream (Before) | This PR (After) | 改善 |
 |------|-------------------|-----------------|------|
-| **インストール先** | `~/.claude/superclaude/` | `site-packages/` | ✅ ゼロフットプリント |
+| **インストール先** | `~/.claude/superagent/` | `site-packages/` | ✅ ゼロフットプリント |
 | **パッケージング** | `setup.py` | `pyproject.toml` (PEP 517) | ✅ 標準準拠 |
 | **構造** | フラット | `src/` layout | ✅ PyPA推奨 |
 | **インストーラー** | 468行カスタムクラス | pytest entry points | ✅ シンプル |
@@ -87,7 +87,7 @@ SuperClaude_Framework/
 ```bash
 # 複雑なカスタムインストール
 python -m setup.core.installer
-# → ~/.claude/superclaude/ に展開
+# → ~/.claude/superagent/ に展開
 # → Claude Codeディレクトリ汚染
 ```
 
@@ -95,7 +95,7 @@ python -m setup.core.installer
 ```bash
 # 標準的なPythonインストール
 uv pip install -e .
-# → site-packages/superclaude/ にインストール
+# → site-packages/superagent/ にインストール
 # → pytest自動検出
 # → ~/.claude/ 汚染なし
 ```
@@ -105,7 +105,7 @@ uv pip install -e .
 **Before**:
 ```python
 # テストで手動import必要
-from superclaude.setup.components.knowledge_base import KnowledgeBase
+from superagent.setup.components.knowledge_base import KnowledgeBase
 ```
 
 **After**:
@@ -124,8 +124,8 @@ def test_example(confidence_checker, token_budget):
 - カスタムコンポーネントシステム → pytest plugin化
 
 **追加**:
-- `src/superclaude/pytest_plugin.py`: 150行（シンプルなpytest統合）
-- `src/superclaude/cli/`: 標準的なClick CLI
+- `src/superagent/pytest_plugin.py`: 150行（シンプルなpytest統合）
+- `src/superagent/cli/`: 標準的なClick CLI
 
 **結果**: **コード量約50%削減、保守性大幅向上**
 
@@ -141,13 +141,13 @@ $ make verify
 ======================================
 
 1. Package location:
-   /Users/kazuki/github/superclaude/src/superclaude/__init__.py ✅
+   /Users/kazuki/github/superagent/src/superagent/__init__.py ✅
 
 2. Package version:
-   SuperClaude, version 0.4.0 ✅
+   Super Agent, version 0.4.0 ✅
 
 3. Pytest plugin:
-   superclaude-0.4.0 at .../src/superclaude/pytest_plugin.py ✅
+   superagent-0.4.0 at .../src/superagent/pytest_plugin.py ✅
    Plugin loaded ✅
 
 4. Health check:
@@ -168,7 +168,7 @@ Plugin Integration:    18 passed ✅
 
 **PM Agent読み込み比較**:
 - Before: `setup/components/` 展開 → 約15K tokens
-- After: `src/superclaude/pm_agent/` import → 約3K tokens
+- After: `src/superagent/pm_agent/` import → 約3K tokens
 - **削減率**: 80%
 
 ---
@@ -221,17 +221,17 @@ pip install -e .  # or: uv pip install -e .
 ### Import Paths
 **Before**:
 ```python
-from superclaude.core import intelligent_execute
+from superagent.core import intelligent_execute
 ```
 
 **After**:
 ```python
-from superclaude.execution import intelligent_execute
+from superagent.execution import intelligent_execute
 ```
 
 ### Skills Installation
-**Before**: Automatically installed to `~/.claude/superclaude/`
-**After**: Optional via `superclaude install-skill pm-agent`
+**Before**: Automatically installed to `~/.claude/superagent/`
+**After**: Optional via `superagent install-skill pm-agent`
 ```
 
 ### 4. Migration Guide
@@ -242,31 +242,31 @@ from superclaude.execution import intelligent_execute
 ### Step 1: Uninstall Old Version
 ```bash
 # Remove old installation
-rm -rf ~/.claude/superclaude/
+rm -rf ~/.claude/superagent/
 ```
 
 ### Step 2: Install New Version
 ```bash
 # Clone and install
-git clone https://github.com/SuperClaude-Org/SuperClaude_Framework.git
-cd SuperClaude_Framework
+git clone https://github.com/kazuki/superagent.git
+cd superagent
 pip install -e .  # or: uv pip install -e .
 ```
 
 ### Step 3: Verify Installation
 ```bash
 # Run health check
-superclaude doctor
+superagent doctor
 
 # Output should show:
 # ✅ pytest plugin loaded
-# ✅ SuperClaude is healthy
+# ✅ Super Agent is healthy
 ```
 
 ### Step 4: (Optional) Install Skills
 ```bash
 # Only if you want Skills
-superclaude install-skill pm-agent
+superagent install-skill pm-agent
 ```
 ```
 
@@ -313,7 +313,7 @@ $ make test
 
 **ファイル変更範囲**:
 ```
-src/superclaude/          # 新規作成
+src/superagent/          # 新規作成
 tests/                    # テスト追加/更新
 docs/architecture/        # 移行ドキュメント
 pyproject.toml           # PEP 517設定

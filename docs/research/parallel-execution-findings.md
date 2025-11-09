@@ -20,7 +20,7 @@
 
 ### 1. 並列リポジトリインデックス作成
 
-**ファイル**: `superclaude/indexing/parallel_repository_indexer.py`
+**ファイル**: `superagent/indexing/parallel_repository_indexer.py`
 
 **機能**:
 ```yaml
@@ -37,7 +37,7 @@
 
 自己学習:
   - エージェントパフォーマンスを記録
-  - .superclaude/knowledge/agent_performance.json に蓄積
+  - .superagent/knowledge/agent_performance.json に蓄積
   - 次回実行時に最適なエージェントを自動選択
 ```
 
@@ -56,7 +56,7 @@ class AgentDelegator:
 
     def record_performance(agent, task, duration, quality, tokens):
         # パフォーマンスデータ記録
-        # .superclaude/knowledge/agent_performance.json に保存
+        # .superagent/knowledge/agent_performance.json に保存
 
     def recommend_agent(task_type):
         # 過去のパフォーマンスから最適エージェント推薦
@@ -232,7 +232,7 @@ results = await asyncio.gather(*tasks)
 tasks = [
     Task(
         subagent_type="system-architect",
-        prompt="Analyze code structure in superclaude/"
+        prompt="Analyze code structure in superagent/"
     ),
     Task(
         subagent_type="technical-writer",
@@ -345,7 +345,7 @@ Quality:
 
 **既に動いている**:
 - エージェントパフォーマンス記録
-- `.superclaude/knowledge/agent_performance.json`
+- `.superagent/knowledge/agent_performance.json`
 - 次回実行時の最適化
 
 **次**: さらに賢くする
@@ -361,12 +361,12 @@ Quality:
 
 ```bash
 # 現在の実装（Threading版）
-uv run python superclaude/indexing/parallel_repository_indexer.py
+uv run python superagent/indexing/parallel_repository_indexer.py
 
 # 出力
 # - PROJECT_INDEX.md
 # - PROJECT_INDEX.json
-# - .superclaude/knowledge/agent_performance.json
+# - .superagent/knowledge/agent_performance.json
 ```
 
 ### パフォーマンステスト
@@ -376,7 +376,7 @@ uv run python superclaude/indexing/parallel_repository_indexer.py
 uv run pytest tests/performance/test_parallel_indexing_performance.py -v -s
 
 # 結果
-# - .superclaude/knowledge/parallel_performance.json
+# - .superagent/knowledge/parallel_performance.json
 ```
 
 ### 生成されたインデックス確認
@@ -389,7 +389,7 @@ cat PROJECT_INDEX.md
 cat PROJECT_INDEX.json | python3 -m json.tool
 
 # パフォーマンスデータ
-cat .superclaude/knowledge/agent_performance.json | python3 -m json.tool
+cat .superagent/knowledge/agent_performance.json | python3 -m json.tool
 ```
 
 ---
@@ -397,15 +397,15 @@ cat .superclaude/knowledge/agent_performance.json | python3 -m json.tool
 ## 📚 References
 
 **実装ファイル**:
-- `superclaude/indexing/parallel_repository_indexer.py`
+- `superagent/indexing/parallel_repository_indexer.py`
 - `tests/performance/test_parallel_indexing_performance.py`
 
 **エージェント定義**:
-- `superclaude/agents/` (18個の専門エージェント)
+- `superagent/agents/` (18個の専門エージェント)
 
 **生成物**:
 - `PROJECT_INDEX.md`: リポジトリナビゲーション
-- `.superclaude/knowledge/`: 自己学習データ
+- `.superagent/knowledge/`: 自己学習データ
 
 **関連ドキュメント**:
 - `docs/research/pm-mode-performance-analysis.md`

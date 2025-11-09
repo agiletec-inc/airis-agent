@@ -34,7 +34,7 @@ Total: ~164KB = ~41,000 tokens PER SESSION
 
 **Implemented**:
 ```python
-superclaude/validators/
+superagent/validators/
 ├── security_roughcheck.py  # Hardcoded secret detection
 ├── context_contract.py     # Project rule enforcement
 ├── dep_sanity.py           # Dependency validation
@@ -60,7 +60,7 @@ superclaude/validators/
 
 **Python Solution**:
 ```python
-# superclaude/modes/orchestration.py
+# superagent/modes/orchestration.py
 
 from enum import Enum
 from typing import Literal, Optional
@@ -137,12 +137,12 @@ Parallel-with-Reflection
 
 **Python**:
 ```python
-# superclaude/agents/pm.py
+# superagent/agents/pm.py
 
 from dataclasses import dataclass
 from typing import Optional
-from superclaude.memory import ReflexionMemory
-from superclaude.validators import ValidationGate
+from superagent.memory import ReflexionMemory
+from superagent.validators import ValidationGate
 
 @dataclass
 class ConfidenceCheck:
@@ -232,13 +232,13 @@ Savings: 98.8% with Skills API
 ### Short-Term (2-4 Weeks)
 
 3. **Orchestration Mode Python**
-   - `superclaude/modes/orchestration.py`
+   - `superagent/modes/orchestration.py`
    - Tool selection matrix (enforced)
    - Resource management (automated)
    - **Savings**: 689 tokens → 50 tokens (93%)
 
 4. **PM Agent Python Core**
-   - `superclaude/agents/pm.py`
+   - `superagent/agents/pm.py`
    - Confidence check (enforced)
    - 4-phase workflow (automated)
    - **Savings**: 4,050 tokens → 100 tokens (97%)
@@ -289,7 +289,7 @@ Red Zone (85%+): Essential only
 ### After (Python Enforcement)
 
 ```python
-# superclaude/modes/orchestration.py
+# superagent/modes/orchestration.py
 
 class OrchestrationMode:
     TOOL_MATRIX = {

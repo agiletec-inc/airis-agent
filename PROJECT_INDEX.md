@@ -1,19 +1,20 @@
-# Project Index: SuperClaude Framework
+# Project Index: Super Agent
 
 **Generated**: 2025-10-29
 **Version**: 0.4.0
-**Description**: AI-enhanced development framework for Claude Code - pytest plugin with specialized commands
+**Description**: AI-enhanced orchestration runtime with a host-agnostic ABI (Claude Code today, Codex/Gemini/Cursor tomorrow).
 
 ---
 
 ## 📁 Project Structure
 
 ```
-SuperClaude_Framework/
-├── src/superclaude/          # Python package (3,002 LOC)
-│   ├── cli/                  # CLI commands (main.py, doctor.py, install_skill.py)
-│   ├── pm_agent/             # PM Agent core (confidence.py, self_check.py, reflexion.py, token_budget.py)
-│   ├── execution/            # Execution patterns (parallel.py, reflection.py, self_correction.py)
+superagent/
+├── src/superagent/          # Python package (3,002 LOC)
+│   ├── api/                  # ABI surface (confidence, repo index, deep research)
+│   ├── cli/                  # Typer CLI commands
+│   ├── pm_agent/             # PM Agent core (confidence/self_check/reflexion/token_budget)
+│   ├── execution/            # Execution patterns (parallel/reflection/self_correction)
 │   ├── pytest_plugin.py      # Auto-loaded pytest integration
 │   └── skills/               # TypeScript skills (confidence-check)
 ├── tests/                    # Test suite (7 files)
@@ -40,13 +41,13 @@ SuperClaude_Framework/
 ## 🚀 Entry Points
 
 ### CLI
-- **Command**: `superclaude` (installed via pip/uv)
-- **Source**: `src/superclaude/cli/main.py:main`
-- **Purpose**: CLI interface for SuperClaude operations
+- **Command**: `superagent` (installed via pip/uv)
+- **Source**: `src/superagent/cli/main.py:main`
+- **Purpose**: CLI interface for Super Agent operations
 
 ### Pytest Plugin
 - **Auto-loaded**: Yes (via `pyproject.toml` entry point)
-- **Source**: `src/superclaude/pytest_plugin.py`
+- **Source**: `src/superagent/pytest_plugin.py`
 - **Purpose**: PM Agent fixtures and test automation
 
 ### Skills
@@ -57,7 +58,7 @@ SuperClaude_Framework/
 
 ## 📦 Core Modules
 
-### PM Agent (src/superclaude/pm_agent/)
+### PM Agent (src/superagent/pm_agent/)
 Core patterns for AI-enhanced development:
 
 #### ConfidenceChecker (`confidence.py`)
@@ -81,7 +82,7 @@ Core patterns for AI-enhanced development:
 - **Levels**: Simple (200), Medium (1,000), Complex (2,500)
 - **Enforcement**: Budget-aware execution
 
-### Execution Patterns (src/superclaude/execution/)
+### Execution Patterns (src/superagent/execution/)
 
 #### Parallel Execution (`parallel.py`)
 - **Pattern**: Wave → Checkpoint → Wave
@@ -97,7 +98,7 @@ Core patterns for AI-enhanced development:
 - **Purpose**: Automated error detection and correction
 - **Strategy**: Iterative refinement
 
-### CLI Commands (src/superclaude/cli/)
+### CLI Commands (src/superagent/cli/)
 
 #### main.py
 - **Exports**: `main()` - CLI entry point
@@ -109,7 +110,7 @@ Core patterns for AI-enhanced development:
 - **Checks**: Package installation, pytest plugin, skills availability
 
 #### install_skill.py
-- **Purpose**: Install SuperClaude skills to Claude Code
+- **Purpose**: Install Super Agent skills to Claude Code
 - **Target**: `~/.claude/skills/`
 
 ---
@@ -124,7 +125,7 @@ Core patterns for AI-enhanced development:
 
 ### NPM Wrapper
 - **File**: `package.json`
-- **Package**: `@bifrost_inc/superclaude`
+- **Package**: `@bifrost_inc/superagent`
 - **Version**: 4.1.5
 - **Purpose**: Cross-platform installation wrapper
 
@@ -203,7 +204,7 @@ uv run pytest tests/pm_agent/ -v
 uv run pytest -m confidence_check
 
 # With coverage
-uv run pytest --cov=superclaude
+uv run pytest --cov=superagent
 ```
 
 ---
@@ -229,10 +230,10 @@ uv run pytest --cov=superclaude
 ### Installation
 ```bash
 # Install with UV (recommended)
-uv pip install superclaude
+uv pip install superagent
 
 # Or with pip
-pip install superclaude
+pip install superagent
 
 # Development mode
 make install
@@ -241,8 +242,8 @@ make install
 ### Usage
 ```bash
 # CLI commands
-superclaude --version
-superclaude install-skill confidence-check
+superagent --version
+superagent install-skill confidence-check
 
 # Health check
 make doctor
@@ -321,4 +322,4 @@ Integrates with multiple MCP servers via **airis-mcp-gateway**:
 
 ---
 
-**For detailed documentation**: See `docs/` directory or visit [GitHub repository](https://github.com/SuperClaude-Org/SuperClaude_Framework)
+**For detailed documentation**: See `docs/` directory or visit [GitHub repository](https://github.com/kazuki/superagent)

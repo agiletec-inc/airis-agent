@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Build SuperClaude plugin distribution artefacts from unified sources.
+Build Super Agent plugin distribution artefacts from unified sources.
 
 Usage:
-    python scripts/build_superclaude_plugin.py
+    python scripts/build_superagent_plugin.py
 """
 
 from __future__ import annotations
@@ -14,8 +14,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN_SRC = ROOT / "plugins" / "superclaude"
-DIST_ROOT = ROOT / "dist" / "plugins" / "superclaude"
+PLUGIN_SRC = ROOT / "plugins" / "superagent"
+DIST_ROOT = ROOT / "dist" / "plugins" / "superagent"
 MANIFEST_DIR = PLUGIN_SRC / "manifest"
 
 

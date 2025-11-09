@@ -2,7 +2,7 @@
 
 ## 基本原則: MCPはオプション
 
-**重要**: SuperClaude Frameworkは **MCPなしでも完全に動作** します。
+**重要**: Super Agentは **MCPなしでも完全に動作** します。
 
 ```yaml
 Core Principle:
@@ -335,7 +335,7 @@ Scenario 4: MCP Performance Issues
 
 ```yaml
 Getting Started:
-  "SuperClaude works out of the box without any MCPs"
+  "Super Agent works out of the box without any MCPs"
   "MCPs are optional performance enhancements"
   "Install MCPs for better performance, not required"
 
@@ -435,7 +435,7 @@ MCP Adoption:
 
 ```yaml
 Core Message:
-  "SuperClaude Framework is MCP-optional by design"
+  "Super Agent is MCP-optional by design"
   "MCPs enhance performance, not functionality"
   "Native tools provide reliable baseline"
   "Choose your enhancement level"

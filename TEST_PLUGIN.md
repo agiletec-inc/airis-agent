@@ -3,8 +3,8 @@
 ## Test Commands (Run in New Session)
 
 ```bash
-/plugin marketplace add superclaude-local file:///Users/kazuki/github/superclaude/.claude-plugin
-/plugin install pm-agent@superclaude-local
+/plugin marketplace add superagent-local file:///Users/kazuki/github/superagent/.claude-plugin
+/plugin install pm-agent@superagent-local
 /context
 /pm
 /context

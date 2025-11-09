@@ -1,6 +1,6 @@
 # Session Management Guide
 
-SuperClaude provides persistent session management through the Serena MCP server, enabling true context preservation across Claude Code conversations and long-term project continuity.
+Super Agent provides persistent session management through the Serena MCP server, enabling true context preservation across Claude Code conversations and long-term project continuity.
 
 ## Core Session Commands with Persistent Memory
 
@@ -203,7 +203,7 @@ When starting a new Claude Code conversation, the persistent memory system allow
 - Reference specific code locations and patterns
 - Maintain consistency in memory structure across sessions
 
-## Integration with Other SuperClaude Features
+## Integration with Other Super Agent Features
 
 ### MCP Server Coordination
 - **Serena MCP**: Provides the persistent memory infrastructure
@@ -307,4 +307,4 @@ When starting a new Claude Code conversation, the persistent memory system allow
 
 ---
 
-**Key Takeaway**: Session management through Serena MCP transforms SuperClaude from single-conversation assistance to persistent project partnership, maintaining context, decisions, and learning across all development phases and Claude Code conversations.
+**Key Takeaway**: Session management through Serena MCP transforms Super Agent from single-conversation assistance to persistent project partnership, maintaining context, decisions, and learning across all development phases and Claude Code conversations.

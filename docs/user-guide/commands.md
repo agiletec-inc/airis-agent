@@ -1,6 +1,6 @@
-# SuperClaude Commands Guide
+# Super Agent Commands Guide
 
-SuperClaude provides 25 commands for Claude Code: `/sc:*` commands for workflows and `@agent-*` for specialists.
+Super Agent provides 25 commands for Claude Code: `/sc:*` commands for workflows and `@agent-*` for specialists.
 
 ## Command Types
 
@@ -8,12 +8,12 @@ SuperClaude provides 25 commands for Claude Code: `/sc:*` commands for workflows
 |------|------------|--------|---------|
 | **Slash Commands** | Claude Code | `/sc:[command]` | `/sc:implement "feature"` |
 | **Agents** | Claude Code | `@agent-[name]` | `@agent-security "review"` |
-| **Installation** | Terminal | `SuperClaude [command]` | `SuperClaude install` |
+| **Installation** | Terminal | `Super Agent [command]` | `Super Agent install` |
 
 ## Quick Test
 ```bash
 # Terminal: Verify installation
-python3 -m SuperClaude --version
+python3 -m Super Agent --version
 # Claude Code CLI verification: claude --version
 
 # Claude Code: Test commands
@@ -23,13 +23,13 @@ python3 -m SuperClaude --version
 
 **Workflow**: `/sc:brainstorm "idea"` → `/sc:implement "feature"` → `/sc:test`
 
-## 🎯 Understanding SuperClaude Commands
+## 🎯 Understanding Super Agent Commands
 
-## How SuperClaude Works
+## How Super Agent Works
 
-SuperClaude provides behavioral context files that Claude Code reads to adopt specialized behaviors. When you type `/sc:implement`, Claude Code reads the `implement.md` context file and follows its behavioral instructions.
+Super Agent provides behavioral context files that Claude Code reads to adopt specialized behaviors. When you type `/sc:implement`, Claude Code reads the `implement.md` context file and follows its behavioral instructions.
 
-**SuperClaude commands are NOT executed by software** - they are context triggers that modify Claude Code's behavior through reading specialized instruction files from the framework.
+**Super Agent commands are NOT executed by software** - they are context triggers that modify Claude Code's behavior through reading specialized instruction files from the framework.
 
 ### Command Types:
 - **Slash Commands** (`/sc:*`): Trigger workflow patterns and behavioral modes
@@ -38,7 +38,7 @@ SuperClaude provides behavioral context files that Claude Code reads to adopt sp
 
 ### The Context Mechanism:
 1. **User Input**: You type `/sc:implement "auth system"`
-2. **Context Loading**: Claude Code reads `~/.claude/superclaude/Commands/implement.md`
+2. **Context Loading**: Claude Code reads `~/.claude/superagent/Commands/implement.md`
 3. **Behavior Adoption**: Claude applies domain expertise, tool selection, and validation patterns
 4. **Enhanced Output**: Structured implementation with security considerations and best practices
 
@@ -47,10 +47,10 @@ SuperClaude provides behavioral context files that Claude Code reads to adopt sp
 ### Installation vs Usage Commands
 
 **🖥️ Terminal Commands** (Actual CLI software):
-- `SuperClaude install` - Installs the framework components
-- `SuperClaude update` - Updates existing installation  
-- `SuperClaude uninstall` - Removes framework installation
-- `python3 -m SuperClaude --version` - Check installation status
+- `Super Agent install` - Installs the framework components
+- `Super Agent update` - Updates existing installation  
+- `Super Agent uninstall` - Removes framework installation
+- `python3 -m Super Agent --version` - Check installation status
 
 **💬 Claude Code Commands** (Context triggers):
 - `/sc:brainstorm` - Activates requirements discovery context
@@ -65,15 +65,15 @@ SuperClaude provides behavioral context files that Claude Code reads to adopt sp
 
 ### 🖥️ Terminal Verification (Run in Terminal/CMD)
 ```bash
-# Verify SuperClaude is working (primary method)
-python3 -m SuperClaude --version
-# Example output: SuperClaude 4.1.5
+# Verify Super Agent is working (primary method)
+python3 -m Super Agent --version
+# Example output: Super Agent 4.1.5
 
 # Claude Code CLI version check
 claude --version
 
 # Check installed components
-python3 -m SuperClaude install --list-components | grep mcp
+python3 -m Super Agent install --list-components | grep mcp
 # Example output: Shows installed MCP components
 ```
 
@@ -94,13 +94,13 @@ python3 -m SuperClaude install --list-components | grep mcp
 
 | Command Type | Where to Run | Format | Purpose | Example |
 |-------------|--------------|--------|---------|----------|
-| **🖥️ Installation** | Terminal/CMD | `SuperClaude [command]` | Setup and maintenance | `SuperClaude install` |
-| **🔧 Configuration** | Terminal/CMD | `python3 -m SuperClaude [command]` | Advanced configuration | `python3 -m SuperClaude --version` |
+| **🖥️ Installation** | Terminal/CMD | `Super Agent [command]` | Setup and maintenance | `Super Agent install` |
+| **🔧 Configuration** | Terminal/CMD | `python3 -m Super Agent [command]` | Advanced configuration | `python3 -m Super Agent --version` |
 | **💬 Slash Commands** | Claude Code | `/sc:[command]` | Workflow automation | `/sc:implement "feature"` |
 | **🤖 Agent Invocation** | Claude Code | `@agent-[name]` | Manual specialist activation | `@agent-security "review"` |
 | **⚡ Enhanced Flags** | Claude Code | `/sc:[command] --flags` | Behavior modification | `/sc:analyze --think-hard` |
 
-> **Remember**: All `/sc:` commands and `@agent-` invocations work inside Claude Code chat, not your terminal. They trigger Claude Code to read specific context files from the SuperClaude framework.
+> **Remember**: All `/sc:` commands and `@agent-` invocations work inside Claude Code chat, not your terminal. They trigger Claude Code to read specific context files from the Super Agent framework.
 
 ## Table of Contents
 
@@ -351,13 +351,13 @@ python3 -m SuperClaude install --list-components | grep mcp
 ## Troubleshooting
 
 **Command Issues:**
-- **Command not found**: Verify installation: `python3 -m SuperClaude --version`
+- **Command not found**: Verify installation: `python3 -m Super Agent --version`
 - **No response**: Restart Claude Code session
 - **Processing delays**: Use `--no-mcp` to test without MCP servers
 
 **Quick Fixes:**
 - Reset session: `/sc:load` to reinitialize
-- Check status: `SuperClaude install --list-components`
+- Check status: `Super Agent install --list-components`
 - Get help: [Troubleshooting Guide](../reference/troubleshooting.md)
 
 ## Next Steps

@@ -1,8 +1,8 @@
-# SuperClaude Documentation
+# Super Agent Documentation
 
 ## 🎯 Essential Understanding
 
-**SuperClaude is a Context Framework for Claude Code** - it installs behavioral instruction files that Claude Code reads to enhance its capabilities.
+**Super Agent is a Context Framework for Claude Code** - it installs behavioral instruction files that Claude Code reads to enhance its capabilities.
 
 ### How It Works
 1. **Installation**: Python CLI installs context files to `~/.claude/`
@@ -15,10 +15,10 @@
 **New Users**: [Quick Start Guide →](getting-started/quick-start.md)
 ```bash
 # Recommended for Linux/macOS
-pipx install SuperClaude && SuperClaude install
+pipx install Super Agent && Super Agent install
 
 # Traditional method
-pip install SuperClaude && SuperClaude install
+pip install Super Agent && Super Agent install
 
 # Then try: /sc:brainstorm "web app idea" in Claude Code
 ```
@@ -73,14 +73,14 @@ pip install SuperClaude && SuperClaude install
 ### In Your Terminal (Installation)
 ```bash
 # Install framework (choose one)
-pipx install SuperClaude       # Recommended for Linux/macOS
-pip install SuperClaude        # Traditional method
-npm install -g @bifrost_inc/superclaude  # Cross-platform
+pipx install Super Agent       # Recommended for Linux/macOS
+pip install Super Agent        # Traditional method
+npm install -g @bifrost_inc/superagent  # Cross-platform
 
 # Configure and maintain
-SuperClaude install            # Configure Claude Code
-SuperClaude update             # Update framework
-python3 -m SuperClaude --version  # Check installation
+Super Agent install            # Configure Claude Code
+Super Agent update             # Update framework
+python3 -m Super Agent --version  # Check installation
 ```
 
 ### In Claude Code (Usage)
@@ -96,7 +96,7 @@ python3 -m SuperClaude --version  # Check installation
 
 | Component | Type | Where It Runs | What It Does |
 |-----------|------|---------------|--------------|
-| **SuperClaude Framework** | Context Files | Read by Claude Code | Modifies AI behavior |
+| **Super Agent** | Context Files | Read by Claude Code | Modifies AI behavior |
 | **Claude Code** | Software | Your computer | Executes everything |
 | **MCP Servers** | Software | Node.js processes | Provide tools |
 | **Python CLI** | Software | Python runtime | Manages installation |
@@ -104,7 +104,7 @@ python3 -m SuperClaude --version  # Check installation
 ## 🔄 How Everything Connects
 
 ```
-User Input → Claude Code → Reads SuperClaude Context → Modified Behavior → Enhanced Output
+User Input → Claude Code → Reads Super Agent Context → Modified Behavior → Enhanced Output
                 ↓
         May use MCP Servers
          (if configured)
@@ -116,22 +116,22 @@ User Input → Claude Code → Reads SuperClaude Context → Modified Behavior �
 **Complex Problems**: [Full Troubleshooting Guide →](reference/troubleshooting.md)  
 **Installation Issues**: [Installation Guide →](getting-started/installation.md)  
 **Command Help**: [Commands Guide →](user-guide/commands.md)  
-**Community Support**: [GitHub Discussions](https://github.com/SuperClaude-Org/SuperClaude_Framework/discussions)
+**Community Support**: [GitHub Discussions](https://github.com/kazuki/superagent/discussions)
 
 ## 🤔 Common Misconceptions Clarified
 
-❌ **"SuperClaude is an AI assistant"**  
-✅ SuperClaude is a configuration framework that enhances Claude Code
+❌ **"Super Agent is an AI assistant"**  
+✅ Super Agent is a configuration framework that enhances Claude Code
 
-❌ **"I'm running SuperClaude"**  
-✅ You're running Claude Code with SuperClaude context loaded
+❌ **"I'm running Super Agent"**  
+✅ You're running Claude Code with Super Agent context loaded
 
-❌ **"Claude Code executes; SuperClaude provides context my commands"**  
-✅ Claude Code executes everything; SuperClaude provides the instructions
+❌ **"Claude Code executes; Super Agent provides context my commands"**  
+✅ Claude Code executes everything; Super Agent provides the instructions
 
 ❌ **"The .md files are documentation"**  
 ✅ The .md files ARE the framework - active instruction sets
 
 ---
 
-*Remember: SuperClaude enhances Claude Code through context - it doesn't replace it or run alongside it. Everything happens within Claude Code itself.*
+*Remember: Super Agent enhances Claude Code through context - it doesn't replace it or run alongside it. Everything happens within Claude Code itself.*

@@ -1,5 +1,5 @@
 """
-Setup.py for SuperClaude Framework
+Setup.py for Super Agent
 
 This is a minimal setup.py that defers to pyproject.toml for configuration.
 Modern Python packaging uses pyproject.toml as the primary configuration file.

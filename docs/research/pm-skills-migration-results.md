@@ -52,15 +52,15 @@ Break-even point: >3% of sessions using PM = net neutral
 
 ### Modified
 ```
-~/github/superclaude/plugins/superclaude/commands/pm.md
+~/github/superagent/plugins/superagent/commands/pm.md
   - Added: skill: pm
   - Updated: Description to reference Skills loading
 ```
 
 ### Preserved (Backup)
 ```
-~/.claude/superclaude/agents/pm-agent.md
-~/.claude/superclaude/modules/*.md
+~/.claude/superagent/agents/pm-agent.md
+~/.claude/superagent/modules/*.md
   - Kept for rollback capability
   - Can be removed after validation period
 ```
@@ -99,7 +99,7 @@ Break-even point: >3% of sessions using PM = net neutral
 - **modules/**: Support files (co-loaded with implementation)
 
 ### 4. Rollback Safety
-- **Backup**: Original files preserved in superclaude/
+- **Backup**: Original files preserved in superagent/
 - **Test**: Can verify Skills work before cleanup
 - **Gradual**: Migrate one component at a time
 
@@ -119,7 +119,7 @@ If PM Agent migration succeeds, apply same pattern to:
 
 ### Expected Total Savings
 ```
-Current SuperClaude overhead: ~26,000 tokens
+Current Super Agent overhead: ~26,000 tokens
 After full Skills migration:  ~500 tokens (descriptions only)
 
 Net savings: ~25,500 tokens (98% reduction)
@@ -144,7 +144,7 @@ Net savings: ~25,500 tokens (98% reduction)
 ### Long Term
 1. Migrate all agents to Skills
 2. Migrate all modes to Skills
-3. Remove ~/.claude/superclaude/ entirely
+3. Remove ~/.claude/superagent/ entirely
 4. Update installation system for Skills-first
 5. Document Skills-based architecture
 
@@ -169,15 +169,15 @@ If Skills migration causes issues:
 
 ```bash
 # 1. Revert slash command
-cd ~/github/superclaude
-git checkout plugins/superclaude/commands/pm.md
+cd ~/github/superagent
+git checkout plugins/superagent/commands/pm.md
 
 # 2. Remove Skills directory
 rm -rf ~/.claude/skills/pm
 
-# 3. Verify superclaude backup exists
-ls -la ~/.claude/superclaude/agents/pm-agent.md
-ls -la ~/.claude/superclaude/modules/
+# 3. Verify superagent backup exists
+ls -la ~/.claude/superagent/agents/pm-agent.md
+ls -la ~/.claude/superagent/modules/
 
 # 4. Test original configuration works
 # (restart Claude Code session)
@@ -209,7 +209,7 @@ PM Agent Skills migration is structurally complete with **97% predicted token sa
 
 Next session will validate functional correctness and actual token measurements.
 
-If successful, this proves the Zero-Footprint architecture and justifies full SuperClaude migration to Skills.
+If successful, this proves the Zero-Footprint architecture and justifies full Super Agent migration to Skills.
 
 ---
 

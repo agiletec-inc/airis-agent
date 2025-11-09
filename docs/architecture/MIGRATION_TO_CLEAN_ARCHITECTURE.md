@@ -11,7 +11,7 @@
 ### Before (Polluting Design)
 ```yaml
 Problem:
-  - Installs to ~/.claude/superclaude/ (pollutes Claude Code)
+  - Installs to ~/.claude/superagent/ (pollutes Claude Code)
   - Complex Component/Installer infrastructure (468-line base class)
   - Skills vs Commands混在 (2つのメカニズム)
   - setup.py packaging (deprecated)
@@ -33,7 +33,7 @@ Solution:
 
 Benefits:
   ✅ Zero ~/.claude/ pollution (unless user wants skills)
-  ✅ pip install superclaude → pytest auto-loads
+  ✅ pip install superagent → pytest auto-loads
   ✅ Standard pytest plugin architecture
   ✅ Clear separation: core vs user config
   ✅ Tests stay in project root (not installed)
@@ -44,9 +44,9 @@ Benefits:
 ## 📂 New Directory Structure
 
 ```
-superclaude/
+superagent/
 ├── src/                           # PEP 517 source layout
-│   └── superclaude/              # Actual package
+│   └── superagent/              # Actual package
 │       ├── __init__.py           # Package metadata
 │       ├── __version__.py        # Version info
 │       ├── pytest_plugin.py      # ⭐ pytest entry point
@@ -62,8 +62,8 @@ superclaude/
 │       ├── cli/                  # CLI commands
 │       │   ├── __init__.py
 │       │   ├── main.py           # Entry point
-│       │   ├── install_skill.py  # superclaude install-skill
-│       │   └── doctor.py         # superclaude doctor
+│       │   ├── install_skill.py  # superagent install-skill
+│       │   └── doctor.py         # superagent doctor
 │       │
 │       └── skills/               # Skill templates (not installed by default)
 │           └── pm/               # PM Agent skill
@@ -107,7 +107,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "superclaude"
+name = "superagent"
 version = "0.4.0"
 description = "AI-enhanced development framework for Claude Code"
 readme = "README.md"
@@ -129,11 +129,11 @@ dev = [
 
 # ⭐ pytest plugin auto-discovery
 [project.entry-points.pytest11]
-superclaude = "superclaude.pytest_plugin"
+superagent = "superagent.pytest_plugin"
 
 # ⭐ CLI commands
 [project.entry-points.console_scripts]
-superclaude = "superclaude.cli.main:main"
+superagent = "superagent.cli.main:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -153,7 +153,7 @@ markers = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/superclaude"]
+packages = ["src/superagent"]
 ```
 
 ---
@@ -162,13 +162,13 @@ packages = ["src/superclaude"]
 
 ### 1. pytest Plugin Entry Point
 
-**File**: `src/superclaude/pytest_plugin.py`
+**File**: `src/superagent/pytest_plugin.py`
 
 ```python
 """
-SuperClaude pytest plugin
+Super Agent pytest plugin
 
-Auto-loaded when superclaude is installed.
+Auto-loaded when superagent is installed.
 Provides PM Agent fixtures and hooks for enhanced testing.
 """
 
@@ -183,7 +183,7 @@ from .pm_agent.token_budget import TokenBudgetManager
 
 
 def pytest_configure(config):
-    """Register SuperClaude plugin and markers"""
+    """Register Super Agent plugin and markers"""
     config.addinivalue_line(
         "markers",
         "confidence_check: Pre-execution confidence assessment"
@@ -282,7 +282,7 @@ def pytest_runtest_makereport(item, call):
 
 ### 2. PM Agent Core Modules
 
-**File**: `src/superclaude/pm_agent/confidence.py`
+**File**: `src/superagent/pm_agent/confidence.py`
 
 ```python
 """
@@ -364,7 +364,7 @@ class ConfidenceChecker:
         return True
 ```
 
-**File**: `src/superclaude/pm_agent/self_check.py`
+**File**: `src/superagent/pm_agent/self_check.py`
 
 ```python
 """
@@ -440,15 +440,15 @@ class SelfCheckProtocol:
 
 ### 3. CLI Commands
 
-**File**: `src/superclaude/cli/main.py`
+**File**: `src/superagent/cli/main.py`
 
 ```python
 """
-SuperClaude CLI
+Super Agent CLI
 
 Commands:
-  superclaude install-skill pm-agent  # Install PM Agent skill to ~/.claude/skills/
-  superclaude doctor                   # Check installation health
+  superagent install-skill pm-agent  # Install PM Agent skill to ~/.claude/skills/
+  superagent doctor                   # Check installation health
 """
 
 import click
@@ -458,7 +458,7 @@ from pathlib import Path
 @click.group()
 @click.version_option()
 def main():
-    """SuperClaude - AI-enhanced development framework"""
+    """Super Agent - AI-enhanced development framework"""
     pass
 
 
@@ -467,10 +467,10 @@ def main():
 @click.option("--target", default="~/.claude/skills", help="Installation directory")
 def install_skill(skill_name: str, target: str):
     """
-    Install a SuperClaude skill to Claude Code
+    Install a Super Agent skill to Claude Code
 
     Example:
-        superclaude install-skill pm-agent
+        superagent install-skill pm-agent
     """
     from ..skills import install_skill as install_fn
 
@@ -485,20 +485,20 @@ def install_skill(skill_name: str, target: str):
 
 @main.command()
 def doctor():
-    """Check SuperClaude installation health"""
-    click.echo("🔍 SuperClaude Doctor\n")
+    """Check Super Agent installation health"""
+    click.echo("🔍 Super Agent Doctor\n")
 
     # Check pytest plugin loaded
     import pytest
     config = pytest.Config.fromdictargs({}, [])
     plugins = config.pluginmanager.list_plugin_distinfo()
 
-    superclaude_loaded = any(
-        "superclaude" in str(plugin[0])
+    superagent_loaded = any(
+        "superagent" in str(plugin[0])
         for plugin in plugins
     )
 
-    if superclaude_loaded:
+    if superagent_loaded:
         click.echo("✅ pytest plugin loaded")
     else:
         click.echo("❌ pytest plugin not loaded")
@@ -511,7 +511,7 @@ def doctor():
     else:
         click.echo("⚠️  No skills installed (optional)")
 
-    click.echo("\n✅ SuperClaude is healthy")
+    click.echo("\n✅ Super Agent is healthy")
 
 
 if __name__ == "__main__":
@@ -524,9 +524,9 @@ if __name__ == "__main__":
 
 ### Phase 1: Restructure (Day 1)
 
-- [ ] Create `src/superclaude/` directory
-- [ ] Move current `superclaude/` → `src/superclaude/`
-- [ ] Create `src/superclaude/pytest_plugin.py`
+- [ ] Create `src/superagent/` directory
+- [ ] Move current `superagent/` → `src/superagent/`
+- [ ] Create `src/superagent/pytest_plugin.py`
 - [ ] Extract PM Agent logic from Skills:
   - [ ] `pm_agent/confidence.py`
   - [ ] `pm_agent/self_check.py`
@@ -551,10 +551,10 @@ if __name__ == "__main__":
 ### Phase 3: Clean Installation (Day 3)
 
 - [ ] Test: `pip install -e .` (editable mode)
-- [ ] Verify: `pytest --trace-config` shows superclaude plugin
+- [ ] Verify: `pytest --trace-config` shows superagent plugin
 - [ ] Verify: `~/.claude/` remains clean (no pollution)
-- [ ] Test: `superclaude doctor` command works
-- [ ] Test: `superclaude install-skill pm-agent`
+- [ ] Test: `superagent doctor` command works
+- [ ] Test: `superagent install-skill pm-agent`
 - [ ] Verify: Skill installed to `~/.claude/skills/pm/`
 
 ### Phase 4: Documentation Update (Day 4)
@@ -582,13 +582,13 @@ pytest tests/test_reflexion_pattern.py -v
 # tests/test_pytest_plugin.py
 
 def test_plugin_loads(pytester):
-    """Test that superclaude plugin loads correctly"""
+    """Test that superagent plugin loads correctly"""
     pytester.makeconftest("""
-        pytest_plugins = ['superclaude.pytest_plugin']
+        pytest_plugins = ['superagent.pytest_plugin']
     """)
 
     result = pytester.runpytest("--trace-config")
-    result.stdout.fnmatch_lines(["*superclaude*"])
+    result.stdout.fnmatch_lines(["*superagent*"])
 
 
 def test_confidence_checker_fixture(pytester):
@@ -607,18 +607,18 @@ def test_confidence_checker_fixture(pytester):
 ### Installation Tests
 ```bash
 # Clean install
-pip uninstall superclaude -y
+pip uninstall superagent -y
 pip install -e .
 
 # Verify plugin loaded
-pytest --trace-config | grep superclaude
+pytest --trace-config | grep superagent
 
 # Verify CLI
-superclaude --version
-superclaude doctor
+superagent --version
+superagent doctor
 
 # Verify ~/.claude/ clean
-ls ~/.claude/  # Should not have superclaude/ unless skill installed
+ls ~/.claude/  # Should not have superagent/ unless skill installed
 ```
 
 ---
@@ -629,26 +629,26 @@ ls ~/.claude/  # Should not have superclaude/ unless skill installed
 
 ```bash
 # Install from PyPI (future)
-pip install superclaude
+pip install superagent
 
 # Install from source (development)
-git clone https://github.com/SuperClaude-Org/SuperClaude_Framework.git
-cd SuperClaude_Framework
+git clone https://github.com/kazuki/superagent.git
+cd superagent
 pip install -e .
 
 # Verify installation
-superclaude doctor
+superagent doctor
 
 # Optional: Install PM Agent skill
-superclaude install-skill pm-agent
+superagent install-skill pm-agent
 ```
 
 ### For Developers
 
 ```bash
 # Clone repository
-git clone https://github.com/SuperClaude-Org/SuperClaude_Framework.git
-cd SuperClaude_Framework
+git clone https://github.com/kazuki/superagent.git
+cd superagent
 
 # Install in editable mode with dev dependencies
 pip install -e ".[dev]"
@@ -678,12 +678,12 @@ pytest --trace-config
 
 ## 🎯 Success Criteria
 
-- [ ] `pip install superclaude` works cleanly
-- [ ] pytest auto-discovers superclaude plugin
+- [ ] `pip install superagent` works cleanly
+- [ ] pytest auto-discovers superagent plugin
 - [ ] `~/.claude/` remains untouched after `pip install`
 - [ ] All existing tests pass with new structure
-- [ ] `superclaude doctor` reports healthy
-- [ ] Skills install optionally: `superclaude install-skill pm-agent`
+- [ ] `superagent doctor` reports healthy
+- [ ] Skills install optionally: `superagent install-skill pm-agent`
 - [ ] Documentation updated and accurate
 
 ---

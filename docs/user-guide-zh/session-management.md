@@ -1,6 +1,6 @@
 # 会话管理指南
 
-SuperClaude 通过 Serena MCP 服务器提供持久会话管理，实现在 Claude Code 对话中真正的上下文保存和长期项目连续性。
+Super Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Claude Code 对话中真正的上下文保存和长期项目连续性。
 
 ## 具有持久内存的核心会话命令
 
@@ -203,7 +203,7 @@ SuperClaude 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 - 引用特定的代码位置和模式
 - 在跨会话中保持内存结构的一致性
 
-## 与其他 SuperClaude 功能的集成
+## 与其他 Super Agent 功能的集成
 
 ### MCP 服务器协调
 - **Serena MCP**：提供持久内存基础设施
@@ -307,4 +307,4 @@ SuperClaude 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 
 ---
 
-**关键要点**：通过 Serena MCP 的会话管理将 SuperClaude 从单次对话帮助转变为持久项目伙伴关系，在所有开发阶段和 Claude Code 对话中维护上下文、决策和学习。
+**关键要点**：通过 Serena MCP 的会话管理将 Super Agent 从单次对话帮助转变为持久项目伙伴关系，在所有开发阶段和 Claude Code 对话中维护上下文、决策和学习。

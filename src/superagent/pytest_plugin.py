@@ -1,12 +1,12 @@
 """
-SuperClaude pytest plugin
+Super Agent pytest plugin
 
-Auto-loaded when superclaude is installed.
+Auto-loaded when superagent is installed.
 Provides PM Agent fixtures and hooks for enhanced testing.
 
 Entry point registered in pyproject.toml:
     [project.entry-points.pytest11]
-    superclaude = "superclaude.pytest_plugin"
+    superagent = "superagent.pytest_plugin"
 """
 
 import pytest
@@ -21,7 +21,7 @@ from .pm_agent.token_budget import TokenBudgetManager
 
 def pytest_configure(config):
     """
-    Register SuperClaude plugin and custom markers
+    Register Super Agent plugin and custom markers
 
     Markers:
         - confidence_check: Pre-execution confidence assessment
@@ -192,9 +192,9 @@ def pytest_runtest_makereport(item, call):
 
 
 def pytest_report_header(config):
-    """Add SuperClaude version to pytest header"""
+    """Add Super Agent version to pytest header"""
     from . import __version__
-    return f"SuperClaude: {__version__}"
+    return f"Super Agent: {__version__}"
 
 
 def pytest_collection_modifyitems(config, items):

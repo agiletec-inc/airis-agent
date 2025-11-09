@@ -105,9 +105,9 @@ poetry.lock
 !.claude/settings.json
 CLAUDE.md
 
-# SuperClaude specific
+# Super Agent specific
 .serena/
-.superclaude/
+.superagent/
 *.backup
 *.bak
 

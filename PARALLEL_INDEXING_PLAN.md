@@ -1,7 +1,7 @@
 # Parallel Repository Indexing Execution Plan
 
 ## Objective
-Create comprehensive repository index for: /Users/kazuki/github/SuperClaude_Framework
+Create comprehensive repository index for: /Users/kazuki/github/superagent
 
 ## Execution Strategy
 
@@ -16,9 +16,9 @@ IMPORTANT: All 5 Task tool calls must be in a SINGLE message for parallel execut
 
 **Prompt**:
 ```
-Analyze the code structure of this repository: /Users/kazuki/github/SuperClaude_Framework
+Analyze the code structure of this repository: /Users/kazuki/github/superagent
 
-Task: Find and analyze all source code directories (src/, lib/, superclaude/, setup/, apps/, packages/)
+Task: Find and analyze all source code directories (src/, lib/, superagent/, setup/, apps/, packages/)
 
 For each directory found:
 1. List all Python/JavaScript/TypeScript files
@@ -51,7 +51,7 @@ Be thorough: "very thorough" level.
 
 **Prompt**:
 ```
-Analyze the documentation of this repository: /Users/kazuki/github/SuperClaude_Framework
+Analyze the documentation of this repository: /Users/kazuki/github/superagent
 
 Task: Find and analyze all documentation (docs/, README*, *.md files)
 
@@ -88,7 +88,7 @@ Check for duplicate content patterns.
 
 **Prompt**:
 ```
-Analyze the configuration files of this repository: /Users/kazuki/github/SuperClaude_Framework
+Analyze the configuration files of this repository: /Users/kazuki/github/superagent
 
 Task: Find and analyze all configuration files (.toml, .yaml, .yml, .json, .ini, .cfg)
 
@@ -120,7 +120,7 @@ Use Glob with appropriate patterns.
 
 **Prompt**:
 ```
-Analyze the test structure of this repository: /Users/kazuki/github/SuperClaude_Framework
+Analyze the test structure of this repository: /Users/kazuki/github/superagent
 
 Task: Find and analyze all tests (tests/, __tests__/, *.test.*, *.spec.*)
 
@@ -152,7 +152,7 @@ Use Glob to find test files.
 
 **Prompt**:
 ```
-Analyze the scripts and utilities of this repository: /Users/kazuki/github/SuperClaude_Framework
+Analyze the scripts and utilities of this repository: /Users/kazuki/github/superagent
 
 Task: Find and analyze all scripts (scripts/, bin/, tools/, *.sh, *.bash)
 

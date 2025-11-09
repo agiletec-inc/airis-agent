@@ -9,7 +9,7 @@
 ### 1. Clean Package Structure (PEP 517 src/ layout)
 
 ```
-src/superclaude/
+src/superagent/
 ├── __init__.py              # Package entry point (version, exports)
 ├── pytest_plugin.py         # ⭐ Pytest auto-discovery entry point
 ├── pm_agent/                # PM Agent core modules
@@ -34,43 +34,43 @@ src/superclaude/
 
 **Evidence**:
 ```bash
-$ uv run python -m pytest --trace-config | grep superclaude
-PLUGIN registered: <module 'superclaude.pytest_plugin' from '.../src/superclaude/pytest_plugin.py'>
+$ uv run python -m pytest --trace-config | grep superagent
+PLUGIN registered: <module 'superagent.pytest_plugin' from '.../src/superagent/pytest_plugin.py'>
 registered third-party plugins:
-  superclaude-0.4.0 at .../src/superclaude/pytest_plugin.py
+  superagent-0.4.0 at .../src/superagent/pytest_plugin.py
 ```
 
 **Configuration** (`pyproject.toml`):
 ```toml
 [project.entry-points.pytest11]
-superclaude = "superclaude.pytest_plugin"
+superagent = "superagent.pytest_plugin"
 ```
 
 ### 3. CLI Commands Working
 
 ```bash
-$ uv run superclaude --version
-SuperClaude version 0.4.0
+$ uv run superagent --version
+Super Agent version 0.4.0
 
-$ uv run superclaude doctor
-🔍 SuperClaude Doctor
+$ uv run superagent doctor
+🔍 Super Agent Doctor
 
 ✅ pytest plugin loaded
 ✅ Skills installed
 ✅ Configuration
 
-✅ SuperClaude is healthy
+✅ Super Agent is healthy
 ```
 
 ### 4. Zero-Footprint Installation
 
 **Before** (❌ Bad):
-- Installed to `~/.claude/superclaude/` (pollutes Claude Code directory)
+- Installed to `~/.claude/superagent/` (pollutes Claude Code directory)
 - Custom installer required
 - Non-standard installation
 
 **After** (✅ Good):
-- Installed to site-packages: `.venv/lib/python3.14/site-packages/superclaude/`
+- Installed to site-packages: `.venv/lib/python3.14/site-packages/superagent/`
 - Standard `uv pip install -e .` (editable install)
 - No `~/.claude/` pollution unless user explicitly installs skills
 
@@ -107,7 +107,7 @@ Successfully migrated 4 core modules from skills system:
 - ✅ Standard `uv pip install` workflow
 
 ### Clean Separation
-- ✅ Package code in `src/superclaude/`
+- ✅ Package code in `src/superagent/`
 - ✅ Tests in `tests/`
 - ✅ Documentation in `docs/`
 - ✅ No `~/.claude/` pollution
@@ -115,27 +115,27 @@ Successfully migrated 4 core modules from skills system:
 ### Developer Experience
 - ✅ Editable install: `uv pip install -e .`
 - ✅ Auto-discovery: pytest finds plugin automatically
-- ✅ CLI commands: `superclaude doctor`, `superclaude install-skill`
+- ✅ CLI commands: `superagent doctor`, `superagent install-skill`
 - ✅ Standard workflows: no custom installers
 
 ## 📊 Installation Verification
 
 ```bash
 # 1. Package installed in correct location
-$ uv run python -c "import superclaude; print(superclaude.__file__)"
-/Users/kazuki/github/superclaude/src/superclaude/__init__.py
+$ uv run python -c "import superagent; print(superagent.__file__)"
+/Users/kazuki/github/superagent/src/superagent/__init__.py
 
 # 2. Pytest plugin registered
-$ uv run python -m pytest --trace-config | grep superclaude
-superclaude-0.4.0 at .../src/superclaude/pytest_plugin.py
+$ uv run python -m pytest --trace-config | grep superagent
+superagent-0.4.0 at .../src/superagent/pytest_plugin.py
 
 # 3. CLI works
-$ uv run superclaude --version
-SuperClaude version 0.4.0
+$ uv run superagent --version
+Super Agent version 0.4.0
 
 # 4. Doctor check passes
-$ uv run superclaude doctor
-✅ SuperClaude is healthy
+$ uv run superagent doctor
+✅ Super Agent is healthy
 ```
 
 ## 🐛 Issues Fixed During Phase 1
@@ -145,15 +145,15 @@ $ uv run superclaude doctor
 - **Fix**: Changed all commands to use `uv` (CLAUDE.md compliance)
 
 ### Issue 2: Vague "core" directory naming
-- **Problem**: `src/superclaude/core/` was too generic
-- **Fix**: Renamed to `src/superclaude/execution/` for clarity
+- **Problem**: `src/superagent/core/` was too generic
+- **Fix**: Renamed to `src/superagent/execution/` for clarity
 
 ### Issue 3: Entry points syntax error
 - **Problem**: Used old setuptools format `[project.entry-points.console_scripts]`
 - **Fix**: Changed to hatchling format `[project.scripts]`
 
 ### Issue 4: Old package location
-- **Problem**: Package installing from old `superclaude/` instead of `src/superclaude/`
+- **Problem**: Package installing from old `superagent/` instead of `src/superagent/`
 - **Fix**: Removed old directory, force reinstalled with `uv pip install -e . --force-reinstall`
 
 ## 📋 What's NOT Included in Phase 1
@@ -174,9 +174,9 @@ collected 115 items / 12 errors
 ```
 
 **Common errors**:
-- `ModuleNotFoundError: No module named 'superclaude.core'` → Will be fixed when we migrate execution modules
-- `ModuleNotFoundError: No module named 'superclaude.context'` → Old module, needs migration
-- `ModuleNotFoundError: No module named 'superclaude.validators'` → Old module, needs migration
+- `ModuleNotFoundError: No module named 'superagent.core'` → Will be fixed when we migrate execution modules
+- `ModuleNotFoundError: No module named 'superagent.context'` → Old module, needs migration
+- `ModuleNotFoundError: No module named 'superagent.validators'` → Old module, needs migration
 
 **This is EXPECTED and NORMAL** - we're only in Phase 1!
 
@@ -184,7 +184,7 @@ collected 115 items / 12 errors
 
 - [x] Package installs to site-packages (not `~/.claude/`)
 - [x] Pytest plugin auto-discovered via entry points
-- [x] CLI commands work (`superclaude doctor`, `superclaude --version`)
+- [x] CLI commands work (`superagent doctor`, `superagent --version`)
 - [x] PM Agent core modules extracted and importable
 - [x] PEP 517 src/ layout implemented
 - [x] No `~/.claude/` pollution unless user installs skills
@@ -196,7 +196,7 @@ collected 115 items / 12 errors
 Phase 2 will focus on optional Skills system:
 
 1. Create Skills registry system
-2. Implement `superclaude install-skill` command
+2. Implement `superagent install-skill` command
 3. Skills install to `~/.claude/skills/` (user choice)
 4. Skills discovery mechanism
 5. Skills documentation

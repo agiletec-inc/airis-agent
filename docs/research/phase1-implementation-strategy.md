@@ -8,7 +8,7 @@
 After implementing Phase 1 (Context initialization, Reflexion Memory, 5 validators), we're at a strategic crossroads:
 
 1. **Upstream has Issue #441**: "Consider migrating Modes to Skills" (announced 10/16/2025)
-2. **User has 3 merged PRs**: Already contributing to SuperClaude-Org
+2. **User has 3 merged PRs**: Already contributing to kazuki
 3. **Token efficiency problem**: Current Markdown modes consume ~30K tokens/session
 4. **Python implementation complete**: Phase 1 with 26 passing tests
 
@@ -51,7 +51,7 @@ From the GitHub discussion:
 
 **What to contribute**:
 ```
-superclaude/
+superagent/
 ├── context/           # NEW: Context initialization
 │   ├── contract.py    # Auto-detect project rules
 │   └── init.py        # Session initialization
@@ -140,7 +140,7 @@ reflection-ai/
 - ✅ Personal tool optimization
 
 **Cons**:
-- ⚠️ Loses SuperClaude community/ecosystem
+- ⚠️ Loses Super Agent community/ecosystem
 - ⚠️ Duplicates upstream effort
 - ⚠️ Maintenance burden
 - ⚠️ Smaller impact (personal vs community)
@@ -177,12 +177,12 @@ If Skills prototype shows **<80% savings** or immature:
 
 ### Phase A PR Content
 
-**File**: `superclaude/validators/security_roughcheck.py`
+**File**: `superagent/validators/security_roughcheck.py`
 - Detection patterns for hardcoded secrets
 - .env file prohibition checking
 - Detects: Stripe keys, Supabase keys, OpenAI keys, Infisical tokens
 
-**File**: `superclaude/validators/context_contract.py`
+**File**: `superagent/validators/context_contract.py`
 - Enforces auto-detected project rules
 - Checks: .env prohibition, hardcoded secrets, proxy routing
 
@@ -267,7 +267,7 @@ def test_skill_token_overhead():
 - ✅ Can include actual code execution in skills
 
 **Overall Success**:
-- ✅ SuperClaude token efficiency improved (either via Skills or incremental PRs)
+- ✅ Super Agent token efficiency improved (either via Skills or incremental PRs)
 - ✅ User becomes recognized maintainer
 - ✅ Core value preserved: reflection, references, memory
 

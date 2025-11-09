@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 SuperClaude Quick Start Guide
+# 🚀 Super Agent Quick Start Guide
 
 ### **Context Engineering Framework for Claude Code**
 
@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Time_to_Start-5_Minutes-green?style=for-the-badge" alt="Quick Start">
 </p>
 
-> **💡 Key Insight**: SuperClaude doesn't replace Claude Code - it **configures and enhances** it through behavioral context injection
+> **💡 Key Insight**: Super Agent doesn't replace Claude Code - it **configures and enhances** it through behavioral context injection
 
 <p align="center">
   <a href="#-how-it-works">How It Works</a> •
@@ -80,13 +80,13 @@
 
 ```bash
 # Quick install with pipx
-pipx install SuperClaude && SuperClaude install
+pipx install Super Agent && Super Agent install
 
 # Or traditional pip
-pip install SuperClaude && SuperClaude install
+pip install Super Agent && Super Agent install
 
 # Or via npm
-npm install -g @bifrost_inc/superclaude && superclaude install
+npm install -g @bifrost_inc/superagent && superagent install
 ```
 
 </td>
@@ -127,7 +127,7 @@ npm install -g @bifrost_inc/superclaude && superclaude install
 
 <div align="center">
 
-### **Four Pillars of SuperClaude**
+### **Four Pillars of Super Agent**
 
 <table>
 <tr>
@@ -271,11 +271,11 @@ Playwright (testing)
 
 <div align="center">
 
-### **SuperClaude vs Standard Claude Code**
+### **Super Agent vs Standard Claude Code**
 
 <table>
 <tr>
-<th width="50%">✅ Use SuperClaude</th>
+<th width="50%">✅ Use Super Agent</th>
 <th width="50%">💭 Use Standard Claude</th>
 </tr>
 <tr>
@@ -383,7 +383,7 @@ Playwright (testing)
 
 <div align="center">
 
-### **Understanding SuperClaude's Value**
+### **Understanding Super Agent's Value**
 
 <table>
 <tr>
@@ -392,7 +392,7 @@ Playwright (testing)
 ### 🧠 **Not Software**
 **It's a Framework**
 
-SuperClaude is behavioral configuration, not standalone software. Everything runs through Claude Code.
+Super Agent is behavioral configuration, not standalone software. Everything runs through Claude Code.
 
 </td>
 <td width="33%" align="center">
@@ -486,7 +486,7 @@ Create custom workflows
 </p>
 
 <p align="center">
-  <sub>SuperClaude v4.1.5 - Context Engineering for Claude Code</sub>
+  <sub>Super Agent v4.1.5 - Context Engineering for Claude Code</sub>
 </p>
 
 </div>

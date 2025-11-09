@@ -9,13 +9,13 @@
   },
   "entry_points": {
     "cli": {
-      "command": "superclaude",
-      "source": "src/superclaude/cli/main.py",
-      "purpose": "CLI interface for SuperClaude operations"
+      "command": "superagent",
+      "source": "src/superagent/cli/main.py",
+      "purpose": "CLI interface for Super Agent operations"
     },
     "pytest_plugin": {
       "auto_loaded": true,
-      "source": "src/superclaude/pytest_plugin.py",
+      "source": "src/superagent/pytest_plugin.py",
       "purpose": "PM Agent fixtures and test automation"
     },
     "skills": {
@@ -27,7 +27,7 @@
   },
   "core_modules": {
     "pm_agent": {
-      "path": "src/superclaude/pm_agent/",
+      "path": "src/superagent/pm_agent/",
       "modules": {
         "confidence": {
           "file": "confidence.py",
@@ -57,7 +57,7 @@
       }
     },
     "execution": {
-      "path": "src/superclaude/execution/",
+      "path": "src/superagent/execution/",
       "modules": {
         "parallel": {
           "file": "parallel.py",
@@ -75,7 +75,7 @@
       }
     },
     "cli": {
-      "path": "src/superclaude/cli/",
+      "path": "src/superagent/cli/",
       "modules": {
         "main": {
           "file": "main.py",
@@ -88,7 +88,7 @@
         },
         "install_skill": {
           "file": "install_skill.py",
-          "purpose": "Install SuperClaude skills to Claude Code",
+          "purpose": "Install Super Agent skills to Claude Code",
           "target": "~/.claude/skills/"
         }
       }
@@ -107,7 +107,7 @@
     },
     "npm_wrapper": {
       "file": "package.json",
-      "package": "@bifrost_inc/superclaude",
+      "package": "@bifrost_inc/superagent",
       "version": "4.1.5",
       "purpose": "Cross-platform installation wrapper"
     },
@@ -171,7 +171,7 @@
       "all_tests": "uv run pytest",
       "specific_directory": "uv run pytest tests/pm_agent/ -v",
       "by_marker": "uv run pytest -m confidence_check",
-      "with_coverage": "uv run pytest --cov=superclaude"
+      "with_coverage": "uv run pytest --cov=superagent"
     }
   },
   "dependencies": {
@@ -190,13 +190,13 @@
   },
   "quick_start": {
     "installation": [
-      "uv pip install superclaude",
-      "pip install superclaude",
+      "uv pip install superagent",
+      "pip install superagent",
       "make install"
     ],
     "usage": [
-      "superclaude --version",
-      "superclaude install-skill confidence-check",
+      "superagent --version",
+      "superagent install-skill confidence-check",
       "make doctor",
       "make test"
     ]

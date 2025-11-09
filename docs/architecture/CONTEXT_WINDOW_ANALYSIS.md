@@ -1,14 +1,14 @@
 # Context Window Analysis: Old vs New Architecture
 
 **Date**: 2025-10-21
-**Related Issue**: [#437 - Extreme Context Window Optimization](https://github.com/SuperClaude-Org/SuperClaude_Framework/issues/437)
+**Related Issue**: [#437 - Extreme Context Window Optimization](https://github.com/kazuki/superagent/issues/437)
 **Status**: Analysis Complete
 
 ---
 
 ## 🎯 Background: Issue #437
 
-**Problem**: SuperClaude消費 55-60% のcontext window
+**Problem**: Super Agent消費 55-60% のcontext window
 - MCP tools: ~30%
 - Memory files: ~30%
 - System prompts/agents: ~10%
@@ -26,7 +26,7 @@
 
 **インストール時の読み込み**:
 ```
-~/.claude/superclaude/
+~/.claude/superagent/
 ├── framework/              # 全フレームワークドキュメント
 │   ├── flags.md           # ~5KB
 │   ├── principles.md      # ~8KB
@@ -61,7 +61,7 @@ Total: ~210KB (推定 50K-60K tokens)
 
 **インストール時の読み込み**:
 ```
-site-packages/superclaude/
+site-packages/superagent/
 ├── __init__.py            # Package metadata (~0.5KB)
 ├── pytest_plugin.py       # Plugin entry point (~6KB)
 ├── pm_agent/              # PM Agentコアのみ
@@ -98,7 +98,7 @@ Total: ~88KB (推定 20K-25K tokens)
 ```
 MCP tools (AIRIS Gateway後):     5K tokens  (PR #449で改善済み)
 Memory files (~/.claude/):       50K tokens  (全ドキュメント読み込み)
-SuperClaude components:          10K tokens  (Component/Installer)
+Super Agent components:          10K tokens  (Component/Installer)
 ─────────────────────────────────────────
 Total consumed:                  65K tokens
 Available for user:              135K tokens (65%)
@@ -108,7 +108,7 @@ Available for user:              135K tokens (65%)
 ```
 MCP tools (AIRIS Gateway):        5K tokens  (同じ)
 Memory files (~/.claude/):        0K tokens  (何もインストールしない)
-SuperClaude pytest plugin:       20K tokens  (pytest起動時のみ)
+Super Agent pytest plugin:       20K tokens  (pytest起動時のみ)
 ─────────────────────────────────────────
 Total consumed (session start):   5K tokens
 Available for user:             195K tokens (97%)
@@ -185,7 +185,7 @@ Total:                         ~11K tokens
 
 **Issue #437 + This PR**:
 - MCP tools: 60K → 10K (50K削減) ← PR #449
-- SuperClaude: 60K → 5K (55K削減) ← This PR
+- Super Agent: 60K → 5K (55K削減) ← This PR
 - **Total reduction**: 105K tokens
 - **User available**: 55K → 150K tokens (2.7倍改善)
 
@@ -207,22 +207,22 @@ Total:                         ~11K tokens
    - ✅ Pytest hooks (configure, runtest_setup, etc.)
 
 3. **CLI Commands**:
-   - ✅ `superclaude doctor` (health check)
-   - ✅ `superclaude install-skill` (Skills installation)
-   - ✅ `superclaude --version`
+   - ✅ `superagent doctor` (health check)
+   - ✅ `superagent install-skill` (Skills installation)
+   - ✅ `superagent --version`
 
 ### ⚠️ 変更される機能
 
 1. **Skills System**:
    - ❌ Before: 自動インストール
-   - ✅ After: オプトイン（`superclaude install-skill pm`）
+   - ✅ After: オプトイン（`superagent install-skill pm`）
 
 2. **Commands/Modes**:
    - ❌ Before: 自動展開
    - ✅ After: Skills経由でインストール
 
 3. **Framework Docs**:
-   - ❌ Before: `~/.claude/superclaude/framework/`
+   - ❌ Before: `~/.claude/superagent/framework/`
    - ✅ After: PyPI package documentation
 
 ### ❌ 削除される機能
@@ -263,7 +263,7 @@ Result:
 ✅ pytest plugin loaded
 ✅ Skills installed (optional)
 ✅ Configuration
-✅ SuperClaude is healthy
+✅ Super Agent is healthy
 ```
 
 ---
@@ -293,14 +293,14 @@ Result:
 **現在**:
 ```python
 # pytest起動時に全モジュールimport
-from superclaude.pm_agent import confidence, self_check, reflexion, token_budget
+from superagent.pm_agent import confidence, self_check, reflexion, token_budget
 ```
 
 **提案**:
 ```python
 # 使用時のみimport
 def confidence_checker():
-    from superclaude.pm_agent.confidence import ConfidenceChecker
+    from superagent.pm_agent.confidence import ConfidenceChecker
     return ConfidenceChecker()
 ```
 
@@ -311,7 +311,7 @@ def confidence_checker():
 **現在**:
 ```bash
 # 事前にインストール必要
-superclaude install-skill pm-agent
+superagent install-skill pm-agent
 ```
 
 **提案**:
@@ -330,7 +330,7 @@ def test_example():
 
 **Issue #437への貢献**:
 - PR #449: MCP tools 50K削減
-- **This PR: SuperClaude 55K削減**
+- **This PR: Super Agent 55K削減**
 - **Total: 105K tokens回復 (52%改善)**
 
 **機能喪失リスク**: **ゼロ** ✅

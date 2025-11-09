@@ -1,7 +1,7 @@
 # MCP Installer Fix Summary
 
 ## Problem Identified
-The SuperClaude Framework installer was using `claude mcp add` CLI commands which are designed for Claude Desktop, not Claude Code. This caused installation failures.
+The Super Agent installer was using `claude mcp add` CLI commands which are designed for Claude Desktop, not Claude Code. This caused installation failures.
 
 ## Root Cause
 - Original implementation: Used `claude mcp add` CLI commands
@@ -92,7 +92,7 @@ Created new helper methods for JSON-based configuration:
 - Verify config file format at `~/.claude/mcp.json`
 
 ## Files Modified
-- `/Users/kazuki/github/SuperClaude_Framework/setup/components/mcp.py`
+- `/Users/kazuki/github/superagent/setup/components/mcp.py`
   - Added JSON helper methods (lines 213-302)
   - Updated `_check_mcp_server_installed()` (lines 357-381)
   - Updated `_install_mcp_server()` (lines 509-611)

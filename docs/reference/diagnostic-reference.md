@@ -1,10 +1,10 @@
-# SuperClaude Diagnostic Reference Guide
+# Super Agent Diagnostic Reference Guide
 
 ## Overview
 
-This guide provides procedures for diagnosing issues with SuperClaude context files and configurations. Since SuperClaude is a collection of text files (not running software), diagnostics focus on file verification and configuration checking.
+This guide provides procedures for diagnosing issues with Super Agent context files and configurations. Since Super Agent is a collection of text files (not running software), diagnostics focus on file verification and configuration checking.
 
-**Important**: There are no processes to monitor, no performance metrics to measure, and no system resources to analyze. SuperClaude is purely configuration files that Claude Code reads.
+**Important**: There are no processes to monitor, no performance metrics to measure, and no system resources to analyze. Super Agent is purely configuration files that Claude Code reads.
 
 ## Quick Diagnostics
 
@@ -12,14 +12,14 @@ This guide provides procedures for diagnosing issues with SuperClaude context fi
 
 ```bash
 # Quick status check
-ls ~/.claude/CLAUDE.md && echo "✅ SuperClaude installed" || echo "❌ Not installed"
+ls ~/.claude/CLAUDE.md && echo "✅ Super Agent installed" || echo "❌ Not installed"
 ```
 
 ### Basic Diagnostic Commands
 
 ```bash
-# Check if SuperClaude is installed
-python3 -m SuperClaude --version
+# Check if Super Agent is installed
+python3 -m Super Agent --version
 
 # Count context files
 find ~/.claude -name "*.md" -type f | wc -l
@@ -43,7 +43,7 @@ ls -la ~/.claude/
 #!/bin/bash
 # Comprehensive context file check
 
-echo "=== SuperClaude Context File Diagnostic ==="
+echo "=== Super Agent Context File Diagnostic ==="
 
 # Define expected counts
 EXPECTED_AGENTS=14
@@ -247,9 +247,9 @@ fi
 
 ```bash
 #!/bin/bash
-# SuperClaude Quick Fix Script
+# Super Agent Quick Fix Script
 
-echo "=== SuperClaude Quick Fix ==="
+echo "=== Super Agent Quick Fix ==="
 
 # Check for common issues and fix them
 ISSUES_FOUND=0
@@ -264,7 +264,7 @@ chmod 755 ~/.claude ~/.claude/agents ~/.claude/commands ~/.claude/modes 2>/dev/n
 for dir in agents commands modes; do
     if [ ! -d ~/.claude/$dir ]; then
         echo "⚠️ Missing directory: $dir"
-        echo "  Run: SuperClaude install --components $dir"
+        echo "  Run: Super Agent install --components $dir"
         ((ISSUES_FOUND++))
     fi
 done
@@ -274,7 +274,7 @@ EMPTY_FILES=$(find ~/.claude -name "*.md" -type f -size 0 2>/dev/null)
 if [ -n "$EMPTY_FILES" ]; then
     echo "⚠️ Found empty files:"
     echo "$EMPTY_FILES"
-    echo "  Run: SuperClaude install --force"
+    echo "  Run: Super Agent install --force"
     ((ISSUES_FOUND++))
 fi
 
@@ -302,7 +302,7 @@ fi
 rm -rf ~/.claude
 
 # Reinstall
-SuperClaude install
+Super Agent install
 
 # Verify installation
 if [ -f ~/.claude/CLAUDE.md ]; then
@@ -335,4 +335,4 @@ fi
 
 ## Summary
 
-SuperClaude diagnostics are simple: verify files exist, check they're readable, and ensure configurations are valid. Since it's just text files that Claude Code reads, there's no complex system monitoring or performance analysis needed. If files are present and readable, SuperClaude is working.
+Super Agent diagnostics are simple: verify files exist, check they're readable, and ensure configurations are valid. Since it's just text files that Claude Code reads, there's no complex system monitoring or performance analysis needed. If files are present and readable, Super Agent is working.

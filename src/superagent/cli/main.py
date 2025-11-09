@@ -1,24 +1,24 @@
 """
-SuperClaude CLI Main Entry Point
+Super Agent CLI Main Entry Point
 
-Provides command-line interface for SuperClaude operations.
+Provides command-line interface for Super Agent operations.
 """
 
 import click
 from pathlib import Path
 import sys
 
-# Add parent directory to path to import superclaude
+# Add parent directory to path to import superagent
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from superclaude import __version__
+from superagent import __version__
 
 
 @click.group()
-@click.version_option(version=__version__, prog_name="SuperClaude")
+@click.version_option(version=__version__, prog_name="Super Agent")
 def main():
     """
-    SuperClaude - AI-enhanced development framework for Claude Code
+    Super Agent - AI-enhanced development framework for Claude Code
 
     A pytest plugin providing PM Agent capabilities and optional skills system.
     """
@@ -39,13 +39,13 @@ def main():
 )
 def install_skill(skill_name: str, target: str, force: bool):
     """
-    Install a SuperClaude skill to Claude Code
+    Install a Super Agent skill to Claude Code
 
     SKILL_NAME: Name of the skill to install (e.g., pm-agent)
 
     Example:
-        superclaude install-skill pm-agent
-        superclaude install-skill pm-agent --target ~/.claude/skills --force
+        superagent install-skill pm-agent
+        superagent install-skill pm-agent --target ~/.claude/skills --force
     """
     from .install_skill import install_skill_command
 
@@ -74,7 +74,7 @@ def install_skill(skill_name: str, target: str, force: bool):
 )
 def doctor(verbose: bool):
     """
-    Check SuperClaude installation health
+    Check Super Agent installation health
 
     Verifies:
         - pytest plugin loaded correctly
@@ -83,7 +83,7 @@ def doctor(verbose: bool):
     """
     from .doctor import run_doctor
 
-    click.echo("🔍 SuperClaude Doctor\n")
+    click.echo("🔍 Super Agent Doctor\n")
 
     results = run_doctor(verbose=verbose)
 
@@ -102,7 +102,7 @@ def doctor(verbose: bool):
     passed = sum(1 for check in results["checks"] if check["passed"])
 
     if passed == total:
-        click.echo("✅ SuperClaude is healthy")
+        click.echo("✅ Super Agent is healthy")
     else:
         click.echo(f"⚠️  {total - passed}/{total} checks failed")
         sys.exit(1)
@@ -110,8 +110,8 @@ def doctor(verbose: bool):
 
 @main.command()
 def version():
-    """Show SuperClaude version"""
-    click.echo(f"SuperClaude version {__version__}")
+    """Show Super Agent version"""
+    click.echo(f"Super Agent version {__version__}")
 
 
 if __name__ == "__main__":

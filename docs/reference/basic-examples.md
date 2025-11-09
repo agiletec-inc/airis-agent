@@ -1,21 +1,21 @@
-# SuperClaude Basic Examples Collection
+# Super Agent Basic Examples Collection
 
 **Status**: ✅ **Status: Current** - Essential commands, single-agent workflows, and common development tasks.
 
-**Quick Reference Guide**: Copy-paste ready examples for beginners, focused on essential SuperClaude usage patterns and fundamental development workflows.
+**Quick Reference Guide**: Copy-paste ready examples for beginners, focused on essential Super Agent usage patterns and fundamental development workflows.
 
 > **📝 Context Note**: These examples show `/sc:` commands and `@agent-` invocations that trigger Claude Code to read specific context files and adopt the behaviors defined there. The sophistication comes from the behavioral instructions, not from executable software.
 
 ## Overview and Usage Guide
 
-**Purpose**: Essential SuperClaude commands and patterns for everyday development tasks. Start here for your first SuperClaude experience.
+**Purpose**: Essential Super Agent commands and patterns for everyday development tasks. Start here for your first Super Agent experience.
 
-**Target Audience**: New users, developers learning SuperClaude fundamentals, immediate task application
+**Target Audience**: New users, developers learning Super Agent fundamentals, immediate task application
 
 **Usage Pattern**: Copy → Adapt → Execute → Learn from results
 
 **Key Features**:
-- Examples demonstrate core SuperClaude functionality
+- Examples demonstrate core Super Agent functionality
 - Clear patterns for immediate application  
 - Single-focus examples for clear learning
 - Progressive complexity within basic scope
@@ -546,8 +546,8 @@
 - Can solve common development problems independently
 - Understands when to use different flags and focuses
 - Can adapt examples to specific project needs
-- Ready to explore more complex SuperClaude capabilities
+- Ready to explore more complex Super Agent capabilities
 
 ---
 
-**Remember**: Start simple, practice frequently, and gradually increase complexity. These basic examples form the foundation for all advanced SuperClaude usage.
+**Remember**: Start simple, practice frequently, and gradually increase complexity. These basic examples form the foundation for all advanced Super Agent usage.

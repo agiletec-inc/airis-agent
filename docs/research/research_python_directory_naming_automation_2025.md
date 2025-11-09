@@ -50,7 +50,7 @@
 - **Hyphens are NOT allowed** in package names (Python import restrictions)
 - **Camel Case / Title Case = PEP 8 violation**
 
-**Current SuperClaude Framework Violations**:
+**Current Super Agent Violations**:
 ```yaml
 # ❌ PEP 8 Violations
 docs/Developer-Guide/     # Contains hyphen + uppercase
@@ -477,7 +477,7 @@ select = ["E", "F", "W", "I", "N"]
 
 ---
 
-## Recommendations for SuperClaude Framework
+## Recommendations for Super Agent
 
 ### Immediate Actions (Required)
 
@@ -639,11 +639,11 @@ python scripts/validate_directory_names.py
 
 #### 1. Consider Repository Rename
 
-**Current**: `SuperClaude_Framework`
-**PEP 8 Compliant**: `superclaude-framework` or `superclaude_framework`
+**Current**: `superagent`
+**PEP 8 Compliant**: `superagent-framework` or `superagent_framework`
 
 **Rationale**:
-- Package name: `superclaude` (already compliant)
+- Package name: `superagent` (already compliant)
 - Repository name: Should match package style
 - GitHub allows repository renaming with automatic redirects
 
@@ -651,13 +651,13 @@ python scripts/validate_directory_names.py
 ```bash
 # 1. Rename on GitHub (Settings → Repository name)
 # 2. Update local remote
-git remote set-url origin https://github.com/SuperClaude-Org/superclaude-framework.git
+git remote set-url origin https://github.com/kazuki/superagent.git
 
 # 3. Update all documentation references
-grep -rl "SuperClaude_Framework" . | xargs sed -i '' 's/SuperClaude_Framework/superclaude-framework/g'
+grep -rl "superagent" . | xargs sed -i '' 's/superagent/superagent-framework/g'
 
 # 4. Update pyproject.toml URLs
-sed -i '' 's|SuperClaude_Framework|superclaude-framework|g' pyproject.toml
+sed -i '' 's|superagent|superagent-framework|g' pyproject.toml
 ```
 
 **GitHub Benefits**:
@@ -671,16 +671,16 @@ sed -i '' 's|SuperClaude_Framework|superclaude-framework|g' pyproject.toml
 
 **Current**:
 ```
-SuperClaude_Framework/
-├── superclaude/          # Package at root
+superagent/
+├── superagent/          # Package at root
 ├── setup/                # Package at root
 ```
 
 **Recommended**:
 ```
-superclaude-framework/
+superagent-framework/
 ├── src/
-│   ├── superclaude/      # Main package
+│   ├── superagent/      # Main package
 │   └── setup/            # Setup package
 ```
 
@@ -696,7 +696,7 @@ superclaude-framework/
 mkdir -p src
 
 # Move packages
-git mv superclaude src/superclaude
+git mv superagent src/superagent
 git mv setup src/setup
 
 # Update pyproject.toml
@@ -705,7 +705,7 @@ git mv setup src/setup
 ```toml
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["superclaude*", "setup*"]
+include = ["superagent*", "setup*"]
 ```
 
 **Note**: This is a breaking change requiring version bump and migration guide.
@@ -817,7 +817,7 @@ jobs:
 3. **Continuous Enforcement**: Ruff linter + CI/CD pipeline
 4. **Documentation**: Update all references (semi-automated with sed)
 
-**For SuperClaude Framework**:
+**For Super Agent**:
 - Complete the remaining directory renames manually (6 directories)
 - Set up pre-commit hooks with custom validator
 - Configure Ruff for Python code linting

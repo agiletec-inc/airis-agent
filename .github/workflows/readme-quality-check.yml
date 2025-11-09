@@ -39,7 +39,7 @@ jobs:
         #!/usr/bin/env python3
         # -*- coding: utf-8 -*-
         """
-        SuperClaude多语言README质量检查器
+        Super Agent多语言README质量检查器
         检查版本同步、链接有效性、结构一致性
         """
         
@@ -52,7 +52,7 @@ jobs:
         
         class READMEQualityChecker:
             def __init__(self):
-                self.readme_files = ['README.md', 'README-zh.md', 'README-ja.md']
+                self.readme_files = ['README.md']
                 self.results = {
                     'structure_consistency': [],
                     'link_validation': [],

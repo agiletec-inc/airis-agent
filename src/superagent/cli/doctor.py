@@ -1,7 +1,7 @@
 """
-SuperClaude Doctor Command
+Super Agent Doctor Command
 
-Health check for SuperClaude installation.
+Health check for Super Agent installation.
 """
 
 from pathlib import Path
@@ -11,7 +11,7 @@ import sys
 
 def run_doctor(verbose: bool = False) -> Dict[str, Any]:
     """
-    Run SuperClaude health checks
+    Run Super Agent health checks
 
     Args:
         verbose: Include detailed diagnostic information
@@ -54,23 +54,23 @@ def _check_pytest_plugin() -> Dict[str, Any]:
             config = pytest.Config.fromdictargs({}, [])
             plugins = config.pluginmanager.list_plugin_distinfo()
 
-            # Check if superclaude plugin is loaded
-            superclaude_loaded = any(
-                "superclaude" in str(plugin[0]).lower()
+            # Check if superagent plugin is loaded
+            superagent_loaded = any(
+                "superagent" in str(plugin[0]).lower()
                 for plugin in plugins
             )
 
-            if superclaude_loaded:
+            if superagent_loaded:
                 return {
                     "name": "pytest plugin loaded",
                     "passed": True,
-                    "details": ["SuperClaude pytest plugin is active"],
+                    "details": ["Super Agent pytest plugin is active"],
                 }
             else:
                 return {
                     "name": "pytest plugin loaded",
                     "passed": False,
-                    "details": ["SuperClaude plugin not found in pytest plugins"],
+                    "details": ["Super Agent plugin not found in pytest plugins"],
                 }
         except Exception as e:
             return {
@@ -125,24 +125,24 @@ def _check_skills_installed() -> Dict[str, Any]:
 
 def _check_configuration() -> Dict[str, Any]:
     """
-    Check SuperClaude configuration
+    Check Super Agent configuration
 
     Returns:
         Check result dict
     """
     # Check if package is importable
     try:
-        import superclaude
-        version = superclaude.__version__
+        import superagent
+        version = superagent.__version__
 
         return {
             "name": "Configuration",
             "passed": True,
-            "details": [f"SuperClaude {version} installed correctly"],
+            "details": [f"Super Agent {version} installed correctly"],
         }
     except ImportError as e:
         return {
             "name": "Configuration",
             "passed": False,
-            "details": [f"Could not import superclaude: {e}"],
+            "details": [f"Could not import superagent: {e}"],
         }

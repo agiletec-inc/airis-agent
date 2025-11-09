@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `src/superclaude/` holds the Python package and pytest plugin entrypoints.
+- `src/superagent/` holds the Python package and pytest plugin entrypoints.
 - `tests/` contains Python integration/unit suites; markers map to features in `pyproject.toml`.
 - `pm/`, `research/`, and `index/` house TypeScript agents with standalone `package.json`.
 - `skills/` holds runtime skills (e.g., `confidence-check`); `commands/` documents scripted Claude commands.
@@ -23,7 +23,7 @@
 ## Testing Guidelines
 - Default to `make test`; add `uv run pytest -m unit` to scope runs during development.
 - When changes touch CLI or plugin startup, extend integration coverage in `tests/test_pytest_plugin.py`.
-- Respect coverage focus on `src/superclaude` (`tool.coverage.run`); adjust configuration instead of skipping logic.
+- Respect coverage focus on `src/superagent` (`tool.coverage.run`); adjust configuration instead of skipping logic.
 - For TypeScript agents, add Jest specs under `__tests__/*.test.ts` and keep coverage thresholds satisfied via `npm run test:coverage`.
 
 ## Commit & Pull Request Guidelines

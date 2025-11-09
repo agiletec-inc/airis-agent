@@ -34,7 +34,7 @@ hooks/hooks.json         # SessionStart auto-activation config
 └── tests/               # Plugin tests
 
 # Python Package
-src/superclaude/         # Pytest plugin + CLI tools
+src/superagent/         # Pytest plugin + CLI tools
 ├── pytest_plugin.py     # Auto-loaded pytest integration
 ├── pm_agent/            # confidence.py, self_check.py, reflexion.py
 ├── execution/           # parallel.py, reflection.py, self_correction.py
@@ -69,7 +69,7 @@ make test             # Run full test suite
 uv run pytest tests/pm_agent/ -v              # Run specific directory
 uv run pytest tests/test_file.py -v           # Run specific file
 uv run pytest -m confidence_check             # Run by marker
-uv run pytest --cov=superclaude               # With coverage
+uv run pytest --cov=superagent               # With coverage
 
 # Code Quality
 make lint             # Run ruff linter
@@ -78,7 +78,7 @@ make doctor           # Health check diagnostics
 
 # Plugin Packaging
 make build-plugin            # Build plugin artefacts into dist/
-make sync-plugin-repo        # Sync artefacts into ../SuperClaude_Plugin
+make sync-plugin-repo        # Sync artefacts into ../Super Agent_Plugin
 
 # Maintenance
 make clean            # Remove build artifacts
@@ -100,29 +100,29 @@ Registered via `pyproject.toml` entry point, automatically available after insta
 
 ### PM Agent - Three Core Patterns
 
-**1. ConfidenceChecker** (src/superclaude/pm_agent/confidence.py)
+**1. ConfidenceChecker** (src/superagent/pm_agent/confidence.py)
 - Pre-execution confidence assessment: ≥90% required, 70-89% present alternatives, <70% ask questions
 - Prevents wrong-direction work, ROI: 25-250x token savings
 
-**2. SelfCheckProtocol** (src/superclaude/pm_agent/self_check.py)
+**2. SelfCheckProtocol** (src/superagent/pm_agent/self_check.py)
 - Post-implementation evidence-based validation
 - No speculation - verify with tests/docs
 
-**3. ReflexionPattern** (src/superclaude/pm_agent/reflexion.py)
+**3. ReflexionPattern** (src/superagent/pm_agent/reflexion.py)
 - Error learning and prevention
 - Cross-session pattern matching
 
 ### Parallel Execution
 
-**Wave → Checkpoint → Wave pattern** (src/superclaude/execution/parallel.py):
+**Wave → Checkpoint → Wave pattern** (src/superagent/execution/parallel.py):
 - 3.5x faster than sequential execution
 - Automatic dependency analysis
 - Example: [Read files in parallel] → Analyze → [Edit files in parallel]
 
 ### TypeScript Plugins (v2.0)
 
-**Location**: Plugin source lives under `plugins/superclaude/` with unified assets (agents, commands, hooks, skills).
-**Packaging**: `make build-plugin` renders `.claude-plugin/*` manifests into `dist/plugins/superclaude/`.
+**Location**: Plugin source lives under `plugins/superagent/` with unified assets (agents, commands, hooks, skills).
+**Packaging**: `make build-plugin` renders `.claude-plugin/*` manifests into `dist/plugins/superagent/`.
 
 **Distributed commands**:
 - **/sc:agent**: Session orchestrator, auto-starts via hooks
@@ -130,9 +130,9 @@ Registered via `pyproject.toml` entry point, automatically available after insta
 - **/sc:research**: Deep research workflow with Tavily + Context7 integration
 
 **Editing flow**:
-- Update agents/commands/hooks/skills in `plugins/superclaude/*`
+- Update agents/commands/hooks/skills in `plugins/superagent/*`
 - Run `make build-plugin` locally to verify packaging
-- Optionally `make sync-plugin-repo` to push artefacts into `../SuperClaude_Plugin`
+- Optionally `make sync-plugin-repo` to push artefacts into `../Super Agent_Plugin`
 
 ## 🧪 Testing with PM Agent
 
@@ -181,11 +181,11 @@ def test_with_budget(token_budget):
 
 ```bash
 # Create worktree for integration branch
-cd ~/github/SuperClaude_Framework
-git worktree add ../SuperClaude_Framework-integration integration
+cd ~/github/superagent
+git worktree add ../superagent-integration integration
 
 # Create worktree for feature branch
-git worktree add ../SuperClaude_Framework-feature feature/pm-agent
+git worktree add ../superagent-feature feature/pm-agent
 ```
 
 **Benefits**:
@@ -195,13 +195,13 @@ git worktree add ../SuperClaude_Framework-feature feature/pm-agent
 - Parallel development without state corruption
 
 **Usage**:
-- Session A: Open `~/github/SuperClaude_Framework/` (current branch)
-- Session B: Open `~/github/SuperClaude_Framework-integration/` (integration)
-- Session C: Open `~/github/SuperClaude_Framework-feature/` (feature branch)
+- Session A: Open `~/github/superagent/` (current branch)
+- Session B: Open `~/github/superagent-integration/` (integration)
+- Session C: Open `~/github/superagent-feature/` (feature branch)
 
 **Cleanup**:
 ```bash
-git worktree remove ../SuperClaude_Framework-integration
+git worktree remove ../superagent-integration
 ```
 
 ## 📝 Key Documentation Files
@@ -257,47 +257,47 @@ This project uses **project-local plugin detection** (v2.0):
 
 ```
 Plugin Components:
-1. Manifest templates (`plugins/superclaude/manifest/*.template.json`)
-2. Command/agent assets (`plugins/superclaude/{commands,agents}/`)
-3. Skills (`plugins/superclaude/skills/`)
-4. Hooks & scripts (`plugins/superclaude/{hooks,scripts}/`)
+1. Manifest templates (`plugins/superagent/manifest/*.template.json`)
+2. Command/agent assets (`plugins/superagent/{commands,agents}/`)
+3. Skills (`plugins/superagent/skills/`)
+4. Hooks & scripts (`plugins/superagent/{hooks,scripts}/`)
 ```
 
 ### Development Workflow
 
 ```bash
 # 1. Edit plugin source
-vim plugins/superclaude/commands/agent.md
-vim plugins/superclaude/skills/confidence-check/confidence.ts
+vim plugins/superagent/commands/agent.md
+vim plugins/superagent/skills/confidence-check/confidence.ts
 
 # 2. Run packaging + smoke tests
 make build-plugin
 
-# 3. (optional) Sync generated artefacts into ../SuperClaude_Plugin
+# 3. (optional) Sync generated artefacts into ../Super Agent_Plugin
 make sync-plugin-repo
 ```
 
 ### Global vs Project-Local
 
 **Project-Local**:
-- Work directly from `plugins/superclaude/`
+- Work directly from `plugins/superagent/`
 - Use `make build-plugin` for validation / artefact refresh
 - Launch Claude Code inside this repo to exercise commands hot-loaded from disk
 
-**Distributed Package** (`../SuperClaude_Plugin`):
+**Distributed Package** (`../Super Agent_Plugin`):
 - Generated output committed for marketplace distribution
 - Do not edit manually—regenerate via `make sync-plugin-repo`
 
 ## 📊 Package Information
 
-**Package name**: `superclaude`
+**Package name**: `superagent`
 **Version**: 0.4.0
 **Python**: >=3.10
 **Build system**: hatchling (PEP 517)
 
 **Entry points**:
-- CLI: `superclaude` command
-- Pytest plugin: Auto-loaded as `superclaude`
+- CLI: `superagent` command
+- Pytest plugin: Auto-loaded as `superagent`
 
 **Dependencies**:
 - pytest>=7.0.0

@@ -21,7 +21,7 @@ PM Agent (最大): 4,050 tokens
 
 #### Day 1-2: PM Agent Core Python実装
 
-**File**: `superclaude/agents/pm_agent.py`
+**File**: `superagent/agents/pm_agent.py`
 
 ```python
 """
@@ -174,7 +174,7 @@ class PMAgent:
 
     def update_index(self) -> bool:
         """Run parallel repository indexer"""
-        indexer_script = self.repo_path / "superclaude" / "indexing" / "parallel_repository_indexer.py"
+        indexer_script = self.repo_path / "superagent" / "indexing" / "parallel_repository_indexer.py"
 
         if not indexer_script.exists():
             print(f"⚠️ Indexer not found: {indexer_script}")
@@ -212,7 +212,7 @@ class PMAgent:
 
     def load_reflexion_memory(self) -> list:
         """Load past mistakes for learning"""
-        from superclaude.memory import ReflexionMemory
+        from superagent.memory import ReflexionMemory
 
         memory = ReflexionMemory(self.repo_path)
         data = memory.load()
@@ -280,7 +280,7 @@ class PMAgent:
 
         # PHASE 3: DO (with validation gates)
         print("\n⚙️ PHASE 3: DO")
-        from superclaude.validators import ValidationGate
+        from superagent.validators import ValidationGate
 
         validator = ValidationGate()
         results = []
@@ -331,7 +331,7 @@ class PMAgent:
 
     def learn_from_execution(self, task: str, tasks: list, results: list) -> None:
         """Capture learning in reflexion memory"""
-        from superclaude.memory import ReflexionMemory, ReflexionEntry
+        from superagent.memory import ReflexionMemory, ReflexionEntry
 
         memory = ReflexionMemory(self.repo_path)
 
@@ -395,7 +395,7 @@ def pm_session_start() -> Dict[str, Any]:
 import pytest
 from pathlib import Path
 from datetime import datetime, timedelta
-from superclaude.agents.pm_agent import PMAgent, IndexStatus, ConfidenceScore
+from superagent.agents.pm_agent import PMAgent, IndexStatus, ConfidenceScore
 
 class TestPMAgent:
     """Test PM Agent intelligent behaviors"""
@@ -460,8 +460,8 @@ class TestPMAgent:
     def test_session_start_creates_index(self, tmp_path):
         """Test session start creates index if missing"""
         # Create minimal structure for indexer
-        (tmp_path / "superclaude").mkdir()
-        (tmp_path / "superclaude" / "indexing").mkdir()
+        (tmp_path / "superagent").mkdir()
+        (tmp_path / "superagent" / "indexing").mkdir()
 
         agent = PMAgent(tmp_path)
         # Would test session_start() but requires full indexer setup
@@ -472,7 +472,7 @@ class TestPMAgent:
 
 #### Day 5: PM Command統合
 
-**Update**: `plugins/superclaude/commands/pm.md`
+**Update**: `plugins/superagent/commands/pm.md`
 
 ```markdown
 ---
@@ -496,7 +496,7 @@ description: "PM Agent with intelligent optimization (Python-powered)"
 
 **Session Start** (自動実行):
 ```python
-from superclaude.agents.pm_agent import pm_session_start
+from superagent.agents.pm_agent import pm_session_start
 
 # Automatically called
 result = pm_session_start()
@@ -517,7 +517,7 @@ result = agent.execute_with_validation(task)
 
 ---
 
-**Implementation**: `superclaude/agents/pm_agent.py`
+**Implementation**: `superagent/agents/pm_agent.py`
 **Tests**: `tests/agents/test_pm_agent.py`
 **Token Savings**: 97% (4,050 → 100 tokens)
 ```
@@ -526,7 +526,7 @@ result = agent.execute_with_validation(task)
 
 #### Day 6-7: Orchestration Mode Python
 
-**File**: `superclaude/modes/orchestration.py`
+**File**: `superagent/modes/orchestration.py`
 
 ```python
 """
@@ -695,12 +695,12 @@ def get_orchestration_mode(context_usage: float = 0.0) -> OrchestrationMode:
 #### Day 8-10: 残りのモードPython化
 
 **Files to create**:
-- `superclaude/modes/brainstorming.py` (533 tokens → 50)
-- `superclaude/modes/introspection.py` (465 tokens → 50)
-- `superclaude/modes/task_management.py` (893 tokens → 50)
-- `superclaude/modes/token_efficiency.py` (757 tokens → 50)
-- `superclaude/modes/deep_research.py` (400 tokens → 50)
-- `superclaude/modes/business_panel.py` (2,940 tokens → 100)
+- `superagent/modes/brainstorming.py` (533 tokens → 50)
+- `superagent/modes/introspection.py` (465 tokens → 50)
+- `superagent/modes/task_management.py` (893 tokens → 50)
+- `superagent/modes/token_efficiency.py` (757 tokens → 50)
+- `superagent/modes/deep_research.py` (400 tokens → 50)
+- `superagent/modes/business_panel.py` (2,940 tokens → 100)
 
 **Total Savings**: 6,677 tokens → 400 tokens = **94% reduction**
 
@@ -736,7 +736,7 @@ skills/
 name: pm-mode
 description: Project Manager Agent with intelligent optimization
 version: 1.0.0
-author: SuperClaude
+author: Super Agent
 ---
 
 # PM Mode
@@ -777,8 +777,8 @@ Intelligent project management with automatic optimization.
 **Migration**:
 ```bash
 # Copy Python implementations to skills/
-cp -r superclaude/agents/pm_agent.py skills/pm-mode/agent.py
-cp -r superclaude/modes/*.py skills/*/mode.py
+cp -r superagent/agents/pm_agent.py skills/pm-mode/agent.py
+cp -r superagent/modes/*.py skills/*/mode.py
 
 # Create SKILL.md for each
 for dir in skills/*/; do

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📦 SuperClaude Installation Guide
+# 📦 Super Agent Installation Guide
 
 ### **Transform Claude Code with 21 Commands, 14 Agents & 6 MCP Servers**
 
@@ -30,9 +30,9 @@
 
 | Method | Command | Platform | Best For |
 |:------:|---------|:--------:|----------|
-| **🐍 pipx** | `pipx install SuperClaude && SuperClaude install` | Linux/macOS | **✅ Recommended** - Isolated environment |
-| **📦 pip** | `pip install SuperClaude && SuperClaude install` | All | Traditional Python setups |
-| **🌐 npm** | `npm install -g @bifrost_inc/superclaude && superclaude install` | All | Node.js developers |
+| **🐍 pipx** | `pipx install Super Agent && Super Agent install` | Linux/macOS | **✅ Recommended** - Isolated environment |
+| **📦 pip** | `pip install Super Agent && Super Agent install` | All | Traditional Python setups |
+| **🌐 npm** | `npm install -g @bifrost_inc/superagent && superagent install` | All | Node.js developers |
 | **🔧 Dev** | `git clone ... && uv pip install -e ".[dev]"` | All | Contributors & developers |
 
 </div>
@@ -108,11 +108,11 @@ git --version 2>/dev/null && echo "✅ Git OK (optional)" || echo "⚠️ Git mi
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 
-# Install SuperClaude
-pipx install SuperClaude
+# Install Super Agent
+pipx install Super Agent
 
 # Run the installer
-SuperClaude install
+Super Agent install
 ```
 
 </td>
@@ -141,13 +141,13 @@ SuperClaude install
 
 ```bash
 # Standard installation
-pip install SuperClaude
+pip install Super Agent
 
 # Or user installation
-pip install --user SuperClaude
+pip install --user Super Agent
 
 # Run the installer
-SuperClaude install
+Super Agent install
 ```
 
 </td>
@@ -175,10 +175,10 @@ SuperClaude install
 
 ```bash
 # Global installation
-npm install -g @bifrost_inc/superclaude
+npm install -g @bifrost_inc/superagent
 
 # Run the installer
-superclaude install
+superagent install
 ```
 
 </td>
@@ -206,8 +206,8 @@ superclaude install
 
 ```bash
 # Clone repository
-git clone https://github.com/SuperClaude-Org/SuperClaude_Framework.git
-cd SuperClaude_Framework
+git clone https://github.com/kazuki/superagent.git
+cd superagent
 
 # Install uv if not present
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -216,7 +216,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv pip install -e ".[dev]"
 
 # Test installation
-SuperClaude install --dry-run
+Super Agent install --dry-run
 ```
 
 </td>
@@ -247,11 +247,11 @@ SuperClaude install --dry-run
 
 | Option | Command | Description |
 |--------|---------|-------------|
-| **Interactive** | `SuperClaude install` | Guided setup with prompts |
-| **Specific Components** | `SuperClaude install --components core mcp modes` | Install only what you need |
-| **Preview Mode** | `SuperClaude install --dry-run` | See what will be installed |
-| **Force Install** | `SuperClaude install --force --yes` | Skip all confirmations |
-| **List Components** | `SuperClaude install --list-components` | View available components |
+| **Interactive** | `Super Agent install` | Guided setup with prompts |
+| **Specific Components** | `Super Agent install --components core mcp modes` | Install only what you need |
+| **Preview Mode** | `Super Agent install --dry-run` | See what will be installed |
+| **Force Install** | `Super Agent install --force --yes` | Skip all confirmations |
+| **List Components** | `Super Agent install --list-components` | View available components |
 
 </div>
 
@@ -268,12 +268,12 @@ SuperClaude install --dry-run
 ### **Step 1: Check Installation**
 
 ```bash
-# Verify SuperClaude version
-python3 -m SuperClaude --version
-# Expected: SuperClaude 4.1.5
+# Verify Super Agent version
+python3 -m Super Agent --version
+# Expected: Super Agent 4.1.5
 
 # List installed components
-SuperClaude install --list-components
+Super Agent install --list-components
 # Expected: List of available components
 ```
 
@@ -316,8 +316,8 @@ SuperClaude install --list-components
 
 ```bash
 # Update to latest
-pip install --upgrade SuperClaude
-SuperClaude update
+pip install --upgrade Super Agent
+Super Agent update
 ```
 
 </td>
@@ -325,10 +325,10 @@ SuperClaude update
 
 ```bash
 # Create backup
-SuperClaude backup --create
+Super Agent backup --create
 
 # Restore backup
-SuperClaude backup --restore [file]
+Super Agent backup --restore [file]
 ```
 
 </td>
@@ -336,10 +336,10 @@ SuperClaude backup --restore [file]
 
 ```bash
 # Remove framework
-SuperClaude uninstall
+Super Agent uninstall
 
 # Uninstall package
-pip uninstall SuperClaude
+pip uninstall Super Agent
 ```
 
 </td>
@@ -361,20 +361,20 @@ This error occurs on systems with externally managed Python environments.
 
 ```bash
 # Option 1: Use pipx (Recommended)
-pipx install SuperClaude
+pipx install Super Agent
 
 # Option 2: User installation
-pip install --user SuperClaude
+pip install --user Super Agent
 
 # Option 3: Virtual environment
-python3 -m venv superclaude-env
-source superclaude-env/bin/activate  # Linux/macOS
+python3 -m venv superagent-env
+source superagent-env/bin/activate  # Linux/macOS
 # or
-superclaude-env\Scripts\activate  # Windows
-pip install SuperClaude
+superagent-env\Scripts\activate  # Windows
+pip install Super Agent
 
 # Option 4: Force (use with caution)
-pip install --break-system-packages SuperClaude
+pip install --break-system-packages Super Agent
 ```
 
 </details>
@@ -382,14 +382,14 @@ pip install --break-system-packages SuperClaude
 <details>
 <summary><b>❌ Command Not Found</b></summary>
 
-If `SuperClaude` command is not found after installation:
+If `Super Agent` command is not found after installation:
 
 ```bash
 # Check if package is installed
-python3 -m pip show SuperClaude
+python3 -m pip show Super Agent
 
 # Run using Python module
-python3 -m SuperClaude install
+python3 -m Super Agent install
 
 # Add to PATH (if using --user)
 export PATH="$HOME/.local/bin:$PATH"
@@ -418,13 +418,13 @@ For permission errors during installation:
 
 ```bash
 # Use user installation
-pip install --user SuperClaude
+pip install --user Super Agent
 
 # Or use sudo (not recommended)
-sudo pip install SuperClaude
+sudo pip install Super Agent
 
 # Better: use pipx
-pipx install SuperClaude
+pipx install Super Agent
 ```
 
 </details>
@@ -507,7 +507,7 @@ You now have access to:
   <b>21 Commands</b> • <b>14 AI Agents</b> • <b>6 Behavioral Modes</b> • <b>6 MCP Servers</b>
 </p>
 
-**Ready to start?** Try `/sc:brainstorm` in Claude Code for your first SuperClaude experience!
+**Ready to start?** Try `/sc:brainstorm` in Claude Code for your first Super Agent experience!
 
 <p align="center">
   <a href="quick-start.md">

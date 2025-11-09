@@ -14,7 +14,7 @@
 | `estimate` | 工数/リスク見積もり | ❌ | プロダクトマネジメント寄り。保持推奨。 |
 | `explain` | 仕様/コード説明生成 | ⚠️ | 標準 `/explain` と役割が近い。独自の証跡・自己チェックがあるか確認要。 |
 | `git` | Git 操作ガイドライン | ✅ | Claude 標準の Git コマンド群と機能的に重複。削除候補。 |
-| `help` | SuperClaude コマンド一覧 | ✅ | `/sc:help` 専用。最小構成には必要。 |
+| `help` | Super Agent コマンド一覧 | ✅ | `/sc:help` 専用。最小構成には必要。 |
 | `implement` | 実装フェーズ全体の進行管理 | ⚠️ | 標準 `/implement` よりテレメトリ・証跡要求が厳密。差分把握の上で統合/維持を判断。 |
 | `improve` | 改善・リファクタリング提案 | ⚠️ | 構造は標準 `/improve` に類似だが、confidence 連動が追加。 |
 | `index` | リポジトリ理解/探索指針 | ❌ | インデックス生成や利用まで含む。保持推奨。 |
@@ -45,7 +45,7 @@
   - Claude 標準 `/build` より CI/CD 文脈の最適化・エラー解析が充実。→ **維持価値高**。  
 - **cleanup**  
   - Architect/Quality/Security personas の多面的チェック、Sequential + Context7 MCP 連携、安全ロールバック付き。  
-  - 標準 `/cleanup` より「安全性評価・ペルソナ連携」が差別化要素。→ **SuperClaude 版として再収録推奨**。  
+  - 標準 `/cleanup` より「安全性評価・ペルソナ連携」が差別化要素。→ **Super Agent 版として再収録推奨**。  
 - **explain**  
   - Educator persona と MCP を連動させ受講者レベル別の説明を生成。標準 `/explain` では扱わない学習指向の段階制御が特徴。  
   - → **教育用途で独自価値**。  
@@ -65,39 +65,39 @@
   - QA persona と Playwright MCP を活用し、テスト種別ごとの検出・監視・自動修復提案まで含む。  
   - 標準 `/test` よりカバレッジレポートや e2e 自動化指針が詳細。→ **維持価値高**。
 
-=> 上記 8 コマンドは「名称の偶然一致はあるが、SuperClaude 仕様として明確に強化された振る舞い」を持つ。  
+=> 上記 8 コマンドは「名称の偶然一致はあるが、Super Agent 仕様として明確に強化された振る舞い」を持つ。  
    → Framework 再集約時に **すべて再収録** し、標準との違いをドキュメントに残す方針で合意したい。
 
 ### 1.2 コマンド別ソースと今後の扱い案
 
 | Command | Source of truth | 推奨ハンドリング | 補足 |
 |---------|-----------------|-------------------|------|
-| `analyze` | SuperClaude オリジナル | Super Agent が自動発火（必要なら `/sc:analyze` も維持） | 調査フェーズ開始時に自動診断として呼び出し候補。 |
-| `brainstorm` | SuperClaude オリジナル | Super Agent 内部モードへ吸収 | 初動ヒアリング時に自動呼び出し、ユーザー入力は任意化。 |
-| `build` | Claude 標準名 + SuperClaude拡張 | Super Agent 内部（CI/CD 監視に連動） | 人手で呼ぶより build wave 中に自動判断させる。 |
-| `business-panel` | SuperClaude オリジナル | Super Agent から選択的に提示 | 経営観点レビューが必要なときだけ案内。 |
+| `analyze` | Super Agent オリジナル | Super Agent が自動発火（必要なら `/sc:analyze` も維持） | 調査フェーズ開始時に自動診断として呼び出し候補。 |
+| `brainstorm` | Super Agent オリジナル | Super Agent 内部モードへ吸収 | 初動ヒアリング時に自動呼び出し、ユーザー入力は任意化。 |
+| `build` | Claude 標準名 + Super Agent拡張 | Super Agent 内部（CI/CD 監視に連動） | 人手で呼ぶより build wave 中に自動判断させる。 |
+| `business-panel` | Super Agent オリジナル | Super Agent から選択的に提示 | 経営観点レビューが必要なときだけ案内。 |
 | `cleanup` | Claude 標準名 + 拡張版 | Super Agent の実装後フェーズに統合 | self-review 後に必要なら自動で走らせる。 |
-| `design` | SuperClaude オリジナル | Super Agent 内の設計モードとして保持 | 明示コマンドも残し、設計特化タスクで案内。 |
-| `document` | SuperClaude オリジナル | 自動ドキュメント更新ワークフローに組み込み | 成果報告時にトリガー。 |
-| `estimate` | SuperClaude オリジナル | 明示コマンド維持 + Super Agent から提案 | 工数見積り要求時の専用エントリ。 |
+| `design` | Super Agent オリジナル | Super Agent 内の設計モードとして保持 | 明示コマンドも残し、設計特化タスクで案内。 |
+| `document` | Super Agent オリジナル | 自動ドキュメント更新ワークフローに組み込み | 成果報告時にトリガー。 |
+| `estimate` | Super Agent オリジナル | 明示コマンド維持 + Super Agent から提案 | 工数見積り要求時の専用エントリ。 |
 | `explain` | Claude 標準名 + 拡張版 | Super Agent が教育モードとして起動 | 学習支援目的なら明示コマンドも残す。 |
 | `git` | Claude 標準そのもの | 削除候補 | 標準 `/git` へ誘導。 |
-| `help` | SuperClaude 専用 | 維持必須 | `/sc:*` 列挙のトップレベル。 |
+| `help` | Super Agent 専用 | 維持必須 | `/sc:*` 列挙のトップレベル。 |
 | `implement` | Claude 標準名 + 拡張版 | Super Agent 実装フェーズのコアとして保持 | ユーザーにはフェーズ説明のみ提示。 |
 | `improve` | Claude 標準名 + 拡張版 | Reflexion / Self-review ループに統合 | メンテナンスモードで自動使用。 |
-| `index` | SuperClaude オリジナル | `/sc:index-repo` として維持 | インデックス生成専用。 |
-| `load` | SuperClaude オリジナル | Super Agent SessionStart に統合 | 手動コマンド不要化。 |
-| `pm` | SuperClaude オリジナル | Super Agent 起動プロトコル（非公開） | 仕様書としては保持するが slash コマンドは廃止方向。 |
-| `reflect` | SuperClaude オリジナル | Reflexion ループへ統合 | 状況に応じ自動で回す。 |
+| `index` | Super Agent オリジナル | `/sc:index-repo` として維持 | インデックス生成専用。 |
+| `load` | Super Agent オリジナル | Super Agent SessionStart に統合 | 手動コマンド不要化。 |
+| `pm` | Super Agent オリジナル | Super Agent 起動プロトコル（非公開） | 仕様書としては保持するが slash コマンドは廃止方向。 |
+| `reflect` | Super Agent オリジナル | Reflexion ループへ統合 | 状況に応じ自動で回す。 |
 | `research` | Claude 標準名 + 拡張版 | `/sc:research` 維持（深度指定付き） | 深堀り案件で Super Agent が推奨。 |
-| `save` | SuperClaude オリジナル | Super Agent 完了処理に統合 | 終了時に自動実行。 |
-| `select-tool` | SuperClaude オリジナル | Super Agent の MCP 選定ロジック内で活用 | 手動入力は廃止方向。 |
-| `spawn` | SuperClaude オリジナル | Super Agent のサブエージェント管理で利用 | 並列タスク時だけ内部的に使用。 |
-| `spec-panel` | SuperClaude オリジナル | エキスパートレビュー要請時に Super Agent が提示 | slash コマンドはオプションとして残す。 |
+| `save` | Super Agent オリジナル | Super Agent 完了処理に統合 | 終了時に自動実行。 |
+| `select-tool` | Super Agent オリジナル | Super Agent の MCP 選定ロジック内で活用 | 手動入力は廃止方向。 |
+| `spawn` | Super Agent オリジナル | Super Agent のサブエージェント管理で利用 | 並列タスク時だけ内部的に使用。 |
+| `spec-panel` | Super Agent オリジナル | エキスパートレビュー要請時に Super Agent が提示 | slash コマンドはオプションとして残す。 |
 | `task` | Claude 標準名 + 拡張版 | Super Agent の計画フェーズで利用 | 直接コマンドは軽量版に統合検討。 |
 | `test` | Claude 標準名 + 拡張版 | 実装波後に自動実行 | 明示 `/sc:test` は e2e/coverage 指定が必要な場合のみ案内。 |
-| `troubleshoot` | SuperClaude オリジナル | インシデント時の自動ハンドラー | slash コマンドも残しつつ、失敗検知で自動案内。 |
-| `workflow` | SuperClaude オリジナル | Super Agent の全体フレーム説明用に保持 | 参考ドキュメントとして提示。 |
+| `troubleshoot` | Super Agent オリジナル | インシデント時の自動ハンドラー | slash コマンドも残しつつ、失敗検知で自動案内。 |
+| `workflow` | Super Agent オリジナル | Super Agent の全体フレーム説明用に保持 | 参考ドキュメントとして提示。 |
 
 ### 1.3 Agent Audit（upstream/master）
 
@@ -122,7 +122,7 @@
 | technical-writer | 技術ライター | ❌ | `/sc:document` や完了報告で使用 |
 
 - 現時点で Framework 側に戻したのは `deep-research`, `repo-index`, `self-review` の 3 件のみ。  
-- 他エージェントは Super Agent のモジュール化計画と合わせて `plugins/superclaude/agents/` へ随時再配置する。
+- 他エージェントは Super Agent のモジュール化計画と合わせて `plugins/superagent/agents/` へ随時再配置する。
 
 ## 2. ドキュメント鮮度・外部記憶フロー骨子
 
@@ -156,11 +156,11 @@
 ## 4. Framework ↔ Plugin 再編ロードマップ（骨子）
 
 1. **資産の再導入**  
-   - `plugins/superclaude/commands/`, `agents/`, `skills/`, `hooks/`, `scripts/` を Framework リポに新設し、upstream/master のコンテンツを復元。  
+   - `plugins/superagent/commands/`, `agents/`, `skills/`, `hooks/`, `scripts/` を Framework リポに新設し、upstream/master のコンテンツを復元。  
    - `manifest/` テンプレートと `tests/` を併設し、ここを唯一の編集ポイントにする。
 2. **ビルド・同期タスク**  
-   - `make build-plugin`: テスト→テンプレート展開→`dist/plugins/superclaude/.claude-plugin/` 出力。  
-   - `make sync-plugin-repo`: 上記成果物を `../SuperClaude_Plugin/` へ rsync（クリーンコピー）。PR 時にも生成物を同梱。  
+   - `make build-plugin`: テスト→テンプレート展開→`dist/plugins/superagent/.claude-plugin/` 出力。  
+   - `make sync-plugin-repo`: 上記成果物を `../Super Agent_Plugin/` へ rsync（クリーンコピー）。PR 時にも生成物を同梱。  
 3. **Plugin リポの役割変更**  
    - 生成物のみを保持し、「直接編集禁止」の README と CI ガードを配置。  
    - 必要に応じて Git subtree/submodule で `dist` を取り込む運用も検討。
@@ -176,7 +176,7 @@
    - 代表タスク（軽微修正／バグ修正／大規模実装）を定義し、Super Agent のみ vs `sc:*` 併用でセッションログを取得。  
    - 計測項目: 総トークン数、経過時間、試行回数、残タスク有無。
 2. **ビルド & 配布検証**  
-   - `make build-plugin` 実行 → `dist/plugins/superclaude/.claude-plugin/` のサイズ・構成を記録。  
+   - `make build-plugin` 実行 → `dist/plugins/superagent/.claude-plugin/` のサイズ・構成を記録。  
    - `make test` および `.claude-plugin/tests/` をフル実行し、失敗時ログを保存。  
 3. **SessionStart 診断ベンチ**  
    - リポジトリの変更量を操作し、インデックス鮮度判定の挙動と出力ログ（fresh/warning/stale）の正確性を検証。  

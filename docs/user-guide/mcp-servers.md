@@ -1,12 +1,12 @@
-# SuperClaude MCP Servers Guide 🔌
+# Super Agent MCP Servers Guide 🔌
 
 ## Overview
 
-MCP (Model Context Protocol) servers extend Claude Code's capabilities through specialized tools. SuperClaude integrates 8 MCP servers and provides Claude with instructions on when to activate them based on your tasks.
+MCP (Model Context Protocol) servers extend Claude Code's capabilities through specialized tools. Super Agent integrates 8 MCP servers and provides Claude with instructions on when to activate them based on your tasks.
 
 ### 🔍 Reality Check
 - **What MCP servers are**: External Node.js processes that provide additional tools
-- **What they aren't**: Built-in SuperClaude functionality
+- **What they aren't**: Built-in Super Agent functionality
 - **How activation works**: Claude reads instructions to use appropriate servers based on context
 - **What they provide**: Real tools that extend Claude Code's native capabilities
 
@@ -306,7 +306,7 @@ echo 'export TAVILY_API_KEY="your_key"' >> ~/.bashrc
 
 ## Integration
 
-**With SuperClaude Commands:**
+**With Super Agent Commands:**
 - Analysis commands automatically use Sequential + Serena
 - Implementation commands use Magic + Context7
 - Testing commands use Playwright + Sequential

@@ -1,6 +1,6 @@
-# SuperClaude 명령어 가이드
+# Super Agent 명령어 가이드
 
-SuperClaude는 Claude Code를 위한 25개의 명령어를 제공합니다: 워크플로우를 위한 `/sc:*` 명령어와 전문가를 위한 `@agent-*`.
+Super Agent는 Claude Code를 위한 25개의 명령어를 제공합니다: 워크플로우를 위한 `/sc:*` 명령어와 전문가를 위한 `@agent-*`.
 
 ## 명령어 유형
 
@@ -8,12 +8,12 @@ SuperClaude는 Claude Code를 위한 25개의 명령어를 제공합니다: 워�
 |------|------------|--------|---------|
 | **슬래시 명령어** | Claude Code | `/sc:[명령어]` | `/sc:implement "기능"` |
 | **에이전트** | Claude Code | `@agent-[이름]` | `@agent-security "검토"` |
-| **설치** | 터미널 | `SuperClaude [명령어]` | `SuperClaude install` |
+| **설치** | 터미널 | `Super Agent [명령어]` | `Super Agent install` |
 
 ## 빠른 테스트
 ```bash
 # 터미널: 설치 확인
-python3 -m SuperClaude --version
+python3 -m Super Agent --version
 # Claude Code CLI 확인: claude --version
 
 # Claude Code: 명령어 테스트
@@ -23,13 +23,13 @@ python3 -m SuperClaude --version
 
 **워크플로우**: `/sc:brainstorm "아이디어"` → `/sc:implement "기능"` → `/sc:test`
 
-## 🎯 SuperClaude 명령어 이해하기
+## 🎯 Super Agent 명령어 이해하기
 
-## SuperClaude 작동 방식
+## Super Agent 작동 방식
 
-SuperClaude는 Claude Code가 읽어 전문화된 동작을 채택하는 행동 컨텍스트 파일을 제공합니다. `/sc:implement`를 입력하면 Claude Code는 `implement.md` 컨텍스트 파일을 읽고 행동 지침을 따릅니다.
+Super Agent는 Claude Code가 읽어 전문화된 동작을 채택하는 행동 컨텍스트 파일을 제공합니다. `/sc:implement`를 입력하면 Claude Code는 `implement.md` 컨텍스트 파일을 읽고 행동 지침을 따릅니다.
 
-**SuperClaude 명령어는 소프트웨어로 실행되지 않습니다** - 프레임워크의 전문 지침 파일을 읽어 Claude Code의 동작을 수정하는 컨텍스트 트리거입니다.
+**Super Agent 명령어는 소프트웨어로 실행되지 않습니다** - 프레임워크의 전문 지침 파일을 읽어 Claude Code의 동작을 수정하는 컨텍스트 트리거입니다.
 
 ### 명령어 유형:
 - **슬래시 명령어** (`/sc:*`): 워크플로우 패턴 및 행동 모드 트리거
@@ -38,7 +38,7 @@ SuperClaude는 Claude Code가 읽어 전문화된 동작을 채택하는 행동 
 
 ### 컨텍스트 메커니즘:
 1. **사용자 입력**: `/sc:implement "인증 시스템"` 입력
-2. **컨텍스트 로딩**: Claude Code가 `~/.claude/superclaude/Commands/implement.md` 읽음
+2. **컨텍스트 로딩**: Claude Code가 `~/.claude/superagent/Commands/implement.md` 읽음
 3. **동작 채택**: Claude가 도메인 전문 지식, 도구 선택, 검증 패턴 적용
 4. **향상된 출력**: 보안 고려사항 및 모범 사례를 갖춘 구조화된 구현
 
@@ -47,10 +47,10 @@ SuperClaude는 Claude Code가 읽어 전문화된 동작을 채택하는 행동 
 ### 설치 vs 사용 명령어
 
 **🖥️ 터미널 명령어** (실제 CLI 소프트웨어):
-- `SuperClaude install` - 프레임워크 컴포넌트 설치
-- `SuperClaude update` - 기존 설치 업데이트
-- `SuperClaude uninstall` - 프레임워크 설치 제거
-- `python3 -m SuperClaude --version` - 설치 상태 확인
+- `Super Agent install` - 프레임워크 컴포넌트 설치
+- `Super Agent update` - 기존 설치 업데이트
+- `Super Agent uninstall` - 프레임워크 설치 제거
+- `python3 -m Super Agent --version` - 설치 상태 확인
 
 **💬 Claude Code 명령어** (컨텍스트 트리거):
 - `/sc:brainstorm` - 요구사항 발견 컨텍스트 활성화
@@ -64,15 +64,15 @@ SuperClaude는 Claude Code가 읽어 전문화된 동작을 채택하는 행동 
 
 ### 🖥️ 터미널 확인 (터미널/CMD에서 실행)
 ```bash
-# SuperClaude 작동 확인 (주요 방법)
-python3 -m SuperClaude --version
-# 예상 출력: SuperClaude 4.1.5
+# Super Agent 작동 확인 (주요 방법)
+python3 -m Super Agent --version
+# 예상 출력: Super Agent 4.1.5
 
 # Claude Code CLI 버전 확인
 claude --version
 
 # 설치된 컴포넌트 확인
-python3 -m SuperClaude install --list-components | grep mcp
+python3 -m Super Agent install --list-components | grep mcp
 # 예상 출력: 설치된 MCP 컴포넌트 표시
 ```
 
@@ -93,13 +93,13 @@ python3 -m SuperClaude install --list-components | grep mcp
 
 | 명령어 유형 | 실행 위치 | 형식 | 목적 | 예제 |
 |-------------|--------------|--------|---------|----------|
-| **🖥️ 설치** | 터미널/CMD | `SuperClaude [명령어]` | 설정 및 유지보수 | `SuperClaude install` |
-| **🔧 구성** | 터미널/CMD | `python3 -m SuperClaude [명령어]` | 고급 구성 | `python3 -m SuperClaude --version` |
+| **🖥️ 설치** | 터미널/CMD | `Super Agent [명령어]` | 설정 및 유지보수 | `Super Agent install` |
+| **🔧 구성** | 터미널/CMD | `python3 -m Super Agent [명령어]` | 고급 구성 | `python3 -m Super Agent --version` |
 | **💬 슬래시 명령어** | Claude Code | `/sc:[명령어]` | 워크플로우 자동화 | `/sc:implement "기능"` |
 | **🤖 에이전트 호출** | Claude Code | `@agent-[이름]` | 수동 전문가 활성화 | `@agent-security "검토"` |
 | **⚡ 향상된 플래그** | Claude Code | `/sc:[명령어] --플래그` | 동작 수정 | `/sc:analyze --think-hard` |
 
-> **기억하세요**: 모든 `/sc:` 명령어와 `@agent-` 호출은 터미널이 아닌 Claude Code 채팅 내에서 작동합니다. 이들은 Claude Code가 SuperClaude 프레임워크에서 특정 컨텍스트 파일을 읽도록 트리거합니다.
+> **기억하세요**: 모든 `/sc:` 명령어와 `@agent-` 호출은 터미널이 아닌 Claude Code 채팅 내에서 작동합니다. 이들은 Claude Code가 Super Agent 프레임워크에서 특정 컨텍스트 파일을 읽도록 트리거합니다.
 
 ## 목차
 
@@ -350,13 +350,13 @@ python3 -m SuperClaude install --list-components | grep mcp
 ## 문제 해결
 
 **명령어 문제:**
-- **명령어를 찾을 수 없음**: 설치 확인: `python3 -m SuperClaude --version`
+- **명령어를 찾을 수 없음**: 설치 확인: `python3 -m Super Agent --version`
 - **응답 없음**: Claude Code 세션 재시작
 - **처리 지연**: MCP 서버 없이 테스트하려면 `--no-mcp` 사용
 
 **빠른 수정:**
 - 세션 재설정: `/sc:load`로 다시 초기화
-- 상태 확인: `SuperClaude install --list-components`
+- 상태 확인: `Super Agent install --list-components`
 - 도움말 받기: [문제 해결 가이드](../reference/troubleshooting.md)
 
 ## 다음 단계

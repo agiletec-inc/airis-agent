@@ -12,7 +12,7 @@
 
 **Created** `tests/conftest.py` (root-level configuration):
 ```python
-# SuperClaude pytest plugin auto-loads these fixtures:
+# Super Agent pytest plugin auto-loads these fixtures:
 # - confidence_checker
 # - self_check_protocol
 # - reflexion_pattern
@@ -58,7 +58,7 @@ $ uv run pytest tests/pm_agent/ -v
 ### 4. Import Path Migration
 
 **Fixed**:
-- ✅ `superclaude.core` → `superclaude.execution`
+- ✅ `superagent.core` → `superagent.execution`
 - ✅ Test compatibility with new package structure
 
 ---
@@ -77,10 +77,10 @@ Total:                 97 passed ✅
 
 **Collection Errors** (expected - old modules not yet migrated):
 ```
-ERROR tests/core/pm_init/test_init_hook.py        # superclaude.context
-ERROR tests/test_cli_smoke.py                      # superclaude.cli.app
+ERROR tests/core/pm_init/test_init_hook.py        # superagent.context
+ERROR tests/test_cli_smoke.py                      # superagent.cli.app
 ERROR tests/test_mcp_component.py                  # setup.components.mcp
-ERROR tests/validators/test_validators.py          # superclaude.validators
+ERROR tests/validators/test_validators.py          # superagent.validators
 ```
 
 **Total**: 12 collection errors (all from unmigrated modules)
@@ -94,10 +94,10 @@ ERROR tests/validators/test_validators.py          # superclaude.validators
 ### Entry Points Working ✅
 
 ```bash
-$ uv run pytest --trace-config | grep superclaude
-PLUGIN registered: <module 'superclaude.pytest_plugin' from '.../src/superclaude/pytest_plugin.py'>
+$ uv run pytest --trace-config | grep superagent
+PLUGIN registered: <module 'superagent.pytest_plugin' from '.../src/superagent/pytest_plugin.py'>
 registered third-party plugins:
-  superclaude-0.4.0 at .../src/superclaude/pytest_plugin.py
+  superagent-0.4.0 at .../src/superagent/pytest_plugin.py
 ```
 
 ### Fixtures Auto-Loaded ✅
@@ -159,13 +159,13 @@ $ make verify
 ======================================
 
 1. Package location:
-   /Users/kazuki/github/superclaude/src/superclaude/__init__.py
+   /Users/kazuki/github/superagent/src/superagent/__init__.py
 
 2. Package version:
-   SuperClaude, version 0.4.0
+   Super Agent, version 0.4.0
 
 3. Pytest plugin:
-   superclaude-0.4.0 at .../src/superclaude/pytest_plugin.py
+   superagent-0.4.0 at .../src/superagent/pytest_plugin.py
    ✅ Plugin loaded
 
 4. Health check:
@@ -276,8 +276,8 @@ The pytest plugin architecture is **working as designed**:
 
 ### Clean Separation ✅
 
-- **Core (PM Agent)**: Business logic in `src/superclaude/pm_agent/`
-- **Plugin**: pytest integration in `src/superclaude/pytest_plugin.py`
+- **Core (PM Agent)**: Business logic in `src/superagent/pm_agent/`
+- **Plugin**: pytest integration in `src/superagent/pytest_plugin.py`
 - **Tests**: Use plugin fixtures without knowing implementation
 
 ---

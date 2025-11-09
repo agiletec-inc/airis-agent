@@ -3,11 +3,11 @@
 
 ## Executive Summary
 
-This research investigates best practices for implementing repository-scoped memory management in AI coding assistants, with specific focus on SuperClaude PM Agent integration. Key findings indicate that **local file storage with git repository detection** is the industry standard for session isolation, offering optimal performance and developer experience.
+This research investigates best practices for implementing repository-scoped memory management in AI coding assistants, with specific focus on Super Agent PM Agent integration. Key findings indicate that **local file storage with git repository detection** is the industry standard for session isolation, offering optimal performance and developer experience.
 
-### Key Recommendations for SuperClaude
+### Key Recommendations for Super Agent
 
-1. **✅ Adopt Local File Storage**: Store memory in repository-specific directories (`.superclaude/memory/` or `docs/memory/`)
+1. **✅ Adopt Local File Storage**: Store memory in repository-specific directories (`.superagent/memory/` or `docs/memory/`)
 2. **✅ Use Git Detection**: Implement `git rev-parse --git-dir` for repository boundary detection
 3. **✅ Prioritize Simplicity**: Start with file-based approach before considering databases
 4. **✅ Maintain Backward Compatibility**: Support future cross-repository intelligence as optional feature
@@ -36,7 +36,7 @@ project-root/
 - MCP integration (Graphiti) for sophisticated memory management across sessions
 - **Problem**: Users report context loss mid-task and excessive "start new chat" prompts
 
-**Relevance to SuperClaude**: Validates local directory approach with repository-scoped configuration.
+**Relevance to Super Agent**: Validates local directory approach with repository-scoped configuration.
 
 ---
 
@@ -54,7 +54,7 @@ project-root/
 - Repository authorization through GitHub App permissions
 - **Limitation**: Context scope is workspace-wide, not repository-specific by default
 
-**Relevance to SuperClaude**: `.gitignore` integration is critical for security and performance.
+**Relevance to Super Agent**: `.gitignore` integration is critical for security and performance.
 
 ---
 
@@ -79,7 +79,7 @@ git worktree add ../feature-branch feature-branch
 3. **Detection**: SAST/DAST/SCA on pull requests
 4. **Response**: Detailed commit-prompt mapping
 
-**Relevance to SuperClaude**: PM Agent should implement context reset between repository changes.
+**Relevance to Super Agent**: PM Agent should implement context reset between repository changes.
 
 ---
 
@@ -107,7 +107,7 @@ git rev-parse --show-toplevel
 ### 2.2 Security Concerns
 
 - **Issue**: Millions of `.git` folders exposed publicly by misconfiguration
-- **Mitigation**: Always respect `.gitignore` and add `.superclaude/` to ignore patterns
+- **Mitigation**: Always respect `.gitignore` and add `.superagent/` to ignore patterns
 - **Best Practice**: Store sensitive memory data in gitignored directories
 
 ---
@@ -162,11 +162,11 @@ git rev-parse --show-toplevel
 - Semantic search across project history
 - Pattern recognition across repositories
 - Requires significant infrastructure investment
-- **Wait until**: SuperClaude reaches "super-intelligence" level
+- **Wait until**: Super Agent reaches "super-intelligence" level
 
 ---
 
-## 4. SuperClaude PM Agent Recommendations
+## 4. Super Agent PM Agent Recommendations
 
 ### 4.1 Immediate Implementation (v1)
 
@@ -175,8 +175,8 @@ git rev-parse --show-toplevel
 project-root/
 ├── .git/                          # Repository boundary
 ├── .gitignore
-│   └── .superclaude/              # Add to gitignore
-├── .superclaude/
+│   └── .superagent/              # Add to gitignore
+├── .superagent/
 │   └── memory/
 │       ├── session_state.json     # Current session context
 │       ├── pm_context.json        # PM Agent PDCA state
@@ -184,7 +184,7 @@ project-root/
 │           ├── 2025-10-16_auth.md
 │           └── 2025-10-15_db.md
 └── docs/
-    └── superclaude/               # Human-readable documentation
+    └── superagent/               # Human-readable documentation
         ├── patterns/              # Successful patterns
         └── mistakes/              # Error prevention
 
@@ -214,12 +214,12 @@ def get_memory_dir() -> Path:
     """Get repository-scoped memory directory."""
     repo_root = get_repository_root()
     if repo_root:
-        memory_dir = repo_root / ".superclaude" / "memory"
+        memory_dir = repo_root / ".superagent" / "memory"
         memory_dir.mkdir(parents=True, exist_ok=True)
         return memory_dir
     else:
         # Fallback to global memory if not in git repo
-        return Path.home() / ".superclaude" / "memory" / "global"
+        return Path.home() / ".superagent" / "memory" / "global"
 ```
 
 **Session Lifecycle Integration**:
@@ -230,7 +230,7 @@ def restore_session_context():
     if not repo_root:
         return {}  # No repository context
 
-    memory_file = repo_root / ".superclaude" / "memory" / "pm_context.json"
+    memory_file = repo_root / ".superagent" / "memory" / "pm_context.json"
     if memory_file.exists():
         return json.loads(memory_file.read_text())
     return {}
@@ -241,7 +241,7 @@ def save_session_context(context: dict):
     if not repo_root:
         return  # Don't save if not in repository
 
-    memory_file = repo_root / ".superclaude" / "memory" / "pm_context.json"
+    memory_file = repo_root / ".superagent" / "memory" / "pm_context.json"
     memory_file.parent.mkdir(parents=True, exist_ok=True)
     memory_file.write_text(json.dumps(context, indent=2))
 ```
@@ -253,21 +253,21 @@ def save_session_context(context: dict):
 **PDCA Cycle Integration**:
 ```python
 # Plan Phase
-write_memory(repo_root / ".superclaude/memory/plan.json", {
+write_memory(repo_root / ".superagent/memory/plan.json", {
     "hypothesis": "...",
     "success_criteria": "...",
     "risks": [...]
 })
 
 # Do Phase
-write_memory(repo_root / ".superclaude/memory/experiment.json", {
+write_memory(repo_root / ".superagent/memory/experiment.json", {
     "trials": [...],
     "errors": [...],
     "solutions": [...]
 })
 
 # Check Phase
-write_memory(repo_root / ".superclaude/memory/evaluation.json", {
+write_memory(repo_root / ".superagent/memory/evaluation.json", {
     "outcomes": {...},
     "adherence_check": "...",
     "completion_status": "..."
@@ -275,17 +275,17 @@ write_memory(repo_root / ".superclaude/memory/evaluation.json", {
 
 # Act Phase
 if success:
-    move_to_patterns(repo_root / "docs/superclaude/patterns/pattern-name.md")
+    move_to_patterns(repo_root / "docs/superagent/patterns/pattern-name.md")
 else:
-    move_to_mistakes(repo_root / "docs/superclaude/mistakes/mistake-YYYY-MM-DD.md")
+    move_to_mistakes(repo_root / "docs/superagent/mistakes/mistake-YYYY-MM-DD.md")
 ```
 
 ---
 
 ### 4.3 Context Isolation Strategy
 
-**Problem**: User switches from `SuperClaude_Framework` to `airis-mcp-gateway`
-**Current Behavior**: PM Agent retains SuperClaude context → Noise
+**Problem**: User switches from `superagent` to `airis-mcp-gateway`
+**Current Behavior**: PM Agent retains Super Agent context → Noise
 **Desired Behavior**: PM Agent detects repository change → Clears context → Loads airis-mcp-gateway context
 
 **Implementation**:
@@ -312,7 +312,7 @@ class RepositoryContextManager:
 
     def load_context(self, repo_root: Path) -> dict:
         """Load repository-specific context."""
-        memory_file = repo_root / ".superclaude" / "memory" / "pm_context.json"
+        memory_file = repo_root / ".superagent" / "memory" / "pm_context.json"
         if memory_file.exists():
             return json.loads(memory_file.read_text())
         return {}
@@ -321,7 +321,7 @@ class RepositoryContextManager:
         """Save current context to repository."""
         if not repo_root:
             return
-        memory_file = repo_root / ".superclaude" / "memory" / "pm_context.json"
+        memory_file = repo_root / ".superagent" / "memory" / "pm_context.json"
         memory_file.parent.mkdir(parents=True, exist_ok=True)
         memory_file.write_text(json.dumps(self.context, indent=2))
 ```
@@ -342,11 +342,11 @@ if context_mgr.check_repository_change():
 
 **Add to .gitignore**:
 ```gitignore
-# SuperClaude Memory (session-specific, not for version control)
-.superclaude/memory/
+# Super Agent Memory (session-specific, not for version control)
+.superagent/memory/
 
 # Keep architectural decisions (optional - can be versioned)
-# !.superclaude/memory/decisions/
+# !.superagent/memory/decisions/
 ```
 
 **Rationale**:
@@ -364,13 +364,13 @@ if context_mgr.check_repository_change():
 
 **Architecture**:
 ```
-~/.superclaude/
+~/.superagent/
 └── global_memory/
     ├── patterns/              # Cross-repo patterns
     │   ├── authentication.json
     │   └── testing.json
     └── repo_index/            # Repository metadata
-        ├── SuperClaude_Framework.json
+        ├── superagent.json
         └── airis-mcp-gateway.json
 ```
 
@@ -392,7 +392,7 @@ def get_relevant_context(current_repo: str) -> dict:
 
 ### 5.2 Vector Database Integration
 
-**When to implement**: If SuperClaude requires semantic search across 100+ repositories
+**When to implement**: If Super Agent requires semantic search across 100+ repositories
 
 **Use Case**:
 - "Find all authentication implementations across my projects"
@@ -411,9 +411,9 @@ def get_relevant_context(current_repo: str) -> dict:
 **Effort**: Low
 
 - [ ] Implement `get_repository_root()` detection
-- [ ] Create `.superclaude/memory/` directory structure
+- [ ] Create `.superagent/memory/` directory structure
 - [ ] Integrate with PM Agent session lifecycle
-- [ ] Add `.superclaude/memory/` to `.gitignore`
+- [ ] Add `.superagent/memory/` to `.gitignore`
 - [ ] Test repository change detection
 
 **Success Criteria**:
@@ -428,7 +428,7 @@ def get_relevant_context(current_repo: str) -> dict:
 **Effort**: Medium
 
 - [ ] Integrate Plan/Do/Check/Act with file storage
-- [ ] Implement `docs/superclaude/patterns/` and `docs/superclaude/mistakes/`
+- [ ] Implement `docs/superagent/patterns/` and `docs/superagent/mistakes/`
 - [ ] Create ADR (Architectural Decision Records) format
 - [ ] Add 7-day cleanup for `docs/temp/`
 
@@ -468,7 +468,7 @@ def get_relevant_context(current_repo: str) -> dict:
 | **Developer UX** | ⭐⭐⭐⭐⭐ Excellent | ⭐⭐⭐ Good | ⭐⭐ Fair |
 | **Maintenance** | ⭐⭐⭐⭐⭐ None | ⭐⭐⭐ Regular | ⭐⭐ Intensive |
 
-**Recommendation for SuperClaude v1**: **Local Files** (clear winner for repository-scoped memory)
+**Recommendation for Super Agent v1**: **Local Files** (clear winner for repository-scoped memory)
 
 ---
 
@@ -498,12 +498,12 @@ def redact_sensitive_data(text: str) -> str:
 ### 8.2 .gitignore Best Practices
 
 **Always gitignore**:
-- `.superclaude/memory/` (session state)
-- `.superclaude/temp/` (temporary files)
+- `.superagent/memory/` (session state)
+- `.superagent/temp/` (temporary files)
 
 **Optional versioning** (team decision):
-- `.superclaude/memory/decisions/` (ADRs)
-- `docs/superclaude/patterns/` (successful patterns)
+- `.superagent/memory/decisions/` (ADRs)
+- `docs/superagent/patterns/` (successful patterns)
 
 ---
 
@@ -516,20 +516,20 @@ def redact_sensitive_data(text: str) -> str:
 3. **✅ Start Simple, Evolve Later**: Files → Database (if needed) → Vector DB (far future)
 4. **✅ Repository Isolation is Critical**: Prevents context noise across projects
 
-### Recommended Architecture for SuperClaude
+### Recommended Architecture for Super Agent
 
 ```
-SuperClaude_Framework/
+superagent/
 ├── .git/
-├── .gitignore (+.superclaude/memory/)
-├── .superclaude/
+├── .gitignore (+.superagent/memory/)
+├── .superagent/
 │   └── memory/
 │       ├── pm_context.json       # Current session state
 │       ├── plan.json             # PDCA Plan phase
 │       ├── experiment.json       # PDCA Do phase
 │       └── evaluation.json       # PDCA Check phase
 └── docs/
-    └── superclaude/
+    └── superagent/
         ├── patterns/             # Successful implementations
         │   └── authentication-jwt.md
         └── mistakes/             # Error prevention
@@ -539,7 +539,7 @@ SuperClaude_Framework/
 **Next Steps**:
 1. Implement `RepositoryContextManager` class
 2. Integrate with PM Agent session lifecycle
-3. Add `.superclaude/memory/` to `.gitignore`
+3. Add `.superagent/memory/` to `.gitignore`
 4. Test with repository switching scenarios
 5. Document for team adoption
 

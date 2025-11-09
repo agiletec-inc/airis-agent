@@ -1,4 +1,4 @@
-# SuperClaude Plugin Installation Guide
+# Super Agent Plugin Installation Guide
 
 ## 公式インストール方法（推奨）
 
@@ -25,12 +25,12 @@
 
 1. Claude Code でマーケットプレイスを追加:
    ```
-   /plugin marketplace add /Users/kazuki/github/superclaude
+   /plugin marketplace add /Users/kazuki/github/superagent
    ```
 
 2. プラグインをインストール:
    ```
-   /plugin install pm-agent@superclaude-local
+   /plugin install pm-agent@superagent-local
    ```
 
 3. Claude Code を再起動
@@ -145,7 +145,7 @@ Claude Code のバージョンを確認してください。2.0.x には既知�
 
 ## 開発者向け情報
 
-プラグインのソースコードは `/Users/kazuki/github/superclaude/` にあります。
+プラグインのソースコードは `/Users/kazuki/github/superagent/` にあります。
 
 変更を反映するには：
 ```bash

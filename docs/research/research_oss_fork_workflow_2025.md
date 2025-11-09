@@ -23,9 +23,9 @@ feature/*: 機能開発ブランチ（upstream/masterから派生）
 ## 📚 Current Structure
 
 ```
-upstream: SuperClaude-Org/SuperClaude_Framework ← OSS本家
+upstream: kazuki/superagent ← OSS本家
   ↓ (fork)
-origin: kazukinakai/SuperClaude_Framework ← 個人フォーク
+origin: kazukinakai/superagent ← 個人フォーク
 ```
 
 **Current Branches**:
@@ -41,19 +41,19 @@ origin: kazukinakai/SuperClaude_Framework ← 個人フォーク
 
 ```bash
 # 1. Fork on GitHub UI
-# SuperClaude-Org/SuperClaude_Framework → kazukinakai/SuperClaude_Framework
+# kazuki/superagent → kazukinakai/superagent
 
 # 2. Clone personal fork
-git clone https://github.com/kazukinakai/SuperClaude_Framework.git
-cd SuperClaude_Framework
+git clone https://github.com/kazukinakai/superagent.git
+cd superagent
 
 # 3. Add upstream remote
-git remote add upstream https://github.com/SuperClaude-Org/SuperClaude_Framework.git
+git remote add upstream https://github.com/kazuki/superagent.git
 
 # 4. Verify remotes
 git remote -v
-# origin    https://github.com/kazukinakai/SuperClaude_Framework.git (fetch/push)
-# upstream  https://github.com/SuperClaude-Org/SuperClaude_Framework.git (fetch/push)
+# origin    https://github.com/kazukinakai/superagent.git (fetch/push)
+# upstream  https://github.com/kazuki/superagent.git (fetch/push)
 ```
 
 ### Phase 2: Daily Workflow
@@ -151,7 +151,7 @@ git diff master...feature/pm-agent-redesign
 git push origin feature/pm-agent-redesign
 
 # Create PR using GitHub CLI
-gh pr create --repo SuperClaude-Org/SuperClaude_Framework \
+gh pr create --repo kazuki/superagent \
   --title "feat: PM Agent session persistence with local memory" \
   --body "$(cat <<'EOF'
 ## Summary
@@ -372,7 +372,7 @@ git checkout -b feature/xxx master
 git rebase -i master
 git diff master...feature/xxx  # verify clean diff
 git push origin feature/xxx
-gh pr create --repo SuperClaude-Org/SuperClaude_Framework
+gh pr create --repo kazuki/superagent
 ```
 
 ---

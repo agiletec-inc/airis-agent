@@ -1,6 +1,6 @@
-# SuperClaude 에이전트 가이드 🤖
+# Super Agent 에이전트 가이드 🤖
 
-SuperClaude는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개의 도메인 전문 에이전트를 제공합니다.
+Super Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개의 도메인 전문 에이전트를 제공합니다.
 
 ## 🧪 에이전트 활성화 테스트
 
@@ -33,9 +33,9 @@ SuperClaude는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 
 ## 핵심 개념
 
-### SuperClaude 에이전트란?
+### Super Agent 에이전트란?
 
-**에이전트**는 Claude Code의 동작을 수정하는 컨텍스트 지시문으로 구현된 전문 AI 도메인 전문가입니다. 각 에이전트는 `superclaude/Agents/` 디렉토리에 있는 신중하게 작성된 `.md` 파일로, 도메인별 전문 지식, 행동 패턴, 문제 해결 접근 방식을 포함합니다.
+**에이전트**는 Claude Code의 동작을 수정하는 컨텍스트 지시문으로 구현된 전문 AI 도메인 전문가입니다. 각 에이전트는 `superagent/Agents/` 디렉토리에 있는 신중하게 작성된 `.md` 파일로, 도메인별 전문 지식, 행동 패턴, 문제 해결 접근 방식을 포함합니다.
 
 **중요**: 에이전트는 별도의 AI 모델이나 소프트웨어가 아닙니다 - Claude Code가 읽어 전문화된 행동을 채택하는 컨텍스트 구성입니다.
 
@@ -50,7 +50,7 @@ SuperClaude는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 ```
 
 #### 2. 자동 활성화 (행동 라우팅)
-"자동 활성화"는 Claude Code가 요청의 키워드와 패턴에 따라 적절한 컨텍스트를 참여시키기 위해 행동 지침을 읽는 것을 의미합니다. SuperClaude는 Claude가 가장 적절한 전문가에게 라우팅하기 위해 따르는 행동 가이드라인을 제공합니다.
+"자동 활성화"는 Claude Code가 요청의 키워드와 패턴에 따라 적절한 컨텍스트를 참여시키기 위해 행동 지침을 읽는 것을 의미합니다. Super Agent는 Claude가 가장 적절한 전문가에게 라우팅하기 위해 따르는 행동 가이드라인을 제공합니다.
 
 > **📝 에이전트 "자동 활성화" 작동 방식**: 
 > 에이전트 활성화는 자동 시스템 로직이 아닙니다 - 컨텍스트 파일의 행동 지침입니다.
@@ -135,7 +135,7 @@ SuperClaude는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 
 ---
 
-## SuperClaude 에이전트 팀 👥
+## Super Agent 에이전트 팀 👥
 
 ### 아키텍처 및 시스템 설계 에이전트 🏗️
 
@@ -603,11 +603,11 @@ SuperClaude는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 - 대상 에이전트의 트리거 키워드 검토
 
 **전문가 지원:**
-- `SuperClaude install --diagnose` 사용
+- `Super Agent install --diagnose` 사용
 - 조정 분석은 [진단 참조 가이드](../reference/diagnostic-reference.md) 참조
 
 **커뮤니티 지원:**
-- [GitHub Issues](https://github.com/SuperClaude-Org/SuperClaude_Framework/issues)에서 문제 보고
+- [GitHub Issues](https://github.com/kazuki/superagent/issues)에서 문제 보고
 - 예상 대비 실제 에이전트 활성화 예제 포함
 
 ### 성공 검증
@@ -832,7 +832,7 @@ SuperClaude는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 ## 관련 리소스 📚
 
 ### 필수 문서
-- **[명령어 가이드](commands.md)** - 최적의 에이전트 조정을 트리거하는 SuperClaude 명령어 마스터
+- **[명령어 가이드](commands.md)** - 최적의 에이전트 조정을 트리거하는 Super Agent 명령어 마스터
 - **[MCP 서버](mcp-servers.md)** - 전문 도구 통합을 통한 향상된 에이전트 기능
 - **[세션 관리](session-management.md)** - 영구 에이전트 컨텍스트를 사용한 장기 워크플로우
 
@@ -842,7 +842,7 @@ SuperClaude는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 - **[예제 모음](../reference/examples-cookbook.md)** - 실제 에이전트 조정 패턴
 
 ### 개발 리소스
-- **[기술 아키텍처](../developer-guide/technical-architecture.md)** - SuperClaude의 에이전트 시스템 설계 이해
+- **[기술 아키텍처](../developer-guide/technical-architecture.md)** - Super Agent의 에이전트 시스템 설계 이해
 - **[기여하기](../developer-guide/contributing-code.md)** - 에이전트 기능 및 조정 패턴 확장
 
 ---
@@ -858,7 +858,7 @@ SuperClaude는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 **2개월 이상: 전문가 조정**
 최적의 에이전트 조합을 트리거하는 다중 도메인 요청을 마스터하세요. 효과적인 에이전트 선택을 위한 문제 해결 기법을 활용하세요. 복잡한 워크플로우를 위한 고급 패턴을 사용하세요.
 
-**SuperClaude 이점:**
+**Super Agent 이점:**
 간단하고 자연스러운 언어 요청을 통해 조정된 응답으로 작동하는 14명의 전문 AI 전문가의 힘을 경험하세요. 구성도, 관리도 필요 없이, 필요에 따라 확장되는 지능적인 협업만 있습니다.
 
 🎯 **지능적인 에이전트 조정을 경험할 준비가 되셨나요? `/sc:implement`로 시작하여 전문 AI 협업의 마법을 발견하세요.**

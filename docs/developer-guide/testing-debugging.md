@@ -1,10 +1,10 @@
-# SuperClaude Verification and Troubleshooting Guide
+# Super Agent Verification and Troubleshooting Guide
 
 ## Overview
 
-This guide covers how to verify your SuperClaude installation and troubleshoot common issues with context files and configurations.
+This guide covers how to verify your Super Agent installation and troubleshoot common issues with context files and configurations.
 
-**Important**: SuperClaude is a collection of context files, not executable software. This guide focuses on verifying context files are properly installed and accessible to Claude Code.
+**Important**: Super Agent is a collection of context files, not executable software. This guide focuses on verifying context files are properly installed and accessible to Claude Code.
 
 ## Table of Contents
 
@@ -19,9 +19,9 @@ This guide covers how to verify your SuperClaude installation and troubleshoot c
 ### Check Installation Status
 
 ```bash
-# Verify SuperClaude installation system is available
-python3 -m SuperClaude --version
-# Expected: SuperClaude Framework installation help
+# Verify Super Agent installation system is available
+python3 -m Super Agent --version
+# Expected: Super Agent installation help
 
 # Verify Claude Code CLI integration
 claude --version
@@ -149,7 +149,7 @@ npx -y @upstash/context7-mcp@latest --help 2>/dev/null && echo "✅ Context7 ava
 ```bash
 # Check if command file exists
 ls ~/.claude/commands/implement.md
-# If missing, reinstall SuperClaude
+# If missing, reinstall Super Agent
 
 # Verify file content
 head -20 ~/.claude/commands/implement.md
@@ -159,7 +159,7 @@ head -20 ~/.claude/commands/implement.md
 **Solution**:
 ```bash
 # Reinstall commands component
-PYTHONPATH=/path/to/SuperClaude_Framework python3 -m setup install --components commands --force
+PYTHONPATH=/path/to/superagent python3 -m setup install --components commands --force
 ```
 
 ### Issue: Agents Not Activating
@@ -178,12 +178,12 @@ cat ~/.claude/agents/python-expert.md | head -20
 **Solution**:
 ```bash
 # Reinstall agents
-PYTHONPATH=/path/to/SuperClaude_Framework python3 -m setup install --components agents --force
+PYTHONPATH=/path/to/superagent python3 -m setup install --components agents --force
 ```
 
 ### Issue: Context Not Loading
 
-**Symptom**: Claude Code doesn't seem to read SuperClaude context
+**Symptom**: Claude Code doesn't seem to read Super Agent context
 
 **Verification**:
 ```bash
@@ -220,7 +220,7 @@ python3 -c "import json; json.load(open('$HOME/.claude.json'))" && echo "✅ Val
 # Windows: Download from nodejs.org
 
 # Fix JSON syntax if invalid
-PYTHONPATH=/path/to/SuperClaude_Framework python3 -m setup install --components mcp --force
+PYTHONPATH=/path/to/superagent python3 -m setup install --components mcp --force
 ```
 
 ## Troubleshooting Commands
@@ -229,18 +229,18 @@ PYTHONPATH=/path/to/SuperClaude_Framework python3 -m setup install --components 
 
 ```bash
 #!/bin/bash
-# SuperClaude Quick Diagnostic Script
+# Super Agent Quick Diagnostic Script
 
-echo "=== SuperClaude Diagnostic ==="
+echo "=== Super Agent Diagnostic ==="
 echo ""
 
 # Check installation system
 echo "1. Installation System:"
-if command -v SuperClaude &> /dev/null; then
-    echo "   ✅ SuperClaude installation available"
-    python3 -m SuperClaude --version
+if command -v Super Agent &> /dev/null; then
+    echo "   ✅ Super Agent installation available"
+    python3 -m Super Agent --version
 else
-    echo "   ❌ SuperClaude not found - install with: pipx install SuperClaude (or pip install SuperClaude)"
+    echo "   ❌ Super Agent not found - install with: pipx install Super Agent (or pip install Super Agent)"
 fi
 
 # Check context files
@@ -296,7 +296,7 @@ cp -r ~/.claude ~/.claude.backup.$(date +%Y%m%d)
 rm -rf ~/.claude
 
 # Reinstall everything
-PYTHONPATH=/path/to/SuperClaude_Framework python3 -m setup install
+PYTHONPATH=/path/to/superagent python3 -m setup install
 
 # Restore any customizations from backup if needed
 ```
@@ -321,4 +321,4 @@ PYTHONPATH=/path/to/SuperClaude_Framework python3 -m setup install
 
 ## Summary
 
-Verification for SuperClaude focuses on ensuring context files are properly installed and accessible to Claude Code. Since SuperClaude is not software but a configuration framework, verification centers on file presence, integrity, and behavioral testing in Claude Code conversations.
+Verification for Super Agent focuses on ensuring context files are properly installed and accessible to Claude Code. Since Super Agent is not software but a configuration framework, verification centers on file presence, integrity, and behavioral testing in Claude Code conversations.

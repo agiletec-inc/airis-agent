@@ -10,7 +10,7 @@
 - **オプション**: `-v --tb=short --strict-markers`
 
 ### カバレッジ設定
-- **対象**: `superclaude/`, `setup/`
+- **対象**: `superagent/`, `setup/`
 - **除外**: `*/tests/*`, `*/test_*`, `*/__pycache__/*`
 - **目標**: 90%以上のカバレッジ
 - **レポート**: `show_missing = true` で未カバー行を表示
@@ -38,10 +38,10 @@ tests/
 black .
 
 # 型チェック
-mypy superclaude setup
+mypy superagent setup
 
 # リンター
-flake8 superclaude setup
+flake8 superagent setup
 ```
 
 ### 2. テスト実行
@@ -50,7 +50,7 @@ flake8 superclaude setup
 pytest -v
 
 # カバレッジチェック（90%以上必須）
-pytest --cov=superclaude --cov=setup --cov-report=term-missing
+pytest --cov=superagent --cov=setup --cov-report=term-missing
 ```
 
 ### 3. ドキュメント更新

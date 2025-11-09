@@ -15,7 +15,7 @@
 
 ### This PR - Core型PM Agent
 
-**場所**: `src/superclaude/pm_agent/` Pythonパッケージ
+**場所**: `src/superagent/pm_agent/` Pythonパッケージ
 **形式**: Pure Python modules
 **読み込み**: pytest実行時のみ、import必要分だけ
 
@@ -37,7 +37,7 @@
         └── workflows/
             └── task-management.md       # ~15KB - タスク管理
 
-superclaude/
+superagent/
 ├── agents/
 │   └── pm-agent.md                      # ~50KB - Agent定義
 ├── commands/
@@ -64,7 +64,7 @@ Total: ~150KB ≈ 35K-40K tokens
 ### This PR (Clean Architecture)
 
 ```
-src/superclaude/
+src/superagent/
 └── pm_agent/                            # Python package
     ├── __init__.py                      # Package exports
     ├── confidence.py                    # ~8KB - Pre-execution
@@ -115,7 +115,7 @@ Token Cost: ~8K (memory files) + 200 (confidence)
 #### This PR
 ```python
 # 自動実行なし - 手動で呼び出し
-from superclaude.pm_agent.confidence import ConfidenceChecker
+from superagent.pm_agent.confidence import ConfidenceChecker
 
 checker = ConfidenceChecker()
 confidence = checker.assess(context)
@@ -134,7 +134,7 @@ Token Cost: ~2K (confidence moduleのみ)
 
 #### Upstream (本家)
 ```markdown
-# superclaude/agents/pm-agent.md より
+# superagent/agents/pm-agent.md より
 
 Confidence Check (200 tokens):
   ❓ "全ファイル読めた？"
@@ -147,7 +147,7 @@ Location: Agent definition内
 
 #### This PR
 ```python
-# src/superclaude/pm_agent/confidence.py
+# src/superagent/pm_agent/confidence.py
 
 class ConfidenceChecker:
     def assess(self, context: Dict[str, Any]) -> float:
@@ -198,7 +198,7 @@ Output: docs/pdca/[feature]/check.md
 
 #### This PR
 ```python
-# src/superclaude/pm_agent/self_check.py
+# src/superagent/pm_agent/self_check.py
 
 class SelfCheckProtocol:
     def validate(self, implementation: Dict[str, Any])
@@ -229,7 +229,7 @@ class SelfCheckProtocol:
 
 #### Upstream (本家)
 ```python
-# superclaude/core/pm_init/reflexion_memory.py
+# superagent/core/pm_init/reflexion_memory.py
 
 class ReflexionMemory:
     """
@@ -243,7 +243,7 @@ class ReflexionMemory:
 
 #### This PR
 ```python
-# src/superclaude/pm_agent/reflexion.py
+# src/superagent/pm_agent/reflexion.py
 
 class ReflexionPattern:
     """
@@ -283,7 +283,7 @@ Enforcement: 手動
 
 #### This PR
 ```python
-# src/superclaude/pm_agent/token_budget.py
+# src/superagent/pm_agent/token_budget.py
 
 class TokenBudgetManager:
     BUDGETS = {
@@ -357,7 +357,7 @@ EVERY session start:
 **This PR**:
 ```python
 # Manual activation required
-from superclaude.pm_agent.confidence import ConfidenceChecker
+from superagent.pm_agent.confidence import ConfidenceChecker
 checker = ConfidenceChecker()
 ```
 
@@ -418,11 +418,11 @@ Auto-generate:
 pip install -e .
 
 # Skills PM Agent (Upstream) - optional
-superclaude install-skill pm-agent
+superagent install-skill pm-agent
 ```
 
 **Result**:
-- Pytest fixtures: `src/superclaude/pm_agent/`
+- Pytest fixtures: `src/superagent/pm_agent/`
 - Auto-activation: `~/.claude/skills/pm/`
 - **両方利用可能**
 
@@ -431,7 +431,7 @@ superclaude install-skill pm-agent
 **Option 2: Skills完全移行**
 ```bash
 # 本家Skills版のみ使用
-superclaude install-skill pm-agent
+superagent install-skill pm-agent
 
 # Pytest fixturesは使わない
 ```
