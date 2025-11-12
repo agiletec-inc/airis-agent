@@ -4,9 +4,10 @@ Super Agent CLI Main Entry Point
 Provides command-line interface for Super Agent operations.
 """
 
-import click
-from pathlib import Path
 import sys
+from pathlib import Path
+
+import click
 
 # Add parent directory to path to import superagent
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))

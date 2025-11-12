@@ -9,12 +9,12 @@ __version__ = "0.4.0"
 __author__ = "Kazuki Nakai"
 
 # Expose main components
-from .pm_agent.confidence import ConfidenceChecker
-from .pm_agent.self_check import SelfCheckProtocol
-from .pm_agent.reflexion import ReflexionPattern
 from .api.confidence import ConfidenceRequest, ConfidenceResponse, evaluate_confidence
-from .api.repo_index import RepoIndexRequest, RepoIndexResponse, generate_repo_index
 from .api.deep_research import ResearchRequest, ResearchResponse, perform_research
+from .api.repo_index import RepoIndexRequest, RepoIndexResponse, generate_repo_index
+from .pm_agent.confidence import ConfidenceChecker
+from .pm_agent.reflexion import ReflexionPattern
+from .pm_agent.self_check import SelfCheckProtocol
 
 __all__ = [
     "ConfidenceChecker",

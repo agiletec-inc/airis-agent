@@ -45,134 +45,207 @@ make build-plugin
 # 3. Add local marketplace
 /plugin marketplace add /path/to/superagent
 
-2. プラグインをインストール:
-   ```
-   /plugin install pm-agent@superagent-local
-   ```
+# 4. Install plugin
+/plugin install superagent
+```
 
-3. Claude Code を再起動
+## What's Included
 
-4. 動作確認:
-   ```
-   /pm
-   /research
-   /index-repo
-   ```
+### Commands
 
-#### 方法B: 開発者モード（直接コピー）
+- **`/agent`** - Session orchestrator
+  - Auto-launches at session start
+  - Coordinates confidence checks, research, and indexing
+  - Manages implementation workflow
 
-**注意**: この方法は開発中のテスト用です。公式方法（方法A）の使用を推奨します。
+- **`/research`** - Deep research agent
+  - Parallel web search with Tavily/Context7 integration
+  - Evidence-based synthesis
+  - Multiple depth levels (quick, standard, deep, exhaustive)
+
+- **`/index-repo`** - Repository indexer
+  - Generates PROJECT_INDEX.md (94% token reduction)
+  - Analyzes codebase structure
+  - Creates machine-readable PROJECT_INDEX.json
+
+### Agents
+
+- **`@deep-research`** - External knowledge gathering specialist
+- **`@repo-index`** - Codebase briefing assistant
+- **`@self-review`** - Post-implementation validation
+
+### Skills
+
+- **`@confidence-check`** - Pre-implementation validation
+  - Confidence score ≥0.90 required before implementation
+  - Returns checklist and action plan
+  - 25-250x token savings ROI
+
+### Auto-Activation
+
+The plugin includes a SessionStart hook that:
+1. Checks git status
+2. Reports core services availability
+3. Activates the `/agent` command automatically
+
+## Verification
+
+After installation, verify the plugin is active:
 
 ```bash
-# プロジェクトルートで実行
-make reinstall-plugin-dev
+# Check available plugins
+/plugin list
+
+# Check if Super Agent is enabled
+# You should see:
+# - superagent (enabled)
 ```
 
-Claude Code を再起動後、コマンドが利用可能になります。
+## Usage Examples
 
-## インストールされるコマンド
+### Basic Workflow
 
-### /pm
-PM Agent モードを起動。以下の機能を提供：
-- 90%信頼度チェック（実装前）
-- 並列実行最適化
-- トークン予算管理
-- エビデンスベース開発
+```bash
+# 1. Plugin auto-activates at session start
+# Output: "Super Agent ready — awaiting task assignment."
 
-### /research
-Deep Research モード。以下の機能を提供：
-- 並列Web検索（Tavily MCP）
-- 公式ドキュメント優先
-- ソース検証
-- 信頼度付き結果
+# 2. Assign a task
+User: "Add user authentication to the API"
 
-### /index-repo
-リポジトリインデックス作成。以下の機能を提供：
-- プロジェクト構造解析
-- 94%トークン削減（58K → 3K）
-- エントリポイント特定
-- モジュールマップ生成
+# 3. Agent runs confidence check automatically
+# Output: "📊 Confidence: 0.85 - Gathering more information..."
 
-## フックの自動実行
+# 4. Agent may trigger research if needed
+# Uses @deep-research for official documentation
 
-SessionStart フックにより、新しいセッション開始時に `/pm` コマンドが自動実行されます。
+# 5. Implementation with self-review
+# Uses @self-review to validate results
+```
 
-無効化したい場合は、`~/.claude/plugins/pm-agent/hooks/hooks.json` を編集してください。
+### Manual Commands
 
-## トラブルシューティング
+```bash
+# Run deep research
+/research "Best practices for JWT authentication in Python 2025"
 
-### コマンドが認識されない場合
+# Index repository
+/index-repo
 
-1. **ripgrep の確認**:
-   ```bash
-   which rg
-   rg --version
-   ```
+# Update existing index
+/index-repo mode=update
+```
 
-   インストールされていない場合：
-   ```bash
-   brew install ripgrep
-   ```
+## Configuration
 
-2. **環境変数の確認**:
-   ```bash
-   echo $USE_BUILTIN_RIPGREP
-   ```
+### Disable Auto-Activation
 
-   設定されていない場合：
-   ```bash
-   echo 'export USE_BUILTIN_RIPGREP=0' >> ~/.zshrc
-   exec $SHELL
-   ```
+If you prefer manual activation, modify `hooks/hooks.json`:
 
-3. **プラグインの確認**:
-   ```bash
-   ls -la ~/.claude/plugins/pm-agent/
-   ```
+```json
+{
+  "hooks": {
+    "SessionStart": []
+  }
+}
+```
 
-   存在しない場合は再インストール：
-   ```bash
-   make reinstall-plugin-dev
-   ```
+### Customize Session Init
 
-4. **Claude Code を再起動**
+Edit `scripts/session-init.sh` to customize startup behavior.
 
-### それでも動かない場合
+## Troubleshooting
 
-Claude Code のバージョンを確認してください。2.0.x には既知のバグがあります：
-- GitHub Issue #8831: Custom slash commands not discovered
+### Plugin Not Found
 
-回避策：
-- NPM版に切り替える（Homebrew版にバグの可能性）
-- ripgrep をシステムにインストール（上記手順）
+```bash
+# Verify marketplace is added
+/plugin marketplace list
 
-## プラグイン構造（参考）
+# Re-add if needed
+/plugin marketplace add kazuki/superagent
+```
+
+### Commands Not Available
+
+```bash
+# Check if plugin is enabled
+/plugin list
+
+# Enable if needed
+/plugin enable superagent
+```
+
+### Auto-Activation Not Working
+
+1. Check if SessionStart hook is configured in `hooks/hooks.json`
+2. Verify `scripts/session-init.sh` is executable
+3. Check Claude Code logs for hook execution errors
+
+## Uninstallation
+
+```bash
+# Disable the plugin
+/plugin disable superagent
+
+# Remove the plugin completely
+/plugin uninstall superagent
+
+# Remove the marketplace
+/plugin marketplace remove kazuki/superagent
+```
+
+## Development
+
+### Building the Plugin
+
+```bash
+# Build plugin artifacts
+make build-plugin
+
+# Sync to distribution repo (if applicable)
+make sync-plugin-repo PLUGIN_REPO=/path/to/dist-repo
+```
+
+### Testing
+
+```bash
+# Run plugin tests
+uv run pytest plugins/superagent/tests/
+
+# Run confidence check tests
+uv run python dist/plugins/superagent/.claude-plugin/tests/run_confidence_tests.py
+```
+
+## Plugin Structure
 
 ```
-~/.claude/plugins/pm-agent/
-├── plugin.json          # プラグインメタデータ
-├── marketplace.json     # マーケットプレイス情報
-├── commands/            # Markdown コマンド
-│   ├── pm.md
+dist/plugins/superagent/
+├── .claude-plugin/
+│   ├── plugin.json          # Plugin metadata
+│   ├── marketplace.json     # Marketplace info
+│   └── tests/               # Plugin tests
+├── commands/                # Command definitions
+│   ├── agent.md
 │   ├── research.md
 │   └── index-repo.md
-└── hooks/
-    └── hooks.json       # SessionStart フック設定
+├── agents/                  # Agent definitions
+│   ├── deep-research.md
+│   ├── repo-index.md
+│   └── self-review.md
+├── skills/                  # TypeScript skills
+│   └── confidence-check/
+├── hooks/                   # Hook configurations
+│   └── hooks.json
+└── scripts/                 # Utility scripts
+    └── session-init.sh
 ```
 
-## 開発者向け情報
+## Support
 
-プラグインのソースコードは `/Users/kazuki/github/superagent/` にあります。
+- **Issues**: https://github.com/kazuki/superagent/issues
+- **Documentation**: See `docs/` directory
+- **CLAUDE.md**: Project-specific guidance for Claude Code
 
-変更を反映するには：
-```bash
-make reinstall-plugin-dev
-# Claude Code を再起動
-```
+## License
 
-## サポート
-
-問題が発生した場合は、以下を確認してください：
-- 公式ドキュメント: https://docs.claude.com/ja/docs/claude-code/plugins
-- GitHub Issues: https://github.com/anthropics/claude-code/issues
-- プロジェクトドキュメント: CLAUDE.md, PLANNING.md
+MIT License - see LICENSE file for details
