@@ -1,5 +1,5 @@
 ---
-name: index-repo
+name: airis:index-repo
 description: Repository Indexing - 94% token reduction (58K → 3K)
 ---
 
@@ -126,17 +126,17 @@ Quality checks:
 
 **Create index**:
 ```
-/index-repo
+/airis:index-repo
 ```
 
 **Update existing index**:
 ```
-/index-repo mode=update
+/airis:index-repo mode=update
 ```
 
 **Quick index (skip tests)**:
 ```
-/index-repo mode=quick
+/airis:index-repo mode=quick
 ```
 
 ---

@@ -29,11 +29,37 @@ Airis Agent is an autonomous workflow orchestrator that enhances Claude Code wit
 
 ### From GitHub Marketplace (Recommended)
 
+**Step 1**: Add the Agiletec marketplace to Claude Code
+
 ```bash
-# In Claude Code, run:
 /plugin marketplace add agiletec-inc/airis-agent
+```
+
+**Step 2**: Install the plugin
+
+```bash
 /plugin install airis-agent
 ```
+
+**Step 3**: Verify installation
+
+```bash
+/plugin list
+```
+
+You should see: `airis-agent@agiletec-inc (enabled)`
+
+**Step 4**: Test the plugin
+
+```bash
+# Try a command to verify it's working
+/airis:research "test query"
+```
+
+**Available commands after installation**:
+- `/airis:agent` - Session controller (auto-runs at startup)
+- `/airis:research` - Deep research with parallel web search
+- `/airis:index-repo` - Generate repository index
 
 ### Local Development
 
@@ -108,6 +134,7 @@ User: "Add user authentication to the API"
 
 | Command | Description |
 |---------|-------------|
+| `/airis:agent` | Session controller that orchestrates investigation, implementation, and review (auto-runs at startup) |
 | `/airis:research` | Deep research with parallel web search |
 | `/airis:index-repo` | Generate PROJECT_INDEX.md (94% token reduction) |
 

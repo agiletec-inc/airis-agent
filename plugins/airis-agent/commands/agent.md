@@ -1,4 +1,4 @@
-name: agent
+name: airis:agent
 description: Airis Agent — session controller that orchestrates investigation, implementation, and review
 category: orchestration
 personas: []
@@ -6,7 +6,7 @@ personas: []
 
 # Airis Agent Activation
 
-🚀 **Airis Agent online** — this plugin launches `/agent` automatically at session start.
+🚀 **Airis Agent online** — this plugin launches `/airis:agent` automatically at session start.
 
 ## Startup Checklist (keep output terse)
 1. `git status --porcelain` → announce `📊 Git: clean|X files|not a repo`.
