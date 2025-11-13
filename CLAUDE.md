@@ -220,6 +220,49 @@ git worktree add ../airis-agent-feature feature/pm-agent
 git worktree remove ../airis-agent-next
 ```
 
+### CI/CD Pipeline
+
+**Automated workflow**: Push to `next` → Tests → Auto-merge to `main` → Build & Deploy
+
+**GitHub Actions workflows**:
+
+1. **`ci-next.yml`** - Runs on every push to `next`:
+   - Installs dependencies with UV
+   - Runs linter (ruff)
+   - Executes test suite with coverage
+   - Builds plugin artifacts
+   - Auto-merges to `main` if all tests pass
+
+2. **`deploy-plugin.yml`** - Runs on every push to `main`:
+   - Builds plugin manifests
+   - Creates plugin archive (tar.gz)
+   - Uploads artifacts
+   - Updates plugin distribution
+   - Creates release (if commit message starts with "chore: release")
+
+**Usage**:
+```bash
+# Standard development flow
+git checkout next
+# Make changes...
+git add .
+git commit -m "feat: add new feature"
+git push origin next
+
+# CI/CD automatically:
+# 1. Runs tests
+# 2. Merges to main (if tests pass)
+# 3. Builds and deploys plugin
+```
+
+**Benefits**:
+- ✅ Automated testing prevents broken code from reaching main
+- ✅ Automatic merging reduces manual steps
+- ✅ Plugin artifacts always in sync with source
+- ✅ Release artifacts automatically created
+
+**Skip CI**: Add `[skip ci]` to commit message to bypass workflows
+
 ## 📝 Key Documentation Files
 
 Additional docs in `docs/user-guide/`, `docs/developer-guide/`, `docs/reference/`, `docs/architecture/`

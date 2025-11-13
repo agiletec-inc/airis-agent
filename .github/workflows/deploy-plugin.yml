@@ -1,0 +1,102 @@
+name: Deploy Plugin
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy Plugin
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install UV
+      run: |
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+    - name: Install dependencies
+      run: |
+        uv pip install --system -e ".[dev]"
+
+    - name: Build plugin
+      run: |
+        make build-plugin
+
+    - name: Verify plugin build
+      run: |
+        test -f dist/plugins/airis-agent/.claude-plugin/plugin.json
+        test -f dist/plugins/airis-agent/.claude-plugin/marketplace.json
+        echo "✅ Plugin artifacts built successfully"
+
+        echo "📦 Plugin manifest:"
+        cat dist/plugins/airis-agent/.claude-plugin/plugin.json
+
+        echo ""
+        echo "📦 Marketplace manifest:"
+        cat dist/plugins/airis-agent/.claude-plugin/marketplace.json
+
+    - name: Create plugin archive
+      run: |
+        cd dist/plugins
+        tar -czf airis-agent-plugin.tar.gz airis-agent/
+        echo "✅ Plugin archive created"
+
+    - name: Upload plugin artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: airis-agent-plugin
+        path: dist/plugins/airis-agent-plugin.tar.gz
+        retention-days: 90
+
+    - name: Update plugin distribution
+      run: |
+        mkdir -p plugin-dist
+        cp -r dist/plugins/airis-agent/* plugin-dist/
+        echo "✅ Plugin distribution updated"
+
+    - name: Commit plugin artifacts
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+        # Add only the root-level plugin manifests (not dist/)
+        git add -f .claude-plugin/
+
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "build: update plugin manifests [skip ci]"
+          git push origin main
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create/Update Release
+      if: startsWith(github.event.head_commit.message, 'chore: release')
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v${{ github.run_number }}
+        name: Release v${{ github.run_number }}
+        files: dist/plugins/airis-agent-plugin.tar.gz
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

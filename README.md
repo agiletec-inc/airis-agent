@@ -7,6 +7,8 @@ Airis Agent is the intelligence layer of the Airis Suite, providing autonomous w
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue)](https://claude.com/code)
+[![CI/CD Next](https://github.com/agiletec-inc/airis-agent/actions/workflows/ci-next.yml/badge.svg?branch=next)](https://github.com/agiletec-inc/airis-agent/actions/workflows/ci-next.yml)
+[![Deploy Plugin](https://github.com/agiletec-inc/airis-agent/actions/workflows/deploy-plugin.yml/badge.svg?branch=main)](https://github.com/agiletec-inc/airis-agent/actions/workflows/deploy-plugin.yml)
 
 ---
 
