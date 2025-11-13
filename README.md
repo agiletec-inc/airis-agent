@@ -1,368 +1,334 @@
 # Airis Agent
 
-AI-enhanced development framework providing confidence gating, parallel execution, and reflexion patterns for LLM-powered development workflows.
+> **Autonomous AI workflow orchestrator for Claude Code**
 
-> **Host-agnostic orchestration runtime**: Python modules expose typed APIs so MCP gateways, CLIs, and IDEs (Claude Code, Cursor, etc.) can share workflow logic without duplicating implementations.
+Airis Agent is the intelligence layer of the Airis Suite, providing autonomous workflow orchestration with confidence gating, deep research, repository indexing, and self-review capabilities for AI-enhanced development.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue)](https://claude.com/code)
 
-## Why Airis Agent Exists
+---
 
-**ABI-first design**: Python modules under `src/airis_agent/api/` provide a reusable Application Binary Interface. This means:
+## What is Airis Agent?
 
-- **Single source of truth**: Runtime logic (confidence gate, parallel executor, reflexion/self-check, repo indexer) lives in one package
-- **No drift**: Plugin artifacts are generated from source templates, preventing inconsistencies
-- **Host-agnostic**: Works with Claude Code, Codex CLI, Gemini CLI, Cursor, or any tool that can call Python APIs
-- **MCP-ready**: Can be exposed via MCP gateway for LLM access
+Airis Agent is an autonomous workflow orchestrator that enhances Claude Code with:
 
-## Features
+- **Pre-implementation Confidence Checks** - Validates readiness before coding (≥90% confidence required)
+- **Deep Research** - Parallel web search with evidence-based synthesis using Tavily/Context7
+- **Repository Indexing** - 94% token reduction through intelligent codebase analysis
+- **Self-Review** - Post-implementation validation with evidence requirements
 
-### 🎯 Confidence Gate
-Pre-implementation confidence assessment that prevents wrong-direction work:
-- Returns score (0.0-1.0), action (proceed/alternatives/ask), and checklist
-- ROI: Spend 100-200 tokens to save 5,000-50,000 tokens
-- **25-250x token savings** by catching issues before implementation
+**Philosophy**: Prevent wrong-direction work through confidence gating, not post-hoc fixes.
 
-### 🔄 Parallel Execution
-Wave-based dependency planner with automatic parallelization:
-- **3.5x faster** than sequential execution
-- Automatic dependency analysis
-- Example: `[Read files in parallel] → Analyze → [Edit files in parallel]`
+---
 
-### 🧠 Reflexion Pattern
-Error learning and prevention across sessions:
-- Records failure signatures
-- Cross-session pattern matching
-- Prevents repeating the same mistakes
+## Installation
 
-### 📦 Repository Indexing
-Generates structured codebase summaries:
-- Produces `PROJECT_INDEX.{md,json}` with codebase structure
-- **94% token reduction** for context
-- Optional on-disk output
-
-### 🔍 Deep Research
-Multi-step research planning with integrated tools:
-- Creates wave/queries plan for complex research
-- Integrates with Tavily (web search) and Context7 (official docs)
-- Returns findings, sources, and confidence scores
-
-## Quick Start
-
-### Installation
-
-#### Option 1: Claude Code Plugin (Recommended for Claude Code users)
-
-Install directly from the GitHub repository marketplace:
+### From GitHub Marketplace (Recommended)
 
 ```bash
 # In Claude Code, run:
 /plugin marketplace add agiletec-inc/airis-agent
-/plugin install airis-agent
+/plugin install airis-agent@agiletec-inc
 ```
 
-Or add to your project's `.claude/settings.json`:
-
-```json
-{
-  "marketplaces": ["https://github.com/agiletec-inc/airis-agent"],
-  "enabledPlugins": ["airis-agent"]
-}
-```
-
-The plugin provides:
-- `/agent` - Session orchestrator with confidence checks
-- `/research` - Deep research with parallel web search
-- `/index-repo` - Repository indexing (94% token reduction)
-- `@confidence-check` skill - Pre-implementation validation
-- Auto-activation via SessionStart hook
-
-#### Option 2: Python Package (For API/CLI usage)
+### Local Development
 
 ```bash
 # Clone the repository
 git clone https://github.com/agiletec-inc/airis-agent.git
 cd airis-agent
 
-# Install with UV (recommended)
+# Add local marketplace
+/plugin marketplace add /path/to/airis-agent
+
+# Install plugin
+/plugin install airis-agent@agiletec
+```
+
+### Verification
+
+```bash
+# Check installed plugins
+/plugin list
+
+# You should see: airis-agent@agiletec-inc (enabled)
+```
+
+---
+
+## Quick Start
+
+### Automatic Session Initialization
+
+Airis Agent automatically activates at session start via `SessionStart` hook:
+
+```
+📊 Git: clean
+✅ CLAUDE.md: 115 lines (適切な範囲)
+📦 PROJECT_INDEX.md: 3 days old (fresh)
+📂 Context available: docs/memory/
+
+🛠️  Core Services Available:
+  ✅ Confidence Check (pre-implementation validation)
+  ✅ Deep Research (web/MCP integration)
+  ✅ Repository Index (token-efficient exploration)
+
+Airis Agent ready — awaiting task assignment.
+```
+
+### Basic Workflow
+
+```bash
+# 1. Start a task
+User: "Add user authentication to the API"
+
+# 2. Airis Agent orchestrates automatically:
+#    - Runs confidence check
+#    - Triggers deep research if needed
+#    - Implements with evidence
+#    - Self-reviews results
+
+# 3. Manual commands (optional)
+/airis:research "Best practices for JWT authentication 2025"
+/airis:index-repo
+```
+
+---
+
+## Available Components
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `/airis:research` | Deep research with parallel web search |
+| `/airis:index-repo` | Generate PROJECT_INDEX.md (94% token reduction) |
+
+### Agents
+
+| Agent | Description | Invocation |
+|-------|-------------|------------|
+| `deep-research` | External knowledge gathering specialist | `@deep-research` via Task tool |
+| `repo-index` | Codebase briefing assistant | `@repo-index` via Task tool |
+| `self-review` | Post-implementation validation | `@self-review` via Task tool |
+
+### Skills
+
+| Skill | Description | Activation |
+|-------|-------------|------------|
+| `confidence-check` | Pre-implementation confidence assessment (≥90% required) | Automatic (Claude decides) |
+
+### Hooks
+
+- **SessionStart**: Automatic initialization with Git status, CLAUDE.md optimization check, PROJECT_INDEX.md freshness check, and context restoration
+
+---
+
+## Session Initialization Features
+
+Airis Agent's `SessionStart` hook automatically checks:
+
+### 1. CLAUDE.md Optimization
+```
+⚠️  CLAUDE.md: 315 lines (推奨: 100-200)
+   💡 Optimize with: /init
+      (Re-analyzes codebase and refreshes CLAUDE.md)
+```
+
+### 2. PROJECT_INDEX.md Freshness
+```
+⚠️  PROJECT_INDEX.md: 12 days old (stale)
+   💡 Regenerate with: /airis:index-repo
+```
+
+### 3. Context Restoration
+```
+📂 Context available: docs/memory/
+📋 Next actions:
+   [Content from next_actions.md]
+🕐 Last session: 2025-11-13
+```
+
+---
+
+## Configuration
+
+### Team-Wide Installation
+
+Add to your project's `.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "agiletec": {
+      "source": {
+        "source": "github",
+        "repo": "agiletec-inc/airis-agent"
+      }
+    }
+  },
+  "enabledPlugins": ["airis-agent@agiletec"]
+}
+```
+
+Team members will automatically receive Airis Agent when they trust the repository.
+
+### Disable Auto-Activation
+
+If you prefer manual activation, modify `hooks/hooks.json` in the plugin:
+
+```json
+{
+  "hooks": {
+    "SessionStart": []
+  }
+}
+```
+
+---
+
+## Development
+
+### Prerequisites
+
+- Python 3.10+
+- UV (Python package manager)
+- Node.js 16+ (for NPM wrapper)
+
+### Setup
+
+```bash
+# Install in editable mode
 make install
-# or: uv pip install -e ".[dev]"
+
+# Or manually:
+uv pip install -e ".[dev]"
 
 # Verify installation
 make verify
-uv run airis-agent doctor
+airis-agent doctor
 ```
 
-### Basic Usage
-
-#### As a Python API
-
-```python
-from airis_agent.api import evaluate_confidence, generate_repo_index
-
-# Confidence gate
-result = evaluate_confidence({
-    "task": "Implement user authentication",
-    "has_official_docs": True,
-    "complexity": "medium"
-})
-print(f"Confidence: {result.score}, Action: {result.action}")
-
-# Repository indexing
-index = generate_repo_index("/path/to/repo", output_format="markdown")
-print(index.content)
-```
-
-#### As a Pytest Plugin
-
-The pytest plugin is auto-loaded after installation:
-
-```python
-import pytest
-
-@pytest.mark.confidence_check
-def test_feature(confidence_checker):
-    """Pre-execution confidence check"""
-    context = {"test_name": "test_feature", "has_official_docs": True}
-    assert confidence_checker.assess(context) >= 0.7
-
-@pytest.mark.reflexion
-def test_error_learning(reflexion_pattern):
-    """Records failures for future prevention"""
-    # Test implementation...
-    pass
-```
-
-#### As a CLI
+### Building the Plugin
 
 ```bash
-# Check installation health
-uv run airis-agent doctor
+# Build plugin artifacts
+make build-plugin
 
-# Show version
-uv run airis-agent version
-
-# Install a skill to Claude Code
-uv run airis-agent install-skill confidence-check
+# Output: dist/plugins/airis-agent/
 ```
 
-## Project Structure
-
-```
-airis-agent/
-├── src/airis_agent/
-│   ├── api/                 # ABI endpoints (confidence, repo_index, deep_research)
-│   ├── cli/                 # CLI commands (doctor, version, install-skill)
-│   ├── execution/           # Parallel executor, reflection, self-correction
-│   ├── pm_agent/            # Confidence checker, self-check protocol, reflexion
-│   ├── pytest_plugin.py     # Auto-loaded pytest integration
-│   └── skills/              # TypeScript skills bundled with package
-├── plugins/airis-agent/      # Plugin source (manifest templates, tests)
-│   ├── manifest/            # Metadata and manifest templates
-│   └── tests/               # Plugin smoke tests
-├── dist/plugins/airis-agent/ # Built plugin artifacts (via make build-plugin)
-├── tests/                   # Python test suite
-├── docs/                    # Documentation
-├── scripts/                 # Build/publish helpers
-└── Makefile                 # Development commands
-```
-
-## Development Workflow
-
-### Essential Commands
-
-```bash
-# Setup
-make install          # Install in editable mode with dev dependencies
-make verify           # Verify installation
-
-# Testing
-make test             # Run full test suite
-uv run pytest tests/pm_agent/ -v              # Run specific directory
-uv run pytest -m confidence_check             # Run by marker
-uv run pytest --cov=superagent               # With coverage
-
-# Code Quality
-make lint             # Run ruff linter
-make format           # Format code with ruff
-make doctor           # Health check diagnostics
-
-# Plugin Packaging
-make build-plugin            # Build plugin artifacts
-make sync-plugin-repo        # Sync to distribution repo
-
-# Maintenance
-make clean            # Remove build artifacts
-```
-
-### Running Tests
+### Testing
 
 ```bash
 # Run all tests
-uv run pytest
+make test
 
-# Run specific test categories
-uv run pytest -m unit           # Unit tests only
-uv run pytest -m integration    # Integration tests only
-uv run pytest -m confidence_check  # Confidence check tests
+# Run specific tests
+uv run pytest tests/airis_agent/ -v
 
-# Run with coverage
-uv run pytest --cov=superagent --cov-report=html
+# With coverage
+make test-coverage
 ```
 
-## ABI Endpoints
+### Project Structure
 
-Airis Agent exposes three main API endpoints:
+```
+airis-agent/
+├── .claude-plugin/
+│   └── marketplace.json       # Plugin marketplace manifest
+├── plugins/airis-agent/
+│   ├── agents/                # Agent definitions
+│   ├── commands/              # Slash commands
+│   ├── skills/                # Skills (auto-invoked)
+│   ├── hooks/                 # Event handlers
+│   ├── scripts/               # Utility scripts
+│   └── manifest/              # Plugin metadata
+├── src/airis_agent/
+│   ├── api/                   # Public API (confidence, research, index)
+│   ├── cli/                   # CLI commands
+│   ├── execution/             # Parallel execution, reflexion
+│   └── pm_agent/              # PM Agent patterns
+├── tests/airis_agent/         # Test suite
+└── dist/plugins/airis-agent/  # Built plugin (generated)
+```
 
-### 1. Confidence Gate (`superagent.api.confidence`)
+---
 
-Pre-implementation confidence assessment:
+## Python API
+
+Airis Agent provides a Python API for programmatic access:
 
 ```python
-from airis_agent.api import evaluate_confidence, ConfidenceRequest
+from airis_agent.api import confidence, deep_research, repo_index
 
-request = ConfidenceRequest(
-    task_description="Implement OAuth2 authentication",
-    has_official_docs=True,
-    has_similar_examples=True,
-    complexity="medium"
-)
+# Confidence check
+result = confidence.assess({
+    "task": "Implement user authentication",
+    "has_official_docs": True
+})
 
-response = evaluate_confidence(request)
-# response.score: 0.0-1.0
-# response.action: "proceed" | "present_alternatives" | "ask_questions"
-# response.checklist: List of verification items
+if result["confidence"] >= 0.90:
+    # Proceed with implementation
+    pass
+else:
+    # Gather more information
+    research = deep_research.execute({
+        "query": "JWT authentication best practices 2025",
+        "depth": "standard"
+    })
 ```
 
-### 2. Repository Index (`superagent.api.repo_index`)
+---
 
-Generates structured codebase summaries:
+## Why Airis Agent Exists
 
-```python
-from airis_agent.api import generate_repo_index, RepoIndexRequest
+**Problem**: LLMs often implement solutions confidently even when lacking complete information, leading to wasted tokens and wrong-direction work.
 
-request = RepoIndexRequest(
-    repo_path="/path/to/repo",
-    output_format="markdown",
-    include_file_tree=True
-)
+**Solution**: Confidence-first workflow with evidence requirements:
 
-response = generate_repo_index(request)
-# response.content: Generated index content
-# response.format: "markdown" | "json"
-```
+1. **Pre-implementation**: Assess confidence (≥90% required)
+2. **Research**: Gather authoritative information if needed
+3. **Implementation**: Execute with validated approach
+4. **Post-review**: Verify with evidence (no speculation)
 
-### 3. Deep Research (`superagent.api.deep_research`)
+**ROI**: Spending 100-200 tokens on confidence checks saves 5,000-50,000 tokens on wrong implementations.
 
-Multi-step research planning:
+---
 
-```python
-from airis_agent.api import perform_research, ResearchRequest
+## Airis Suite Integration
 
-request = ResearchRequest(
-    topic="React Server Components best practices",
-    depth="medium",
-    sources=["official_docs", "web"]
-)
+Airis Agent is part of the Airis Suite:
 
-response = perform_research(request)
-# response.findings: Research results
-# response.sources: List of sources used
-# response.confidence: Confidence score
-```
+- **Airis Workspace** - Docker-based development OS
+- **Airis Code** - AI-enhanced coding environment
+- **Airis Agent** - Autonomous workflow orchestrator (this project)
+- **Airis Voice** - AI phone automation
+- **Airis MCP** - Model Context Protocol tools
+- **MindBase** - Cross-session memory database
 
-## Pytest Plugin Features
-
-The pytest plugin is automatically loaded and provides:
-
-### Fixtures
-
-- `confidence_checker` - Pre-execution confidence assessment
-- `self_check_protocol` - Post-implementation validation
-- `reflexion_pattern` - Error learning and prevention
-- `token_budget` - Token budget allocation
-- `pm_context` - PM Agent context
-
-### Markers
-
-- `@pytest.mark.unit` - Unit tests (auto-applied to `/unit/`)
-- `@pytest.mark.integration` - Integration tests (auto-applied to `/integration/`)
-- `@pytest.mark.confidence_check` - Pre-execution confidence assessment
-- `@pytest.mark.self_check` - Post-implementation validation
-- `@pytest.mark.reflexion` - Error learning and prevention
-- `@pytest.mark.complexity("simple"|"medium"|"complex")` - Task complexity
-
-## Integration with MCP Servers
-
-Airis Agent integrates with multiple MCP servers via **airis-mcp-gateway**:
-
-- **Tavily**: Web search for deep research
-- **Context7**: Official documentation lookup (prevents hallucination)
-- **Sequential**: Token-efficient reasoning (30-50% reduction)
-- **Serena**: Session persistence and memory
-- **Mindbase**: Cross-session learning
-
-## Roadmap (2025)
-
-### Q1: ABI Hardening
-- Finalize JSON schemas for all endpoints
-- Add streaming/partial responses for progress updates
-- Document API contracts under `docs/mcp-api-plan.md`
-
-### Q2: Gateway Integrations
-- Connect `airis-mcp-gateway` to ABI endpoints
-- Publish sample Codex CLI for host-agnostic proof
-- MCP server implementation for confidence gate
-
-### Q3: Runtime Enhancements
-- Diff-aware incremental repo indexing
-- Deep-research planner with actual MCP tool orchestration
-- Trace logging and metrics for parallel executor
-
-### Q4: Documentation & Tooling
-- Migration guide from SuperClaude to Airis Agent
-- Comprehensive API reference
-- Video tutorials and example projects
+---
 
 ## Contributing
 
-We welcome contributions! Please:
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-1. Run tests: `uv run pytest`
-2. Run linter: `make lint`
-3. Use Conventional Commits: `feat:`, `fix:`, `refactor:`, etc.
-4. Open PRs against the `next` branch
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
-
-## Documentation
-
-- **User Guides**: `docs/user-guide/` - Getting started, commands, agents
-- **Developer Guides**: `docs/developer-guide/` - Architecture, API reference
-- **Reference**: `docs/reference/` - Advanced patterns, troubleshooting
-- **Architecture**: `docs/architecture/` - Design decisions, roadmap
-
-## Requirements
-
-- Python 3.10 or higher
-- UV (recommended) or pip
-- pytest 7.0.0+
-- click 8.0.0+
-- rich 13.0.0+
+---
 
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
-## Authors
+---
 
-- Kazuki Nakai
-- NomenAK (anton.knoery@gmail.com)
-- Mithun Gowda B (mithungowda.b7411@gmail.com)
+## Support
 
-## Links
+- **Issues**: https://github.com/agiletec-inc/airis-agent/issues
+- **Documentation**: See `docs/` directory
+- **Homepage**: https://github.com/agiletec-inc/airis-agent
 
-- **GitHub**: [github.com/agiletec-inc/airis-agent](https://github.com/agiletec-inc/airis-agent)
-- **Issues**: [github.com/agiletec-inc/airis-agent/issues](https://github.com/agiletec-inc/airis-agent/issues)
-- **Documentation**: [docs/](docs/)
+---
+
+**Built with ❤️ by Agiletec Inc.**

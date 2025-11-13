@@ -1,23 +1,26 @@
 {
-  "name": "superagent-marketplace",
-  "owner": "Super Agent Team",
-  "description": "Official marketplace for Super Agent plugins",
-  "version": "4.1.6",
-  "pluginRoot": "./dist/plugins",
+  "name": "agiletec",
+  "owner": {
+    "name": "Agiletec Inc.",
+    "email": "contact@agiletec.com"
+  },
+  "metadata": {
+    "description": "Airis Suite Plugin Marketplace - Official plugins for Airis Agent and related tools",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "airis-agent",
-      "source": "./superagent",
-      "description": "Super Agent - Confidence-driven orchestrator with deep research and repository indexing",
-      "version": "4.1.6",
+      "source": "./dist/plugins/airis-agent",
+      "description": "Airis Agent - Autonomous AI workflow orchestrator for Claude Code with deep research, repo indexing, confidence checks, and self-review capabilities",
+      "version": "1.0.0",
       "author": {
-        "name": "Super Agent Team"
+        "name": "Agiletec Inc."
       },
-      "homepage": "https://github.com/kazuki/airis-agent",
-      "repository": "https://github.com/kazuki/airis-agent",
+      "homepage": "https://github.com/agiletec-inc/airis-agent",
+      "repository": "https://github.com/agiletec-inc/airis-agent",
       "license": "MIT",
-      "keywords": ["airis-agent", "pm-agent", "deep-research", "index", "confidence-check"],
-      "category": "productivity"
+      "keywords": ["airis", "agent", "workflow", "orchestration", "deep-research", "confidence-check"]
     }
   ]
 }
