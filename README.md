@@ -30,7 +30,7 @@ Airis Agent is an autonomous workflow orchestrator that enhances Claude Code wit
 ```bash
 # In Claude Code, run:
 /plugin marketplace add agiletec-inc/airis-agent
-/plugin install airis-agent@agiletec-inc
+/plugin install airis-agent
 ```
 
 ### Local Development
@@ -40,11 +40,14 @@ Airis Agent is an autonomous workflow orchestrator that enhances Claude Code wit
 git clone https://github.com/agiletec-inc/airis-agent.git
 cd airis-agent
 
+# Build plugin
+make build-plugin
+
 # Add local marketplace
-/plugin marketplace add /path/to/airis-agent
+/plugin marketplace add file:///path/to/airis-agent
 
 # Install plugin
-/plugin install airis-agent@agiletec
+/plugin install airis-agent
 ```
 
 ### Verification
