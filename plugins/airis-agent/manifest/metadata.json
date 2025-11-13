@@ -1,0 +1,16 @@
+{
+  "plugin_name": "airis-agent",
+  "plugin_version": "1.0.0",
+  "plugin_description": "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)",
+  "author_name": "Agiletec",
+  "author_email": "kazuki.nakai@agiletec.net",
+  "owner_name": "Agile Technology Inc.",
+  "homepage_url": "https://github.com/agiletec-inc/airis-agent",
+  "repository_url": "https://github.com/agiletec-inc/airis-agent",
+  "license": "MIT",
+  "keywords": ["airis", "airis-agent", "agent", "deep-research", "repo-index", "confidence-check", "claude-code"],
+  "keywords_json": "[\"airis\", \"airis-agent\", \"agent\", \"deep-research\", \"repo-index\", \"confidence-check\", \"claude-code\"]",
+  "marketplace_name": "agiletec-inc",
+  "marketplace_description": "Official Agiletec OSS plugin marketplace",
+  "plugin_category": "productivity"
+}

@@ -5,13 +5,14 @@ build-backend = "hatchling.build"
 [project]
 name = "airis-agent"
 version = "1.0.0"
-description = "Airis Agent - AI-enhanced development framework for Claude Code with autonomous workflow orchestration"
+description = "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Kazuki Nakai"},
-    {name = "NomenAK", email = "anton.knoery@gmail.com"},
-    {name = "Mithun Gowda B", email = "mithungowda.b7411@gmail.com"}
+    {name = "Agiletec", email = "kazuki.nakai@agiletec.net"}
+]
+maintainers = [
+    {name = "Kazuki Nakai", email = "kazuki.nakai@agiletec.net"}
 ]
 requires-python = ">=3.10"
 keywords = ["claude", "ai", "automation", "framework", "pytest", "plugin", "testing", "development"]

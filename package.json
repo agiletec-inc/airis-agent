@@ -14,7 +14,8 @@
     "LICENSE"
   ],
   "author": {
-    "name": "Agiletec Inc.",
+    "name": "Agiletec",
+    "email": "kazuki.nakai@agiletec.net",
     "url": "https://github.com/agiletec-inc"
   },
   "repository": {

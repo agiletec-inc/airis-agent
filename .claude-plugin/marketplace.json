@@ -1,26 +1,26 @@
 {
-  "name": "agiletec",
+  "name": "agiletec-inc",
   "owner": {
-    "name": "Agiletec Inc.",
-    "email": "contact@agiletec.com"
+    "name": "Agile Technology Inc.",
+    "email": "kazuki.nakai@agiletec.net"
   },
   "metadata": {
-    "description": "Airis Suite Plugin Marketplace - Official plugins for Airis Agent and related tools",
+    "description": "Official Agiletec OSS plugin marketplace",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "airis-agent",
       "source": "./dist/plugins/airis-agent",
-      "description": "Airis Agent - Autonomous AI workflow orchestrator for Claude Code with deep research, repo indexing, confidence checks, and self-review capabilities",
+      "description": "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)",
       "version": "1.0.0",
       "author": {
-        "name": "Agiletec Inc."
+        "name": "Agiletec"
       },
       "homepage": "https://github.com/agiletec-inc/airis-agent",
       "repository": "https://github.com/agiletec-inc/airis-agent",
       "license": "MIT",
-      "keywords": ["airis", "agent", "workflow", "orchestration", "deep-research", "confidence-check"]
+      "keywords": ["airis", "airis-agent", "agent", "deep-research", "repo-index", "confidence-check", "claude-code"]
     }
   ]
 }

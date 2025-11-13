@@ -1,0 +1,26 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "{{marketplace_name}}",
+  "version": "{{plugin_version}}",
+  "description": "{{marketplace_description}}",
+  "owner": {
+    "name": "{{owner_name}}",
+    "email": "{{author_email}}"
+  },
+  "plugins": [
+    {
+      "name": "{{plugin_name}}",
+      "source": "./",
+      "description": "{{plugin_description}}",
+      "version": "{{plugin_version}}",
+      "author": {
+        "name": "{{author_name}}"
+      },
+      "category": "{{plugin_category}}",
+      "homepage": "{{homepage_url}}",
+      "repository": "{{repository_url}}",
+      "license": "{{license}}",
+      "keywords": {{keywords_json}}
+    }
+  ]
+}
