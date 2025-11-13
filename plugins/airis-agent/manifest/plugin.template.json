@@ -1,0 +1,13 @@
+{
+  "name": "{{plugin_name}}",
+  "version": "{{plugin_version}}",
+  "description": "{{plugin_description}}",
+  "author": {
+    "name": "{{author_name}}"
+  },
+  "homepage": "{{homepage_url}}",
+  "repository": "{{repository_url}}",
+  "license": "{{license}}",
+  "keywords": {{keywords_json}},
+  "skills": "./skills/"
+}
