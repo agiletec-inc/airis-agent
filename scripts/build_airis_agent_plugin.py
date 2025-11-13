@@ -58,12 +58,14 @@ def main() -> None:
         "plugin_version": metadata["plugin_version"],
         "plugin_description": metadata["plugin_description"],
         "author_name": metadata["author_name"],
+        "author_email": metadata.get("author_email", "support@agiletec.com"),
         "homepage_url": metadata["homepage_url"],
         "repository_url": metadata["repository_url"],
         "license": metadata["license"],
         "keywords_json": json.dumps(metadata["keywords"]),
         "marketplace_name": metadata["marketplace_name"],
         "marketplace_description": metadata["marketplace_description"],
+        "plugin_category": metadata.get("plugin_category", "productivity"),
     }
 
     # Clean dist directory
