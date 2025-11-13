@@ -10,7 +10,7 @@
 
 ```
 superagent/
-├── src/superagent/          # Python package (3,002 LOC)
+├── src/airis_agent/          # Python package (3,002 LOC)
 │   ├── api/                  # ABI surface (confidence, repo index, deep research)
 │   ├── cli/                  # Typer CLI commands
 │   ├── pm_agent/             # PM Agent core (confidence/self_check/reflexion/token_budget)
@@ -42,12 +42,12 @@ superagent/
 
 ### CLI
 - **Command**: `superagent` (installed via pip/uv)
-- **Source**: `src/superagent/cli/main.py:main`
+- **Source**: `src/airis_agent/cli/main.py:main`
 - **Purpose**: CLI interface for Airis Agent operations
 
 ### Pytest Plugin
 - **Auto-loaded**: Yes (via `pyproject.toml` entry point)
-- **Source**: `src/superagent/pytest_plugin.py`
+- **Source**: `src/airis_agent/pytest_plugin.py`
 - **Purpose**: PM Agent fixtures and test automation
 
 ### Skills
@@ -58,7 +58,7 @@ superagent/
 
 ## 📦 Core Modules
 
-### PM Agent (src/superagent/pm_agent/)
+### PM Agent (src/airis_agent/pm_agent/)
 Core patterns for AI-enhanced development:
 
 #### ConfidenceChecker (`confidence.py`)
@@ -82,7 +82,7 @@ Core patterns for AI-enhanced development:
 - **Levels**: Simple (200), Medium (1,000), Complex (2,500)
 - **Enforcement**: Budget-aware execution
 
-### Execution Patterns (src/superagent/execution/)
+### Execution Patterns (src/airis_agent/execution/)
 
 #### Parallel Execution (`parallel.py`)
 - **Pattern**: Wave → Checkpoint → Wave
@@ -98,7 +98,7 @@ Core patterns for AI-enhanced development:
 - **Purpose**: Automated error detection and correction
 - **Strategy**: Iterative refinement
 
-### CLI Commands (src/superagent/cli/)
+### CLI Commands (src/airis_agent/cli/)
 
 #### main.py
 - **Exports**: `main()` - CLI entry point
@@ -230,10 +230,10 @@ uv run pytest --cov=superagent
 ### Installation
 ```bash
 # Install with UV (recommended)
-uv pip install superagent
+uv pip install airis-agent
 
 # Or with pip
-pip install superagent
+pip install airis-agent
 
 # Development mode
 make install

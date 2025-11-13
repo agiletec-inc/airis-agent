@@ -42,7 +42,7 @@ This PR implements **Phase 1** of the PM-as-Default architecture: **PM Mode Init
 **Location**: `superagent/core/pm_init/`
 
 ```python
-from superagent.core.pm_init import initialize_pm_mode
+from airis_agent.core.pm_init import initialize_pm_mode
 
 # Runs automatically at session start
 init_data = initialize_pm_mode()
@@ -171,7 +171,7 @@ uv run pytest tests/core/pm_init/ tests/validators/ -v
 
 ```python
 # Session start (automatic)
-from superagent.core.pm_init import initialize_pm_mode
+from airis_agent.core.pm_init import initialize_pm_mode
 
 init_data = initialize_pm_mode()
 
@@ -192,7 +192,7 @@ init_data = initialize_pm_mode()
 ### Manual Validation
 
 ```python
-from superagent.validators import (
+from airis_agent.validators import (
     ContextContractValidator,
     SecurityRoughcheckValidator,
     ValidationStatus
@@ -218,7 +218,7 @@ if result.failed:
 ### Reflexion Memory
 
 ```python
-from superagent.core.pm_init import ReflexionMemory, ReflexionEntry
+from airis_agent.core.pm_init import ReflexionMemory, ReflexionEntry
 
 memory = ReflexionMemory(git_root)
 

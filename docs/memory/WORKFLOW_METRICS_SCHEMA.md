@@ -396,6 +396,6 @@ find docs/memory/archive/ -name "workflow_metrics_*.jsonl" \
 
 ## References
 
-- Specification: `plugins/superagent/commands/pm.md` (Line 291-355)
+- Specification: `plugins/airis-agent/commands/pm.md` (Line 291-355)
 - Research: `docs/research/llm-agent-token-efficiency-2025.md`
 - Tests: `tests/pm_agent/test_token_budget.py`

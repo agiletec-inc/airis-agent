@@ -4,13 +4,13 @@
 
 | Area | Current Repo | Target Location (Framework) | Notes |
 |------|--------------|-----------------------------|-------|
-| Agent docs (`agents/*.md`) | `Airis Agent_Plugin/agents/` | `plugins/superagent/agents/` | Markdown instructions consumed by `/sc:*` commands. |
-| Command definitions (`commands/*.md`) | `Airis Agent_Plugin/commands/` | `plugins/superagent/commands/` | YAML frontmatter + markdown bodies. |
-| Hook config | `Airis Agent_Plugin/hooks/hooks.json` | `plugins/superagent/hooks/hooks.json` | SessionStart automation. |
-| Skill source (`skills/confidence-check/`) | Divergent copies in both repos | **Single canonical copy in Framework** under `plugins/superagent/skills/confidence-check/` | Replace plugin repo copy with build artefact. |
-| Session init scripts | `Airis Agent_Plugin/scripts/*.sh` | `plugins/superagent/scripts/` | Executed via Claude Code hooks. |
-| Plugin manifest (`.claude-plugin/plugin.json`, `marketplace.json`) | `Airis Agent_Plugin/.claude-plugin/` | Generated from `plugins/superagent/manifest/` templates | Manifest fields will be parameterised for official distribution/local builds. |
-| Confidence skill tests (`.claude-plugin/tests`) | `Airis Agent_Plugin/.claude-plugin/tests/` | `plugins/superagent/tests/` | Keep with Framework to ensure tests run before packaging. |
+| Agent docs (`agents/*.md`) | `Airis Agent_Plugin/agents/` | `plugins/airis-agent/agents/` | Markdown instructions consumed by `/sc:*` commands. |
+| Command definitions (`commands/*.md`) | `Airis Agent_Plugin/commands/` | `plugins/airis-agent/commands/` | YAML frontmatter + markdown bodies. |
+| Hook config | `Airis Agent_Plugin/hooks/hooks.json` | `plugins/airis-agent/hooks/hooks.json` | SessionStart automation. |
+| Skill source (`skills/confidence-check/`) | Divergent copies in both repos | **Single canonical copy in Framework** under `plugins/airis-agent/skills/confidence-check/` | Replace plugin repo copy with build artefact. |
+| Session init scripts | `Airis Agent_Plugin/scripts/*.sh` | `plugins/airis-agent/scripts/` | Executed via Claude Code hooks. |
+| Plugin manifest (`.claude-plugin/plugin.json`, `marketplace.json`) | `Airis Agent_Plugin/.claude-plugin/` | Generated from `plugins/airis-agent/manifest/` templates | Manifest fields will be parameterised for official distribution/local builds. |
+| Confidence skill tests (`.claude-plugin/tests`) | `Airis Agent_Plugin/.claude-plugin/tests/` | `plugins/airis-agent/tests/` | Keep with Framework to ensure tests run before packaging. |
 
 ## Proposed Layout in `superagent`
 
@@ -39,7 +39,7 @@ plugins/
 
 1. `make build-plugin` (new target):
    - Validates skill tests (`uv run` / Node unit tests).
-   - Copies `plugins/superagent/*` into a fresh `dist/plugins/superagent/.claude-plugin/…` tree.
+   - Copies `plugins/airis-agent/*` into a fresh `dist/plugins/airis-agent/.claude-plugin/…` tree.
    - Renders manifest templates with version/author pulled from `pyproject.toml` / git tags.
 2. `make sync-plugin-repo`:
    - Rsyncs the generated artefacts into `../Airis Agent_Plugin/`.

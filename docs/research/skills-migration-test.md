@@ -59,7 +59,7 @@ mkdir -p ~/.claude/skills/pm
 
 ### 3. Update Slash Command
 ```bash
-# plugins/superagent/commands/pm.md
+# plugins/airis-agent/commands/pm.md
 # Updated to reference skill: pm
 ```
 
@@ -107,7 +107,7 @@ rm -rf ~/.claude/skills/pm
 mv ~/.claude/superagent.backup ~/.claude/superagent
 
 # Revert slash command
-git checkout plugins/superagent/commands/pm.md
+git checkout plugins/airis-agent/commands/pm.md
 ```
 
 ## Next Steps

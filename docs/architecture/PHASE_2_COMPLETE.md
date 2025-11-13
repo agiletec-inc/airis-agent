@@ -95,9 +95,9 @@ ERROR tests/validators/test_validators.py          # superagent.validators
 
 ```bash
 $ uv run pytest --trace-config | grep superagent
-PLUGIN registered: <module 'superagent.pytest_plugin' from '.../src/superagent/pytest_plugin.py'>
+PLUGIN registered: <module 'superagent.pytest_plugin' from '.../src/airis_agent/pytest_plugin.py'>
 registered third-party plugins:
-  superagent-0.4.0 at .../src/superagent/pytest_plugin.py
+  superagent-0.4.0 at .../src/airis_agent/pytest_plugin.py
 ```
 
 ### Fixtures Auto-Loaded ✅
@@ -159,13 +159,13 @@ $ make verify
 ======================================
 
 1. Package location:
-   /Users/kazuki/github/superagent/src/superagent/__init__.py
+   /Users/kazuki/github/superagent/src/airis_agent/__init__.py
 
 2. Package version:
    Airis Agent, version 0.4.0
 
 3. Pytest plugin:
-   superagent-0.4.0 at .../src/superagent/pytest_plugin.py
+   superagent-0.4.0 at .../src/airis_agent/pytest_plugin.py
    ✅ Plugin loaded
 
 4. Health check:
@@ -276,8 +276,8 @@ The pytest plugin architecture is **working as designed**:
 
 ### Clean Separation ✅
 
-- **Core (PM Agent)**: Business logic in `src/superagent/pm_agent/`
-- **Plugin**: pytest integration in `src/superagent/pytest_plugin.py`
+- **Core (PM Agent)**: Business logic in `src/airis_agent/pm_agent/`
+- **Plugin**: pytest integration in `src/airis_agent/pytest_plugin.py`
 - **Tests**: Use plugin fixtures without knowing implementation
 
 ---

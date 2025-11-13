@@ -28,7 +28,7 @@ Welcome to Airis Agent development! This guide provides everything you need to c
 ```bash
 # Fork superagent on GitHub first
 git clone https://github.com/YOUR_USERNAME/superagent.git
-cd superagent
+cd airis-agent
 
 # Test installation system
 PYTHONPATH=/path/to/superagent python3 -m setup --help
@@ -151,7 +151,7 @@ Core philosophy and approach
    ```bash
    # Fork on GitHub, then:
    git clone https://github.com/YOUR_USERNAME/superagent.git
-   cd superagent
+   cd airis-agent
    git remote add upstream https://github.com/agiletec-inc/airis-agent.git
    ```
 

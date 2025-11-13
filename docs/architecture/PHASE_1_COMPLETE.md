@@ -9,7 +9,7 @@
 ### 1. Clean Package Structure (PEP 517 src/ layout)
 
 ```
-src/superagent/
+src/airis_agent/
 ├── __init__.py              # Package entry point (version, exports)
 ├── pytest_plugin.py         # ⭐ Pytest auto-discovery entry point
 ├── pm_agent/                # PM Agent core modules
@@ -35,9 +35,9 @@ src/superagent/
 **Evidence**:
 ```bash
 $ uv run python -m pytest --trace-config | grep superagent
-PLUGIN registered: <module 'superagent.pytest_plugin' from '.../src/superagent/pytest_plugin.py'>
+PLUGIN registered: <module 'superagent.pytest_plugin' from '.../src/airis_agent/pytest_plugin.py'>
 registered third-party plugins:
-  superagent-0.4.0 at .../src/superagent/pytest_plugin.py
+  superagent-0.4.0 at .../src/airis_agent/pytest_plugin.py
 ```
 
 **Configuration** (`pyproject.toml`):
@@ -49,10 +49,10 @@ superagent = "superagent.pytest_plugin"
 ### 3. CLI Commands Working
 
 ```bash
-$ uv run superagent --version
+$ uv run airis-agent --version
 Airis Agent version 0.4.0
 
-$ uv run superagent doctor
+$ uv run airis-agent doctor
 🔍 Airis Agent Doctor
 
 ✅ pytest plugin loaded
@@ -107,7 +107,7 @@ Successfully migrated 4 core modules from skills system:
 - ✅ Standard `uv pip install` workflow
 
 ### Clean Separation
-- ✅ Package code in `src/superagent/`
+- ✅ Package code in `src/airis_agent/`
 - ✅ Tests in `tests/`
 - ✅ Documentation in `docs/`
 - ✅ No `~/.claude/` pollution
@@ -122,19 +122,19 @@ Successfully migrated 4 core modules from skills system:
 
 ```bash
 # 1. Package installed in correct location
-$ uv run python -c "import superagent; print(superagent.__file__)"
-/Users/kazuki/github/superagent/src/superagent/__init__.py
+$ uv run python -c "import airis_agent; print(superagent.__file__)"
+/Users/kazuki/github/superagent/src/airis_agent/__init__.py
 
 # 2. Pytest plugin registered
 $ uv run python -m pytest --trace-config | grep superagent
-superagent-0.4.0 at .../src/superagent/pytest_plugin.py
+superagent-0.4.0 at .../src/airis_agent/pytest_plugin.py
 
 # 3. CLI works
-$ uv run superagent --version
+$ uv run airis-agent --version
 Airis Agent version 0.4.0
 
 # 4. Doctor check passes
-$ uv run superagent doctor
+$ uv run airis-agent doctor
 ✅ Airis Agent is healthy
 ```
 
@@ -145,15 +145,15 @@ $ uv run superagent doctor
 - **Fix**: Changed all commands to use `uv` (CLAUDE.md compliance)
 
 ### Issue 2: Vague "core" directory naming
-- **Problem**: `src/superagent/core/` was too generic
-- **Fix**: Renamed to `src/superagent/execution/` for clarity
+- **Problem**: `src/airis_agent/core/` was too generic
+- **Fix**: Renamed to `src/airis_agent/execution/` for clarity
 
 ### Issue 3: Entry points syntax error
 - **Problem**: Used old setuptools format `[project.entry-points.console_scripts]`
 - **Fix**: Changed to hatchling format `[project.scripts]`
 
 ### Issue 4: Old package location
-- **Problem**: Package installing from old `superagent/` instead of `src/superagent/`
+- **Problem**: Package installing from old `superagent/` instead of `src/airis_agent/`
 - **Fix**: Removed old directory, force reinstalled with `uv pip install -e . --force-reinstall`
 
 ## 📋 What's NOT Included in Phase 1

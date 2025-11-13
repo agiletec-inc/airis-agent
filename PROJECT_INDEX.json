@@ -9,13 +9,13 @@
   },
   "entry_points": {
     "cli": {
-      "command": "superagent",
-      "source": "src/superagent/cli/main.py",
+      "command": "airis-agent",
+      "source": "src/airis_agent/cli/main.py",
       "purpose": "CLI interface for Super Agent operations"
     },
     "pytest_plugin": {
       "auto_loaded": true,
-      "source": "src/superagent/pytest_plugin.py",
+      "source": "src/airis_agent/pytest_plugin.py",
       "purpose": "PM Agent fixtures and test automation"
     },
     "skills": {
@@ -27,7 +27,7 @@
   },
   "core_modules": {
     "pm_agent": {
-      "path": "src/superagent/pm_agent/",
+      "path": "src/airis_agent/pm_agent/",
       "modules": {
         "confidence": {
           "file": "confidence.py",
@@ -57,7 +57,7 @@
       }
     },
     "execution": {
-      "path": "src/superagent/execution/",
+      "path": "src/airis_agent/execution/",
       "modules": {
         "parallel": {
           "file": "parallel.py",
@@ -75,7 +75,7 @@
       }
     },
     "cli": {
-      "path": "src/superagent/cli/",
+      "path": "src/airis_agent/cli/",
       "modules": {
         "main": {
           "file": "main.py",
@@ -190,8 +190,8 @@
   },
   "quick_start": {
     "installation": [
-      "uv pip install superagent",
-      "pip install superagent",
+      "uv pip install airis-agent",
+      "pip install airis-agent",
       "make install"
     ],
     "usage": [

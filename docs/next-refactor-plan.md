@@ -122,7 +122,7 @@
 | technical-writer | 技術ライター | ❌ | `/sc:document` や完了報告で使用 |
 
 - 現時点で Framework 側に戻したのは `deep-research`, `repo-index`, `self-review` の 3 件のみ。  
-- 他エージェントは Airis Agent のモジュール化計画と合わせて `plugins/superagent/agents/` へ随時再配置する。
+- 他エージェントは Airis Agent のモジュール化計画と合わせて `plugins/airis-agent/agents/` へ随時再配置する。
 
 ## 2. ドキュメント鮮度・外部記憶フロー骨子
 
@@ -156,10 +156,10 @@
 ## 4. Framework ↔ Plugin 再編ロードマップ（骨子）
 
 1. **資産の再導入**  
-   - `plugins/superagent/commands/`, `agents/`, `skills/`, `hooks/`, `scripts/` を Framework リポに新設し、upstream/master のコンテンツを復元。  
+   - `plugins/airis-agent/commands/`, `agents/`, `skills/`, `hooks/`, `scripts/` を Framework リポに新設し、upstream/master のコンテンツを復元。  
    - `manifest/` テンプレートと `tests/` を併設し、ここを唯一の編集ポイントにする。
 2. **ビルド・同期タスク**  
-   - `make build-plugin`: テスト→テンプレート展開→`dist/plugins/superagent/.claude-plugin/` 出力。  
+   - `make build-plugin`: テスト→テンプレート展開→`dist/plugins/airis-agent/.claude-plugin/` 出力。  
    - `make sync-plugin-repo`: 上記成果物を `../Airis Agent_Plugin/` へ rsync（クリーンコピー）。PR 時にも生成物を同梱。  
 3. **Plugin リポの役割変更**  
    - 生成物のみを保持し、「直接編集禁止」の README と CI ガードを配置。  
@@ -176,7 +176,7 @@
    - 代表タスク（軽微修正／バグ修正／大規模実装）を定義し、Airis Agent のみ vs `sc:*` 併用でセッションログを取得。  
    - 計測項目: 総トークン数、経過時間、試行回数、残タスク有無。
 2. **ビルド & 配布検証**  
-   - `make build-plugin` 実行 → `dist/plugins/superagent/.claude-plugin/` のサイズ・構成を記録。  
+   - `make build-plugin` 実行 → `dist/plugins/airis-agent/.claude-plugin/` のサイズ・構成を記録。  
    - `make test` および `.claude-plugin/tests/` をフル実行し、失敗時ログを保存。  
 3. **SessionStart 診断ベンチ**  
    - リポジトリの変更量を操作し、インデックス鮮度判定の挙動と出力ログ（fresh/warning/stale）の正確性を検証。  

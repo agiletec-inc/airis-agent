@@ -33,7 +33,7 @@ Solution:
 
 Benefits:
   ✅ Zero ~/.claude/ pollution (unless user wants skills)
-  ✅ pip install superagent → pytest auto-loads
+  ✅ pip install airis-agent → pytest auto-loads
   ✅ Standard pytest plugin architecture
   ✅ Clear separation: core vs user config
   ✅ Tests stay in project root (not installed)
@@ -107,7 +107,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "superagent"
+name = "airis-agent"
 version = "0.4.0"
 description = "AI-enhanced development framework for Claude Code"
 readme = "README.md"
@@ -153,7 +153,7 @@ markers = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/superagent"]
+packages = ["src/airis_agent"]
 ```
 
 ---
@@ -162,7 +162,7 @@ packages = ["src/superagent"]
 
 ### 1. pytest Plugin Entry Point
 
-**File**: `src/superagent/pytest_plugin.py`
+**File**: `src/airis_agent/pytest_plugin.py`
 
 ```python
 """
@@ -282,7 +282,7 @@ def pytest_runtest_makereport(item, call):
 
 ### 2. PM Agent Core Modules
 
-**File**: `src/superagent/pm_agent/confidence.py`
+**File**: `src/airis_agent/pm_agent/confidence.py`
 
 ```python
 """
@@ -364,7 +364,7 @@ class ConfidenceChecker:
         return True
 ```
 
-**File**: `src/superagent/pm_agent/self_check.py`
+**File**: `src/airis_agent/pm_agent/self_check.py`
 
 ```python
 """
@@ -440,7 +440,7 @@ class SelfCheckProtocol:
 
 ### 3. CLI Commands
 
-**File**: `src/superagent/cli/main.py`
+**File**: `src/airis_agent/cli/main.py`
 
 ```python
 """
@@ -494,7 +494,7 @@ def doctor():
     plugins = config.pluginmanager.list_plugin_distinfo()
 
     superagent_loaded = any(
-        "superagent" in str(plugin[0])
+        "airis-agent" in str(plugin[0])
         for plugin in plugins
     )
 
@@ -524,9 +524,9 @@ if __name__ == "__main__":
 
 ### Phase 1: Restructure (Day 1)
 
-- [ ] Create `src/superagent/` directory
-- [ ] Move current `superagent/` → `src/superagent/`
-- [ ] Create `src/superagent/pytest_plugin.py`
+- [ ] Create `src/airis_agent/` directory
+- [ ] Move current `superagent/` → `src/airis_agent/`
+- [ ] Create `src/airis_agent/pytest_plugin.py`
 - [ ] Extract PM Agent logic from Skills:
   - [ ] `pm_agent/confidence.py`
   - [ ] `pm_agent/self_check.py`
@@ -629,11 +629,11 @@ ls ~/.claude/  # Should not have superagent/ unless skill installed
 
 ```bash
 # Install from PyPI (future)
-pip install superagent
+pip install airis-agent
 
 # Install from source (development)
 git clone https://github.com/agiletec-inc/airis-agent.git
-cd superagent
+cd airis-agent
 pip install -e .
 
 # Verify installation
@@ -648,7 +648,7 @@ superagent install-skill pm-agent
 ```bash
 # Clone repository
 git clone https://github.com/agiletec-inc/airis-agent.git
-cd superagent
+cd airis-agent
 
 # Install in editable mode with dev dependencies
 pip install -e ".[dev]"
@@ -678,7 +678,7 @@ pytest --trace-config
 
 ## 🎯 Success Criteria
 
-- [ ] `pip install superagent` works cleanly
+- [ ] `pip install airis-agent` works cleanly
 - [ ] pytest auto-discovers superagent plugin
 - [ ] `~/.claude/` remains untouched after `pip install`
 - [ ] All existing tests pass with new structure

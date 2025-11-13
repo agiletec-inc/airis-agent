@@ -55,7 +55,7 @@ def _check_pytest_plugin() -> Dict[str, Any]:
 
             # Check if superagent plugin is loaded
             superagent_loaded = any(
-                "superagent" in str(plugin[0]).lower()
+                "airis-agent" in str(plugin[0]).lower()
                 for plugin in plugins
             )
 

@@ -15,7 +15,7 @@
 
 ### This PR - Core型PM Agent
 
-**場所**: `src/superagent/pm_agent/` Pythonパッケージ
+**場所**: `src/airis_agent/pm_agent/` Pythonパッケージ
 **形式**: Pure Python modules
 **読み込み**: pytest実行時のみ、import必要分だけ
 
@@ -64,7 +64,7 @@ Total: ~150KB ≈ 35K-40K tokens
 ### This PR (Clean Architecture)
 
 ```
-src/superagent/
+src/airis_agent/
 └── pm_agent/                            # Python package
     ├── __init__.py                      # Package exports
     ├── confidence.py                    # ~8KB - Pre-execution
@@ -115,7 +115,7 @@ Token Cost: ~8K (memory files) + 200 (confidence)
 #### This PR
 ```python
 # 自動実行なし - 手動で呼び出し
-from superagent.pm_agent.confidence import ConfidenceChecker
+from airis_agent.pm_agent.confidence import ConfidenceChecker
 
 checker = ConfidenceChecker()
 confidence = checker.assess(context)
@@ -147,7 +147,7 @@ Location: Agent definition内
 
 #### This PR
 ```python
-# src/superagent/pm_agent/confidence.py
+# src/airis_agent/pm_agent/confidence.py
 
 class ConfidenceChecker:
     def assess(self, context: Dict[str, Any]) -> float:
@@ -198,7 +198,7 @@ Output: docs/pdca/[feature]/check.md
 
 #### This PR
 ```python
-# src/superagent/pm_agent/self_check.py
+# src/airis_agent/pm_agent/self_check.py
 
 class SelfCheckProtocol:
     def validate(self, implementation: Dict[str, Any])
@@ -243,7 +243,7 @@ class ReflexionMemory:
 
 #### This PR
 ```python
-# src/superagent/pm_agent/reflexion.py
+# src/airis_agent/pm_agent/reflexion.py
 
 class ReflexionPattern:
     """
@@ -283,7 +283,7 @@ Enforcement: 手動
 
 #### This PR
 ```python
-# src/superagent/pm_agent/token_budget.py
+# src/airis_agent/pm_agent/token_budget.py
 
 class TokenBudgetManager:
     BUDGETS = {
@@ -357,7 +357,7 @@ EVERY session start:
 **This PR**:
 ```python
 # Manual activation required
-from superagent.pm_agent.confidence import ConfidenceChecker
+from airis_agent.pm_agent.confidence import ConfidenceChecker
 checker = ConfidenceChecker()
 ```
 
@@ -422,7 +422,7 @@ superagent install-skill pm-agent
 ```
 
 **Result**:
-- Pytest fixtures: `src/superagent/pm_agent/`
+- Pytest fixtures: `src/airis_agent/pm_agent/`
 - Auto-activation: `~/.claude/skills/pm/`
 - **両方利用可能**
 

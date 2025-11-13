@@ -111,7 +111,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["src/superagent"]
+source = ["src/airis_agent"]
 omit = [
     "*/tests/*",
     "*/test_*",

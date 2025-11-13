@@ -9,7 +9,7 @@ AI-enhanced development framework providing confidence gating, parallel executio
 
 ## Why Airis Agent Exists
 
-**ABI-first design**: Python modules under `src/superagent/api/` provide a reusable Application Binary Interface. This means:
+**ABI-first design**: Python modules under `src/airis_agent/api/` provide a reusable Application Binary Interface. This means:
 
 - **Single source of truth**: Runtime logic (confidence gate, parallel executor, reflexion/self-check, repo indexer) lives in one package
 - **No drift**: Plugin artifacts are generated from source templates, preventing inconsistencies
@@ -58,16 +58,16 @@ Install directly from the GitHub repository marketplace:
 
 ```bash
 # In Claude Code, run:
-/plugin marketplace add kazuki/superagent
-/plugin install superagent
+/plugin marketplace add agiletec-inc/airis-agent
+/plugin install airis-agent
 ```
 
 Or add to your project's `.claude/settings.json`:
 
 ```json
 {
-  "marketplaces": ["kazuki/superagent"],
-  "enabledPlugins": ["superagent"]
+  "marketplaces": ["https://github.com/agiletec-inc/airis-agent"],
+  "enabledPlugins": ["airis-agent"]
 }
 ```
 
@@ -83,7 +83,7 @@ The plugin provides:
 ```bash
 # Clone the repository
 git clone https://github.com/agiletec-inc/airis-agent.git
-cd superagent
+cd airis-agent
 
 # Install with UV (recommended)
 make install
@@ -91,7 +91,7 @@ make install
 
 # Verify installation
 make verify
-uv run superagent doctor
+uv run airis-agent doctor
 ```
 
 ### Basic Usage
@@ -99,7 +99,7 @@ uv run superagent doctor
 #### As a Python API
 
 ```python
-from superagent.api import evaluate_confidence, generate_repo_index
+from airis_agent.api import evaluate_confidence, generate_repo_index
 
 # Confidence gate
 result = evaluate_confidence({
@@ -138,30 +138,30 @@ def test_error_learning(reflexion_pattern):
 
 ```bash
 # Check installation health
-uv run superagent doctor
+uv run airis-agent doctor
 
 # Show version
-uv run superagent version
+uv run airis-agent version
 
 # Install a skill to Claude Code
-uv run superagent install-skill confidence-check
+uv run airis-agent install-skill confidence-check
 ```
 
 ## Project Structure
 
 ```
-superagent/
-├── src/superagent/
+airis-agent/
+├── src/airis_agent/
 │   ├── api/                 # ABI endpoints (confidence, repo_index, deep_research)
 │   ├── cli/                 # CLI commands (doctor, version, install-skill)
 │   ├── execution/           # Parallel executor, reflection, self-correction
 │   ├── pm_agent/            # Confidence checker, self-check protocol, reflexion
 │   ├── pytest_plugin.py     # Auto-loaded pytest integration
 │   └── skills/              # TypeScript skills bundled with package
-├── plugins/superagent/      # Plugin source (manifest templates, tests)
+├── plugins/airis-agent/      # Plugin source (manifest templates, tests)
 │   ├── manifest/            # Metadata and manifest templates
 │   └── tests/               # Plugin smoke tests
-├── dist/plugins/superagent/ # Built plugin artifacts (via make build-plugin)
+├── dist/plugins/airis-agent/ # Built plugin artifacts (via make build-plugin)
 ├── tests/                   # Python test suite
 ├── docs/                    # Documentation
 ├── scripts/                 # Build/publish helpers
@@ -220,7 +220,7 @@ Airis Agent exposes three main API endpoints:
 Pre-implementation confidence assessment:
 
 ```python
-from superagent.api import evaluate_confidence, ConfidenceRequest
+from airis_agent.api import evaluate_confidence, ConfidenceRequest
 
 request = ConfidenceRequest(
     task_description="Implement OAuth2 authentication",
@@ -240,7 +240,7 @@ response = evaluate_confidence(request)
 Generates structured codebase summaries:
 
 ```python
-from superagent.api import generate_repo_index, RepoIndexRequest
+from airis_agent.api import generate_repo_index, RepoIndexRequest
 
 request = RepoIndexRequest(
     repo_path="/path/to/repo",
@@ -258,7 +258,7 @@ response = generate_repo_index(request)
 Multi-step research planning:
 
 ```python
-from superagent.api import perform_research, ResearchRequest
+from airis_agent.api import perform_research, ResearchRequest
 
 request = ResearchRequest(
     topic="React Server Components best practices",

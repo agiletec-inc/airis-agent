@@ -326,7 +326,7 @@ Root Cause: validation
 ## Integration: Complete Workflow
 
 ```python
-from superagent.core import intelligent_execute
+from airis_agent.core import intelligent_execute
 
 result = intelligent_execute(
     task="Create user validation system with email verification",
@@ -427,7 +427,7 @@ Result: 97% token savings
 
 ### Quick Start
 ```python
-from superagent.core import intelligent_execute
+from airis_agent.core import intelligent_execute
 
 # Simple execution
 result = intelligent_execute(
@@ -439,7 +439,7 @@ result = intelligent_execute(
 
 ### Quick Mode (No Reflection)
 ```python
-from superagent.core import quick_execute
+from airis_agent.core import quick_execute
 
 # Fast execution without reflection overhead
 results = quick_execute([op1, op2, op3])
@@ -447,7 +447,7 @@ results = quick_execute([op1, op2, op3])
 
 ### Safe Mode (Guaranteed Reflection)
 ```python
-from superagent.core import safe_execute
+from airis_agent.core import safe_execute
 
 # Blocks if confidence <70%, raises error
 result = safe_execute(
@@ -479,7 +479,7 @@ python scripts/demo_intelligent_execution.py
 ## Files Created
 
 ```
-src/superagent/core/
+src/airis_agent/core/
 ├── __init__.py                  # Integration layer
 ├── reflection.py                # Reflection × 3 engine
 ├── parallel.py                  # Parallel execution engine

@@ -654,7 +654,7 @@ python scripts/validate_directory_names.py
 git remote set-url origin https://github.com/agiletec-inc/airis-agent.git
 
 # 3. Update all documentation references
-grep -rl "superagent" . | xargs sed -i '' 's/superagent/superagent-framework/g'
+grep -rl "airis-agent" . | xargs sed -i '' 's/superagent/superagent-framework/g'
 
 # 4. Update pyproject.toml URLs
 sed -i '' 's|superagent|superagent-framework|g' pyproject.toml
@@ -696,7 +696,7 @@ superagent-framework/
 mkdir -p src
 
 # Move packages
-git mv superagent src/superagent
+git mv superagent src/airis_agent
 git mv setup src/setup
 
 # Update pyproject.toml

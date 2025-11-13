@@ -12,7 +12,7 @@ import click
 # Add parent directory to path to import airis_agent
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from superagent import __version__
+from airis_agent import __version__
 
 
 @click.group()

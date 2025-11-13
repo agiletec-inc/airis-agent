@@ -43,7 +43,7 @@ Remove old installation system (setup/) that caused heavy token consumption
 
 **Evidence 2: PHASE_2_COMPLETE.md**
 ```markdown
-New architecture (src/superagent/) is self-contained and doesn't need setup/.
+New architecture (src/airis_agent/) is self-contained and doesn't need setup/.
 ```
 
 **Evidence 3: Architecture Migration Rationale**
@@ -94,14 +94,14 @@ Use src/ layout for Airis Agent:
 superagent/pm_agent/confidence.py
 
 # New structure (PEP 517 compliant)
-src/superagent/pm_agent/confidence.py
+src/airis_agent/pm_agent/confidence.py
 ```
 
 **Evidence 3: pytest plugin auto-discovery**
 ```bash
 $ uv run python -m pytest --trace-config 2>&1 | grep "registered third-party plugins:"
 registered third-party plugins:
-  superagent-0.4.0 at /Users/kazuki/github/superagent/src/superagent/pytest_plugin.py
+  superagent-0.4.0 at /Users/kazuki/github/superagent/src/airis_agent/pytest_plugin.py
 ```
 
 **Logical Conclusion**:
@@ -287,7 +287,7 @@ This repository focuses on Python package implementation.
 ```
 superagent:
   Purpose: Distributed as Python library
-  Install: `uv pip install superagent`
+  Install: `uv pip install airis-agent`
   Target: pytest + CLI users
 
 Airis Agent_Plugin:
@@ -336,7 +336,7 @@ feat: migrate CLI to typer + rich for modern UX
 - Complex dependency checking
 - Auto-update functionality
 
-**New CLI (src/superagent/cli/main.py)**:
+**New CLI (src/airis_agent/cli/main.py)**:
 ```python
 # Modern Python CLI with typer + rich
 @app.command()
@@ -369,7 +369,7 @@ def doctor(verbose: bool = False):
 
 ### After (next)
 - **Total lines**: ~22,500 lines (**50% reduction**)
-- **Directories**: src/superagent/, docs/, tests/
+- **Directories**: src/airis_agent/, docs/, tests/
 - **Installation**: `uv pip install -e ".[dev]"`
 - **Distribution**: PyPI (plugin in separate repo)
 - **Dependencies**: Python only

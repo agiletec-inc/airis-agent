@@ -39,7 +39,7 @@ uv run python -m pytest --trace-config 2>&1 | grep "registered third-party plugi
 **Result**:
 ```
 registered third-party plugins:
-  superagent-0.4.0 at /Users/kazuki/github/superagent/src/superagent/pytest_plugin.py
+  superagent-0.4.0 at /Users/kazuki/github/superagent/src/airis_agent/pytest_plugin.py
 ```
 
 **Status**: ✅ **Plugin auto-discovered via entry points**
@@ -90,7 +90,7 @@ superagent = "superagent.pytest_plugin"
 
 **Command**:
 ```bash
-uv run superagent doctor --verbose
+uv run airis-agent doctor --verbose
 ```
 
 **Result**:
@@ -135,7 +135,7 @@ $ uv run pytest tests/test_pytest_plugin.py -v
 
 ### Package Location
 ```
-Location: /Users/kazuki/github/superagent/src/superagent/__init__.py
+Location: /Users/kazuki/github/superagent/src/airis_agent/__init__.py
 Version: 0.4.0
 ```
 
@@ -171,7 +171,7 @@ make clean          # Clean artifacts
 
 **Core (Site Packages)**:
 ```
-src/superagent/
+src/airis_agent/
 ├── pm_agent/          # Core PM Agent functionality
 ├── execution/         # Execution engine (parallel, reflection)
 ├── cli/               # CLI interface
@@ -465,7 +465,7 @@ superagent install  # Installs to ~/.claude/superagent/
 
 **New (This PR)**:
 ```bash
-pip install superagent  # Standard Python package
+pip install airis-agent  # Standard Python package
 
 # Optional: Install Skills for auto-activation
 superagent install-skill pm-agent

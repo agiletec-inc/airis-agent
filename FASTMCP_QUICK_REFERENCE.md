@@ -1,4 +1,4 @@
-# FastMCP Quick Reference for Superagent Integration
+# FastMCP Quick Reference for Airis Agent Integration
 
 ## What is FastMCP at a Glance?
 
@@ -10,9 +10,9 @@ Think of it as:
 - Handles all protocol complexity automatically
 - Enterprise auth, middleware, deployment built-in
 
-## Why it matters for Superagent
+## Why it matters for Airis Agent
 
-1. **Expose Superagent as MCP service**: Any IDE/CLI can use it (Claude, Cursor, Gemini, etc.)
+1. **Expose Airis Agent as MCP service**: Any IDE/CLI can use it (Claude, Cursor, Gemini, etc.)
 2. **No code duplication**: Single Python API serves multiple clients
 3. **Built-in auth**: Protect endpoints without custom work
 4. **Enterprise-ready**: Logging, middleware, deployments included
@@ -81,13 +81,13 @@ async with Client("server.py") as client:
     result = await client.call_tool("add", {"a": 1, "b": 2})
 ```
 
-## Superagent Integration Opportunities
+## Airis Agent Integration Opportunities
 
 ### A. Expose confidence checker as MCP tool
 ```python
-from superagent.api import evaluate_confidence
+from airis_agent.api import evaluate_confidence
 
-mcp = FastMCP("Superagent")
+mcp = FastMCP("Airis Agent")
 
 @mcp.tool
 async def check_confidence(task: str) -> dict:
@@ -102,7 +102,7 @@ async def check_confidence(task: str) -> dict:
 
 ### B. Repository indexing as resource
 ```python
-from superagent.api import generate_repo_index
+from airis_agent.api import generate_repo_index
 
 @mcp.resource("repo://index")
 async def get_repo_index(path: str):
@@ -119,7 +119,7 @@ auth = GoogleProvider(
     client_secret="...",
     base_url="https://myserver.com"
 )
-mcp = FastMCP("Superagent", auth=auth)
+mcp = FastMCP("Airis Agent", auth=auth)
 ```
 
 ### D. Middleware for PM patterns
@@ -134,7 +134,7 @@ class ConfidenceCheckMiddleware(Middleware):
                 return {"error": "Confidence too low"}
         return await call_next(request)
 
-mcp = FastMCP("Superagent", middleware=[ConfidenceCheckMiddleware()])
+mcp = FastMCP("Airis Agent", middleware=[ConfidenceCheckMiddleware()])
 ```
 
 ## Key FastMCP Features

@@ -174,7 +174,7 @@ class PMAgent:
 
     def update_index(self) -> bool:
         """Run parallel repository indexer"""
-        indexer_script = self.repo_path / "superagent" / "indexing" / "parallel_repository_indexer.py"
+        indexer_script = self.repo_path / "airis-agent" / "indexing" / "parallel_repository_indexer.py"
 
         if not indexer_script.exists():
             print(f"⚠️ Indexer not found: {indexer_script}")
@@ -212,7 +212,7 @@ class PMAgent:
 
     def load_reflexion_memory(self) -> list:
         """Load past mistakes for learning"""
-        from superagent.memory import ReflexionMemory
+        from airis_agent.memory import ReflexionMemory
 
         memory = ReflexionMemory(self.repo_path)
         data = memory.load()
@@ -280,7 +280,7 @@ class PMAgent:
 
         # PHASE 3: DO (with validation gates)
         print("\n⚙️ PHASE 3: DO")
-        from superagent.validators import ValidationGate
+        from airis_agent.validators import ValidationGate
 
         validator = ValidationGate()
         results = []
@@ -331,7 +331,7 @@ class PMAgent:
 
     def learn_from_execution(self, task: str, tasks: list, results: list) -> None:
         """Capture learning in reflexion memory"""
-        from superagent.memory import ReflexionMemory, ReflexionEntry
+        from airis_agent.memory import ReflexionMemory, ReflexionEntry
 
         memory = ReflexionMemory(self.repo_path)
 
@@ -395,7 +395,7 @@ def pm_session_start() -> Dict[str, Any]:
 import pytest
 from pathlib import Path
 from datetime import datetime, timedelta
-from superagent.agents.pm_agent import PMAgent, IndexStatus, ConfidenceScore
+from airis_agent.agents.pm_agent import PMAgent, IndexStatus, ConfidenceScore
 
 class TestPMAgent:
     """Test PM Agent intelligent behaviors"""
@@ -460,8 +460,8 @@ class TestPMAgent:
     def test_session_start_creates_index(self, tmp_path):
         """Test session start creates index if missing"""
         # Create minimal structure for indexer
-        (tmp_path / "superagent").mkdir()
-        (tmp_path / "superagent" / "indexing").mkdir()
+        (tmp_path / "airis-agent").mkdir()
+        (tmp_path / "airis-agent" / "indexing").mkdir()
 
         agent = PMAgent(tmp_path)
         # Would test session_start() but requires full indexer setup
@@ -472,7 +472,7 @@ class TestPMAgent:
 
 #### Day 5: PM Command統合
 
-**Update**: `plugins/superagent/commands/pm.md`
+**Update**: `plugins/airis-agent/commands/pm.md`
 
 ```markdown
 ---
@@ -496,7 +496,7 @@ description: "PM Agent with intelligent optimization (Python-powered)"
 
 **Session Start** (自動実行):
 ```python
-from superagent.agents.pm_agent import pm_session_start
+from airis_agent.agents.pm_agent import pm_session_start
 
 # Automatically called
 result = pm_session_start()

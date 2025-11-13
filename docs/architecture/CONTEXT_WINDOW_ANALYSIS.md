@@ -293,14 +293,14 @@ Result:
 **現在**:
 ```python
 # pytest起動時に全モジュールimport
-from superagent.pm_agent import confidence, self_check, reflexion, token_budget
+from airis_agent.pm_agent import confidence, self_check, reflexion, token_budget
 ```
 
 **提案**:
 ```python
 # 使用時のみimport
 def confidence_checker():
-    from superagent.pm_agent.confidence import ConfidenceChecker
+    from airis_agent.pm_agent.confidence import ConfidenceChecker
     return ConfidenceChecker()
 ```
 

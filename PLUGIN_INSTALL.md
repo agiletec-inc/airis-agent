@@ -10,8 +10,8 @@ Install from the GitHub repository marketplace:
 
 ```bash
 # In Claude Code, run:
-/plugin marketplace add kazuki/superagent
-/plugin install superagent
+/plugin marketplace add kazuki/airis-agent
+/plugin install airis-agent
 ```
 
 ### Method 2: Auto-Installation for Teams
@@ -20,8 +20,8 @@ Add to your project's `.claude/settings.json` to automatically install for all t
 
 ```json
 {
-  "marketplaces": ["kazuki/superagent"],
-  "enabledPlugins": ["superagent"]
+  "marketplaces": ["kazuki/airis-agent"],
+  "enabledPlugins": ["airis-agent"]
 }
 ```
 
@@ -37,7 +37,7 @@ For plugin development or testing:
 ```bash
 # 1. Clone the repository
 git clone https://github.com/agiletec-inc/airis-agent.git
-cd superagent
+cd airis-agent
 
 # 2. Build the plugin
 make build-plugin
@@ -46,7 +46,7 @@ make build-plugin
 /plugin marketplace add /path/to/superagent
 
 # 4. Install plugin
-/plugin install superagent
+/plugin install airis-agent
 ```
 
 ## What's Included
@@ -162,7 +162,7 @@ Edit `scripts/session-init.sh` to customize startup behavior.
 /plugin marketplace list
 
 # Re-add if needed
-/plugin marketplace add kazuki/superagent
+/plugin marketplace add kazuki/airis-agent
 ```
 
 ### Commands Not Available
@@ -191,7 +191,7 @@ Edit `scripts/session-init.sh` to customize startup behavior.
 /plugin uninstall superagent
 
 # Remove the marketplace
-/plugin marketplace remove kazuki/superagent
+/plugin marketplace remove kazuki/airis-agent
 ```
 
 ## Development
@@ -210,16 +210,16 @@ make sync-plugin-repo PLUGIN_REPO=/path/to/dist-repo
 
 ```bash
 # Run plugin tests
-uv run pytest plugins/superagent/tests/
+uv run pytest plugins/airis-agent/tests/
 
 # Run confidence check tests
-uv run python dist/plugins/superagent/.claude-plugin/tests/run_confidence_tests.py
+uv run python dist/plugins/airis-agent/.claude-plugin/tests/run_confidence_tests.py
 ```
 
 ## Plugin Structure
 
 ```
-dist/plugins/superagent/
+dist/plugins/airis-agent/
 ├── .claude-plugin/
 │   ├── plugin.json          # Plugin metadata
 │   ├── marketplace.json     # Marketplace info

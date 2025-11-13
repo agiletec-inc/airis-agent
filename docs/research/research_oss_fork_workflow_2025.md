@@ -23,7 +23,7 @@ feature/*: 機能開発ブランチ（upstream/masterから派生）
 ## 📚 Current Structure
 
 ```
-upstream: kazuki/superagent ← OSS本家
+upstream: kazuki/airis-agent ← OSS本家
   ↓ (fork)
 origin: kazukinakai/superagent ← 個人フォーク
 ```
@@ -41,11 +41,11 @@ origin: kazukinakai/superagent ← 個人フォーク
 
 ```bash
 # 1. Fork on GitHub UI
-# kazuki/superagent → kazukinakai/superagent
+# kazuki/airis-agent → kazukinakai/superagent
 
 # 2. Clone personal fork
 git clone https://github.com/kazukinakai/superagent.git
-cd superagent
+cd airis-agent
 
 # 3. Add upstream remote
 git remote add upstream https://github.com/agiletec-inc/airis-agent.git
@@ -151,7 +151,7 @@ git diff master...feature/pm-agent-redesign
 git push origin feature/pm-agent-redesign
 
 # Create PR using GitHub CLI
-gh pr create --repo kazuki/superagent \
+gh pr create --repo kazuki/airis-agent \
   --title "feat: PM Agent session persistence with local memory" \
   --body "$(cat <<'EOF'
 ## Summary
@@ -372,7 +372,7 @@ git checkout -b feature/xxx master
 git rebase -i master
 git diff master...feature/xxx  # verify clean diff
 git push origin feature/xxx
-gh pr create --repo kazuki/superagent
+gh pr create --repo kazuki/airis-agent
 ```
 
 ---

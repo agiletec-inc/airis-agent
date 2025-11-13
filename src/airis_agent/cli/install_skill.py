@@ -59,7 +59,7 @@ def _get_skill_source(skill_name: str) -> Optional[Path]:
     Get source directory for skill
 
     Skills are stored in:
-        src/superagent/skills/{skill_name}/
+        src/airis_agent/skills/{skill_name}/
 
     Args:
         skill_name: Name of skill
@@ -79,7 +79,7 @@ def _get_skill_source(skill_name: str) -> Optional[Path]:
             base / normalized,
         ]
 
-    # Packaged skills (src/superagent/skills/…)
+    # Packaged skills (src/airis_agent/skills/…)
     skill_dirs.extend(_candidate_paths(package_root / "skills"))
 
     # Repository root skills/ when running from source checkout

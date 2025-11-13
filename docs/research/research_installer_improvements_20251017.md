@@ -392,7 +392,7 @@ import typer
 from rich.console import Console
 
 app = typer.Typer(
-    name="superagent",
+    name="airis-agent",
     help="Airis Agent CLI",
     add_completion=True  # Automatic shell completion
 )

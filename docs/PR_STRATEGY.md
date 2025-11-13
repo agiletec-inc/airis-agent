@@ -1,7 +1,7 @@
 # PR Strategy for Clean Architecture Migration
 
 **Date**: 2025-10-21
-**Target**: kazuki/superagent
+**Target**: kazuki/airis-agent
 **Branch**: `feature/clean-architecture` → `master`
 
 ---
@@ -105,7 +105,7 @@ uv pip install -e .
 **Before**:
 ```python
 # テストで手動import必要
-from superagent.setup.components.knowledge_base import KnowledgeBase
+from airis_agent.setup.components.knowledge_base import KnowledgeBase
 ```
 
 **After**:
@@ -124,8 +124,8 @@ def test_example(confidence_checker, token_budget):
 - カスタムコンポーネントシステム → pytest plugin化
 
 **追加**:
-- `src/superagent/pytest_plugin.py`: 150行（シンプルなpytest統合）
-- `src/superagent/cli/`: 標準的なClick CLI
+- `src/airis_agent/pytest_plugin.py`: 150行（シンプルなpytest統合）
+- `src/airis_agent/cli/`: 標準的なClick CLI
 
 **結果**: **コード量約50%削減、保守性大幅向上**
 
@@ -141,13 +141,13 @@ $ make verify
 ======================================
 
 1. Package location:
-   /Users/kazuki/github/superagent/src/superagent/__init__.py ✅
+   /Users/kazuki/github/superagent/src/airis_agent/__init__.py ✅
 
 2. Package version:
    Airis Agent, version 0.4.0 ✅
 
 3. Pytest plugin:
-   superagent-0.4.0 at .../src/superagent/pytest_plugin.py ✅
+   superagent-0.4.0 at .../src/airis_agent/pytest_plugin.py ✅
    Plugin loaded ✅
 
 4. Health check:
@@ -168,7 +168,7 @@ Plugin Integration:    18 passed ✅
 
 **PM Agent読み込み比較**:
 - Before: `setup/components/` 展開 → 約15K tokens
-- After: `src/superagent/pm_agent/` import → 約3K tokens
+- After: `src/airis_agent/pm_agent/` import → 約3K tokens
 - **削減率**: 80%
 
 ---
@@ -221,12 +221,12 @@ pip install -e .  # or: uv pip install -e .
 ### Import Paths
 **Before**:
 ```python
-from superagent.core import intelligent_execute
+from airis_agent.core import intelligent_execute
 ```
 
 **After**:
 ```python
-from superagent.execution import intelligent_execute
+from airis_agent.execution import intelligent_execute
 ```
 
 ### Skills Installation
@@ -249,7 +249,7 @@ rm -rf ~/.claude/superagent/
 ```bash
 # Clone and install
 git clone https://github.com/agiletec-inc/airis-agent.git
-cd superagent
+cd airis-agent
 pip install -e .  # or: uv pip install -e .
 ```
 
@@ -313,7 +313,7 @@ $ make test
 
 **ファイル変更範囲**:
 ```
-src/superagent/          # 新規作成
+src/airis_agent/          # 新規作成
 tests/                    # テスト追加/更新
 docs/architecture/        # 移行ドキュメント
 pyproject.toml           # PEP 517設定

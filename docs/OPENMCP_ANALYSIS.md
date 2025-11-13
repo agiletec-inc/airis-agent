@@ -344,12 +344,12 @@ const tools = await client.listTools(); // All tools from both servers
 
 ---
 
-## 6. Whether It Can Be Integrated with Superagent
+## 6. Whether It Can Be Integrated with Airis Agent
 
 ### 6.1 Integration Points - YES, Multiple Options
 
 #### **Option 1: Use OpenMCP as MCP Server Backend**
-Superagent could wrap OpenAPI specifications using OpenMCP:
+Airis Agent could wrap OpenAPI specifications using OpenMCP:
 
 ```typescript
 // In superagent plugin or CLI command
@@ -376,7 +376,7 @@ const createApiTool = async (openapiUrl: string, config: any) => {
 ```
 
 #### **Option 2: Server Composition for Multi-API Agents**
-Superagent could use OpenMCP Manager for agent orchestration:
+Airis Agent could use OpenMCP Manager for agent orchestration:
 
 ```typescript
 import { createMcpManager } from '@openmcp/manager';
@@ -416,7 +416,7 @@ superagent add-api https://api.github.com/openapi.json \
 ```
 
 #### **Option 4: Pytest Plugin Integration**
-Test APIs using OpenMCP + Superagent's PM Agent:
+Test APIs using OpenMCP + Airis Agent's PM Agent:
 
 ```python
 # In pytest plugin
@@ -452,7 +452,7 @@ def test_external_api_integration(confidence_checker):
 
 5. **Client Agnostic**
    - OpenMCP works with any MCP client
-   - Superagent could offer to users via MCP transport
+   - Airis Agent could offer to users via MCP transport
 
 ### 6.3 Potential Challenges
 
@@ -462,7 +462,7 @@ def test_external_api_integration(confidence_checker):
 
 2. **Type Safety**
    - Dynamically generated from specs
-   - Consider Superagent's type-first approach
+   - Consider Airis Agent's type-first approach
 
 3. **Error Handling**
    - HTTP errors from external APIs
@@ -480,7 +480,7 @@ def test_external_api_integration(confidence_checker):
    - Use `openApiToMcpServerOptions` for REST APIs
    - Build OpenMCP servers for databases, GraphQL endpoints
    
-2. **Custom Superagent Tools for Complex Logic**
+2. **Custom Airis Agent Tools for Complex Logic**
    - Keep error handling, retry logic in Python/TypeScript
    - Use OpenMCP tools as building blocks
 
@@ -546,9 +546,9 @@ Tools available in chat client
 
 ---
 
-## 8. Comparison Matrix: Superagent vs OpenMCP
+## 8. Comparison Matrix: Airis Agent vs OpenMCP
 
-| Dimension | Superagent | OpenMCP |
+| Dimension | Airis Agent | OpenMCP |
 |-----------|-----------|---------|
 | **Purpose** | Agent framework + orchestration | MCP server framework |
 | **Core Use** | Build autonomous agents | Expose APIs as MCP tools |
@@ -573,7 +573,7 @@ Tools available in chat client
 
 ---
 
-## 10. Integration Checklist for Superagent
+## 10. Integration Checklist for Airis Agent
 
 - [ ] Evaluate OpenAPI specification coverage needed
 - [ ] Design tool auto-generation strategy

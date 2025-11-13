@@ -471,20 +471,20 @@ Demonstrates:
 
 ---
 
-## Integration Potential with Superagent
+## Integration Potential with Airis Agent
 
-### 1. **MCP Gateway for Superagent Tools**
+### 1. **MCP Gateway for Airis Agent Tools**
 
-FastMCP could provide an MCP wrapper layer for Superagent's PM Agent patterns:
+FastMCP could provide an MCP wrapper layer for Airis Agent's PM Agent patterns:
 
 ```python
 # Expose confidence checker as MCP server
-mcp = FastMCP("Superagent PM Agent")
+mcp = FastMCP("Airis Agent PM Agent")
 
 @mcp.tool
 async def evaluate_confidence(task: str, context: dict) -> dict:
     """Pre-implementation confidence assessment"""
-    from superagent.api import evaluate_confidence
+    from airis_agent.api import evaluate_confidence
     result = await evaluate_confidence(task, context)
     return {
         "score": result.score,
@@ -495,26 +495,26 @@ async def evaluate_confidence(task: str, context: dict) -> dict:
 @mcp.tool
 async def generate_repo_index(repo_path: str) -> str:
     """Generate repository index"""
-    from superagent.api import generate_repo_index
+    from airis_agent.api import generate_repo_index
     index = await generate_repo_index(repo_path)
     return index.content
 
-@mcp.resource("superagent://reflexion/{error_id}")
+@mcp.resource("airis-agent://reflexion/{error_id}")
 async def get_error_pattern(error_id: str):
     """Access learned error patterns"""
-    from superagent.pm_agent import reflexion
+    from airis_agent.pm_agent import reflexion
     return await reflexion.get_pattern(error_id)
 ```
 
 **Benefits:**
-- Makes Superagent accessible to any MCP client (Claude, Cursor, etc.)
-- Automatic schema generation from Superagent APIs
+- Makes Airis Agent accessible to any MCP client (Claude, Cursor, etc.)
+- Automatic schema generation from Airis Agent APIs
 - Authentication built-in
 - No need to maintain separate integrations
 
 ### 2. **Parallel Execution via FastMCP Tools**
 
-Superagent's parallel execution could be exposed as distributed tools:
+Airis Agent's parallel execution could be exposed as distributed tools:
 
 ```python
 @mcp.tool
@@ -522,14 +522,14 @@ async def parallel_execute(
     waves: Annotated[list[dict], Field(description="Execution waves")]
 ) -> dict:
     """Execute tasks in parallel waves with dependency management"""
-    from superagent.execution import parallel
+    from airis_agent.execution import parallel
     return await parallel.execute_waves(waves)
 ```
 
 ### 3. **Authentication & Deployment**
 
-FastMCP's enterprise auth and deployment tools complement Superagent:
-- Protect Superagent PM Agent endpoints with OAuth
+FastMCP's enterprise auth and deployment tools complement Airis Agent:
+- Protect Airis Agent PM Agent endpoints with OAuth
 - Deploy to FastMCP Cloud or self-hosted infrastructure
 - Automatic credential management
 
@@ -541,19 +541,19 @@ Deep Research as MCP resources:
 @mcp.resource("research://tavily/search")
 async def web_search(query: str):
     """Search the web using Tavily"""
-    from superagent.api import deep_research
+    from airis_agent.api import deep_research
     return await deep_research.search_web(query)
 
 @mcp.resource("research://docs/context7")
 async def fetch_official_docs(query: str):
     """Fetch official documentation via Context7"""
-    from superagent.api import deep_research
+    from airis_agent.api import deep_research
     return await deep_research.fetch_docs(query)
 ```
 
 ### 5. **Middleware for PM Patterns**
 
-Use FastMCP middleware to inject Superagent patterns:
+Use FastMCP middleware to inject Airis Agent patterns:
 
 ```python
 class ConfidenceCheckMiddleware(Middleware):
@@ -569,12 +569,12 @@ mcp = FastMCP("PM Agent", middleware=[ConfidenceCheckMiddleware()])
 
 ### 6. **Testing Integration**
 
-FastMCP's in-memory client could test Superagent plugins:
+FastMCP's in-memory client could test Airis Agent plugins:
 
 ```python
-from superagent.integration.fastmcp import create_superagent_mcp
+from airis_agent.integration.fastmcp import create_airis_agent_mcp
 
-mcp = create_superagent_mcp()
+mcp = create_airis_agent_mcp()
 
 async def test_pm_agent():
     async with Client(mcp) as client:
@@ -587,9 +587,9 @@ async def test_pm_agent():
 
 ---
 
-## Key Differences from Superagent
+## Key Differences from Airis Agent
 
-| Aspect | FastMCP | Superagent |
+| Aspect | FastMCP | Airis Agent |
 |--------|---------|-----------|
 | **Purpose** | MCP framework for building servers/clients | PM Agent patterns for LLM development |
 | **Scope** | Protocol implementation + production patterns | Confidence, parallelization, reflexion |
@@ -634,15 +634,15 @@ uv run pytest               # Full test suite
 
 ## Summary: Integration Opportunities
 
-FastMCP provides three main integration points with Superagent:
+FastMCP provides three main integration points with Airis Agent:
 
-1. **MCP Gateway Layer**: Wrap Superagent APIs as MCP server with automatic schema generation
+1. **MCP Gateway Layer**: Wrap Airis Agent APIs as MCP server with automatic schema generation
 2. **Middleware Integration**: Use FastMCP middleware for confidence checks and PM patterns
-3. **Testing Framework**: Leverage in-memory client for testing Superagent patterns
-4. **Deployment**: Package Superagent as FastMCP server for cloud/self-hosted deployment
+3. **Testing Framework**: Leverage in-memory client for testing Airis Agent patterns
+4. **Deployment**: Package Airis Agent as FastMCP server for cloud/self-hosted deployment
 
 The integration is natural because:
 - Both are production-focused frameworks
-- FastMCP handles protocol; Superagent handles LLM patterns
+- FastMCP handles protocol; Airis Agent handles LLM patterns
 - No overlap in functionality
 - Complementary deployment/auth/testing capabilities

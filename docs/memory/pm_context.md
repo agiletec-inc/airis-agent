@@ -16,8 +16,8 @@ Airis Agent is a comprehensive framework for Claude Code that provides:
 
 ## Architecture
 
-- `plugins/superagent/agents/` - Agent persona definitions
-- `plugins/superagent/commands/` - Slash command definitions (pm.md: token-efficient redesign)
+- `plugins/airis-agent/agents/` - Agent persona definitions
+- `plugins/airis-agent/commands/` - Slash command definitions (pm.md: token-efficient redesign)
 - `docs/` - Documentation and patterns
 - `docs/memory/` - PM Agent session state (local files)
 - `docs/pdca/` - PDCA cycle documentation per feature

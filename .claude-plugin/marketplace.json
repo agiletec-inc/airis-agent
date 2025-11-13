@@ -6,17 +6,17 @@
   "pluginRoot": "./dist/plugins",
   "plugins": [
     {
-      "name": "superagent",
+      "name": "airis-agent",
       "source": "./superagent",
       "description": "Super Agent - Confidence-driven orchestrator with deep research and repository indexing",
       "version": "4.1.6",
       "author": {
         "name": "Super Agent Team"
       },
-      "homepage": "https://github.com/kazuki/superagent",
-      "repository": "https://github.com/kazuki/superagent",
+      "homepage": "https://github.com/kazuki/airis-agent",
+      "repository": "https://github.com/kazuki/airis-agent",
       "license": "MIT",
-      "keywords": ["superagent", "pm-agent", "deep-research", "index", "confidence-check"],
+      "keywords": ["airis-agent", "pm-agent", "deep-research", "index", "confidence-check"],
       "category": "productivity"
     }
   ]

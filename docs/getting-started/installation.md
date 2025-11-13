@@ -207,7 +207,7 @@ superagent install
 ```bash
 # Clone repository
 git clone https://github.com/agiletec-inc/airis-agent.git
-cd superagent
+cd airis-agent
 
 # Install uv if not present
 curl -LsSf https://astral.sh/uv/install.sh | sh

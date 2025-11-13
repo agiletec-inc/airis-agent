@@ -141,8 +141,8 @@ Parallel-with-Reflection
 
 from dataclasses import dataclass
 from typing import Optional
-from superagent.memory import ReflexionMemory
-from superagent.validators import ValidationGate
+from airis_agent.memory import ReflexionMemory
+from airis_agent.validators import ValidationGate
 
 @dataclass
 class ConfidenceCheck:
