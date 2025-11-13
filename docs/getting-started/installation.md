@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📦 Super Agent Installation Guide
+# 📦 Airis Agent Installation Guide
 
 ### **Transform Claude Code with 21 Commands, 14 Agents & 6 MCP Servers**
 
@@ -30,8 +30,8 @@
 
 | Method | Command | Platform | Best For |
 |:------:|---------|:--------:|----------|
-| **🐍 pipx** | `pipx install Super Agent && Super Agent install` | Linux/macOS | **✅ Recommended** - Isolated environment |
-| **📦 pip** | `pip install Super Agent && Super Agent install` | All | Traditional Python setups |
+| **🐍 pipx** | `pipx install Airis Agent && Airis Agent install` | Linux/macOS | **✅ Recommended** - Isolated environment |
+| **📦 pip** | `pip install Airis Agent && Airis Agent install` | All | Traditional Python setups |
 | **🌐 npm** | `npm install -g @bifrost_inc/superagent && superagent install` | All | Node.js developers |
 | **🔧 Dev** | `git clone ... && uv pip install -e ".[dev]"` | All | Contributors & developers |
 
@@ -108,11 +108,11 @@ git --version 2>/dev/null && echo "✅ Git OK (optional)" || echo "⚠️ Git mi
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 
-# Install Super Agent
-pipx install Super Agent
+# Install Airis Agent
+pipx install Airis Agent
 
 # Run the installer
-Super Agent install
+Airis Agent install
 ```
 
 </td>
@@ -141,13 +141,13 @@ Super Agent install
 
 ```bash
 # Standard installation
-pip install Super Agent
+pip install Airis Agent
 
 # Or user installation
-pip install --user Super Agent
+pip install --user Airis Agent
 
 # Run the installer
-Super Agent install
+Airis Agent install
 ```
 
 </td>
@@ -206,7 +206,7 @@ superagent install
 
 ```bash
 # Clone repository
-git clone https://github.com/kazuki/superagent.git
+git clone https://github.com/agiletec-inc/airis-agent.git
 cd superagent
 
 # Install uv if not present
@@ -216,7 +216,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv pip install -e ".[dev]"
 
 # Test installation
-Super Agent install --dry-run
+Airis Agent install --dry-run
 ```
 
 </td>
@@ -247,11 +247,11 @@ Super Agent install --dry-run
 
 | Option | Command | Description |
 |--------|---------|-------------|
-| **Interactive** | `Super Agent install` | Guided setup with prompts |
-| **Specific Components** | `Super Agent install --components core mcp modes` | Install only what you need |
-| **Preview Mode** | `Super Agent install --dry-run` | See what will be installed |
-| **Force Install** | `Super Agent install --force --yes` | Skip all confirmations |
-| **List Components** | `Super Agent install --list-components` | View available components |
+| **Interactive** | `Airis Agent install` | Guided setup with prompts |
+| **Specific Components** | `Airis Agent install --components core mcp modes` | Install only what you need |
+| **Preview Mode** | `Airis Agent install --dry-run` | See what will be installed |
+| **Force Install** | `Airis Agent install --force --yes` | Skip all confirmations |
+| **List Components** | `Airis Agent install --list-components` | View available components |
 
 </div>
 
@@ -268,12 +268,12 @@ Super Agent install --dry-run
 ### **Step 1: Check Installation**
 
 ```bash
-# Verify Super Agent version
-python3 -m Super Agent --version
-# Expected: Super Agent 4.1.5
+# Verify Airis Agent version
+python3 -m Airis Agent --version
+# Expected: Airis Agent 4.1.5
 
 # List installed components
-Super Agent install --list-components
+Airis Agent install --list-components
 # Expected: List of available components
 ```
 
@@ -316,8 +316,8 @@ Super Agent install --list-components
 
 ```bash
 # Update to latest
-pip install --upgrade Super Agent
-Super Agent update
+pip install --upgrade Airis Agent
+Airis Agent update
 ```
 
 </td>
@@ -325,10 +325,10 @@ Super Agent update
 
 ```bash
 # Create backup
-Super Agent backup --create
+Airis Agent backup --create
 
 # Restore backup
-Super Agent backup --restore [file]
+Airis Agent backup --restore [file]
 ```
 
 </td>
@@ -336,10 +336,10 @@ Super Agent backup --restore [file]
 
 ```bash
 # Remove framework
-Super Agent uninstall
+Airis Agent uninstall
 
 # Uninstall package
-pip uninstall Super Agent
+pip uninstall Airis Agent
 ```
 
 </td>
@@ -361,20 +361,20 @@ This error occurs on systems with externally managed Python environments.
 
 ```bash
 # Option 1: Use pipx (Recommended)
-pipx install Super Agent
+pipx install Airis Agent
 
 # Option 2: User installation
-pip install --user Super Agent
+pip install --user Airis Agent
 
 # Option 3: Virtual environment
 python3 -m venv superagent-env
 source superagent-env/bin/activate  # Linux/macOS
 # or
 superagent-env\Scripts\activate  # Windows
-pip install Super Agent
+pip install Airis Agent
 
 # Option 4: Force (use with caution)
-pip install --break-system-packages Super Agent
+pip install --break-system-packages Airis Agent
 ```
 
 </details>
@@ -382,14 +382,14 @@ pip install --break-system-packages Super Agent
 <details>
 <summary><b>❌ Command Not Found</b></summary>
 
-If `Super Agent` command is not found after installation:
+If `Airis Agent` command is not found after installation:
 
 ```bash
 # Check if package is installed
-python3 -m pip show Super Agent
+python3 -m pip show Airis Agent
 
 # Run using Python module
-python3 -m Super Agent install
+python3 -m Airis Agent install
 
 # Add to PATH (if using --user)
 export PATH="$HOME/.local/bin:$PATH"
@@ -418,13 +418,13 @@ For permission errors during installation:
 
 ```bash
 # Use user installation
-pip install --user Super Agent
+pip install --user Airis Agent
 
 # Or use sudo (not recommended)
-sudo pip install Super Agent
+sudo pip install Airis Agent
 
 # Better: use pipx
-pipx install Super Agent
+pipx install Airis Agent
 ```
 
 </details>
@@ -507,7 +507,7 @@ You now have access to:
   <b>21 Commands</b> • <b>14 AI Agents</b> • <b>6 Behavioral Modes</b> • <b>6 MCP Servers</b>
 </p>
 
-**Ready to start?** Try `/sc:brainstorm` in Claude Code for your first Super Agent experience!
+**Ready to start?** Try `/sc:brainstorm` in Claude Code for your first Airis Agent experience!
 
 <p align="center">
   <a href="quick-start.md">

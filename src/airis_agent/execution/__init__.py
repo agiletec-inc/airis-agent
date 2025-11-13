@@ -7,7 +7,7 @@ Integrates three execution engines:
 3. Self-Correction Engine: Learn from mistakes
 
 Usage:
-    from superagent.execution import intelligent_execute
+    from airis_agent.execution import intelligent_execute
 
     result = intelligent_execute(
         task="Create user authentication system",

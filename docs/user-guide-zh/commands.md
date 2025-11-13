@@ -1,6 +1,6 @@
-# Super Agent 命令指南
+# Airis Agent 命令指南
 
-Super Agent 为 Claude Code 提供 21 个命令：用于工作流的 `/sc:*` 命令和用于专家的 `@agent-*`。
+Airis Agent 为 Claude Code 提供 21 个命令：用于工作流的 `/sc:*` 命令和用于专家的 `@agent-*`。
 
 ## 命令类型
 
@@ -8,12 +8,12 @@ Super Agent 为 Claude Code 提供 21 个命令：用于工作流的 `/sc:*` 命
 |------|------------|--------|---------|
 | **斜杠命令** | Claude Code | `/sc:[command]` | `/sc:implement "feature"` |
 | **智能体** | Claude Code | `@agent-[name]` | `@agent-security "review"` |
-| **安装命令** | 终端 | `Super Agent [command]` | `Super Agent install` |
+| **安装命令** | 终端 | `Airis Agent [command]` | `Airis Agent install` |
 
 ## 快速测试
 ```bash
 # 终端：验证安装
-python3 -m Super Agent --version
+python3 -m Airis Agent --version
 # Claude Code CLI 验证：claude --version
 
 # Claude Code：测试命令
@@ -23,13 +23,13 @@ python3 -m Super Agent --version
 
 **工作流**：`/sc:brainstorm "idea"` → `/sc:implement "feature"` → `/sc:test`
 
-## 🎯 理解 Super Agent 命令
+## 🎯 理解 Airis Agent 命令
 
-## Super Agent 如何工作
+## Airis Agent 如何工作
 
-Super Agent 提供行为上下文文件，Claude Code 通过读取这些文件来采用专门的行为。当您键入 `/sc:implement` 时，Claude Code 读取 `implement.md` 上下文文件并遵循其行为指令。
+Airis Agent 提供行为上下文文件，Claude Code 通过读取这些文件来采用专门的行为。当您键入 `/sc:implement` 时，Claude Code 读取 `implement.md` 上下文文件并遵循其行为指令。
 
-**Super Agent 命令不是由软件执行的** - 它们是上下文触发器，通过读取框架中的专门指令文件来修改 Claude Code 的行为。
+**Airis Agent 命令不是由软件执行的** - 它们是上下文触发器，通过读取框架中的专门指令文件来修改 Claude Code 的行为。
 
 ### 命令类型：
 - **斜杠命令** (`/sc:*`)：触发工作流模式和行为模式
@@ -47,10 +47,10 @@ Super Agent 提供行为上下文文件，Claude Code 通过读取这些文件�
 ### 安装命令 vs 使用命令
 
 **🖥️ 终端命令** （实际 CLI 软件）：
-- `Super Agent install` - 安装框架组件
-- `Super Agent update` - 更新现有安装
-- `Super Agent uninstall` - 卸载框架安装
-- `python3 -m Super Agent --version` - 检查安装状态
+- `Airis Agent install` - 安装框架组件
+- `Airis Agent update` - 更新现有安装
+- `Airis Agent uninstall` - 卸载框架安装
+- `python3 -m Airis Agent --version` - 检查安装状态
 
 **💬 Claude Code 命令** （上下文触发器）：
 - `/sc:brainstorm` - 激活需求发现上下文
@@ -65,15 +65,15 @@ Super Agent 提供行为上下文文件，Claude Code 通过读取这些文件�
 
 ### 🖥️ 终端验证（在终端/CMD 中运行）
 ```bash
-# 验证 Super Agent 是否正常工作（主要方法）
-python3 -m Super Agent --version
-# 示例输出：Super Agent 4.1.5
+# 验证 Airis Agent 是否正常工作（主要方法）
+python3 -m Airis Agent --version
+# 示例输出：Airis Agent 4.1.5
 
 # Claude Code CLI 版本检查
 claude --version
 
 # 检查已安装的组件
-python3 -m Super Agent install --list-components | grep mcp
+python3 -m Airis Agent install --list-components | grep mcp
 # 示例输出：显示已安装的 MCP 组件
 ```
 
@@ -94,13 +94,13 @@ python3 -m Super Agent install --list-components | grep mcp
 
 | Command Type | Where to Run | Format | Purpose | Example |
 |-------------|--------------|--------|---------|----------|
-| **🖥️ 安装** | 终端/CMD | `Super Agent [command]` | 设置和维护 | `Super Agent install` |
-| **🔧 配置** | 终端/CMD | `python3 -m Super Agent [command]` | 高级配置 | `python3 -m Super Agent --version` |
+| **🖥️ 安装** | 终端/CMD | `Airis Agent [command]` | 设置和维护 | `Airis Agent install` |
+| **🔧 配置** | 终端/CMD | `python3 -m Airis Agent [command]` | 高级配置 | `python3 -m Airis Agent --version` |
 | **💬 斜杠命令** | Claude Code | `/sc:[command]` | 工作流自动化 | `/sc:implement "feature"` |
 | **🤖 智能体调用** | Claude Code | `@agent-[name]` | 手动专家激活 | `@agent-security "review"` |
 | **⚡ 增强标志** | Claude Code | `/sc:[command] --flags` | 行为修改 | `/sc:analyze --think-hard` |
 
-> **记住**：所有 `/sc:` 命令和 `@agent-` 调用都在 Claude Code 聊天中工作，而不是在您的终端中。它们触发 Claude Code 从 Super Agent 框架中读取特定的上下文文件。
+> **记住**：所有 `/sc:` 命令和 `@agent-` 调用都在 Claude Code 聊天中工作，而不是在您的终端中。它们触发 Claude Code 从 Airis Agent 框架中读取特定的上下文文件。
 
 ## 目录
 
@@ -289,13 +289,13 @@ python3 -m Super Agent install --list-components | grep mcp
 ## 故障排除
 
 **命令问题：**
-- **命令未找到**: 验证安装: `python3 -m Super Agent --version`
+- **命令未找到**: 验证安装: `python3 -m Airis Agent --version`
 - **无响应**: 重启 Claude Code 会话
 - **处理延迟**: 使用 `--no-mcp` 测试不使用 MCP 服务器
 
 **快速修复：**
 - 重置会话: `/sc:load` 重新初始化
-- 检查状态: `Super Agent install --list-components`
+- 检查状态: `Airis Agent install --list-components`
 - 获取帮助: [故障排除指南](../reference/troubleshooting.md)
 
 ## 下一步

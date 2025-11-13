@@ -1,4 +1,4 @@
-# Super Agent Behavioral Modes Guide 🧠
+# Airis Agent Behavioral Modes Guide 🧠
 
 ## ✅ Quick Verification
 Test modes by using `/sc:` commands - they activate automatically based on task complexity. For full command reference, see [Commands Guide](commands.md).
@@ -100,7 +100,7 @@ Brainstorming Approach:
 - **Decision Analysis**: Evaluates choice logic and considers alternative approaches
 - **Pattern Recognition**: Identifies recurring behaviors and improvement opportunities
 - **Meta-Learning**: Extracts insights for continuous framework improvement
-- **Framework Compliance**: Validates actions against Super Agent principles and quality gates
+- **Framework Compliance**: Validates actions against Airis Agent principles and quality gates
 
 **Example Experience:**
 ```
@@ -533,7 +533,7 @@ For troubleshooting help, see:
 | **O001** | Orchestration coordination failed | Use `--no-mcp` or `--simple` |
 | **M001** | Mode conflict detected | Check flag priority rules |
 | **M002** | Mode switching loop | Restart session to reset state |
-| **M003** | Mode not recognized | Update Super Agent or check spelling |
+| **M003** | Mode not recognized | Update Airis Agent or check spelling |
 
 ### Progressive Support Levels
 
@@ -554,14 +554,14 @@ For troubleshooting help, see:
 **Level 3: Expert Support (30+ min)**
 ```bash
 # Deep mode analysis
-Super Agent install --diagnose
+Airis Agent install --diagnose
 # Check mode activation patterns
 # Review behavioral triggers and thresholds
 ```
 - See [Diagnostic Reference Guide](../reference/diagnostic-reference.md) for behavioral mode analysis
 
 **Level 4: Community Support**
-- Report mode issues at [GitHub Issues](https://github.com/kazuki/superagent/issues)
+- Report mode issues at [GitHub Issues](https://github.com/agiletec-inc/airis-agent/issues)
 - Include examples of unexpected mode behavior
 - Describe desired vs actual mode activation
 
@@ -616,7 +616,7 @@ A: Yes, modes are designed to complement each other:
 
 ## Summary
 
-Super Agent's 5 behavioral modes create an **intelligent adaptation system** that matches your needs automatically:
+Airis Agent's 5 behavioral modes create an **intelligent adaptation system** that matches your needs automatically:
 
 - **🧠 Brainstorming**: Transforms vague ideas into clear requirements
 - **🔍 Introspection**: Provides transparent reasoning for learning and debugging
@@ -625,7 +625,7 @@ Super Agent's 5 behavioral modes create an **intelligent adaptation system** tha
 - **⚡ Token Efficiency**: Compresses communication while preserving clarity
 - **🎨 Standard**: Maintains professional baseline for straightforward tasks
 
-**The key insight**: You don't need to think about modes - they work transparently to enhance your development experience. Simply describe what you want to accomplish, and Super Agent automatically adapts its approach to match your needs.
+**The key insight**: You don't need to think about modes - they work transparently to enhance your development experience. Simply describe what you want to accomplish, and Airis Agent automatically adapts its approach to match your needs.
 
 ---
 

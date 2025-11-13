@@ -1,13 +1,13 @@
-# Super Agent Troubleshooting Guide 🔧
+# Airis Agent Troubleshooting Guide 🔧
 
-Quick fixes to advanced diagnostics for Super Agent issues.
+Quick fixes to advanced diagnostics for Airis Agent issues.
 
 ## Quick Fixes (90% of problems)
 
 **Installation Verification:**
 ```bash
-python3 -m Super Agent --version    # Should show 4.1.5
-Super Agent install --list-components
+python3 -m Airis Agent --version    # Should show 4.1.5
+Airis Agent install --list-components
 ```
 
 **Command Issues:**
@@ -21,7 +21,7 @@ Super Agent install --list-components
 **Resolution Checklist:**
 - [ ] Version commands work and show 4.1.5
 - [ ] `/sc:` commands respond in Claude Code  
-- [ ] MCP servers listed: `Super Agent install --list-components | grep mcp`
+- [ ] MCP servers listed: `Airis Agent install --list-components | grep mcp`
 
 ## Common Issues
 
@@ -30,40 +30,40 @@ Super Agent install --list-components
 **Package Installation Fails:**
 ```bash
 # For pipx users
-pipx uninstall Super Agent
-pipx install Super Agent
+pipx uninstall Airis Agent
+pipx install Airis Agent
 
 # For pip users
-pip uninstall Super Agent
+pip uninstall Airis Agent
 pip install --upgrade pip
-pip install Super Agent
+pip install Airis Agent
 ```
 
 **Permission Denied / PEP 668 Error:**
 ```bash
 # Option 1: Use pipx (recommended)
-pipx install Super Agent
+pipx install Airis Agent
 
 # Option 2: Use pip with --user flag
-pip install --user Super Agent
+pip install --user Airis Agent
 
 # Option 3: Fix permissions
 sudo chown -R $USER ~/.claude
 
 # Option 4: Force installation (use with caution)
-pip install --break-system-packages Super Agent
+pip install --break-system-packages Airis Agent
 ```
 
 **Component Missing:**
 ```bash
-python3 -m Super Agent install --components core commands agents modes --force
+python3 -m Airis Agent install --components core commands agents modes --force
 ```
 
 ### Command Issues
 
 **Commands Not Recognized:**
 1. Restart Claude Code completely
-2. Verify: `python3 -m Super Agent --version`
+2. Verify: `python3 -m Airis Agent --version`
 3. Test: `/sc:brainstorm "test"`
 
 **Agents Not Activating:**
@@ -82,7 +82,7 @@ python3 -m Super Agent install --components core commands agents modes --force
 ```bash
 ls ~/.claude/.claude.json            # Check config exists
 node --version                       # Verify Node.js 16+
-Super Agent install --components mcp --force
+Airis Agent install --components mcp --force
 ```
 
 **API Key Required (Magic/Morphllm):**
@@ -96,7 +96,7 @@ export MORPH_API_KEY="your_key"
 
 **System Analysis:**
 ```bash
-Super Agent install --diagnose
+Airis Agent install --diagnose
 cat ~/.claude/logs/superagent.log | tail -50
 ```
 
@@ -108,9 +108,9 @@ grep -r "@" ~/.claude/CLAUDE.md      # Verify imports
 
 **Reset Installation:**
 ```bash
-Super Agent backup --create          # Backup first
-Super Agent uninstall
-Super Agent install --fresh
+Airis Agent backup --create          # Backup first
+Airis Agent uninstall
+Airis Agent install --fresh
 ```
 
 ## Get Help
@@ -120,5 +120,5 @@ Super Agent install --fresh
 - [Commands Guide](../user-guide/commands.md) - Usage issues
 
 **Community:**
-- [GitHub Issues](https://github.com/kazuki/superagent/issues)
+- [GitHub Issues](https://github.com/agiletec-inc/airis-agent/issues)
 - Include: OS, Python version, error message, steps to reproduce

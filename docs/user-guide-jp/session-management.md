@@ -2,7 +2,7 @@
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#session-management-guide)
 
-Super Agent は、Serena MCP サーバーを通じて永続的なセッション管理を提供し、Claude Code の会話全体にわたる真のコンテキスト保存と長期的なプロジェクト継続性を実現します。
+Airis Agent は、Serena MCP サーバーを通じて永続的なセッション管理を提供し、Claude Code の会話全体にわたる真のコンテキスト保存と長期的なプロジェクト継続性を実現します。
 
 ## 永続メモリを使用したコアセッションコマンド
 
@@ -262,7 +262,7 @@ Super Agent は、Serena MCP サーバーを通じて永続的なセッション
 - 特定のコードの場所とパターンを参照する
 - セッション間でメモリ構造の一貫性を維持する
 
-## 他のSuper Agent機能との統合
+## 他のAiris Agent機能との統合
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#integration-with-other-superagent-features)
 
@@ -411,4 +411,4 @@ Super Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 ---
 
-**重要なポイント**: Serena MCP によるセッション管理により、Super Agent は単一の会話の支援から永続的なプロジェクト パートナーシップへと変わり、すべての開発フェーズと Claude Code の会話にわたってコンテキスト、決定、学習が維持されます。
+**重要なポイント**: Serena MCP によるセッション管理により、Airis Agent は単一の会話の支援から永続的なプロジェクト パートナーシップへと変わり、すべての開発フェーズと Claude Code の会話にわたってコンテキスト、決定、学習が維持されます。

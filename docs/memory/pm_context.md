@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-Super Agent is a comprehensive framework for Claude Code that provides:
+Airis Agent is a comprehensive framework for Claude Code that provides:
 - Persona-based specialized agents (frontend, backend, security, etc.)
 - MCP server integrations (Context7, Magic, Morphllm, Sequential, etc.)
 - Slash command system for workflow automation

@@ -2,7 +2,7 @@
 
 ## 🤝 Our Commitment
 
-Super Agent is committed to fostering an inclusive, professional, and collaborative community focused on advancing AI-assisted software development. We welcome contributors of all backgrounds, experience levels, and perspectives to participate in building better development tools and workflows.
+Airis Agent is committed to fostering an inclusive, professional, and collaborative community focused on advancing AI-assisted software development. We welcome contributors of all backgrounds, experience levels, and perspectives to participate in building better development tools and workflows.
 
 **Our Mission**: Create a supportive environment where software developers can learn, contribute, and innovate together while maintaining the highest standards of technical excellence and professional conduct.
 
@@ -272,27 +272,27 @@ Super Agent is committed to fostering an inclusive, professional, and collaborat
 ## 🌍 Scope
 
 **GitHub Repositories:**
-- Super Agent main repository and all related repositories
+- Airis Agent main repository and all related repositories
 - Issues, pull requests, discussions, and code review interactions
 - Repository wikis, documentation, and project boards
 - Release notes, commit messages, and repository metadata
 
 **Communication Platforms:**
 - GitHub Discussions and Issues for project-related communication
-- Any official Super Agent social media accounts or announcements
+- Any official Airis Agent social media accounts or announcements
 - Community forums, chat channels, or messaging platforms
 - Video calls, meetings, or webinars related to the project
 
 **Events and Conferences:**
-- Super Agent-sponsored events, meetups, or conference presentations
+- Airis Agent-sponsored events, meetups, or conference presentations
 - Community workshops, training sessions, or educational events
-- Online events, webinars, or live streams featuring Super Agent
+- Online events, webinars, or live streams featuring Airis Agent
 - Informal gatherings or meetups organized by community members
 
 **External Platforms:**
-- Stack Overflow, Reddit, or other platforms when discussing Super Agent
+- Stack Overflow, Reddit, or other platforms when discussing Airis Agent
 - Social media interactions related to the project or community
-- Blog posts, articles, or publications about Super Agent
+- Blog posts, articles, or publications about Airis Agent
 - Professional networking platforms when representing the community
 
 **Private Communications:**
@@ -302,7 +302,7 @@ Super Agent is committed to fostering an inclusive, professional, and collaborat
 - Mentorship relationships formed through community participation
 
 **Representation Guidelines:**
-When representing Super Agent in any capacity:
+When representing Airis Agent in any capacity:
 - Professional behavior expected regardless of platform or context
 - Community standards apply even in informal settings
 - Consider impact on project reputation and community relationships
@@ -354,7 +354,7 @@ When representing Super Agent in any capacity:
 
 **Educational Philosophy:**
 
-Super Agent prioritizes education and growth over punishment when addressing community issues. We believe most conflicts arise from misunderstandings, different experience levels, or lack of context rather than malicious intent.
+Airis Agent prioritizes education and growth over punishment when addressing community issues. We believe most conflicts arise from misunderstandings, different experience levels, or lack of context rather than malicious intent.
 
 **Learning-Focused Enforcement:**
 - First response focuses on education and clarification of expectations
@@ -516,7 +516,7 @@ This code of conduct draws inspiration from several established community standa
 
 **Policy Maintenance:**
 
-**Last Updated**: December 2024 (Super Agent v4.0)
+**Last Updated**: December 2024 (Airis Agent v4.0)
 **Next Review**: June 2025 (Semi-annual review cycle)
 **Version**: 4.1.5 (Updated for v4 community structure and governance)
 
@@ -534,7 +534,7 @@ This code of conduct draws inspiration from several established community standa
 
 **Community Acknowledgments:**
 
-Super Agent's inclusive and professional community culture benefits from the active participation of contributors who embody these values in their daily interactions and technical contributions.
+Airis Agent's inclusive and professional community culture benefits from the active participation of contributors who embody these values in their daily interactions and technical contributions.
 
 **Community Contributors:**
 - Community members who model professional communication and inclusive participation
@@ -543,13 +543,13 @@ Super Agent's inclusive and professional community culture benefits from the act
 - Advocates who promote the framework and community in external venues
 
 **Positive Impact Recognition:**
-- [GitHub Contributors](https://github.com/kazuki/superagent/graphs/contributors) - Technical and community contributions
+- [GitHub Contributors](https://github.com/agiletec-inc/airis-agent/graphs/contributors) - Technical and community contributions
 - Community discussions highlight helpful guidance, mentorship, and collaborative problem-solving
 - Regular appreciation for inclusive behavior and professional communication
 - Annual community recognition for outstanding contributions to community culture
 
 **Growing Community:**
-The Super Agent community continues to grow through shared commitment to technical excellence, inclusive collaboration, and continuous learning. Community-focused contributions, from welcoming newcomers to facilitating productive discussions, strengthen the environment for all participants.
+The Airis Agent community continues to grow through shared commitment to technical excellence, inclusive collaboration, and continuous learning. Community-focused contributions, from welcoming newcomers to facilitating productive discussions, strengthen the environment for all participants.
 
 **Join Our Community:**
 Whether you're contributing code, improving documentation, helping others learn, or participating in discussions, your commitment to professional and inclusive behavior helps build a better software development community for everyone. Every positive interaction contributes to our collective success and the advancement of AI-assisted development tools.

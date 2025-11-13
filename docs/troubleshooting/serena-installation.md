@@ -11,7 +11,7 @@ Caused by: No such file or directory (os error 2)
 ```
 
 **Root Cause:**
-The Super Agent installer was incorrectly configured to use `uv run serena` instead of `uvx` for Serena MCP server installation.
+The Airis Agent installer was incorrectly configured to use `uv run serena` instead of `uvx` for Serena MCP server installation.
 
 **Solution:**
 
@@ -123,13 +123,13 @@ If issues persist:
 1. Check [Serena documentation](https://github.com/oraios/serena)
 2. Verify uvx installation: `uvx --version`
 3. Test direct installation: `uvx --from git+https://github.com/oraios/serena serena --help`
-4. Report issues to [Super Agent](https://github.com/kazuki/superagent/issues)
+4. Report issues to [Airis Agent](https://github.com/agiletec-inc/airis-agent/issues)
 
 ### Version Information
 
 This troubleshooting guide is for:
-- Super Agent v4.1.5+
+- Airis Agent v4.1.5+
 - Serena MCP (latest from GitHub)
 - UV/UVX package manager
 
-For older versions, refer to legacy documentation or upgrade to latest Super Agent.
+For older versions, refer to legacy documentation or upgrade to latest Airis Agent.

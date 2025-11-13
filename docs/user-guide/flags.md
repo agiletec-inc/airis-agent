@@ -1,4 +1,4 @@
-# Super Agent Flags Guide 🏁
+# Airis Agent Flags Guide 🏁
 
 **Most flags activate automatically** - Claude Code reads behavioral instructions to engage appropriate contexts based on keywords and patterns in your requests.
 
@@ -169,7 +169,7 @@
 | `--no-mcp` | Native tools only | Boolean |
 | `--frontend-verify` | UI testing, frontend debugging, layout validation | Enable Playwright + Chrome DevTools + Serena |
 
-### System Flags (Super Agent Installation)
+### System Flags (Airis Agent Installation)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--verbose` / `-v` | Verbose logging | Boolean |

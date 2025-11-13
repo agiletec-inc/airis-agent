@@ -16,12 +16,12 @@ test:
 # Test pytest plugin loading
 test-plugin:
 	@echo "Testing pytest plugin auto-discovery..."
-	@uv run python -m pytest --trace-config 2>&1 | grep -A2 "registered third-party plugins:" | grep superagent && echo "✅ Plugin loaded successfully" || echo "❌ Plugin not loaded"
+	@uv run python -m pytest --trace-config 2>&1 | grep -A2 "registered third-party plugins:" | grep airis-agent && echo "✅ Plugin loaded successfully" || echo "❌ Plugin not loaded"
 
 # Run doctor command
 doctor:
 	@echo "Running Super Agent health check..."
-	@uv run superagent doctor
+	@uv run airis-agent doctor
 
 # Verify Phase 1 installation
 verify:
@@ -29,16 +29,16 @@ verify:
 	@echo "======================================"
 	@echo ""
 	@echo "1. Package location:"
-	@uv run python -c "import superagent; print(f'   {superagent.__file__}')"
+	@uv run python -c "import airis-agent; print(f'   {airis-agent.__file__}')"
 	@echo ""
 	@echo "2. Package version:"
-	@uv run superagent --version | sed 's/^/   /'
+	@uv run airis-agent --version | sed 's/^/   /'
 	@echo ""
 	@echo "3. Pytest plugin:"
-	@uv run python -m pytest --trace-config 2>&1 | grep "registered third-party plugins:" -A2 | grep superagent | sed 's/^/   /' && echo "   ✅ Plugin loaded" || echo "   ❌ Plugin not loaded"
+	@uv run python -m pytest --trace-config 2>&1 | grep "registered third-party plugins:" -A2 | grep airis-agent | sed 's/^/   /' && echo "   ✅ Plugin loaded" || echo "   ❌ Plugin not loaded"
 	@echo ""
 	@echo "4. Health check:"
-	@uv run superagent doctor | grep "Super Agent is healthy" > /dev/null && echo "   ✅ All checks passed" || echo "   ❌ Some checks failed"
+	@uv run airis-agent doctor | grep "Super Agent is healthy" > /dev/null && echo "   ✅ All checks passed" || echo "   ❌ Some checks failed"
 	@echo ""
 	@echo "======================================"
 	@echo "✅ Phase 1 verification complete"
@@ -61,13 +61,13 @@ clean:
 	find . -type d -name .pytest_cache -exec rm -rf {} +
 	find . -type d -name .ruff_cache -exec rm -rf {} +
 
-PLUGIN_DIST := dist/plugins/superagent
+PLUGIN_DIST := dist/plugins/airis-agent
 PLUGIN_REPO ?= ../Super Agent_Plugin
 
 .PHONY: build-plugin
-build-plugin: ## Build Super Agent plugin artefacts into dist/
-	@echo "🛠️  Building Super Agent plugin from unified sources..."
-	@uv run python scripts/build_superagent_plugin.py
+build-plugin: ## Build Airis Agent plugin artefacts into dist/
+	@echo "🛠️  Building Airis Agent plugin from unified sources..."
+	@uv run python scripts/build_airis_agent_plugin.py
 
 .PHONY: sync-plugin-repo
 sync-plugin-repo: build-plugin ## Sync built plugin artefacts into ../Super Agent_Plugin
@@ -102,7 +102,7 @@ help:
 	@echo "  make clean           - Clean build artifacts"
 	@echo ""
 	@echo "🔌 Plugin Packaging:"
-	@echo "  make build-plugin    - Build Super Agent plugin artefacts into dist/"
+	@echo "  make build-plugin    - Build Airis Agent plugin artefacts into dist/"
 	@echo "  make sync-plugin-repo - Sync artefacts into ../Super Agent_Plugin"
 	@echo ""
 	@echo "📚 Documentation:"

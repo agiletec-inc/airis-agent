@@ -72,7 +72,7 @@ make doctor           # Health check diagnostics
 
 # Plugin Packaging
 make build-plugin            # Build plugin artifacts into dist/plugins/superagent/
-make sync-plugin-repo        # Sync artifacts into ../Super Agent_Plugin
+make sync-plugin-repo        # Sync artifacts into ../Airis Agent_Plugin
 
 # Maintenance
 make clean            # Remove build artifacts
@@ -123,7 +123,7 @@ Registered via `pyproject.toml` entry point, automatically available after insta
 
 ### ABI Endpoints (src/superagent/api/)
 
-These modules provide the public API surface for Super Agent runtime:
+These modules provide the public API surface for Airis Agent runtime:
 
 **1. Confidence Gate** (`confidence.py`)
 - Pre-implementation confidence assessment
@@ -148,7 +148,7 @@ These modules provide the public API surface for Super Agent runtime:
 - Source: `plugins/superagent/manifest/*.template.json`
 - Output: `dist/plugins/superagent/.claude-plugin/plugin.json`
 
-**Distribution**: Use `make sync-plugin-repo` to push built artifacts into `../Super Agent_Plugin` for marketplace distribution.
+**Distribution**: Use `make sync-plugin-repo` to push built artifacts into `../Airis Agent_Plugin` for marketplace distribution.
 
 ## 🧪 Testing with PM Agent
 
@@ -267,7 +267,7 @@ Plugin artifacts are generated from source templates:
 make build-plugin
 
 # Sync to distribution repository (optional)
-make sync-plugin-repo PLUGIN_REPO=/path/to/Super Agent_Plugin
+make sync-plugin-repo PLUGIN_REPO=/path/to/Airis Agent_Plugin
 ```
 
 **Source**: `plugins/superagent/manifest/` contains:
@@ -284,7 +284,7 @@ make sync-plugin-repo PLUGIN_REPO=/path/to/Super Agent_Plugin
 3. Verify: Check `dist/plugins/superagent/.claude-plugin/plugin.json`
 4. (Optional) Sync to distribution repo: `make sync-plugin-repo`
 
-**Distribution Package** (`../Super Agent_Plugin`):
+**Distribution Package** (`../Airis Agent_Plugin`):
 - Contains generated artifacts for marketplace
 - Do not edit manually - regenerate via `make sync-plugin-repo`
 

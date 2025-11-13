@@ -50,16 +50,16 @@ superagent = "superagent.pytest_plugin"
 
 ```bash
 $ uv run superagent --version
-Super Agent version 0.4.0
+Airis Agent version 0.4.0
 
 $ uv run superagent doctor
-🔍 Super Agent Doctor
+🔍 Airis Agent Doctor
 
 ✅ pytest plugin loaded
 ✅ Skills installed
 ✅ Configuration
 
-✅ Super Agent is healthy
+✅ Airis Agent is healthy
 ```
 
 ### 4. Zero-Footprint Installation
@@ -131,11 +131,11 @@ superagent-0.4.0 at .../src/superagent/pytest_plugin.py
 
 # 3. CLI works
 $ uv run superagent --version
-Super Agent version 0.4.0
+Airis Agent version 0.4.0
 
 # 4. Doctor check passes
 $ uv run superagent doctor
-✅ Super Agent is healthy
+✅ Airis Agent is healthy
 ```
 
 ## 🐛 Issues Fixed During Phase 1

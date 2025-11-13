@@ -736,7 +736,7 @@ skills/
 name: pm-mode
 description: Project Manager Agent with intelligent optimization
 version: 1.0.0
-author: Super Agent
+author: Airis Agent
 ---
 
 # PM Mode

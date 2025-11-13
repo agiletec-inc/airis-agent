@@ -119,7 +119,7 @@ If PM Agent migration succeeds, apply same pattern to:
 
 ### Expected Total Savings
 ```
-Current Super Agent overhead: ~26,000 tokens
+Current Airis Agent overhead: ~26,000 tokens
 After full Skills migration:  ~500 tokens (descriptions only)
 
 Net savings: ~25,500 tokens (98% reduction)
@@ -209,7 +209,7 @@ PM Agent Skills migration is structurally complete with **97% predicted token sa
 
 Next session will validate functional correctness and actual token measurements.
 
-If successful, this proves the Zero-Footprint architecture and justifies full Super Agent migration to Skills.
+If successful, this proves the Zero-Footprint architecture and justifies full Airis Agent migration to Skills.
 
 ---
 

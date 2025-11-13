@@ -3,9 +3,9 @@
 
 ## Executive Summary
 
-This research investigates best practices for implementing repository-scoped memory management in AI coding assistants, with specific focus on Super Agent PM Agent integration. Key findings indicate that **local file storage with git repository detection** is the industry standard for session isolation, offering optimal performance and developer experience.
+This research investigates best practices for implementing repository-scoped memory management in AI coding assistants, with specific focus on Airis Agent PM Agent integration. Key findings indicate that **local file storage with git repository detection** is the industry standard for session isolation, offering optimal performance and developer experience.
 
-### Key Recommendations for Super Agent
+### Key Recommendations for Airis Agent
 
 1. **✅ Adopt Local File Storage**: Store memory in repository-specific directories (`.superagent/memory/` or `docs/memory/`)
 2. **✅ Use Git Detection**: Implement `git rev-parse --git-dir` for repository boundary detection
@@ -36,7 +36,7 @@ project-root/
 - MCP integration (Graphiti) for sophisticated memory management across sessions
 - **Problem**: Users report context loss mid-task and excessive "start new chat" prompts
 
-**Relevance to Super Agent**: Validates local directory approach with repository-scoped configuration.
+**Relevance to Airis Agent**: Validates local directory approach with repository-scoped configuration.
 
 ---
 
@@ -54,7 +54,7 @@ project-root/
 - Repository authorization through GitHub App permissions
 - **Limitation**: Context scope is workspace-wide, not repository-specific by default
 
-**Relevance to Super Agent**: `.gitignore` integration is critical for security and performance.
+**Relevance to Airis Agent**: `.gitignore` integration is critical for security and performance.
 
 ---
 
@@ -79,7 +79,7 @@ git worktree add ../feature-branch feature-branch
 3. **Detection**: SAST/DAST/SCA on pull requests
 4. **Response**: Detailed commit-prompt mapping
 
-**Relevance to Super Agent**: PM Agent should implement context reset between repository changes.
+**Relevance to Airis Agent**: PM Agent should implement context reset between repository changes.
 
 ---
 
@@ -162,11 +162,11 @@ git rev-parse --show-toplevel
 - Semantic search across project history
 - Pattern recognition across repositories
 - Requires significant infrastructure investment
-- **Wait until**: Super Agent reaches "super-intelligence" level
+- **Wait until**: Airis Agent reaches "super-intelligence" level
 
 ---
 
-## 4. Super Agent PM Agent Recommendations
+## 4. Airis Agent PM Agent Recommendations
 
 ### 4.1 Immediate Implementation (v1)
 
@@ -285,7 +285,7 @@ else:
 ### 4.3 Context Isolation Strategy
 
 **Problem**: User switches from `superagent` to `airis-mcp-gateway`
-**Current Behavior**: PM Agent retains Super Agent context → Noise
+**Current Behavior**: PM Agent retains Airis Agent context → Noise
 **Desired Behavior**: PM Agent detects repository change → Clears context → Loads airis-mcp-gateway context
 
 **Implementation**:
@@ -342,7 +342,7 @@ if context_mgr.check_repository_change():
 
 **Add to .gitignore**:
 ```gitignore
-# Super Agent Memory (session-specific, not for version control)
+# Airis Agent Memory (session-specific, not for version control)
 .superagent/memory/
 
 # Keep architectural decisions (optional - can be versioned)
@@ -392,7 +392,7 @@ def get_relevant_context(current_repo: str) -> dict:
 
 ### 5.2 Vector Database Integration
 
-**When to implement**: If Super Agent requires semantic search across 100+ repositories
+**When to implement**: If Airis Agent requires semantic search across 100+ repositories
 
 **Use Case**:
 - "Find all authentication implementations across my projects"
@@ -468,7 +468,7 @@ def get_relevant_context(current_repo: str) -> dict:
 | **Developer UX** | ⭐⭐⭐⭐⭐ Excellent | ⭐⭐⭐ Good | ⭐⭐ Fair |
 | **Maintenance** | ⭐⭐⭐⭐⭐ None | ⭐⭐⭐ Regular | ⭐⭐ Intensive |
 
-**Recommendation for Super Agent v1**: **Local Files** (clear winner for repository-scoped memory)
+**Recommendation for Airis Agent v1**: **Local Files** (clear winner for repository-scoped memory)
 
 ---
 
@@ -516,7 +516,7 @@ def redact_sensitive_data(text: str) -> str:
 3. **✅ Start Simple, Evolve Later**: Files → Database (if needed) → Vector DB (far future)
 4. **✅ Repository Isolation is Critical**: Prevents context noise across projects
 
-### Recommended Architecture for Super Agent
+### Recommended Architecture for Airis Agent
 
 ```
 superagent/

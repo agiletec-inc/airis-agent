@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-Super Agent now features a Python-based Intelligent Execution Engine that implements your core requirements:
+Airis Agent now features a Python-based Intelligent Execution Engine that implements your core requirements:
 
 1. **🧠 Reflection × 3**: Deep thinking before execution (prevents wrong-direction work)
 2. **⚡ Parallel Execution**: Maximum speed through automatic parallelization
@@ -497,7 +497,7 @@ docs/research/
 
 ## Next Steps
 
-1. **Test in Real Scenarios**: Use in actual Super Agent tasks
+1. **Test in Real Scenarios**: Use in actual Airis Agent tasks
 2. **Tune Thresholds**: Adjust confidence threshold based on usage
 3. **Expand Patterns**: Add more failure categories and prevention rules
 4. **Integration**: Connect to Skills-based PM Agent

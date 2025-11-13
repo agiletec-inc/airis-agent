@@ -6,14 +6,14 @@
 - Allow three clients to use the same surface:
   1. **Settings UI** (existing Vite app) – keep UX for beginners.
   2. **`airis-mcp-cli`** – power users / automation.
-  3. **Super Agents** (Super Agent, Codex, others) – programmatic orchestration.
+  3. **Airis Agents** (Airis Agent, Codex, others) – programmatic orchestration.
 - Avoid direct database access from clients; enforce validation and auditing inside the Gateway.
 - Supply IDE-specific config renderers (Claude Code, Cursor, Windsurf, etc.) from one canonical model.
 
 ## Architectural Overview
 
 ```
-Clients (UI / CLI / Super Agent)
+Clients (UI / CLI / Airis Agent)
         │
         ▼
     Gateway API (FastAPI)
@@ -105,7 +105,7 @@ Authentication: initial implementation can rely on loopback + API token (`X-AIRI
 - Thin wrapper over API (e.g. `airis-mcp list`, `airis-mcp enable tavily`, `airis-mcp secret tavily tavily_api_key`).
 - Support scripting via JSON output (`--json`).
 
-### Super Agents
+### Airis Agents
 - Detect missing capabilities (language, domain, research) → query `catalog` and propose install.
 - Schedule automatic validation and restart via API.
 - Persist decisions (e.g., “enable Rust toolchain when project == Rust”) via automation config.
@@ -130,7 +130,7 @@ Each renderer must account for:
 2. Implement FastAPI routes + pydantic schemas, including validation logic.
 3. Update Settings UI to consume API.
 4. Build CLI client (Python or Node) against the new endpoints.
-5. Integrate Super Agent (Super Agent) with the API.
+5. Integrate Airis Agent (Airis Agent) with the API.
 6. Extend renderers for Cursor, Windsurf, Codex.
 7. Add catalog ingestion from external registries (Docker Hub, community JSON feeds).
 8. Document API usage in `docs/api/` and generate OpenAPI spec.
@@ -138,8 +138,8 @@ Each renderer must account for:
 ## Open Questions
 
 - Authentication model for remote access (CLI on another machine).
-- Rate limiting / throttling when Super Agent performs bulk operations.
+- Rate limiting / throttling when Airis Agent performs bulk operations.
 - Versioning strategy for descriptors (support for schema evolution).
 - Secret migration path when renaming server IDs or keys.
 
-This plan aligns Gateway, CLI、Super Agent, and IDE integrations around one responsibility boundary. Implementation should proceed iteratively, starting with read-only catalog exposure, then state mutation, then secret management.
+This plan aligns Gateway, CLI、Airis Agent, and IDE integrations around one responsibility boundary. Implementation should proceed iteratively, starting with read-only catalog exposure, then state mutation, then secret management.

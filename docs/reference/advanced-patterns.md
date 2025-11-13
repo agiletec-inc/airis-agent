@@ -1,8 +1,8 @@
-# Super Agent Advanced Patterns
+# Airis Agent Advanced Patterns
 
-**Advanced Context Usage Patterns**: Sophisticated combinations of commands, agents, and flags for experienced Super Agent users working on complex projects.
+**Advanced Context Usage Patterns**: Sophisticated combinations of commands, agents, and flags for experienced Airis Agent users working on complex projects.
 
-**Remember**: Super Agent provides context to Claude Code. All patterns here are about guiding Claude's behavior through context, not executing code or coordinating processes.
+**Remember**: Airis Agent provides context to Claude Code. All patterns here are about guiding Claude's behavior through context, not executing code or coordinating processes.
 
 ## Table of Contents
 
@@ -320,4 +320,4 @@
 
 ## Summary
 
-Advanced Super Agent patterns are about sophisticated context management and command sequencing. They help Claude Code generate better outputs by providing richer, more structured context. Remember: all "coordination" and "optimization" happens in how Claude interprets the context, not in any actual execution or parallel processing.
+Advanced Airis Agent patterns are about sophisticated context management and command sequencing. They help Claude Code generate better outputs by providing richer, more structured context. Remember: all "coordination" and "optimization" happens in how Claude interprets the context, not in any actual execution or parallel processing.

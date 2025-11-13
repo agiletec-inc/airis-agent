@@ -1,4 +1,4 @@
-# Super Agent フラグガイド 🏁
+# Airis Agent フラグガイド 🏁
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#superagent-flags-guide-)
 
@@ -240,7 +240,7 @@
 |`--all-mcp`|すべてのMCPサーバーを有効にする|ブール値|
 |`--no-mcp`|ネイティブツールのみ|ブール値|
 
-### システムフラグ（Super Agent インストール）
+### システムフラグ（Airis Agent インストール）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#system-flags-superagent-installation)
 

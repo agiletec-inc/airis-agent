@@ -414,7 +414,7 @@ User correctly identified the problem:
 
 ---
 
-**Conclusion**: Task tool-based parallel execution provides TRUE parallelism (3-5x speedup) by operating at API level, avoiding Python GIL constraints. This is the recommended approach for all multi-task repository operations in Super Agent.
+**Conclusion**: Task tool-based parallel execution provides TRUE parallelism (3-5x speedup) by operating at API level, avoiding Python GIL constraints. This is the recommended approach for all multi-task repository operations in Airis Agent.
 
 **Last Updated**: 2025-10-20
 **Status**: Implementation complete, findings documented

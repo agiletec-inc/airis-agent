@@ -1,10 +1,10 @@
-# Super Agent Developer Guide
+# Airis Agent Developer Guide
 
-A documentation suite for understanding and extending the Super Agent Context-Oriented Configuration Framework.
+A documentation suite for understanding and extending the Airis Agent Context-Oriented Configuration Framework.
 
 ## Documentation Overview
 
-This Developer Guide provides documentation for understanding Super Agent's context architecture and how to extend it:
+This Developer Guide provides documentation for understanding Airis Agent's context architecture and how to extend it:
 
 ### [Contributing Code Guide](contributing-code.md)
 **Purpose**: Guidelines for contributing context files and framework improvements  
@@ -13,7 +13,7 @@ This Developer Guide provides documentation for understanding Super Agent's cont
 
 ### [Context Architecture Guide](technical-architecture.md)
 **Purpose**: Understanding how context files work and are structured  
-**Audience**: Anyone wanting to understand or extend Super Agent  
+**Audience**: Anyone wanting to understand or extend Airis Agent  
 **Key Topics**: Context file structure, import system, agent/command patterns
 
 ### [Verification & Troubleshooting Guide](testing-debugging.md)
@@ -46,9 +46,9 @@ This Developer Guide provides documentation for understanding Super Agent's cont
 ## Key Framework Concepts
 
 ### Context-Oriented Configuration
-Super Agent is a collection of `.md` instruction files that Claude Code reads to modify its behavior. It is NOT executing software.
+Airis Agent is a collection of `.md` instruction files that Claude Code reads to modify its behavior. It is NOT executing software.
 
-**IMPORTANT**: Super Agent is NOT a CLI tool or executable software. When you see `/sc:` commands in documentation, these are **context trigger patterns** you type in Claude Code conversations, not terminal commands.
+**IMPORTANT**: Airis Agent is NOT a CLI tool or executable software. When you see `/sc:` commands in documentation, these are **context trigger patterns** you type in Claude Code conversations, not terminal commands.
 
 ### Agent Context Files
 Specialized instruction sets that provide domain expertise when activated by `@agent-[name]` or automatically by keywords.
@@ -59,7 +59,7 @@ Workflow patterns triggered by `/sc:[command]` **context patterns** (not CLI com
 ### MCP Integration
 External tools (actual software) that can be configured to provide additional capabilities like documentation lookup or code analysis.
 
-## What Super Agent Is NOT
+## What Airis Agent Is NOT
 
 - ❌ **Not Software**: No code executes, no processes run
 - ❌ **Not Testable**: Context files are instructions, not functions  
@@ -127,7 +127,7 @@ cat ~/.claude/agents/python-expert.md
 # You'll see expertise definitions, not programs
 ```
 
-### Extending Super Agent
+### Extending Airis Agent
 1. **Add Commands**: Create new `.md` files in `~/.claude/commands/`
 2. **Add Agents**: Create new `.md` files in `~/.claude/agents/`
 3. **Add Modes**: Create new `.md` files in `~/.claude/modes/`
@@ -147,7 +147,7 @@ No compilation, no testing, no deployment - just add context files and Claude Co
 - **Feature Requests**: Propose enhancements through GitHub issues
 
 ### Community Resources
-- **[GitHub Repository](https://github.com/kazuki/superagent)**: Main development and collaboration hub
+- **[GitHub Repository](https://github.com/agiletec-inc/airis-agent)**: Main development and collaboration hub
 
 ## Contributing to Documentation
 
@@ -167,6 +167,6 @@ We welcome contributions to improve documentation quality, accuracy, and complet
 
 ---
 
-**Super Agent**: Building the future of AI-assisted development through intelligent orchestration and behavioral programming.
+**Airis Agent**: Building the future of AI-assisted development through intelligent orchestration and behavioral programming.
 
-For the latest updates and community discussions, visit our [GitHub repository](https://github.com/kazuki/superagent).
+For the latest updates and community discussions, visit our [GitHub repository](https://github.com/agiletec-inc/airis-agent).

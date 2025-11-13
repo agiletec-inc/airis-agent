@@ -1,6 +1,6 @@
-# Contributing to Super Agent
+# Contributing to Airis Agent
 
-Super Agent transforms Claude Code into a structured development platform through behavioral instruction injection and intelligent workflow orchestration. We welcome contributions that enhance the framework's capabilities, improve documentation, and expand the ecosystem of specialized agents and MCP server integrations.
+Airis Agent transforms Claude Code into a structured development platform through behavioral instruction injection and intelligent workflow orchestration. We welcome contributions that enhance the framework's capabilities, improve documentation, and expand the ecosystem of specialized agents and MCP server integrations.
 
 **Project Mission**: Enable systematic software development workflows with automated expert coordination, quality gates, and session persistence for Claude Code users.
 
@@ -11,11 +11,11 @@ Super Agent transforms Claude Code into a structured development platform throug
 ### 🐛 Bug Reports
 **Before Reporting:**
 - Search existing issues to avoid duplicates
-- Test with latest Super Agent version
+- Test with latest Airis Agent version
 - Verify issue isn't covered in [Troubleshooting Guide](docs/Reference/troubleshooting.md)
 
 **Required Information:**
-- Super Agent version: `Super Agent --version`
+- Airis Agent version: `Airis Agent --version`
 - Operating system and version
 - Claude Code version: `claude --version`
 - Python version: `python3 --version`
@@ -27,7 +27,7 @@ Super Agent transforms Claude Code into a structured development platform throug
 **Good Bug Report Example:**
 ```
 **Environment:**
-- Super Agent: 4.1.5
+- Airis Agent: 4.1.5
 - OS: Ubuntu 22.04
 - Claude Code: 1.5.2
 - Python: 3.9.7
@@ -35,7 +35,7 @@ Super Agent transforms Claude Code into a structured development platform throug
 **Issue:** `/sc:implement` command fails with ModuleNotFoundError
 
 **Steps to Reproduce:**
-1. Run `Super Agent install --components core`
+1. Run `Airis Agent install --components core`
 2. Execute `/sc:implement "user login"`
 3. Error appears: ModuleNotFoundError: No module named 'requests'
 
@@ -52,7 +52,7 @@ Super Agent transforms Claude Code into a structured development platform throug
 
 ### 💡 Feature Requests
 **Feature Evaluation Criteria:**
-- Aligns with Super Agent's systematic development workflow mission
+- Aligns with Airis Agent's systematic development workflow mission
 - Provides clear utility for software development tasks
 - Integrates well with existing command/agent/mode architecture
 - Maintains framework simplicity and discoverability
@@ -236,7 +236,7 @@ All community interactions should embody professional software development stand
 
 ### Stay Focused
 **Project Focus:**
-Super Agent enhances Claude Code for systematic software development workflows. Contributions should align with this core mission.
+Airis Agent enhances Claude Code for systematic software development workflows. Contributions should align with this core mission.
 
 **In Scope:**
 - Software development workflow automation
@@ -336,21 +336,21 @@ Super Agent enhances Claude Code for systematic software development workflows. 
 Before seeking support, please:
 1. Check existing documentation and troubleshooting guides
 2. Search GitHub issues for similar problems
-3. Verify you're using the latest Super Agent version
+3. Verify you're using the latest Airis Agent version
 4. Test with minimal reproduction case
 
 ### Common Questions
 
 **Development Environment Issues:**
 
-**Q: "Super Agent install fails with permission errors"**
-A: Use `pip install --user Super Agent` or create virtual environment. See [Installation Guide](docs/Getting-Started/installation.md) for details.
+**Q: "Airis Agent install fails with permission errors"**
+A: Use `pip install --user Airis Agent` or create virtual environment. See [Installation Guide](docs/Getting-Started/installation.md) for details.
 
 **Q: "Commands not recognized after installation"**
-A: Restart Claude Code session. Verify installation with `Super Agent install --list-components`. Check ~/.claude directory exists.
+A: Restart Claude Code session. Verify installation with `Airis Agent install --list-components`. Check ~/.claude directory exists.
 
 **Q: "MCP servers not connecting"**
-A: Check Node.js installation for MCP servers. Verify ~/.claude/.claude.json configuration. Try `Super Agent install --components mcp --force`.
+A: Check Node.js installation for MCP servers. Verify ~/.claude/.claude.json configuration. Try `Airis Agent install --components mcp --force`.
 
 **Code Development:**
 
@@ -378,10 +378,10 @@ A: Profile before optimizing. Focus on common workflows. Maintain cross-platform
 
 **MIT License Agreement:**
 
-By contributing to Super Agent, you agree that your contributions will be licensed under the same MIT License that covers the project. This ensures the framework remains open and accessible for educational and commercial use.
+By contributing to Airis Agent, you agree that your contributions will be licensed under the same MIT License that covers the project. This ensures the framework remains open and accessible for educational and commercial use.
 
 **Contribution Terms:**
-- All contributions become part of the Super Agent under MIT License
+- All contributions become part of the Airis Agent under MIT License
 - Contributors retain copyright to their original work
 - No contributor license agreement (CLA) required for simple contributions
 - Complex contributions may require explicit license confirmation
@@ -399,16 +399,16 @@ By contributing to Super Agent, you agree that your contributions will be licens
 - Document any patent or licensing considerations
 
 **Commercial Usage:**
-The MIT License explicitly allows commercial use of Super Agent, including contributions. This supports the project's goal of enabling professional software development workflows.
+The MIT License explicitly allows commercial use of Airis Agent, including contributions. This supports the project's goal of enabling professional software development workflows.
 
 ## 🙏 Acknowledgments
 
 **Project Contributors:**
 
-Super Agent benefits from community contributions across documentation, code development, testing, and user experience improvements. 
+Airis Agent benefits from community contributions across documentation, code development, testing, and user experience improvements. 
 
 **Recognition:**
-- [GitHub Contributors Graph](https://github.com/kazuki/superagent/graphs/contributors) - Complete contributor list
+- [GitHub Contributors Graph](https://github.com/agiletec-inc/airis-agent/graphs/contributors) - Complete contributor list
 - Release notes acknowledge significant contributions
 - Documentation contributors credited in relevant guides
 - Community discussions highlight helpful patterns and solutions
@@ -432,7 +432,7 @@ Super Agent benefits from community contributions across documentation, code dev
 - Community members sharing workflows and best practices
 
 **Growth:**
-The Super Agent community continues growing through shared commitment to systematic software development and AI-assisted workflows. Every contribution, from typo fixes to major features, strengthens the framework for all users.
+The Airis Agent community continues growing through shared commitment to systematic software development and AI-assisted workflows. Every contribution, from typo fixes to major features, strengthens the framework for all users.
 
 **Join Us:**
 Whether you're fixing documentation, adding features, or sharing usage patterns, your contributions help build better software development tools for the entire community.

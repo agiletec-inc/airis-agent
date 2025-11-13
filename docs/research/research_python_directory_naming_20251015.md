@@ -2,7 +2,7 @@
 
 **Date**: 2025-10-15
 **Research Question**: What is the correct naming convention for documentation directories in Python projects?
-**Context**: Super Agent upstream uses mixed naming (PascalCase-with-hyphens and lowercase), need to determine Python ecosystem best practices before proposing standardization.
+**Context**: Airis Agent upstream uses mixed naming (PascalCase-with-hyphens and lowercase), need to determine Python ecosystem best practices before proposing standardization.
 
 ---
 
@@ -174,7 +174,7 @@ docs/
 
 ---
 
-## Current Super Agent Structure
+## Current Airis Agent Structure
 
 ### Upstream (7c14a31) - **Inconsistent**
 
@@ -356,7 +356,7 @@ The Python ecosystem has a clear, unambiguous convention: **lowercase** director
 
 ---
 
-## Recommendation for Super Agent
+## Recommendation for Airis Agent
 
 **Immediate Action**: Propose PR to upstream standardizing to lowercase-with-hyphens
 

@@ -1,6 +1,6 @@
-# Super Agent PyPI Publishing Scripts
+# Airis Agent PyPI Publishing Scripts
 
-This directory contains scripts for building and publishing Super Agent to PyPI.
+This directory contains scripts for building and publishing Airis Agent to PyPI.
 
 ## Scripts
 

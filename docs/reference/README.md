@@ -1,4 +1,4 @@
-# Super Agent Reference Documentation
+# Airis Agent Reference Documentation
 
 **Navigation Hub**: Structured learning paths and technical references for all skill levels.
 
@@ -37,7 +37,7 @@ This documentation is organized for **progressive learning** with multiple entry
 ## Recommended Learning Paths
 
 ### New Users (Week 1 Foundation)
-**Goal**: Establish confident Super Agent usage with essential workflows
+**Goal**: Establish confident Airis Agent usage with essential workflows
 
 ```
 Day 1-2: ../getting-started/quick-start.md
@@ -92,7 +92,7 @@ Advanced Analysis: diagnostic-reference.md
 
 ## Command Quick Reference
 
-### Essential Super Agent Commands
+### Essential Airis Agent Commands
 
 | Command Pattern | Purpose | Example |
 |----------------|---------|---------|
@@ -158,7 +158,7 @@ Advanced Analysis: diagnostic-reference.md
 ## Problem-Solving Quick Reference
 
 ### Immediate Issues
-- **Command not working**: Check [common-issues.md](./common-issues.md) → Common Super Agent Problems
+- **Command not working**: Check [common-issues.md](./common-issues.md) → Common Airis Agent Problems
 - **Session lost**: Use `/sc:load` → See [Session Management](../user-guide/session-management.md)
 - **Flag confusion**: Check [basic-examples.md](./basic-examples.md) → Flag Usage Examples
 
@@ -183,7 +183,7 @@ Advanced Analysis: diagnostic-reference.md
 - ✅ **Regular Updates**: Documentation synchronized with framework evolution
 
 ### Accuracy Standards
-- **Command Syntax**: Verified against latest Super Agent implementation
+- **Command Syntax**: Verified against latest Airis Agent implementation
 - **Flag Behavior**: Tested in multiple scenarios and environments
 - **MCP Integration**: Confirmed compatibility with current MCP server versions
 - **Performance Claims**: Benchmarked and measured in realistic conditions
@@ -237,12 +237,12 @@ Found outdated information or broken examples?
 ### Community & Support
 - **Best Practices**: Continuously updated based on community feedback
 - **Pattern Library**: Growing collection of proven workflow patterns
-- **Expert Network**: Connect with experienced Super Agent practitioners
+- **Expert Network**: Connect with experienced Airis Agent practitioners
 - **Regular Updates**: Documentation evolves with framework capabilities
 
 ---
 
-**Start Your Journey**: New to Super Agent? Begin with [Quick Start Guide](../getting-started/quick-start.md) for immediate productivity gains.
+**Start Your Journey**: New to Airis Agent? Begin with [Quick Start Guide](../getting-started/quick-start.md) for immediate productivity gains.
 
 **Need Answers Now**: Jump to [basic-examples.md](./basic-examples.md) for copy-paste solutions.
 

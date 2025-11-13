@@ -131,7 +131,7 @@ def _check_configuration() -> Dict[str, Any]:
     """
     # Check if package is importable
     try:
-        import superagent
+        import airis_agent
         version = superagent.__version__
 
         return {
@@ -143,5 +143,5 @@ def _check_configuration() -> Dict[str, Any]:
         return {
             "name": "Configuration",
             "passed": False,
-            "details": [f"Could not import superagent: {e}"],
+            "details": [f"Could not import airis_agent: {e}"],
         }

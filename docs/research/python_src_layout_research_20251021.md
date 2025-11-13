@@ -97,7 +97,7 @@ awesome_package/           # リポジトリ（GitHub名）
 
 **モノレポとの違い**:
 - モノレポ: 複数パッケージを含む (`src/package1/`, `src/package2/`)
-- Super Agent: 単一パッケージなので、リポジトリ名 = パッケージ名
+- Airis Agent: 単一パッケージなので、リポジトリ名 = パッケージ名
 
 ---
 

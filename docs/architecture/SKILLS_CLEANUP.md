@@ -195,7 +195,7 @@ rm -rf ~/.claude/skills/pm*
 Context consumed at startup:
 - MCP tools: 5K tokens (AIRIS Gateway)
 - Skills (全部): 15K tokens ← 削除対象
-- Super Agent: 0K tokens (未インストール状態想定)
+- Airis Agent: 0K tokens (未インストール状態想定)
 ─────────────────────────────
 Total: 20K tokens
 Available: 180K tokens
@@ -206,7 +206,7 @@ Available: 180K tokens
 Context consumed at startup:
 - MCP tools: 5K tokens (AIRIS Gateway)
 - Skills: 0K tokens ← 削除完了
-- Super Agent pytest plugin: 0K tokens (pytestなし時)
+- Airis Agent pytest plugin: 0K tokens (pytestなし時)
 ─────────────────────────────
 Total: 5K tokens
 Available: 195K tokens

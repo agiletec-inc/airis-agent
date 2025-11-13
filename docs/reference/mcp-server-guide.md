@@ -176,7 +176,7 @@ cat ~/.claude/CLAUDE.md | grep -i context7
 # MCP servers restart with Claude Code session restart
 
 # Solution 2: Reconfigure MCP servers
-python3 -m Super Agent install --components mcp --force
+python3 -m Airis Agent install --components mcp --force
 
 # Solution 3: Manual server testing
 node -e "console.log('Node.js working')"
@@ -720,7 +720,7 @@ npm list -g | grep -E "context7|sequential|magic|playwright|morphllm|serena" | a
 npm cache clean --force
 
 # Step 5: Reinstall MCP servers
-python3 -m Super Agent install --components mcp --force
+python3 -m Airis Agent install --components mcp --force
 
 # Step 6: Verification
 npm list -g | grep -E "context7|sequential|magic|playwright|morphllm|serena"
@@ -732,7 +732,7 @@ echo "Test MCP servers in Claude Code after restart"
 ## Related Resources
 
 ### MCP-Specific Documentation
-- **Core Super Agent Guide**: [../user-guide/mcp-servers.md](../user-guide/mcp-servers.md) - MCP server overview and usage
+- **Core Airis Agent Guide**: [../user-guide/mcp-servers.md](../user-guide/mcp-servers.md) - MCP server overview and usage
 - **Common Issues**: [common-issues.md](./common-issues.md) - General troubleshooting procedures
 - **Diagnostic Reference**: [diagnostic-reference.md](./diagnostic-reference.md) - Advanced diagnostic procedures
 
@@ -742,8 +742,8 @@ echo "Test MCP servers in Claude Code after restart"
 - **Playwright Guide**: [https://playwright.dev/](https://playwright.dev/) - Browser automation documentation
 
 ### Support Channels
-- **GitHub Issues**: [MCP-specific problems](https://github.com/kazuki/superagent/issues)
-- **GitHub Discussions**: [MCP server community support](https://github.com/kazuki/superagent/discussions)
+- **GitHub Issues**: [MCP-specific problems](https://github.com/agiletec-inc/airis-agent/issues)
+- **GitHub Discussions**: [MCP server community support](https://github.com/agiletec-inc/airis-agent/discussions)
 
 ---
 

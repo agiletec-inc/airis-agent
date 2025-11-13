@@ -166,7 +166,7 @@ packages = ["src/superagent"]
 
 ```python
 """
-Super Agent pytest plugin
+Airis Agent pytest plugin
 
 Auto-loaded when superagent is installed.
 Provides PM Agent fixtures and hooks for enhanced testing.
@@ -183,7 +183,7 @@ from .pm_agent.token_budget import TokenBudgetManager
 
 
 def pytest_configure(config):
-    """Register Super Agent plugin and markers"""
+    """Register Airis Agent plugin and markers"""
     config.addinivalue_line(
         "markers",
         "confidence_check: Pre-execution confidence assessment"
@@ -444,7 +444,7 @@ class SelfCheckProtocol:
 
 ```python
 """
-Super Agent CLI
+Airis Agent CLI
 
 Commands:
   superagent install-skill pm-agent  # Install PM Agent skill to ~/.claude/skills/
@@ -458,7 +458,7 @@ from pathlib import Path
 @click.group()
 @click.version_option()
 def main():
-    """Super Agent - AI-enhanced development framework"""
+    """Airis Agent - AI-enhanced development framework"""
     pass
 
 
@@ -467,7 +467,7 @@ def main():
 @click.option("--target", default="~/.claude/skills", help="Installation directory")
 def install_skill(skill_name: str, target: str):
     """
-    Install a Super Agent skill to Claude Code
+    Install a Airis Agent skill to Claude Code
 
     Example:
         superagent install-skill pm-agent
@@ -485,8 +485,8 @@ def install_skill(skill_name: str, target: str):
 
 @main.command()
 def doctor():
-    """Check Super Agent installation health"""
-    click.echo("🔍 Super Agent Doctor\n")
+    """Check Airis Agent installation health"""
+    click.echo("🔍 Airis Agent Doctor\n")
 
     # Check pytest plugin loaded
     import pytest
@@ -511,7 +511,7 @@ def doctor():
     else:
         click.echo("⚠️  No skills installed (optional)")
 
-    click.echo("\n✅ Super Agent is healthy")
+    click.echo("\n✅ Airis Agent is healthy")
 
 
 if __name__ == "__main__":
@@ -632,7 +632,7 @@ ls ~/.claude/  # Should not have superagent/ unless skill installed
 pip install superagent
 
 # Install from source (development)
-git clone https://github.com/kazuki/superagent.git
+git clone https://github.com/agiletec-inc/airis-agent.git
 cd superagent
 pip install -e .
 
@@ -647,7 +647,7 @@ superagent install-skill pm-agent
 
 ```bash
 # Clone repository
-git clone https://github.com/kazuki/superagent.git
+git clone https://github.com/agiletec-inc/airis-agent.git
 cd superagent
 
 # Install in editable mode with dev dependencies

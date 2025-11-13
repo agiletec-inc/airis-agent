@@ -9,7 +9,7 @@ from pathlib import Path
 
 import click
 
-# Add parent directory to path to import superagent
+# Add parent directory to path to import airis_agent
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from superagent import __version__

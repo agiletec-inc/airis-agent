@@ -1,4 +1,4 @@
-# Super Agent 行動モードガイド 🧠
+# Airis Agent 行動モードガイド 🧠
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/modes.md#superagent-behavioral-modes-guide-)
 
@@ -124,7 +124,7 @@ Brainstorming Approach:
 - **意思決定分析**：選択ロジックを評価し、代替アプローチを検討する
 - **パターン認識**：繰り返される行動と改善の機会を特定します
 - **メタ学習**：継続的なフレームワーク改善のための洞察を抽出
-- **フレームワークコンプライアンス**: Super Agent原則と品質ゲートに照らしてアクションを検証します
+- **フレームワークコンプライアンス**: Airis Agent原則と品質ゲートに照らしてアクションを検証します
 
 **経験例:**
 
@@ -575,7 +575,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 |**O001**|オーケストレーション調整に失敗|使用`--no-mcp`または`--simple`|
 |**M001**|モードの競合が検出されました|フラグの優先順位のルールを確認する|
 |**M002**|モード切り替えループ|状態をリセットするにはセッションを再起動してください|
-|**M003**|モードが認識されません|Super Agentを更新するかスペルをチェックする|
+|**M003**|モードが認識されません|Airis Agentを更新するかスペルをチェックする|
 
 ### プログレッシブサポートレベル
 
@@ -602,7 +602,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 
 ```shell
 # Deep mode analysis
-Super Agent install --diagnose
+Airis Agent install --diagnose
 # Check mode activation patterns
 # Review behavioral triggers and thresholds
 ```
@@ -611,7 +611,7 @@ Super Agent install --diagnose
 
 **レベル4: コミュニティサポート**
 
-- [GitHub Issues](https://github.com/kazuki/superagent/issues)でのモードの問題の報告[](https://github.com/kazuki/superagent/issues)
+- [GitHub Issues](https://github.com/agiletec-inc/airis-agent/issues)でのモードの問題の報告[](https://github.com/agiletec-inc/airis-agent/issues)
 - 予期しないモード動作の例を含める
 - 望ましいモードと実際のモードのアクティベーションを説明する
 
@@ -676,7 +676,7 @@ Super Agent install --diagnose
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/modes.md#summary)
 
-Super Agent の 5 つの行動モードは、ユーザーのニーズに自動的に適合する**インテリジェントな適応システムを作成します。**
+Airis Agent の 5 つの行動モードは、ユーザーのニーズに自動的に適合する**インテリジェントな適応システムを作成します。**
 
 - **🧠 ブレインストーミング**：漠然としたアイデアを明確な要件に変換する
 - **🔍 イントロスペクション**：学習とデバッグのための透過的な推論を提供します
@@ -685,7 +685,7 @@ Super Agent の 5 つの行動モードは、ユーザーのニーズに自動�
 - **⚡ トークン効率**: 明瞭さを保ちながらコミュニケーションを圧縮する
 - **🎨 標準**: 単純なタスクに対してプロフェッショナルな基準を維持します
 
-**重要な洞察**：モードについて考える必要はありません。モードは透過的に動作し、開発エクスペリエンスを向上させます。達成したいことを説明するだけで、Super Agentはニーズに合わせてアプローチを自動的に調整します。
+**重要な洞察**：モードについて考える必要はありません。モードは透過的に動作し、開発エクスペリエンスを向上させます。達成したいことを説明するだけで、Airis Agentはニーズに合わせてアプローチを自動的に調整します。
 
 ---
 

@@ -3,7 +3,7 @@
 from dataclasses import dataclass, field
 from typing import Any, Dict, List
 
-from superagent.pm_agent.confidence import ConfidenceChecker
+from airis_agent.pm_agent.confidence import ConfidenceChecker
 
 
 @dataclass

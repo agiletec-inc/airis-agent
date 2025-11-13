@@ -12,7 +12,7 @@
 
 **Created** `tests/conftest.py` (root-level configuration):
 ```python
-# Super Agent pytest plugin auto-loads these fixtures:
+# Airis Agent pytest plugin auto-loads these fixtures:
 # - confidence_checker
 # - self_check_protocol
 # - reflexion_pattern
@@ -162,7 +162,7 @@ $ make verify
    /Users/kazuki/github/superagent/src/superagent/__init__.py
 
 2. Package version:
-   Super Agent, version 0.4.0
+   Airis Agent, version 0.4.0
 
 3. Pytest plugin:
    superagent-0.4.0 at .../src/superagent/pytest_plugin.py

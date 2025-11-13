@@ -1,4 +1,4 @@
-# Super Agent Common Issues - Quick Reference 🚀
+# Airis Agent Common Issues - Quick Reference 🚀
 
 **Problem Solving Guide**: Most frequent issues with practical solutions.
 
@@ -13,27 +13,27 @@ Test: /sc:brainstorm "test" should ask questions
 
 ### 2. Installation Verification
 ```bash
-python3 -m Super Agent --version    # Should show 4.1.5
+python3 -m Airis Agent --version    # Should show 4.1.5
 
 # If not working:
 # For pipx users
-pipx upgrade Super Agent
+pipx upgrade Airis Agent
 
 # For pip users
-pip install --upgrade Super Agent
+pip install --upgrade Airis Agent
 
 # Then reinstall
-python3 -m Super Agent install
+python3 -m Airis Agent install
 ```
 
 ### 3. Permission Issues
 ```bash
 # Permission denied / PEP 668 errors:
 # Option 1: Use pipx (recommended)
-pipx install Super Agent
+pipx install Airis Agent
 
 # Option 2: Use pip with --user
-pip install --user Super Agent
+pip install --user Airis Agent
 
 # Option 3: Fix permissions
 sudo chown -R $USER ~/.claude
@@ -47,7 +47,7 @@ node --version                      # Check Node.js 16+ if needed
 
 ### 5. Component Missing
 ```bash
-python3 -m Super Agent install --components core commands agents modes --force
+python3 -m Airis Agent install --components core commands agents modes --force
 ```
 
 ## Platform-Specific Issues
@@ -55,25 +55,25 @@ python3 -m Super Agent install --components core commands agents modes --force
 **Windows:**
 ```cmd
 set CLAUDE_CONFIG_DIR=%USERPROFILE%\.claude
-python -m Super Agent install --install-dir "%CLAUDE_CONFIG_DIR%"
+python -m Airis Agent install --install-dir "%CLAUDE_CONFIG_DIR%"
 ```
 
 **macOS:**
 ```bash
 brew install python3 node
-pip3 install Super Agent
+pip3 install Airis Agent
 ```
 
 **Linux:**
 ```bash
 sudo apt install python3 python3-pip nodejs
-pip3 install Super Agent
+pip3 install Airis Agent
 ```
 
 ## Verification Checklist
-- [ ] `python3 -m Super Agent --version` returns 4.1.5
+- [ ] `python3 -m Airis Agent --version` returns 4.1.5
 - [ ] `/sc:brainstorm "test"` works in Claude Code
-- [ ] `Super Agent install --list-components` shows components
+- [ ] `Airis Agent install --list-components` shows components
 
 ## When Quick Fixes Don't Work
 See [Troubleshooting Guide](troubleshooting.md) for advanced diagnostics.

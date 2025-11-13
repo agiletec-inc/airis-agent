@@ -1,4 +1,4 @@
-# Super Agent MCP サーバーガイド 🔌
+# Airis Agent MCP サーバーガイド 🔌
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/mcp-servers.md#superagent-mcp-servers-guide-)
 
@@ -6,14 +6,14 @@
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/mcp-servers.md#overview)
 
-MCP（モデルコンテキストプロトコル）サーバーは、専用ツールを通じてClaude Codeの機能を拡張します。Super Agentは6つのMCPサーバーを統合し、タスクに応じてサーバーをいつ起動するかをClaudeに指示します。
+MCP（モデルコンテキストプロトコル）サーバーは、専用ツールを通じてClaude Codeの機能を拡張します。Airis Agentは6つのMCPサーバーを統合し、タスクに応じてサーバーをいつ起動するかをClaudeに指示します。
 
 ### 🔍 現実チェック
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/mcp-servers.md#-reality-check)
 
 - **MCPサーバーとは**: 追加ツールを提供する外部Node.jsプロセス
-- **含まれていないもの**：Super Agent 機能が組み込まれている
+- **含まれていないもの**：Airis Agent 機能が組み込まれている
 - **アクティベーションの仕組み**: クロードは状況に応じて適切なサーバーを使用するための指示を読み上げます
 - **提供されるもの**：Claude Codeのネイティブ機能を拡張する実際のツール
 
@@ -280,7 +280,7 @@ echo 'export MORPH_API_KEY="your_key"' >> ~/.bashrc
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/mcp-servers.md#integration)
 
-**Super Agent コマンドを使用する場合:**
+**Airis Agent コマンドを使用する場合:**
 
 - 分析コマンドは自動的にSequential + Serenaを使用します
 - 実装コマンドはMagic + Context7を使用する

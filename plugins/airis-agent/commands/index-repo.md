@@ -22,7 +22,7 @@ description: Repository Indexing - 94% token reduction (58K → 3K)
    ```
    src/**/*.{ts,py,js,tsx,jsx}
    lib/**/*.{ts,py,js}
-   superagent/**/*.py
+   airis-agent/**/*.py
    ```
 
 2. **Documentation**

@@ -48,12 +48,12 @@ git clone https://github.com/kazukinakai/superagent.git
 cd superagent
 
 # 3. Add upstream remote
-git remote add upstream https://github.com/kazuki/superagent.git
+git remote add upstream https://github.com/agiletec-inc/airis-agent.git
 
 # 4. Verify remotes
 git remote -v
 # origin    https://github.com/kazukinakai/superagent.git (fetch/push)
-# upstream  https://github.com/kazuki/superagent.git (fetch/push)
+# upstream  https://github.com/agiletec-inc/airis-agent.git (fetch/push)
 ```
 
 ### Phase 2: Daily Workflow

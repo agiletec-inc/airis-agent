@@ -1,6 +1,6 @@
-# Super Agent Plugin Installation Guide
+# Airis Agent Plugin Installation Guide
 
-This guide explains how to install and use the Super Agent plugin for Claude Code.
+This guide explains how to install and use the Airis Agent plugin for Claude Code.
 
 ## Installation Methods
 
@@ -26,7 +26,7 @@ Add to your project's `.claude/settings.json` to automatically install for all t
 ```
 
 When team members trust the repository folder, Claude Code will automatically:
-1. Install the Super Agent marketplace
+1. Install the Airis Agent marketplace
 2. Enable the `superagent` plugin
 3. Activate all commands and agents
 
@@ -36,7 +36,7 @@ For plugin development or testing:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/kazuki/superagent.git
+git clone https://github.com/agiletec-inc/airis-agent.git
 cd superagent
 
 # 2. Build the plugin
@@ -96,7 +96,7 @@ After installation, verify the plugin is active:
 # Check available plugins
 /plugin list
 
-# Check if Super Agent is enabled
+# Check if Airis Agent is enabled
 # You should see:
 # - superagent (enabled)
 ```
@@ -107,7 +107,7 @@ After installation, verify the plugin is active:
 
 ```bash
 # 1. Plugin auto-activates at session start
-# Output: "Super Agent ready — awaiting task assignment."
+# Output: "Airis Agent ready — awaiting task assignment."
 
 # 2. Assign a task
 User: "Add user authentication to the API"
@@ -242,7 +242,7 @@ dist/plugins/superagent/
 
 ## Support
 
-- **Issues**: https://github.com/kazuki/superagent/issues
+- **Issues**: https://github.com/agiletec-inc/airis-agent/issues
 - **Documentation**: See `docs/` directory
 - **CLAUDE.md**: Project-specific guidance for Claude Code
 

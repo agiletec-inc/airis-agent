@@ -1,6 +1,6 @@
-# Super Agent Commands Guide
+# Airis Agent Commands Guide
 
-Super Agent provides 25 commands for Claude Code: `/sc:*` commands for workflows and `@agent-*` for specialists.
+Airis Agent provides 25 commands for Claude Code: `/sc:*` commands for workflows and `@agent-*` for specialists.
 
 ## Command Types
 
@@ -8,12 +8,12 @@ Super Agent provides 25 commands for Claude Code: `/sc:*` commands for workflows
 |------|------------|--------|---------|
 | **Slash Commands** | Claude Code | `/sc:[command]` | `/sc:implement "feature"` |
 | **Agents** | Claude Code | `@agent-[name]` | `@agent-security "review"` |
-| **Installation** | Terminal | `Super Agent [command]` | `Super Agent install` |
+| **Installation** | Terminal | `Airis Agent [command]` | `Airis Agent install` |
 
 ## Quick Test
 ```bash
 # Terminal: Verify installation
-python3 -m Super Agent --version
+python3 -m Airis Agent --version
 # Claude Code CLI verification: claude --version
 
 # Claude Code: Test commands
@@ -23,13 +23,13 @@ python3 -m Super Agent --version
 
 **Workflow**: `/sc:brainstorm "idea"` → `/sc:implement "feature"` → `/sc:test`
 
-## 🎯 Understanding Super Agent Commands
+## 🎯 Understanding Airis Agent Commands
 
-## How Super Agent Works
+## How Airis Agent Works
 
-Super Agent provides behavioral context files that Claude Code reads to adopt specialized behaviors. When you type `/sc:implement`, Claude Code reads the `implement.md` context file and follows its behavioral instructions.
+Airis Agent provides behavioral context files that Claude Code reads to adopt specialized behaviors. When you type `/sc:implement`, Claude Code reads the `implement.md` context file and follows its behavioral instructions.
 
-**Super Agent commands are NOT executed by software** - they are context triggers that modify Claude Code's behavior through reading specialized instruction files from the framework.
+**Airis Agent commands are NOT executed by software** - they are context triggers that modify Claude Code's behavior through reading specialized instruction files from the framework.
 
 ### Command Types:
 - **Slash Commands** (`/sc:*`): Trigger workflow patterns and behavioral modes
@@ -47,10 +47,10 @@ Super Agent provides behavioral context files that Claude Code reads to adopt sp
 ### Installation vs Usage Commands
 
 **🖥️ Terminal Commands** (Actual CLI software):
-- `Super Agent install` - Installs the framework components
-- `Super Agent update` - Updates existing installation  
-- `Super Agent uninstall` - Removes framework installation
-- `python3 -m Super Agent --version` - Check installation status
+- `Airis Agent install` - Installs the framework components
+- `Airis Agent update` - Updates existing installation  
+- `Airis Agent uninstall` - Removes framework installation
+- `python3 -m Airis Agent --version` - Check installation status
 
 **💬 Claude Code Commands** (Context triggers):
 - `/sc:brainstorm` - Activates requirements discovery context
@@ -65,15 +65,15 @@ Super Agent provides behavioral context files that Claude Code reads to adopt sp
 
 ### 🖥️ Terminal Verification (Run in Terminal/CMD)
 ```bash
-# Verify Super Agent is working (primary method)
-python3 -m Super Agent --version
-# Example output: Super Agent 4.1.5
+# Verify Airis Agent is working (primary method)
+python3 -m Airis Agent --version
+# Example output: Airis Agent 4.1.5
 
 # Claude Code CLI version check
 claude --version
 
 # Check installed components
-python3 -m Super Agent install --list-components | grep mcp
+python3 -m Airis Agent install --list-components | grep mcp
 # Example output: Shows installed MCP components
 ```
 
@@ -94,13 +94,13 @@ python3 -m Super Agent install --list-components | grep mcp
 
 | Command Type | Where to Run | Format | Purpose | Example |
 |-------------|--------------|--------|---------|----------|
-| **🖥️ Installation** | Terminal/CMD | `Super Agent [command]` | Setup and maintenance | `Super Agent install` |
-| **🔧 Configuration** | Terminal/CMD | `python3 -m Super Agent [command]` | Advanced configuration | `python3 -m Super Agent --version` |
+| **🖥️ Installation** | Terminal/CMD | `Airis Agent [command]` | Setup and maintenance | `Airis Agent install` |
+| **🔧 Configuration** | Terminal/CMD | `python3 -m Airis Agent [command]` | Advanced configuration | `python3 -m Airis Agent --version` |
 | **💬 Slash Commands** | Claude Code | `/sc:[command]` | Workflow automation | `/sc:implement "feature"` |
 | **🤖 Agent Invocation** | Claude Code | `@agent-[name]` | Manual specialist activation | `@agent-security "review"` |
 | **⚡ Enhanced Flags** | Claude Code | `/sc:[command] --flags` | Behavior modification | `/sc:analyze --think-hard` |
 
-> **Remember**: All `/sc:` commands and `@agent-` invocations work inside Claude Code chat, not your terminal. They trigger Claude Code to read specific context files from the Super Agent framework.
+> **Remember**: All `/sc:` commands and `@agent-` invocations work inside Claude Code chat, not your terminal. They trigger Claude Code to read specific context files from the Airis Agent framework.
 
 ## Table of Contents
 
@@ -351,13 +351,13 @@ python3 -m Super Agent install --list-components | grep mcp
 ## Troubleshooting
 
 **Command Issues:**
-- **Command not found**: Verify installation: `python3 -m Super Agent --version`
+- **Command not found**: Verify installation: `python3 -m Airis Agent --version`
 - **No response**: Restart Claude Code session
 - **Processing delays**: Use `--no-mcp` to test without MCP servers
 
 **Quick Fixes:**
 - Reset session: `/sc:load` to reinitialize
-- Check status: `Super Agent install --list-components`
+- Check status: `Airis Agent install --list-components`
 - Get help: [Troubleshooting Guide](../reference/troubleshooting.md)
 
 ## Next Steps

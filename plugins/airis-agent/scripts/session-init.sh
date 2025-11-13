@@ -1,5 +1,5 @@
 #!/bin/bash
-# Super Agent SessionStart initialization script
+# Airis Agent SessionStart initialization script
 # Auto-executed when Claude Code session starts
 
 # 1. Check git status
@@ -48,13 +48,13 @@ if [ -f "PROJECT_INDEX.md" ]; then
 
     if [ "$days_old" -gt 7 ]; then
         echo "⚠️  PROJECT_INDEX.md: ${days_old} days old (stale)"
-        echo "   💡 Regenerate with: /superagent:index-repo"
+        echo "   💡 Regenerate with: /airis-agent:index-repo"
     else
         echo "📦 PROJECT_INDEX.md: ${days_old} days old (fresh)"
     fi
 else
     echo "📦 PROJECT_INDEX.md: not found"
-    echo "   💡 Generate with: /superagent:index-repo"
+    echo "   💡 Generate with: /airis-agent:index-repo"
 fi
 
 # 4. Context restoration from docs/memory/
@@ -91,6 +91,6 @@ echo "  ✅ Confidence Check (pre-implementation validation)"
 echo "  ✅ Deep Research (web/MCP integration)"
 echo "  ✅ Repository Index (token-efficient exploration)"
 echo ""
-echo "Super Agent ready — awaiting task assignment."
+echo "Airis Agent ready — awaiting task assignment."
 
 exit 0

@@ -1,8 +1,8 @@
-# Super Agent Documentation
+# Airis Agent Documentation
 
 ## 🎯 Essential Understanding
 
-**Super Agent is a Context Framework for Claude Code** - it installs behavioral instruction files that Claude Code reads to enhance its capabilities.
+**Airis Agent is a Context Framework for Claude Code** - it installs behavioral instruction files that Claude Code reads to enhance its capabilities.
 
 ### How It Works
 1. **Installation**: Python CLI installs context files to `~/.claude/`
@@ -15,10 +15,10 @@
 **New Users**: [Quick Start Guide →](getting-started/quick-start.md)
 ```bash
 # Recommended for Linux/macOS
-pipx install Super Agent && Super Agent install
+pipx install Airis Agent && Airis Agent install
 
 # Traditional method
-pip install Super Agent && Super Agent install
+pip install Airis Agent && Airis Agent install
 
 # Then try: /sc:brainstorm "web app idea" in Claude Code
 ```
@@ -73,14 +73,14 @@ pip install Super Agent && Super Agent install
 ### In Your Terminal (Installation)
 ```bash
 # Install framework (choose one)
-pipx install Super Agent       # Recommended for Linux/macOS
-pip install Super Agent        # Traditional method
+pipx install Airis Agent       # Recommended for Linux/macOS
+pip install Airis Agent        # Traditional method
 npm install -g @bifrost_inc/superagent  # Cross-platform
 
 # Configure and maintain
-Super Agent install            # Configure Claude Code
-Super Agent update             # Update framework
-python3 -m Super Agent --version  # Check installation
+Airis Agent install            # Configure Claude Code
+Airis Agent update             # Update framework
+python3 -m Airis Agent --version  # Check installation
 ```
 
 ### In Claude Code (Usage)
@@ -96,7 +96,7 @@ python3 -m Super Agent --version  # Check installation
 
 | Component | Type | Where It Runs | What It Does |
 |-----------|------|---------------|--------------|
-| **Super Agent** | Context Files | Read by Claude Code | Modifies AI behavior |
+| **Airis Agent** | Context Files | Read by Claude Code | Modifies AI behavior |
 | **Claude Code** | Software | Your computer | Executes everything |
 | **MCP Servers** | Software | Node.js processes | Provide tools |
 | **Python CLI** | Software | Python runtime | Manages installation |
@@ -104,7 +104,7 @@ python3 -m Super Agent --version  # Check installation
 ## 🔄 How Everything Connects
 
 ```
-User Input → Claude Code → Reads Super Agent Context → Modified Behavior → Enhanced Output
+User Input → Claude Code → Reads Airis Agent Context → Modified Behavior → Enhanced Output
                 ↓
         May use MCP Servers
          (if configured)
@@ -116,22 +116,22 @@ User Input → Claude Code → Reads Super Agent Context → Modified Behavior �
 **Complex Problems**: [Full Troubleshooting Guide →](reference/troubleshooting.md)  
 **Installation Issues**: [Installation Guide →](getting-started/installation.md)  
 **Command Help**: [Commands Guide →](user-guide/commands.md)  
-**Community Support**: [GitHub Discussions](https://github.com/kazuki/superagent/discussions)
+**Community Support**: [GitHub Discussions](https://github.com/agiletec-inc/airis-agent/discussions)
 
 ## 🤔 Common Misconceptions Clarified
 
-❌ **"Super Agent is an AI assistant"**  
-✅ Super Agent is a configuration framework that enhances Claude Code
+❌ **"Airis Agent is an AI assistant"**  
+✅ Airis Agent is a configuration framework that enhances Claude Code
 
-❌ **"I'm running Super Agent"**  
-✅ You're running Claude Code with Super Agent context loaded
+❌ **"I'm running Airis Agent"**  
+✅ You're running Claude Code with Airis Agent context loaded
 
-❌ **"Claude Code executes; Super Agent provides context my commands"**  
-✅ Claude Code executes everything; Super Agent provides the instructions
+❌ **"Claude Code executes; Airis Agent provides context my commands"**  
+✅ Claude Code executes everything; Airis Agent provides the instructions
 
 ❌ **"The .md files are documentation"**  
 ✅ The .md files ARE the framework - active instruction sets
 
 ---
 
-*Remember: Super Agent enhances Claude Code through context - it doesn't replace it or run alongside it. Everything happens within Claude Code itself.*
+*Remember: Airis Agent enhances Claude Code through context - it doesn't replace it or run alongside it. Everything happens within Claude Code itself.*

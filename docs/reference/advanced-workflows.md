@@ -1,4 +1,4 @@
-# Super Agent Advanced Workflows Collection
+# Airis Agent Advanced Workflows Collection
 
 **Status**: ✅ **Status: Current** - Complex command sequences and context combinations for sophisticated projects.
 
@@ -6,7 +6,7 @@
 
 ## Overview and Usage Guide
 
-**Purpose**: Advanced Super Agent patterns for complex, multi-step projects that require careful sequencing of commands and context management.
+**Purpose**: Advanced Airis Agent patterns for complex, multi-step projects that require careful sequencing of commands and context management.
 
 **Important**: These are conversation patterns, not executing workflows. All work happens within Claude Code based on context provided.
 
@@ -306,4 +306,4 @@
 
 ## Summary
 
-Advanced workflows in Super Agent are sophisticated conversation patterns that build context progressively within a single Claude Code session. They help generate better outputs through careful command sequencing and context management, but do not involve any actual workflow execution, parallel processing, or automation. Success comes from understanding how to layer context effectively within Claude's conversation scope.
+Advanced workflows in Airis Agent are sophisticated conversation patterns that build context progressively within a single Claude Code session. They help generate better outputs through careful command sequencing and context management, but do not involve any actual workflow execution, parallel processing, or automation. Success comes from understanding how to layer context effectively within Claude's conversation scope.

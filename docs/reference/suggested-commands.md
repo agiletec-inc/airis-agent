@@ -3,21 +3,21 @@
 ## インストール・セットアップ
 ```bash
 # 推奨インストール方法
-pipx install Super Agent
-pipx upgrade Super Agent
-Super Agent install
+pipx install Airis Agent
+pipx upgrade Airis Agent
+Airis Agent install
 
 # または pip
-pip install Super Agent
-pip install --upgrade Super Agent
-Super Agent install
+pip install Airis Agent
+pip install --upgrade Airis Agent
+Airis Agent install
 
 # コンポーネント一覧
-Super Agent install --list-components
+Airis Agent install --list-components
 
 # 特定コンポーネントのインストール
-Super Agent install --components core
-Super Agent install --components mcp --force
+Airis Agent install --components core
+Airis Agent install --components mcp --force
 ```
 
 ## 開発環境セットアップ
@@ -129,7 +129,7 @@ python3 --version
 pip3 --version
 ```
 
-## Super Agent使用例
+## Airis Agent使用例
 ```bash
 # コマンド一覧表示
 /sc:help

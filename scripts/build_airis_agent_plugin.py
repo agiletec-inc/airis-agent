@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Build Super Agent plugin distribution artefacts from unified sources.
+Build Airis Agent plugin distribution artefacts from unified sources.
 
 Usage:
-    python scripts/build_superagent_plugin.py
+    python scripts/build_airis-agent_plugin.py
 """
 
 from __future__ import annotations
@@ -13,8 +13,8 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN_SRC = ROOT / "plugins" / "superagent"
-DIST_ROOT = ROOT / "dist" / "plugins" / "superagent"
+PLUGIN_SRC = ROOT / "plugins" / "airis-agent"
+DIST_ROOT = ROOT / "dist" / "plugins" / "airis-agent"
 MANIFEST_DIR = PLUGIN_SRC / "manifest"
 
 

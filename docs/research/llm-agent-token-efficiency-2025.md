@@ -1,7 +1,7 @@
 # LLM Agent Token Efficiency & Context Management - 2025 Best Practices
 
 **Research Date**: 2025-10-17
-**Researcher**: PM Agent (Super Agent)
+**Researcher**: PM Agent (Airis Agent)
 **Purpose**: Optimize PM Agent token consumption and context management
 
 ---

@@ -1,4 +1,4 @@
-# Super Agent
+# Airis Agent
 
 AI-enhanced development framework providing confidence gating, parallel execution, and reflexion patterns for LLM-powered development workflows.
 
@@ -7,7 +7,7 @@ AI-enhanced development framework providing confidence gating, parallel executio
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-## Why Super Agent Exists
+## Why Airis Agent Exists
 
 **ABI-first design**: Python modules under `src/superagent/api/` provide a reusable Application Binary Interface. This means:
 
@@ -82,7 +82,7 @@ The plugin provides:
 
 ```bash
 # Clone the repository
-git clone https://github.com/kazuki/superagent.git
+git clone https://github.com/agiletec-inc/airis-agent.git
 cd superagent
 
 # Install with UV (recommended)
@@ -213,7 +213,7 @@ uv run pytest --cov=superagent --cov-report=html
 
 ## ABI Endpoints
 
-Super Agent exposes three main API endpoints:
+Airis Agent exposes three main API endpoints:
 
 ### 1. Confidence Gate (`superagent.api.confidence`)
 
@@ -295,7 +295,7 @@ The pytest plugin is automatically loaded and provides:
 
 ## Integration with MCP Servers
 
-Super Agent integrates with multiple MCP servers via **airis-mcp-gateway**:
+Airis Agent integrates with multiple MCP servers via **airis-mcp-gateway**:
 
 - **Tavily**: Web search for deep research
 - **Context7**: Official documentation lookup (prevents hallucination)
@@ -321,7 +321,7 @@ Super Agent integrates with multiple MCP servers via **airis-mcp-gateway**:
 - Trace logging and metrics for parallel executor
 
 ### Q4: Documentation & Tooling
-- Migration guide from SuperClaude to Super Agent
+- Migration guide from SuperClaude to Airis Agent
 - Comprehensive API reference
 - Video tutorials and example projects
 
@@ -363,6 +363,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Links
 
-- **GitHub**: [github.com/kazuki/superagent](https://github.com/kazuki/superagent)
-- **Issues**: [github.com/kazuki/superagent/issues](https://github.com/kazuki/superagent/issues)
+- **GitHub**: [github.com/agiletec-inc/airis-agent](https://github.com/agiletec-inc/airis-agent)
+- **Issues**: [github.com/agiletec-inc/airis-agent/issues](https://github.com/agiletec-inc/airis-agent/issues)
 - **Documentation**: [docs/](docs/)

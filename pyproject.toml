@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "superagent"
-version = "0.4.0"
-description = "AI-enhanced development framework for Claude Code - pytest plugin with optional skills"
+name = "airis-agent"
+version = "1.0.0"
+description = "Airis Agent - AI-enhanced development framework for Claude Code with autonomous workflow orchestration"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
@@ -53,23 +53,23 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/kazuki/superagent"
-GitHub = "https://github.com/kazuki/superagent"
-"Bug Tracker" = "https://github.com/kazuki/superagent/issues"
-Documentation = "https://github.com/kazuki/superagent/blob/main/README.md"
+Homepage = "https://github.com/agiletec-inc/airis-agent"
+GitHub = "https://github.com/agiletec-inc/airis-agent"
+"Bug Tracker" = "https://github.com/agiletec-inc/airis-agent/issues"
+Documentation = "https://github.com/agiletec-inc/airis-agent/blob/main/README.md"
 
 # ⭐ CLI commands (hatchling format)
 [project.scripts]
-superagent = "superagent.cli.main:main"
+airis-agent = "airis_agent.cli.main:main"
 
 # ⭐ pytest plugin auto-discovery (most important!)
 [project.entry-points.pytest11]
-superagent = "superagent.pytest_plugin"
+airis-agent = "airis_agent.pytest_plugin"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/superagent"]
+packages = ["src/airis_agent"]
 include = [
-    "src/superagent/skills/confidence-check/**",
+    "src/airis_agent/skills/confidence-check/**",
 ]
 
 [tool.hatch.build.targets.sdist]

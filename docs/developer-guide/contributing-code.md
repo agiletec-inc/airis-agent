@@ -1,8 +1,8 @@
-# Contributing Context Files to Super Agent 🛠️
+# Contributing Context Files to Airis Agent 🛠️
 
-Welcome to Super Agent development! This guide provides everything you need to contribute context files and behavioral instructions that enhance Claude Code through structured prompts and MCP server integration.
+Welcome to Airis Agent development! This guide provides everything you need to contribute context files and behavioral instructions that enhance Claude Code through structured prompts and MCP server integration.
 
-**Project Purpose**: Super Agent provides Claude Code with structured context files and behavioral instructions. We're building the next generation of AI-assisted development through intelligent prompt engineering.
+**Project Purpose**: Airis Agent provides Claude Code with structured context files and behavioral instructions. We're building the next generation of AI-assisted development through intelligent prompt engineering.
 
 ## Table of Contents
 
@@ -53,7 +53,7 @@ ls ~/.claude/      # Should show Claude Code directory
 
 ### Framework Structure
 
-Super Agent is a **Context-Oriented Configuration Framework** - not executing software, but instruction files that Claude Code reads to modify its behavior.
+Airis Agent is a **Context-Oriented Configuration Framework** - not executing software, but instruction files that Claude Code reads to modify its behavior.
 
 ```
 superagent/
@@ -78,7 +78,7 @@ superagent/
 ### How It Works
 
 ```
-User Input → Claude Code → Reads Super Agent Context → Modified Behavior → Enhanced Output
+User Input → Claude Code → Reads Airis Agent Context → Modified Behavior → Enhanced Output
 ```
 
 1. User types `/sc:implement "auth system"` **in Claude Code conversation** (not terminal)
@@ -152,7 +152,7 @@ Core philosophy and approach
    # Fork on GitHub, then:
    git clone https://github.com/YOUR_USERNAME/superagent.git
    cd superagent
-   git remote add upstream https://github.com/kazuki/superagent.git
+   git remote add upstream https://github.com/agiletec-inc/airis-agent.git
    ```
 
 2. **Create Feature Branch:**
@@ -187,7 +187,7 @@ Brief description of context file changes
 - [ ] Examples validated in Claude Code conversations
 
 ## Checklist
-- [ ] Files follow Super Agent conventions
+- [ ] Files follow Airis Agent conventions
 - [ ] Self-review completed
 - [ ] Documentation updated
 - [ ] No breaking changes to existing context
@@ -386,16 +386,16 @@ grep "@import" ~/.claude/CLAUDE.md
 
 ## License and Attribution
 
-**MIT License**: Super Agent is licensed under the MIT License, providing maximum freedom for use, modification, and distribution.
+**MIT License**: Airis Agent is licensed under the MIT License, providing maximum freedom for use, modification, and distribution.
 
-By contributing to Super Agent, you agree that your contributions will be licensed under the same MIT License. You retain copyright to your contributions while granting the project perpetual rights to use, modify, and distribute your context files.
+By contributing to Airis Agent, you agree that your contributions will be licensed under the same MIT License. You retain copyright to your contributions while granting the project perpetual rights to use, modify, and distribute your context files.
 
 ## Acknowledgments
 
-Super Agent exists because of the collaborative effort of developers, users, and contributors who believe in advancing AI-assisted development. Every bug report, feature suggestion, documentation improvement, and context file contribution makes the framework better for everyone.
+Airis Agent exists because of the collaborative effort of developers, users, and contributors who believe in advancing AI-assisted development. Every bug report, feature suggestion, documentation improvement, and context file contribution makes the framework better for everyone.
 
-Your expertise and perspective make Super Agent better. Whether you're improving context files, adding features, or helping other users, every contribution advances the goal of more effective AI-assisted development.
+Your expertise and perspective make Airis Agent better. Whether you're improving context files, adding features, or helping other users, every contribution advances the goal of more effective AI-assisted development.
 
 ---
 
-**Welcome to the Super Agent contributor community!** Your contributions help build the future of AI-assisted development through intelligent context and behavioral programming.
+**Welcome to the Airis Agent contributor community!** Your contributions help build the future of AI-assisted development through intelligent context and behavioral programming.

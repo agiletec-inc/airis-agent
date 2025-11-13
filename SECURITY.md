@@ -2,7 +2,7 @@
 
 ## 🔒 Reporting Security Vulnerabilities
 
-Super Agent prioritizes security through secure-by-design principles, comprehensive input validation, and responsible vulnerability management. We are committed to maintaining a secure development platform while enabling powerful AI-assisted workflows.
+Airis Agent prioritizes security through secure-by-design principles, comprehensive input validation, and responsible vulnerability management. We are committed to maintaining a secure development platform while enabling powerful AI-assisted workflows.
 
 **Security Commitment:**
 - Timely response to security reports (48-72 hours)
@@ -39,7 +39,7 @@ Super Agent prioritizes security through secure-by-design principles, comprehens
 ### What to Include
 
 **Essential Information:**
-- Super Agent version: `Super Agent --version`
+- Airis Agent version: `Airis Agent --version`
 - Operating system and version
 - Python version: `python3 --version`
 - Claude Code version: `claude --version`
@@ -56,7 +56,7 @@ Super Agent prioritizes security through secure-by-design principles, comprehens
 
 **Vulnerability Report Template:**
 ```
-**Super Agent Version:** [version]
+**Airis Agent Version:** [version]
 **Environment:** [OS, Python version, Claude Code version]
 
 **Vulnerability Summary:**
@@ -345,7 +345,7 @@ For organizations requiring extended security support:
 ### For Users
 
 **Installation Security:**
-- Download Super Agent only from official sources (PyPI, npm, GitHub releases)
+- Download Airis Agent only from official sources (PyPI, npm, GitHub releases)
 - Verify package signatures and checksums when available
 - Use virtual environments to isolate dependencies
 - Keep Python, Node.js, and system packages updated
@@ -357,9 +357,9 @@ For organizations requiring extended security support:
 - Enable only needed MCP servers to minimize attack surface
 
 **Project Security:**
-- Never run Super Agent with elevated privileges unless absolutely necessary
+- Never run Airis Agent with elevated privileges unless absolutely necessary
 - Review generated code before execution, especially for external API calls
-- Use version control to track all Super Agent-generated changes
+- Use version control to track all Airis Agent-generated changes
 - Regularly backup project configurations and important data
 
 **Network Security:**
@@ -533,7 +533,7 @@ Security researchers who responsibly disclose vulnerabilities are recognized in:
 - Priority review for future security research and contributions
 
 **Current Incentive Structure:**
-Super Agent currently operates as an open-source project without monetary bug bounty rewards. Recognition focuses on professional acknowledgment and community contribution value.
+Airis Agent currently operates as an open-source project without monetary bug bounty rewards. Recognition focuses on professional acknowledgment and community contribution value.
 
 **Future Incentive Considerations:**
 As the project grows and secures funding:
@@ -611,7 +611,7 @@ As the project grows and secures funding:
 - **Community Security Liaisons**: Interface with security researchers and community
 
 **GitHub Security Integration:**
-- **Security Advisories**: https://github.com/kazuki/superagent/security/advisories
+- **Security Advisories**: https://github.com/agiletec-inc/airis-agent/security/advisories
 - **Security Policy**: Available in repository security tab
 - **Vulnerability Reporting**: GitHub's private vulnerability reporting system
 - **Security Team**: GitHub team with security focus and escalation procedures
@@ -629,7 +629,7 @@ For critical vulnerabilities requiring immediate attention:
 
 ### General Security Questions
 **General Security Questions:**
-- **GitHub Discussions**: https://github.com/kazuki/superagent/discussions
+- **GitHub Discussions**: https://github.com/agiletec-inc/airis-agent/discussions
 - **Community Forums**: Security-focused discussion threads
 - **Documentation**: [Security Best Practices](docs/Reference/quick-start-practices.md#security-practices)
 - **Issue Tracker**: Non-sensitive security configuration questions
@@ -721,7 +721,7 @@ For organizations requiring dedicated security support:
 
 **Security Policy Maintenance:**
 
-**Last Updated**: December 2024 (Super Agent v4.0)
+**Last Updated**: December 2024 (Airis Agent v4.0)
 **Next Review**: March 2025 (Quarterly review cycle)
 **Version**: 4.1.5 (Updated for v4 architectural changes)
 
@@ -739,7 +739,7 @@ For organizations requiring dedicated security support:
 
 **Security Contributor Acknowledgments:**
 
-Super Agent's security posture benefits from community-driven security research, responsible disclosure, and collaborative improvement efforts.
+Airis Agent's security posture benefits from community-driven security research, responsible disclosure, and collaborative improvement efforts.
 
 **Security Contributors:**
 - Security researchers who responsibly disclose vulnerabilities
@@ -748,13 +748,13 @@ Super Agent's security posture benefits from community-driven security research,
 - Documentation contributors who improve security guidance and best practices
 
 **Recognition:**
-- [GitHub Contributors](https://github.com/kazuki/superagent/graphs/contributors) - Complete contributor recognition
+- [GitHub Contributors](https://github.com/agiletec-inc/airis-agent/graphs/contributors) - Complete contributor recognition
 - Security advisories include researcher acknowledgment and credit
 - Annual security report highlights significant security contributions
 - Community discussions celebrate helpful security guidance and support
 
 **Ongoing Security Community:**
-The Super Agent security community continues growing through shared commitment to secure AI-assisted development workflows. Security-focused contributions, from vulnerability reports to secure coding practices, strengthen the framework for all users.
+The Airis Agent security community continues growing through shared commitment to secure AI-assisted development workflows. Security-focused contributions, from vulnerability reports to secure coding practices, strengthen the framework for all users.
 
 **Join Security Efforts:**
 Whether you're reporting security issues, improving security documentation, or contributing security-focused code, your efforts help build more secure software development tools for the entire community.

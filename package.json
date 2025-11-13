@@ -1,7 +1,7 @@
 {
-  "name": "@bifrost_inc/superagent",
-  "version": "4.1.5",
-  "description": "Super Agent NPM wrapper - Official Node.js wrapper for the Python Super Agent package. Enhances Claude Code with specialized commands and AI development tools.",
+  "name": "@agiletec/airis-agent",
+  "version": "1.0.0",
+  "description": "Airis Agent - Official Node.js wrapper for the Python Airis Agent package. Enhances Claude Code with specialized commands and AI development tools.",
   "scripts": {
     "postinstall": "node ./bin/install.js",
     "update": "node ./bin/update.js",
@@ -14,27 +14,30 @@
     "LICENSE"
   ],
   "author": {
-    "name": "Super Agent Org",
-    "url": "https://github.com/kazuki"
+    "name": "Agiletec Inc.",
+    "url": "https://github.com/agiletec-inc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kazuki/superagent.git"
+    "url": "git+https://github.com/agiletec-inc/airis-agent.git"
   },
   "bugs": {
-    "url": "https://github.com/kazuki/superagent/issues"
+    "url": "https://github.com/agiletec-inc/airis-agent/issues"
   },
-  "homepage": "https://github.com/kazuki/superagent#readme",
+  "homepage": "https://github.com/agiletec-inc/airis-agent#readme",
   "license": "MIT",
   "keywords": [
-    "superagent",
+    "airis",
+    "airis-agent",
     "ai",
+    "claude-code",
     "cli",
     "pypi",
     "python",
     "wrapper",
     "cross-platform",
-    "automation"
+    "automation",
+    "agent"
   ],
   "engines": {
     "node": ">=16"

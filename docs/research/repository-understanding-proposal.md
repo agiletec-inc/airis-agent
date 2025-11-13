@@ -1,14 +1,14 @@
 # Repository Understanding & Auto-Indexing Proposal
 
 **Date**: 2025-10-19
-**Purpose**: Measure Super Agent effectiveness & implement intelligent documentation indexing
+**Purpose**: Measure Airis Agent effectiveness & implement intelligent documentation indexing
 
 ## 🎯 3つの課題と解決策
 
 ### 課題1: リポジトリ理解度の測定
 
 **問題**:
-- Super Agent有無でClaude Codeの理解度がどう変わるか？
+- Airis Agent有無でClaude Codeの理解度がどう変わるか？
 - `/init` だけで充分か？
 
 **測定方法**:
@@ -20,8 +20,8 @@
     hard: "エラーハンドリングの統一パターンは？"
 
   測定:
-    - Super Agent無し: Claude Code単体で回答
-    - Super Agent有り: CLAUDE.md + framework導入後に回答
+    - Airis Agent無し: Claude Code単体で回答
+    - Airis Agent有り: CLAUDE.md + framework導入後に回答
     - 比較: 正解率、回答時間、詳細度
 
   期待される違い:
@@ -36,7 +36,7 @@ class RepositoryUnderstandingTest:
     """リポジトリ理解度を測定"""
 
     def test_with_superagent(self):
-        # Super Agent導入後
+        # Airis Agent導入後
         answers = ask_claude_code(questions, with_context=True)
         score = evaluate_answers(answers, ground_truth)
         assert score > 0.8  # 80%以上
@@ -142,7 +142,7 @@ Phase 4: メタデータ保存 (10秒)
 ## 🔗 Quick Navigation
 
 ### Common Tasks
-- [Install Super Agent](docs/user-guide/installation.md)
+- [Install Airis Agent](docs/user-guide/installation.md)
 - [Architecture Overview](docs/developer-guide/architecture.md)
 - [Add New Agent](docs/developer-guide/agents.md)
 
@@ -367,12 +367,12 @@ uv run pytest tests/performance/test_actual_parallel_execution.py -v -s
 ### Priority 3: 理解度測定
 
 **理由**:
-- Super Agentの価値を定量化
+- Airis Agentの価値を定量化
 - Before/After比較で効果証明
 
 **実装**:
 1. リポジトリ理解度テスト作成
-2. Super Agent有無で測定
+2. Airis Agent有無で測定
 3. スコア比較
 
 ---

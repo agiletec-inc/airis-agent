@@ -1,7 +1,7 @@
 # MCP Installer Fix Summary
 
 ## Problem Identified
-The Super Agent installer was using `claude mcp add` CLI commands which are designed for Claude Desktop, not Claude Code. This caused installation failures.
+The Airis Agent installer was using `claude mcp add` CLI commands which are designed for Claude Desktop, not Claude Code. This caused installation failures.
 
 ## Root Cause
 - Original implementation: Used `claude mcp add` CLI commands

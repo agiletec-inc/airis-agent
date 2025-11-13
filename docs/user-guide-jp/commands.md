@@ -1,8 +1,8 @@
-# Super Agent コマンドガイド
+# Airis Agent コマンドガイド
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#superagent-commands-guide)
 
-`/sc:*`Super Agent は、ワークフロー用コマンドと`@agent-*`スペシャリスト用コマンドの 21 個の Claude Code コマンドを提供します。
+`/sc:*`Airis Agent は、ワークフロー用コマンドと`@agent-*`スペシャリスト用コマンドの 21 個の Claude Code コマンドを提供します。
 
 ## コマンドの種類
 
@@ -12,7 +12,7 @@
 |---|---|---|---|
 |**スラッシュコマンド**|クロード・コード|`/sc:[command]`|`/sc:implement "feature"`|
 |**エージェント**|クロード・コード|`@agent-[name]`|`@agent-security "review"`|
-|**インストール**|ターミナル|`Super Agent [command]`|`Super Agent install`|
+|**インストール**|ターミナル|`Airis Agent [command]`|`Airis Agent install`|
 
 ## クイックテスト
 
@@ -20,7 +20,7 @@
 
 ```shell
 # Terminal: Verify installation
-python3 -m Super Agent --version
+python3 -m Airis Agent --version
 # Claude Code CLI verification: claude --version
 
 # Claude Code: Test commands
@@ -30,17 +30,17 @@ python3 -m Super Agent --version
 
 **ワークフロー**：`/sc:brainstorm "idea"`→→`/sc:implement "feature"`​`/sc:test`
 
-## 🎯 Super Agent コマンドの理解
+## 🎯 Airis Agent コマンドの理解
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#-understanding-superagent-commands)
 
-## Super Agentの仕組み
+## Airis Agentの仕組み
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#how-superagent-works)
 
-Super Agent は、Claude Code が特殊な動作を実行するために読み込む動作コンテキストファイルを提供します。 と入力すると`/sc:implement`、Claude Code は`implement.md`コンテキストファイルを読み込み、その動作指示に従います。
+Airis Agent は、Claude Code が特殊な動作を実行するために読み込む動作コンテキストファイルを提供します。 と入力すると`/sc:implement`、Claude Code は`implement.md`コンテキストファイルを読み込み、その動作指示に従います。
 
-**Super Agent コマンドはソフトウェアによって実行されるのではなく**、フレームワークから特殊な命令ファイルを読み取ることで Claude コードの動作を変更するコンテキスト トリガーです。
+**Airis Agent コマンドはソフトウェアによって実行されるのではなく**、フレームワークから特殊な命令ファイルを読み取ることで Claude コードの動作を変更するコンテキスト トリガーです。
 
 ### コマンドの種類:
 
@@ -67,10 +67,10 @@ Super Agent は、Claude Code が特殊な動作を実行するために読み�
 
 **🖥️ ターミナルコマンド**（実際の CLI ソフトウェア）：
 
-- `Super Agent install`- フレームワークコンポーネントをインストールします
-- `Super Agent update`- 既存のインストールを更新します
-- `Super Agent uninstall`- フレームワークのインストールを削除します
-- `python3 -m Super Agent --version`- インストール状態を確認する
+- `Airis Agent install`- フレームワークコンポーネントをインストールします
+- `Airis Agent update`- 既存のインストールを更新します
+- `Airis Agent uninstall`- フレームワークのインストールを削除します
+- `python3 -m Airis Agent --version`- インストール状態を確認する
 
 **💬 クロード コード コマンド**(コンテキスト トリガー):
 
@@ -90,15 +90,15 @@ Super Agent は、Claude Code が特殊な動作を実行するために読み�
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#%EF%B8%8F-terminal-verification-run-in-terminalcmd)
 
 ```shell
-# Verify Super Agent is working (primary method)
-python3 -m Super Agent --version
-# Example output: Super Agent 4.1.5
+# Verify Airis Agent is working (primary method)
+python3 -m Airis Agent --version
+# Example output: Airis Agent 4.1.5
 
 # Claude Code CLI version check
 claude --version
 
 # Check installed components
-python3 -m Super Agent install --list-components | grep mcp
+python3 -m Airis Agent install --list-components | grep mcp
 # Example output: Shows installed MCP components
 ```
 
@@ -124,13 +124,13 @@ python3 -m Super Agent install --list-components | grep mcp
 
 |コマンドタイプ|走る場所|形式|目的|例|
 |---|---|---|---|---|
-|**🖥️ インストール**|ターミナル/CMD|`Super Agent [command]`|セットアップとメンテナンス|`Super Agent install`|
-|**🔧 構成**|ターミナル/CMD|`python3 -m Super Agent [command]`|高度な設定|`python3 -m Super Agent --version`|
+|**🖥️ インストール**|ターミナル/CMD|`Airis Agent [command]`|セットアップとメンテナンス|`Airis Agent install`|
+|**🔧 構成**|ターミナル/CMD|`python3 -m Airis Agent [command]`|高度な設定|`python3 -m Airis Agent --version`|
 |**💬 スラッシュコマンド**|クロード・コード|`/sc:[command]`|ワークフロー自動化|`/sc:implement "feature"`|
 |**🤖 エージェントの呼び出し**|クロード・コード|`@agent-[name]`|手動スペシャリストの有効化|`@agent-security "review"`|
 |**⚡ 強化されたフラグ**|クロード・コード|`/sc:[command] --flags`|行動修正|`/sc:analyze --think-hard`|
 
-> **注意**：すべての`/sc:`コマンドと`@agent-`呼び出しは、ターミナルではなくClaude Codeチャット内で動作します。これらのコマンドと呼び出しは、Claude CodeがSuper Agentフレームワークから特定のコンテキストファイルを読み取るようにトリガーします。
+> **注意**：すべての`/sc:`コマンドと`@agent-`呼び出しは、ターミナルではなくClaude Codeチャット内で動作します。これらのコマンドと呼び出しは、Claude CodeがAiris Agentフレームワークから特定のコンテキストファイルを読み取るようにトリガーします。
 
 ## 目次
 
@@ -396,14 +396,14 @@ python3 -m Super Agent install --list-components | grep mcp
 
 **コマンドの問題:**
 
-- **コマンドが見つかりません**: インストールを確認してください:`python3 -m Super Agent --version`
+- **コマンドが見つかりません**: インストールを確認してください:`python3 -m Airis Agent --version`
 - **応答なし**: Claude Codeセッションを再開する
 - **処理遅延**: `--no-mcp`MCPサーバーなしでテストするために使用します
 
 **クイックフィックス:**
 
 - セッションをリセット:`/sc:load`再初期化する
-- ステータスを確認:`Super Agent install --list-components`
+- ステータスを確認:`Airis Agent install --list-components`
 - ヘルプ:[トラブルシューティングガイド](https://github.com/khayashi4337/superagent/blob/master/docs/reference/troubleshooting.md)
 
 ## 次のステップ

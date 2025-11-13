@@ -1,10 +1,10 @@
-# Super Agent Verification and Troubleshooting Guide
+# Airis Agent Verification and Troubleshooting Guide
 
 ## Overview
 
-This guide covers how to verify your Super Agent installation and troubleshoot common issues with context files and configurations.
+This guide covers how to verify your Airis Agent installation and troubleshoot common issues with context files and configurations.
 
-**Important**: Super Agent is a collection of context files, not executable software. This guide focuses on verifying context files are properly installed and accessible to Claude Code.
+**Important**: Airis Agent is a collection of context files, not executable software. This guide focuses on verifying context files are properly installed and accessible to Claude Code.
 
 ## Table of Contents
 
@@ -19,9 +19,9 @@ This guide covers how to verify your Super Agent installation and troubleshoot c
 ### Check Installation Status
 
 ```bash
-# Verify Super Agent installation system is available
-python3 -m Super Agent --version
-# Expected: Super Agent installation help
+# Verify Airis Agent installation system is available
+python3 -m Airis Agent --version
+# Expected: Airis Agent installation help
 
 # Verify Claude Code CLI integration
 claude --version
@@ -149,7 +149,7 @@ npx -y @upstash/context7-mcp@latest --help 2>/dev/null && echo "✅ Context7 ava
 ```bash
 # Check if command file exists
 ls ~/.claude/commands/implement.md
-# If missing, reinstall Super Agent
+# If missing, reinstall Airis Agent
 
 # Verify file content
 head -20 ~/.claude/commands/implement.md
@@ -183,7 +183,7 @@ PYTHONPATH=/path/to/superagent python3 -m setup install --components agents --fo
 
 ### Issue: Context Not Loading
 
-**Symptom**: Claude Code doesn't seem to read Super Agent context
+**Symptom**: Claude Code doesn't seem to read Airis Agent context
 
 **Verification**:
 ```bash
@@ -229,18 +229,18 @@ PYTHONPATH=/path/to/superagent python3 -m setup install --components mcp --force
 
 ```bash
 #!/bin/bash
-# Super Agent Quick Diagnostic Script
+# Airis Agent Quick Diagnostic Script
 
-echo "=== Super Agent Diagnostic ==="
+echo "=== Airis Agent Diagnostic ==="
 echo ""
 
 # Check installation system
 echo "1. Installation System:"
-if command -v Super Agent &> /dev/null; then
-    echo "   ✅ Super Agent installation available"
-    python3 -m Super Agent --version
+if command -v Airis Agent &> /dev/null; then
+    echo "   ✅ Airis Agent installation available"
+    python3 -m Airis Agent --version
 else
-    echo "   ❌ Super Agent not found - install with: pipx install Super Agent (or pip install Super Agent)"
+    echo "   ❌ Airis Agent not found - install with: pipx install Airis Agent (or pip install Airis Agent)"
 fi
 
 # Check context files
@@ -321,4 +321,4 @@ PYTHONPATH=/path/to/superagent python3 -m setup install
 
 ## Summary
 
-Verification for Super Agent focuses on ensuring context files are properly installed and accessible to Claude Code. Since Super Agent is not software but a configuration framework, verification centers on file presence, integrity, and behavioral testing in Claude Code conversations.
+Verification for Airis Agent focuses on ensuring context files are properly installed and accessible to Claude Code. Since Airis Agent is not software but a configuration framework, verification centers on file presence, integrity, and behavioral testing in Claude Code conversations.

@@ -1,21 +1,21 @@
-# Super Agent Basic Examples Collection
+# Airis Agent Basic Examples Collection
 
 **Status**: ✅ **Status: Current** - Essential commands, single-agent workflows, and common development tasks.
 
-**Quick Reference Guide**: Copy-paste ready examples for beginners, focused on essential Super Agent usage patterns and fundamental development workflows.
+**Quick Reference Guide**: Copy-paste ready examples for beginners, focused on essential Airis Agent usage patterns and fundamental development workflows.
 
 > **📝 Context Note**: These examples show `/sc:` commands and `@agent-` invocations that trigger Claude Code to read specific context files and adopt the behaviors defined there. The sophistication comes from the behavioral instructions, not from executable software.
 
 ## Overview and Usage Guide
 
-**Purpose**: Essential Super Agent commands and patterns for everyday development tasks. Start here for your first Super Agent experience.
+**Purpose**: Essential Airis Agent commands and patterns for everyday development tasks. Start here for your first Airis Agent experience.
 
-**Target Audience**: New users, developers learning Super Agent fundamentals, immediate task application
+**Target Audience**: New users, developers learning Airis Agent fundamentals, immediate task application
 
 **Usage Pattern**: Copy → Adapt → Execute → Learn from results
 
 **Key Features**:
-- Examples demonstrate core Super Agent functionality
+- Examples demonstrate core Airis Agent functionality
 - Clear patterns for immediate application  
 - Single-focus examples for clear learning
 - Progressive complexity within basic scope
@@ -546,8 +546,8 @@
 - Can solve common development problems independently
 - Understands when to use different flags and focuses
 - Can adapt examples to specific project needs
-- Ready to explore more complex Super Agent capabilities
+- Ready to explore more complex Airis Agent capabilities
 
 ---
 
-**Remember**: Start simple, practice frequently, and gradually increase complexity. These basic examples form the foundation for all advanced Super Agent usage.
+**Remember**: Start simple, practice frequently, and gradually increase complexity. These basic examples form the foundation for all advanced Airis Agent usage.

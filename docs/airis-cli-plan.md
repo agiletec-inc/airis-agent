@@ -3,7 +3,7 @@
 ## Goals
 
 - Provide a single command-line entry point to inspect and manage MCP servers exposed by AIRIS MCP Gateway.
-- Mirror the HTTP API (`docs/mcp-api-plan.md`) so CLI and Super Agent share the same surface.
+- Mirror the HTTP API (`docs/mcp-api-plan.md`) so CLI and Airis Agent share the same surface.
 - Support both human-readable output and JSON for scripting.
 - Offer guardrails (validation, secret prompts) so users avoid invalid configurations.
 
@@ -55,10 +55,10 @@ Global options:
   3. After add, automatically prompt for required secrets and optionally enable.
 - Errors from API should be surfaced with a friendly message; `--debug` prints raw details.
 
-## Integration with Super Agent
+## Integration with Airis Agent
 
-- Super Agent can shell out to CLI (quick win) or use shared library (`airis_mcp_cli.api`).
-- Expose Python API entry points so Super Agent imports functions directly without subprocess overhead.
+- Airis Agent can shell out to CLI (quick win) or use shared library (`airis_mcp_cli.api`).
+- Expose Python API entry points so Airis Agent imports functions directly without subprocess overhead.
 - Example:
   ```python
   from airis_mcp_cli.api import GatewayClient
@@ -84,4 +84,4 @@ Global options:
 - How to handle MCP server versions / updates (maybe `airis-mcp update`).
 - Should CLI support profile export/import (e.g., `airis-mcp profile save dev.json`)?
 
-This CLI plan keeps the UX coherent across novices (UI), pros (CLI), and automation (Super Agent).
+This CLI plan keeps the UX coherent across novices (UI), pros (CLI), and automation (Airis Agent).

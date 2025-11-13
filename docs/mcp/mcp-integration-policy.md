@@ -1,6 +1,6 @@
 # MCP Integration Policy
 
-Super AgentにおけるMCP (Model Context Protocol) サーバーの統合ポリシーと使用ガイドライン。
+Airis AgentにおけるMCP (Model Context Protocol) サーバーの統合ポリシーと使用ガイドライン。
 
 ## MCP Server Definitions
 

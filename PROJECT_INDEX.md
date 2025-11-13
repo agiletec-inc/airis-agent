@@ -1,4 +1,4 @@
-# Project Index: Super Agent
+# Project Index: Airis Agent
 
 **Generated**: 2025-10-29
 **Version**: 0.4.0
@@ -43,7 +43,7 @@ superagent/
 ### CLI
 - **Command**: `superagent` (installed via pip/uv)
 - **Source**: `src/superagent/cli/main.py:main`
-- **Purpose**: CLI interface for Super Agent operations
+- **Purpose**: CLI interface for Airis Agent operations
 
 ### Pytest Plugin
 - **Auto-loaded**: Yes (via `pyproject.toml` entry point)
@@ -110,7 +110,7 @@ Core patterns for AI-enhanced development:
 - **Checks**: Package installation, pytest plugin, skills availability
 
 #### install_skill.py
-- **Purpose**: Install Super Agent skills to Claude Code
+- **Purpose**: Install Airis Agent skills to Claude Code
 - **Target**: `~/.claude/skills/`
 
 ---
@@ -322,4 +322,4 @@ Integrates with multiple MCP servers via **airis-mcp-gateway**:
 
 ---
 
-**For detailed documentation**: See `docs/` directory or visit [GitHub repository](https://github.com/kazuki/superagent)
+**For detailed documentation**: See `docs/` directory or visit [GitHub repository](https://github.com/agiletec-inc/airis-agent)

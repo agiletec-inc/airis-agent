@@ -313,7 +313,7 @@ docs/memory/  (auto-generated)
 
 2. **Context7 MCP** - Pattern for project-specific configuration
 
-3. **Super Agent** - Behavioral Rules and Principles
+3. **Airis Agent** - Behavioral Rules and Principles
 
 ---
 

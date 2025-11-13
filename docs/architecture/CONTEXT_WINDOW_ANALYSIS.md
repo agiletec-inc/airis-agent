@@ -1,14 +1,14 @@
 # Context Window Analysis: Old vs New Architecture
 
 **Date**: 2025-10-21
-**Related Issue**: [#437 - Extreme Context Window Optimization](https://github.com/kazuki/superagent/issues/437)
+**Related Issue**: [#437 - Extreme Context Window Optimization](https://github.com/agiletec-inc/airis-agent/issues/437)
 **Status**: Analysis Complete
 
 ---
 
 ## 🎯 Background: Issue #437
 
-**Problem**: Super Agent消費 55-60% のcontext window
+**Problem**: Airis Agent消費 55-60% のcontext window
 - MCP tools: ~30%
 - Memory files: ~30%
 - System prompts/agents: ~10%
@@ -98,7 +98,7 @@ Total: ~88KB (推定 20K-25K tokens)
 ```
 MCP tools (AIRIS Gateway後):     5K tokens  (PR #449で改善済み)
 Memory files (~/.claude/):       50K tokens  (全ドキュメント読み込み)
-Super Agent components:          10K tokens  (Component/Installer)
+Airis Agent components:          10K tokens  (Component/Installer)
 ─────────────────────────────────────────
 Total consumed:                  65K tokens
 Available for user:              135K tokens (65%)
@@ -108,7 +108,7 @@ Available for user:              135K tokens (65%)
 ```
 MCP tools (AIRIS Gateway):        5K tokens  (同じ)
 Memory files (~/.claude/):        0K tokens  (何もインストールしない)
-Super Agent pytest plugin:       20K tokens  (pytest起動時のみ)
+Airis Agent pytest plugin:       20K tokens  (pytest起動時のみ)
 ─────────────────────────────────────────
 Total consumed (session start):   5K tokens
 Available for user:             195K tokens (97%)
@@ -185,7 +185,7 @@ Total:                         ~11K tokens
 
 **Issue #437 + This PR**:
 - MCP tools: 60K → 10K (50K削減) ← PR #449
-- Super Agent: 60K → 5K (55K削減) ← This PR
+- Airis Agent: 60K → 5K (55K削減) ← This PR
 - **Total reduction**: 105K tokens
 - **User available**: 55K → 150K tokens (2.7倍改善)
 
@@ -263,7 +263,7 @@ Result:
 ✅ pytest plugin loaded
 ✅ Skills installed (optional)
 ✅ Configuration
-✅ Super Agent is healthy
+✅ Airis Agent is healthy
 ```
 
 ---
@@ -330,7 +330,7 @@ def test_example():
 
 **Issue #437への貢献**:
 - PR #449: MCP tools 50K削減
-- **This PR: Super Agent 55K削減**
+- **This PR: Airis Agent 55K削減**
 - **Total: 105K tokens回復 (52%改善)**
 
 **機能喪失リスク**: **ゼロ** ✅

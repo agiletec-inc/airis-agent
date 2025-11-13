@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Super Agent Quick Start Guide
+# 🚀 Airis Agent Quick Start Guide
 
 ### **Context Engineering Framework for Claude Code**
 
@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Time_to_Start-5_Minutes-green?style=for-the-badge" alt="Quick Start">
 </p>
 
-> **💡 Key Insight**: Super Agent doesn't replace Claude Code - it **configures and enhances** it through behavioral context injection
+> **💡 Key Insight**: Airis Agent doesn't replace Claude Code - it **configures and enhances** it through behavioral context injection
 
 <p align="center">
   <a href="#-how-it-works">How It Works</a> •
@@ -80,10 +80,10 @@
 
 ```bash
 # Quick install with pipx
-pipx install Super Agent && Super Agent install
+pipx install Airis Agent && Airis Agent install
 
 # Or traditional pip
-pip install Super Agent && Super Agent install
+pip install Airis Agent && Airis Agent install
 
 # Or via npm
 npm install -g @bifrost_inc/superagent && superagent install
@@ -127,7 +127,7 @@ npm install -g @bifrost_inc/superagent && superagent install
 
 <div align="center">
 
-### **Four Pillars of Super Agent**
+### **Four Pillars of Airis Agent**
 
 <table>
 <tr>
@@ -271,11 +271,11 @@ Playwright (testing)
 
 <div align="center">
 
-### **Super Agent vs Standard Claude Code**
+### **Airis Agent vs Standard Claude Code**
 
 <table>
 <tr>
-<th width="50%">✅ Use Super Agent</th>
+<th width="50%">✅ Use Airis Agent</th>
 <th width="50%">💭 Use Standard Claude</th>
 </tr>
 <tr>
@@ -383,7 +383,7 @@ Playwright (testing)
 
 <div align="center">
 
-### **Understanding Super Agent's Value**
+### **Understanding Airis Agent's Value**
 
 <table>
 <tr>
@@ -392,7 +392,7 @@ Playwright (testing)
 ### 🧠 **Not Software**
 **It's a Framework**
 
-Super Agent is behavioral configuration, not standalone software. Everything runs through Claude Code.
+Airis Agent is behavioral configuration, not standalone software. Everything runs through Claude Code.
 
 </td>
 <td width="33%" align="center">
@@ -486,7 +486,7 @@ Create custom workflows
 </p>
 
 <p align="center">
-  <sub>Super Agent v4.1.5 - Context Engineering for Claude Code</sub>
+  <sub>Airis Agent v4.1.5 - Context Engineering for Claude Code</sub>
 </p>
 
 </div>

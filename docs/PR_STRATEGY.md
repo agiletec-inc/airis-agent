@@ -144,7 +144,7 @@ $ make verify
    /Users/kazuki/github/superagent/src/superagent/__init__.py ✅
 
 2. Package version:
-   Super Agent, version 0.4.0 ✅
+   Airis Agent, version 0.4.0 ✅
 
 3. Pytest plugin:
    superagent-0.4.0 at .../src/superagent/pytest_plugin.py ✅
@@ -248,7 +248,7 @@ rm -rf ~/.claude/superagent/
 ### Step 2: Install New Version
 ```bash
 # Clone and install
-git clone https://github.com/kazuki/superagent.git
+git clone https://github.com/agiletec-inc/airis-agent.git
 cd superagent
 pip install -e .  # or: uv pip install -e .
 ```
@@ -260,7 +260,7 @@ superagent doctor
 
 # Output should show:
 # ✅ pytest plugin loaded
-# ✅ Super Agent is healthy
+# ✅ Airis Agent is healthy
 ```
 
 ### Step 4: (Optional) Install Skills

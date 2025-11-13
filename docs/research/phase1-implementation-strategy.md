@@ -140,7 +140,7 @@ reflection-ai/
 - ✅ Personal tool optimization
 
 **Cons**:
-- ⚠️ Loses Super Agent community/ecosystem
+- ⚠️ Loses Airis Agent community/ecosystem
 - ⚠️ Duplicates upstream effort
 - ⚠️ Maintenance burden
 - ⚠️ Smaller impact (personal vs community)
@@ -267,7 +267,7 @@ def test_skill_token_overhead():
 - ✅ Can include actual code execution in skills
 
 **Overall Success**:
-- ✅ Super Agent token efficiency improved (either via Skills or incremental PRs)
+- ✅ Airis Agent token efficiency improved (either via Skills or incremental PRs)
 - ✅ User becomes recognized maintainer
 - ✅ Core value preserved: reflection, references, memory
 

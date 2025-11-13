@@ -82,7 +82,7 @@ superagent/
 File: docs/research/python_src_layout_research_20251021.md
 
 ## Recommendation
-Use src/ layout for Super Agent:
+Use src/ layout for Airis Agent:
 - Clear separation between package code and tests
 - Prevents accidental imports from development directory
 - Modern Python best practice
@@ -152,7 +152,7 @@ Strategy: Minimal start with PM Agent orchestration
 
 **Evidence 3: PM Agent Orchestration Strategy**
 ```markdown
-File: commands/agent.md (Super Agent_Plugin)
+File: commands/agent.md (Airis Agent_Plugin)
 
 ## Task Protocol
 1. Clarify scope
@@ -263,9 +263,9 @@ hooks/
 **Evidence 1: Commit Message**
 ```
 commit 87c80d0
-refactor: move plugin files to Super Agent_Plugin repository
+refactor: move plugin files to Airis Agent_Plugin repository
 
-Plugin files now maintained in Super Agent_Plugin repository.
+Plugin files now maintained in Airis Agent_Plugin repository.
 This repository focuses on Python package implementation.
 ```
 
@@ -277,7 +277,7 @@ This repository focuses on Python package implementation.
 - CLI tools (`superagent` command)
 - Documentation
 
-**Super Agent_Plugin (separate repository)**:
+**Airis Agent_Plugin (separate repository)**:
 - Claude Code plugin
 - Slash command definitions
 - Agent definitions
@@ -290,7 +290,7 @@ superagent:
   Install: `uv pip install superagent`
   Target: pytest + CLI users
 
-Super Agent_Plugin:
+Airis Agent_Plugin:
   Purpose: Distributed as Claude Code plugin
   Install: `/plugin install sc@kazuki`
   Target: Claude Code users

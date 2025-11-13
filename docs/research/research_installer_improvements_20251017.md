@@ -1,4 +1,4 @@
-# Super Agent Installer Improvement Recommendations
+# Airis Agent Installer Improvement Recommendations
 
 **Research Date**: 2025-10-17
 **Query**: Python CLI installer best practices 2025 - uv pip packaging, interactive installation, user experience, argparse/click/typer standards
@@ -9,9 +9,9 @@
 
 ## Executive Summary
 
-Comprehensive research into modern Python CLI installer best practices reveals significant opportunities for Super Agent installer improvements. Key findings focus on **uv** as the emerging standard for Python packaging, **typer/rich** for enhanced interactive UX, and industry-standard validation patterns for robust error handling.
+Comprehensive research into modern Python CLI installer best practices reveals significant opportunities for Airis Agent installer improvements. Key findings focus on **uv** as the emerging standard for Python packaging, **typer/rich** for enhanced interactive UX, and industry-standard validation patterns for robust error handling.
 
-**Current Status**: Super Agent installer uses argparse with custom UI utilities, providing functional interactive installation.
+**Current Status**: Airis Agent installer uses argparse with custom UI utilities, providing functional interactive installation.
 
 **Opportunity**: Modernize to 2025 standards with minimal breaking changes while significantly improving UX, performance, and maintainability.
 
@@ -27,14 +27,14 @@ Comprehensive research into modern Python CLI installer best practices reveals s
 - **Industry Momentum**: Replaces pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv
 - **Source**: [Official uv docs](https://docs.astral.sh/uv/), [Astral blog](https://astral.sh/blog/uv)
 
-**Current Super Agent State**:
+**Current Airis Agent State**:
 ```python
 # pyproject.toml exists with modern configuration
 # Installation: uv pip install -e ".[dev]"
 # ✅ Already using uv - No changes needed
 ```
 
-**Recommendation**: ✅ **No Action Required** - Super Agent already follows 2025 best practices
+**Recommendation**: ✅ **No Action Required** - Airis Agent already follows 2025 best practices
 
 ---
 
@@ -64,7 +64,7 @@ Comprehensive research into modern Python CLI installer best practices reveals s
 4. **Modern Standard**: FastAPI creator's official CLI framework (Sebastian Ramirez)
 5. **Migration Path**: Typer built on Click - can migrate incrementally
 
-**Current Super Agent Issues This Solves**:
+**Current Airis Agent Issues This Solves**:
 - **Custom UI utilities** (setup/utils/ui.py:500+ lines) → Reduce to rich native features
 - **Manual input validation** → Automatic via type hints
 - **Inconsistent prompts** → Standardized typer.prompt() API
@@ -86,7 +86,7 @@ Best Practice:
   Non-Interactive: Flags for automation (CI/CD)
   Both: Always support both modes
 
-Super Agent Current State:
+Airis Agent Current State:
   ✅ Interactive: Two-stage selection (MCP + Framework)
   ✅ Non-Interactive: --components flag support
   ✅ Automation: --yes flag for CI/CD
@@ -103,7 +103,7 @@ Best Practice:
   - Retry loop until valid
   - Don't make users restart process
 
-Super Agent Current State:
+Airis Agent Current State:
   ⚠️ Custom validation in Menu class
   ❌ No automatic retry for invalid API keys
   ❌ Manual validation code throughout
@@ -158,7 +158,7 @@ Best Practice:
   - Group related options
   - Provide context-aware help
 
-Super Agent Current State:
+Airis Agent Current State:
   ✅ Two-stage selection (simple → detailed)
   ✅ Stage 1: Optional MCP servers
   ✅ Stage 2: Framework components
@@ -177,7 +177,7 @@ Best Practice:
   - Yellow for warnings
   - Gray for secondary info
 
-Super Agent Current State:
+Airis Agent Current State:
   ✅ Colors module with semantic colors
   ✅ Header styling with cyan
   ⚠️ Custom color codes (manual ANSI)
@@ -215,7 +215,7 @@ Best Practice:
   - Avoid bare except clauses
   - Let unexpected exceptions propagate
 
-Super Agent Current State:
+Airis Agent Current State:
   ✅ Specific exception handling in installer.py
   ✅ ValueError for dependency errors
   ✅ Proper exception propagation
@@ -239,7 +239,7 @@ Best Practice:
   - Type-based validation
   - Automatic error messages
 
-Super Agent Current State:
+Airis Agent Current State:
   ❌ Manual validation throughout
   ❌ No Pydantic models for config
   🟢 Opportunity for improvement
@@ -302,7 +302,7 @@ Best Practice:
   - Ensure cleanup even on error
   - try-finally or with statements
 
-Super Agent Current State:
+Airis Agent Current State:
   ✅ tempfile.TemporaryDirectory context manager
   ✅ Proper cleanup in backup creation
 ```
@@ -342,7 +342,7 @@ with tempfile.TemporaryDirectory() as temp_dir:
    - Manual virtual environment management
    - Being replaced by uv
 
-**Super Agent Positioning**:
+**Airis Agent Positioning**:
 ```yaml
 Strength: Interactive two-stage installation (better than all three)
 Weakness: Custom UI code (300+ lines vs framework primitives)
@@ -393,7 +393,7 @@ from rich.console import Console
 
 app = typer.Typer(
     name="superagent",
-    help="Super Agent CLI",
+    help="Airis Agent CLI",
     add_completion=True  # Automatic shell completion
 )
 console = Console()
@@ -407,7 +407,7 @@ def install(
     yes: bool = typer.Option(False, "--yes", "-y", help="Auto-confirm prompts"),
     verbose: bool = typer.Option(False, "--verbose", "-v", help="Verbose logging"),
 ):
-    """Install Super Agent framework components"""
+    """Install Airis Agent framework components"""
     # Implementation
 ```
 
@@ -796,7 +796,7 @@ def test_install_command():
     """Test install command with typer"""
     result = runner.invoke(app, ["install", "--help"])
     assert result.exit_code == 0
-    assert "Install Super Agent" in result.output
+    assert "Install Airis Agent" in result.output
 
 def test_install_with_components():
     """Test component selection"""
@@ -910,7 +910,7 @@ def test_api_key_validation():
 
 ## 12. Conclusion
 
-**High-Confidence Recommendation**: Migrate Super Agent installer to typer + rich + Pydantic
+**High-Confidence Recommendation**: Migrate Airis Agent installer to typer + rich + Pydantic
 
 **Rationale**:
 - **-60% code**: Remove custom UI utilities (300+ lines)

@@ -50,7 +50,7 @@
 - **Hyphens are NOT allowed** in package names (Python import restrictions)
 - **Camel Case / Title Case = PEP 8 violation**
 
-**Current Super Agent Violations**:
+**Current Airis Agent Violations**:
 ```yaml
 # ❌ PEP 8 Violations
 docs/Developer-Guide/     # Contains hyphen + uppercase
@@ -477,7 +477,7 @@ select = ["E", "F", "W", "I", "N"]
 
 ---
 
-## Recommendations for Super Agent
+## Recommendations for Airis Agent
 
 ### Immediate Actions (Required)
 
@@ -651,7 +651,7 @@ python scripts/validate_directory_names.py
 ```bash
 # 1. Rename on GitHub (Settings → Repository name)
 # 2. Update local remote
-git remote set-url origin https://github.com/kazuki/superagent.git
+git remote set-url origin https://github.com/agiletec-inc/airis-agent.git
 
 # 3. Update all documentation references
 grep -rl "superagent" . | xargs sed -i '' 's/superagent/superagent-framework/g'
@@ -817,7 +817,7 @@ jobs:
 3. **Continuous Enforcement**: Ruff linter + CI/CD pipeline
 4. **Documentation**: Update all references (semi-automated with sed)
 
-**For Super Agent**:
+**For Airis Agent**:
 - Complete the remaining directory renames manually (6 directories)
 - Set up pre-commit hooks with custom validator
 - Configure Ruff for Python code linting

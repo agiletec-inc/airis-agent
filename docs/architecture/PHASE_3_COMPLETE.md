@@ -95,16 +95,16 @@ uv run superagent doctor --verbose
 
 **Result**:
 ```
-🔍 Super Agent Doctor
+🔍 Airis Agent Doctor
 
 ✅ pytest plugin loaded
-    Super Agent pytest plugin is active
+    Airis Agent pytest plugin is active
 ✅ Skills installed
     9 skill(s) installed: pm, token-efficiency-mode, pm.backup, ...
 ✅ Configuration
-    Super Agent 0.4.0 installed correctly
+    Airis Agent 0.4.0 installed correctly
 
-✅ Super Agent is healthy
+✅ Airis Agent is healthy
 ```
 
 **Status**: ✅ **All health checks passed**
