@@ -45,8 +45,8 @@ def install_skill(skill_name: str, target: str, force: bool):
     SKILL_NAME: Name of the skill to install (e.g., pm-agent)
 
     Example:
-        superagent install-skill pm-agent
-        superagent install-skill pm-agent --target ~/.claude/skills --force
+        airis-agent install-skill pm-agent
+        airis-agent install-skill pm-agent --target ~/.claude/skills --force
     """
     from .install_skill import install_skill_command
 

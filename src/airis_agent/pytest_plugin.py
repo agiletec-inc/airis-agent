@@ -1,12 +1,12 @@
 """
 Super Agent pytest plugin
 
-Auto-loaded when superagent is installed.
+Auto-loaded when airis-agent is installed.
 Provides PM Agent fixtures and hooks for enhanced testing.
 
 Entry point registered in pyproject.toml:
     [project.entry-points.pytest11]
-    superagent = "superagent.pytest_plugin"
+    airis_agent = "airis_agent.pytest_plugin"
 """
 
 

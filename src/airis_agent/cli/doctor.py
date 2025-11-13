@@ -53,13 +53,13 @@ def _check_pytest_plugin() -> Dict[str, Any]:
             config = pytest.Config.fromdictargs({}, [])
             plugins = config.pluginmanager.list_plugin_distinfo()
 
-            # Check if superagent plugin is loaded
-            superagent_loaded = any(
+            # Check if airis-agent plugin is loaded
+            airis_agent_loaded = any(
                 "airis-agent" in str(plugin[0]).lower()
                 for plugin in plugins
             )
 
-            if superagent_loaded:
+            if airis_agent_loaded:
                 return {
                     "name": "pytest plugin loaded",
                     "passed": True,
@@ -132,7 +132,7 @@ def _check_configuration() -> Dict[str, Any]:
     # Check if package is importable
     try:
         import airis_agent
-        version = superagent.__version__
+        version = airis_agent.__version__
 
         return {
             "name": "Configuration",
