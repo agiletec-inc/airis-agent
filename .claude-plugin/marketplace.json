@@ -1,17 +1,18 @@
 {
-  "name": "agiletec-inc",
+  "name": "agiletec",
   "owner": {
     "name": "Agile Technology Inc.",
     "email": "kazuki.nakai@agiletec.net"
   },
   "metadata": {
     "description": "Official Agiletec OSS plugin marketplace",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "pluginRoot": "./dist/plugins"
   },
   "plugins": [
     {
       "name": "airis-agent",
-      "source": "./dist/plugins/airis-agent",
+      "source": "./airis-agent",
       "description": "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)",
       "version": "1.0.0",
       "author": {
