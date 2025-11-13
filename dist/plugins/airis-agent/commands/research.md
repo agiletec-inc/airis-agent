@@ -1,5 +1,5 @@
 ---
-name: research
+name: airis:research
 description: Deep Research - Parallel web search with evidence-based synthesis
 ---
 
