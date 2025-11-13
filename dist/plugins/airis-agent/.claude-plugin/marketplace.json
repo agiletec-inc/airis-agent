@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "agiletec",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Official Agiletec OSS plugin marketplace",
   "owner": {
     "name": "Agile Technology Inc.",
@@ -12,7 +12,7 @@
       "name": "airis-agent",
       "source": "./dist/plugins/airis-agent",
       "description": "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "Agiletec"
       },
