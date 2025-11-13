@@ -39,7 +39,7 @@ jobs:
         #!/usr/bin/env python3
         # -*- coding: utf-8 -*-
         """
-        Super Agent多语言README质量检查器
+        Airis Agent多语言README质量检查器
         检查版本同步、链接有效性、结构一致性
         """
         

@@ -75,7 +75,7 @@ pip install Airis Agent && Airis Agent install
 # Install framework (choose one)
 pipx install Airis Agent       # Recommended for Linux/macOS
 pip install Airis Agent        # Traditional method
-npm install -g @bifrost_inc/superagent  # Cross-platform
+npm install -g @agiletec/airis-agent  # Cross-platform
 
 # Configure and maintain
 Airis Agent install            # Configure Claude Code

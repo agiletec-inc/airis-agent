@@ -32,7 +32,7 @@
 |:------:|---------|:--------:|----------|
 | **🐍 pipx** | `pipx install Airis Agent && Airis Agent install` | Linux/macOS | **✅ Recommended** - Isolated environment |
 | **📦 pip** | `pip install Airis Agent && Airis Agent install` | All | Traditional Python setups |
-| **🌐 npm** | `npm install -g @bifrost_inc/superagent && superagent install` | All | Node.js developers |
+| **🌐 npm** | `npm install -g @agiletec/airis-agent && airis-agent install` | All | Node.js developers |
 | **🔧 Dev** | `git clone ... && uv pip install -e ".[dev]"` | All | Contributors & developers |
 
 </div>
@@ -175,10 +175,10 @@ Airis Agent install
 
 ```bash
 # Global installation
-npm install -g @bifrost_inc/superagent
+npm install -g @agiletec/airis-agent
 
 # Run the installer
-superagent install
+airis-agent install
 ```
 
 </td>

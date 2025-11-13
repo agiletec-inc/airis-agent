@@ -72,7 +72,6 @@ make doctor           # Health check diagnostics
 
 # Plugin Packaging
 make build-plugin            # Build plugin artifacts into dist/plugins/airis-agent/
-make sync-plugin-repo        # Sync artifacts into ../Super Agent_Plugin
 
 # Maintenance
 make clean            # Remove build artifacts
@@ -148,7 +147,7 @@ These modules provide the public API surface for Airis Agent runtime:
 - Source: `plugins/airis-agent/manifest/*.template.json`
 - Output: `dist/plugins/airis-agent/.claude-plugin/plugin.json`
 
-**Distribution**: Use `make sync-plugin-repo` to push built artifacts into `../Super Agent_Plugin` for marketplace distribution.
+**Distribution**: Built artifacts in `dist/plugins/airis-agent/` are committed to Git for direct GitHub marketplace distribution.
 
 ## 🧪 Testing with PM Agent
 
@@ -308,9 +307,6 @@ Plugin artifacts are generated from source templates:
 ```bash
 # Build plugin manifests and copy assets
 make build-plugin
-
-# Sync to distribution repository (optional)
-make sync-plugin-repo PLUGIN_REPO=/path/to/Airis Agent_Plugin
 ```
 
 **Source**: `plugins/airis-agent/manifest/` contains:
@@ -325,11 +321,7 @@ make sync-plugin-repo PLUGIN_REPO=/path/to/Airis Agent_Plugin
 1. Update metadata: `plugins/airis-agent/manifest/metadata.json`
 2. Build: `make build-plugin`
 3. Verify: Check `dist/plugins/airis-agent/.claude-plugin/plugin.json`
-4. (Optional) Sync to distribution repo: `make sync-plugin-repo`
-
-**Distribution Package** (`../Super Agent_Plugin`):
-- Contains generated artifacts for marketplace
-- Do not edit manually - regenerate via `make sync-plugin-repo`
+4. Commit: `git add dist/plugins/` (build artifacts are version controlled)
 
 ## 📊 Package Information
 
