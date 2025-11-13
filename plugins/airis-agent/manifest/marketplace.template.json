@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "{{plugin_name}}",
-      "source": "./",
+      "source": "./dist/plugins/airis-agent",
       "description": "{{plugin_description}}",
       "version": "{{plugin_version}}",
       "author": {

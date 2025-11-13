@@ -25,9 +25,9 @@ jobs:
   build-and-publish:
     name: Build and publish Python package
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: ${{ github.event_name == 'release' && 'pypi' || 'testpypi' }}
-      url: ${{ github.event_name == 'release' && 'https://pypi.org/p/Super Agent' || 'https://test.pypi.org/p/Super Agent' }}
+      url: ${{ github.event_name == 'release' && 'https://pypi.org/p/airis-agent' || 'https://test.pypi.org/p/airis-agent' }}
     
     steps:
     - name: Checkout repository
@@ -51,29 +51,27 @@ jobs:
       run: |
         echo "📦 Checking package structure..."
         ls -la
-        echo "🔍 Checking Super Agent package..."
-        ls -la superagent/
-        echo "🔍 Checking setup package..."
-        ls -la setup/
-        
+        echo "🔍 Checking airis-agent package..."
+        ls -la src/airis_agent/
+
         # Verify version consistency
         echo "📋 Checking version consistency..."
         python -c "
         import toml
         import sys
-        sys.path.insert(0, '.')
-        
+        sys.path.insert(0, 'src')
+
         # Load pyproject.toml version
         with open('pyproject.toml', 'r') as f:
             pyproject = toml.load(f)
         pyproject_version = pyproject['project']['version']
-        
+
         # Load package version
-        from superagent import __version__
-        
+        from airis_agent import __version__
+
         print(f'pyproject.toml version: {pyproject_version}')
         print(f'Package version: {__version__}')
-        
+
         if pyproject_version != __version__:
             print('❌ Version mismatch!')
             sys.exit(1)
@@ -117,21 +115,21 @@ jobs:
     - name: Create deployment summary
       if: always()
       run: |
-        echo "## 📦 Super Agent Package Deployment" >> $GITHUB_STEP_SUMMARY
+        echo "## 📦 Airis Agent Package Deployment" >> $GITHUB_STEP_SUMMARY
         echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
         echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
         echo "| Target | ${{ github.event_name == 'release' && 'PyPI (Production)' || github.event.inputs.target || 'TestPyPI' }} |" >> $GITHUB_STEP_SUMMARY
         echo "| Trigger | ${{ github.event_name }} |" >> $GITHUB_STEP_SUMMARY
-        echo "| Version | $(python -c 'from superagent import __version__; print(__version__)') |" >> $GITHUB_STEP_SUMMARY
+        echo "| Version | $(python -c 'import sys; sys.path.insert(0, \"src\"); from airis_agent import __version__; print(__version__)') |" >> $GITHUB_STEP_SUMMARY
         echo "| Commit | ${{ github.sha }} |" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        
+
         if [ "${{ github.event_name }}" == "release" ]; then
           echo "🎉 **Production release published to PyPI!**" >> $GITHUB_STEP_SUMMARY
-          echo "Install with: \`pip install Super Agent\`" >> $GITHUB_STEP_SUMMARY
+          echo "Install with: \`pip install airis-agent\`" >> $GITHUB_STEP_SUMMARY
         else
           echo "🧪 **Test release published to TestPyPI**" >> $GITHUB_STEP_SUMMARY
-          echo "Test install with: \`pip install --index-url https://test.pypi.org/simple/ Super Agent\`" >> $GITHUB_STEP_SUMMARY
+          echo "Test install with: \`pip install --index-url https://test.pypi.org/simple/ airis-agent\`" >> $GITHUB_STEP_SUMMARY
         fi
 
   test-installation:
@@ -149,24 +147,24 @@ jobs:
     - name: Test installation from TestPyPI
       run: |
         echo "🧪 Testing installation from TestPyPI..."
-        
+
         # Wait a bit for the package to be available
         sleep 30
-        
+
         # Install from TestPyPI
         pip install --index-url https://test.pypi.org/simple/ \
                    --extra-index-url https://pypi.org/simple/ \
-                   Super Agent
-        
+                   airis-agent
+
         # Test basic import
         python -c "
-        import superagent
-        print(f'✅ Successfully imported Super Agent v{superagent.__version__}')
+        import airis_agent
+        print(f'✅ Successfully imported airis-agent v{airis_agent.__version__}')
 
         # Test CLI entry point
         import subprocess
-        result = subprocess.run(['Super Agent', '--version'], capture_output=True, text=True)
+        result = subprocess.run(['airis-agent', '--version'], capture_output=True, text=True)
         print(f'✅ CLI version: {result.stdout.strip()}')
         "
-        
+
         echo "✅ Installation test completed successfully!"

@@ -1,0 +1,14 @@
+{
+  "name": "airis-agent",
+  "version": "1.0.0",
+  "description": "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)",
+  "author": {
+    "name": "Agiletec"
+  },
+  "homepage": "https://github.com/agiletec-inc/airis-agent",
+  "repository": "https://github.com/agiletec-inc/airis-agent",
+  "license": "MIT",
+  "keywords": ["airis", "airis-agent", "agent", "deep-research", "repo-index", "confidence-check", "claude-code"],
+  "skills": "./skills/"
+}
+

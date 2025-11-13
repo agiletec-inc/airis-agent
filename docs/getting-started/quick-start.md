@@ -86,7 +86,7 @@ pipx install Airis Agent && Airis Agent install
 pip install Airis Agent && Airis Agent install
 
 # Or via npm
-npm install -g @bifrost_inc/superagent && superagent install
+npm install -g @agiletec/airis-agent && airis-agent install
 ```
 
 </td>
