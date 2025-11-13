@@ -38,6 +38,7 @@ jobs:
     - name: Install dependencies
       run: |
         uv pip install --system -e ".[dev]"
+        uv pip install --system pytest-cov
 
     - name: Run linter
       run: |
@@ -45,7 +46,7 @@ jobs:
 
     - name: Run tests
       run: |
-        uv run pytest tests/ -v --cov=airis_agent --cov-report=term-missing
+        uv run pytest tests/ -v
 
     - name: Build plugin
       run: |
