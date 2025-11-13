@@ -1,8 +1,8 @@
-.PHONY: install test test-plugin doctor verify clean lint format build-plugin sync-plugin-repo help
+.PHONY: install test test-plugin doctor verify clean lint format build-plugin help
 
 # Installation (local source, editable) - RECOMMENDED
 install:
-	@echo "🔧 Installing Super Agent (development mode)..."
+	@echo "🔧 Installing Airis Agent (development mode)..."
 	uv pip install -e ".[dev]"
 	@echo ""
 	@echo "✅ Installation complete!"
@@ -20,7 +20,7 @@ test-plugin:
 
 # Run doctor command
 doctor:
-	@echo "Running Super Agent health check..."
+	@echo "Running Airis Agent health check..."
 	@uv run airis-agent doctor
 
 # Verify Phase 1 installation
@@ -38,7 +38,7 @@ verify:
 	@uv run python -m pytest --trace-config 2>&1 | grep "registered third-party plugins:" -A2 | grep airis-agent | sed 's/^/   /' && echo "   ✅ Plugin loaded" || echo "   ❌ Plugin not loaded"
 	@echo ""
 	@echo "4. Health check:"
-	@uv run airis-agent doctor | grep "Super Agent is healthy" > /dev/null && echo "   ✅ All checks passed" || echo "   ❌ Some checks failed"
+	@uv run airis-agent doctor | grep "Airis Agent is healthy" > /dev/null && echo "   ✅ All checks passed" || echo "   ❌ Some checks failed"
 	@echo ""
 	@echo "======================================"
 	@echo "✅ Phase 1 verification complete"
@@ -61,33 +61,14 @@ clean:
 	find . -type d -name .pytest_cache -exec rm -rf {} +
 	find . -type d -name .ruff_cache -exec rm -rf {} +
 
-PLUGIN_DIST := dist/plugins/airis-agent
-PLUGIN_REPO ?= ../Super Agent_Plugin
-
 .PHONY: build-plugin
 build-plugin: ## Build Airis Agent plugin artefacts into dist/
 	@echo "🛠️  Building Airis Agent plugin from unified sources..."
 	@uv run python scripts/build_airis_agent_plugin.py
 
-.PHONY: sync-plugin-repo
-sync-plugin-repo: build-plugin ## Sync built plugin artefacts into ../Super Agent_Plugin
-	@if [ ! -d "$(PLUGIN_REPO)" ]; then \
-		echo "❌ Target plugin repository not found at $(PLUGIN_REPO)"; \
-		echo "   Set PLUGIN_REPO=/path/to/Super Agent_Plugin when running make."; \
-		exit 1; \
-	fi
-	@echo "📦 Syncing artefacts to $(PLUGIN_REPO)..."
-	@rsync -a --delete $(PLUGIN_DIST)/agents/ $(PLUGIN_REPO)/agents/
-	@rsync -a --delete $(PLUGIN_DIST)/commands/ $(PLUGIN_REPO)/commands/
-	@rsync -a --delete $(PLUGIN_DIST)/hooks/ $(PLUGIN_REPO)/hooks/
-	@rsync -a --delete $(PLUGIN_DIST)/scripts/ $(PLUGIN_REPO)/scripts/
-	@rsync -a --delete $(PLUGIN_DIST)/skills/ $(PLUGIN_REPO)/skills/
-	@rsync -a --delete $(PLUGIN_DIST)/.claude-plugin/ $(PLUGIN_REPO)/.claude-plugin/
-	@echo "✅ Sync complete."
-
 # Show help
 help:
-	@echo "Super Agent - Available commands:"
+	@echo "Airis Agent - Available commands:"
 	@echo ""
 	@echo "🚀 Quick Start:"
 	@echo "  make install         - Install in development mode (RECOMMENDED)"
@@ -103,9 +84,7 @@ help:
 	@echo ""
 	@echo "🔌 Plugin Packaging:"
 	@echo "  make build-plugin    - Build Airis Agent plugin artefacts into dist/"
-	@echo "  make sync-plugin-repo - Sync artefacts into ../Super Agent_Plugin"
 	@echo ""
 	@echo "📚 Documentation:"
-	@echo "  make translate       - Translate README to Chinese and Japanese"
 	@echo "  make help            - Show this help message"
 	@echo ""
