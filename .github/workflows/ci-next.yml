@@ -57,6 +57,21 @@ jobs:
         test -f dist/plugins/airis-agent/.claude-plugin/marketplace.json
         echo "✅ Plugin build verified"
 
+    - name: Commit plugin artifacts
+      if: github.event_name == 'push' && github.ref == 'refs/heads/next'
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add dist/plugins/
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore: update plugin build artifacts [skip ci]"
+          git push origin next
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   auto-merge:
     name: Auto-merge to Main
     needs: test
