@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matchers": [
+          {"source": "startup"}
+        ],
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "/airis-agent:agent"
+          }
+        ]
+      }
+    ]
+  }
+}
