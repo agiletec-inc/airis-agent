@@ -48,13 +48,13 @@ if [ -f "PROJECT_INDEX.md" ]; then
 
     if [ "$days_old" -gt 7 ]; then
         echo "⚠️  PROJECT_INDEX.md: ${days_old} days old (stale)"
-        echo "   💡 Regenerate with: /airis-agent:index-repo"
+        echo "   💡 Regenerate with: /airis:index-repo"
     else
         echo "📦 PROJECT_INDEX.md: ${days_old} days old (fresh)"
     fi
 else
     echo "📦 PROJECT_INDEX.md: not found"
-    echo "   💡 Generate with: /airis-agent:index-repo"
+    echo "   💡 Generate with: /airis:index-repo"
 fi
 
 # 4. Context restoration from docs/memory/
@@ -90,6 +90,8 @@ echo "🛠️  Core Services Available:"
 echo "  ✅ Confidence Check (pre-implementation validation)"
 echo "  ✅ Deep Research (web/MCP integration)"
 echo "  ✅ Repository Index (token-efficient exploration)"
+echo ""
+echo "🔌 MCP: 'airis-agent' server auto-starts via plugin manifest when tool calls run."
 echo ""
 echo "Airis Agent ready — awaiting task assignment."
 
