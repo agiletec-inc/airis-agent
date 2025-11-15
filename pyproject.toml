@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "airis-agent"
-version = "1.0.0"
+version = "1.1.0"
 description = "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)"
 readme = "README.md"
 license = {text = "MIT"}
@@ -73,6 +73,7 @@ airis-agent = "airis_agent.pytest_plugin"
 packages = ["src/airis_agent"]
 include = [
     "src/airis_agent/skills/confidence-check/**",
+    "src/airis_agent/data/*.json",
 ]
 
 [tool.hatch.build.targets.sdist]
