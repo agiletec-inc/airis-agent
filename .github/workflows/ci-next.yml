@@ -94,7 +94,7 @@ jobs:
       run: |
         git fetch origin main:main
         git checkout main
-        git merge --no-ff next -m "chore: auto-merge next to main [skip ci]"
+        git merge --no-ff next -m "chore: auto-merge next to main"
         git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
