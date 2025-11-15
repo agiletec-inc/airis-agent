@@ -48,13 +48,13 @@ This Developer Guide provides documentation for understanding Airis Agent's cont
 ### Context-Oriented Configuration
 Airis Agent is a collection of `.md` instruction files that Claude Code reads to modify its behavior. It is NOT executing software.
 
-**IMPORTANT**: Airis Agent is NOT a CLI tool or executable software. When you see `/sc:` commands in documentation, these are **context trigger patterns** you type in Claude Code conversations, not terminal commands.
+**IMPORTANT**: Airis Agent is NOT a CLI tool or executable software. When you see `/airis:` commands in documentation, these are **context trigger patterns** you type in Claude Code conversations, not terminal commands.
 
 ### Agent Context Files
 Specialized instruction sets that provide domain expertise when activated by `@agent-[name]` or automatically by keywords.
 
 ### Command Context Files
-Workflow patterns triggered by `/sc:[command]` **context patterns** (not CLI commands) that guide Claude Code through structured development tasks when you type them in Claude Code conversations.
+Workflow patterns triggered by `/airis:[command]` **context patterns** (not CLI commands) that guide Claude Code through structured development tasks when you type them in Claude Code conversations.
 
 ### MCP Integration
 External tools (actual software) that can be configured to provide additional capabilities like documentation lookup or code analysis.

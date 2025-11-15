@@ -395,7 +395,7 @@ def pm_session_start() -> Dict[str, Any]:
 import pytest
 from pathlib import Path
 from datetime import datetime, timedelta
-from airis_agent.agents.pm_agent import PMAgent, IndexStatus, ConfidenceScore
+from airis_agent.agents.airis_agent import PMAgent, IndexStatus, ConfidenceScore
 
 class TestPMAgent:
     """Test PM Agent intelligent behaviors"""
@@ -496,7 +496,7 @@ description: "PM Agent with intelligent optimization (Python-powered)"
 
 **Session Start** (自動実行):
 ```python
-from airis_agent.agents.pm_agent import pm_session_start
+from airis_agent.agents.airis_agent import pm_session_start
 
 # Automatically called
 result = pm_session_start()
@@ -749,7 +749,7 @@ Intelligent project management with automatic optimization.
 - Post-execution validation
 - Reflexion learning
 
-**Activation**: `/sc:pm` or auto-detect complex tasks
+**Activation**: `/airis:pm` or auto-detect complex tasks
 
 **Resources**: agent.py, memory.py, validators.py
 ```

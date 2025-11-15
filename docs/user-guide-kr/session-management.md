@@ -4,10 +4,10 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 
 ## 영구 메모리를 사용한 핵심 세션 명령어
 
-### `/sc:load` - 영구 메모리를 사용한 컨텍스트 로딩
+### `/airis:load` - 영구 메모리를 사용한 컨텍스트 로딩
 **목적**: 이전 세션의 프로젝트 컨텍스트 및 영구 메모리로 세션 초기화
 **MCP 통합**: Serena MCP가 저장된 프로젝트 메모리를 읽도록 트리거
-**구문**: `/sc:load [프로젝트_경로]`
+**구문**: `/airis:load [프로젝트_경로]`
 
 **발생하는 일**:
 - Serena MCP가 이전 세션의 영구 메모리 파일 읽기
@@ -18,19 +18,19 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 **사용 사례**:
 ```bash
 # 영구 메모리에서 기존 프로젝트 컨텍스트 로드
-/sc:load src/
+/airis:load src/
 
 # 전체 기록과 함께 특정 프로젝트 작업 재개
-/sc:load "authentication-system"
+/airis:load "authentication-system"
 
 # 코드베이스 분석 및 이전 통찰력으로 초기화
-/sc:load . --analyze
+/airis:load . --analyze
 ```
 
-### `/sc:save` - 메모리에 세션 지속성
+### `/airis:save` - 메모리에 세션 지속성
 **목적**: 현재 세션 상태 및 결정을 영구 메모리에 저장
 **MCP 통합**: Serena MCP가 메모리 파일을 작성하도록 트리거
-**구문**: `/sc:save "세션_설명"`
+**구문**: `/airis:save "세션_설명"`
 
 **발생하는 일**:
 - 현재 컨텍스트 및 결정이 Serena 메모리에 작성됨
@@ -41,19 +41,19 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 **사용 사례**:
 ```bash
 # 향후 참조를 위해 완료된 기능 작업 저장
-/sc:save "JWT로 사용자 인증 구현됨"
+/airis:save "JWT로 사용자 인증 구현됨"
 
 # 복잡한 작업 중 체크포인트
-/sc:save "API 설계 단계 완료, 구현 준비"
+/airis:save "API 설계 단계 완료, 구현 준비"
 
 # 아키텍처 결정을 영구적으로 저장
-/sc:save "마이크로서비스 아키텍처 결정, 서비스 경계 정의됨"
+/airis:save "마이크로서비스 아키텍처 결정, 서비스 경계 정의됨"
 ```
 
-### `/sc:reflect` - 메모리 컨텍스트를 사용한 진행 상황 평가
+### `/airis:reflect` - 메모리 컨텍스트를 사용한 진행 상황 평가
 **목적**: 저장된 메모리에 대한 현재 진행 상황 분석 및 세션 완전성 검증
 **MCP 통합**: Serena MCP를 사용하여 저장된 메모리에 대한 현재 상태 비교
-**구문**: `/sc:reflect [--scope project|session]`
+**구문**: `/airis:reflect [--scope project|session]`
 
 **발생하는 일**:
 - Serena MCP가 이전 메모리 및 현재 컨텍스트 읽기
@@ -64,13 +64,13 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 **사용 사례**:
 ```bash
 # 저장된 마일스톤에 대한 프로젝트 진행 상황 평가
-/sc:reflect --scope project
+/airis:reflect --scope project
 
 # 현재 세션 완전성 검증
-/sc:reflect
+/airis:reflect
 
 # 메모리를 기반으로 다음 단계로 이동할 준비가 되었는지 확인
-/sc:reflect --scope session
+/airis:reflect --scope session
 ```
 
 ## 영구 메모리 아키텍처
@@ -100,45 +100,45 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 ### 새 프로젝트 초기화
 ```bash
 # 1. 새 프로젝트 시작
-/sc:brainstorm "전자상거래 플랫폼 요구사항"
+/airis:brainstorm "전자상거래 플랫폼 요구사항"
 
 # 2. 초기 결정을 영구 메모리에 저장
-/sc:save "프로젝트 범위 및 요구사항 정의됨"
+/airis:save "프로젝트 범위 및 요구사항 정의됨"
 
 # 3. 구현 계획 시작
-/sc:workflow "사용자 인증 시스템"
+/airis:workflow "사용자 인증 시스템"
 
 # 4. 아키텍처 결정을 영구적으로 저장
-/sc:save "인증 아키텍처: JWT + 리프레시 토큰 + 속도 제한"
+/airis:save "인증 아키텍처: JWT + 리프레시 토큰 + 속도 제한"
 ```
 
 ### 기존 작업 재개 (교차 대화)
 ```bash
 # 1. 영구 메모리에서 이전 컨텍스트 로드
-/sc:load "e-commerce-project"
+/airis:load "e-commerce-project"
 
 # 2. 저장된 진행 상황에 대한 현재 상태 평가
-/sc:reflect --scope project
+/airis:reflect --scope project
 
 # 3. 저장된 컨텍스트를 사용하여 다음 단계 계속
-/sc:implement "결제 처리 통합"
+/airis:implement "결제 처리 통합"
 
 # 4. 진행 상황 체크포인트를 메모리에 저장
-/sc:save "Stripe API와 결제 시스템 통합됨"
+/airis:save "Stripe API와 결제 시스템 통합됨"
 ```
 
 ### 장기 프로젝트 관리
 ```bash
 # 지속성을 갖춘 주간 체크포인트 패턴
-/sc:load project-name
-/sc:reflect --scope project
+/airis:load project-name
+/airis:reflect --scope project
 # ... 기능 작업 ...
-/sc:save "N주차 진행: 기능 X, Y, Z 완료"
+/airis:save "N주차 진행: 기능 X, Y, Z 완료"
 
 # 메모리를 사용한 단계 완료 패턴
-/sc:reflect --scope project
-/sc:save "1단계 완료: 핵심 인증 및 사용자 관리"
-/sc:workflow "2단계: 결제 및 주문 처리"
+/airis:reflect --scope project
+/airis:save "1단계 완료: 핵심 인증 및 사용자 관리"
+/airis:workflow "2단계: 결제 및 주문 처리"
 ```
 
 ## 교차 대화 연속성
@@ -149,7 +149,7 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 
 1. **자동 컨텍스트 복원**
    ```bash
-   /sc:load project-name
+   /airis:load project-name
    # 모든 이전 컨텍스트, 결정, 진행 상황을 자동으로 복원
    ```
 
@@ -186,14 +186,14 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 ## 영구 세션 모범 사례
 
 ### 세션 시작 프로토콜
-1. 기존 프로젝트의 경우 항상 `/sc:load`로 시작
-2. `/sc:reflect`를 사용하여 메모리에서 현재 상태 이해
+1. 기존 프로젝트의 경우 항상 `/airis:load`로 시작
+2. `/airis:reflect`를 사용하여 메모리에서 현재 상태 이해
 3. 영구 컨텍스트 및 저장된 패턴을 기반으로 작업 계획
 4. 이전 결정 및 아키텍처 선택 기반 구축
 
 ### 세션 종료 프로토콜
-1. `/sc:reflect`를 사용하여 저장된 목표에 대한 완전성 평가
-2. 향후 세션을 위해 `/sc:save`로 주요 결정 저장
+1. `/airis:reflect`를 사용하여 저장된 목표에 대한 완전성 평가
+2. 향후 세션을 위해 `/airis:save`로 주요 결정 저장
 3. 메모리에 다음 단계 및 미해결 질문 문서화
 4. 원활한 향후 계속을 위한 컨텍스트 보존
 
@@ -218,7 +218,7 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 - 프로젝트 기록을 기반으로 한 일관된 전문가 권장사항
 
 ### 지속성을 갖춘 명령어 통합
-- 모든 `/sc:` 명령어가 영구 컨텍스트를 참조하고 구축 가능
+- 모든 `/airis:` 명령어가 영구 컨텍스트를 참조하고 구축 가능
 - 이전 명령어 출력 및 결정이 세션 전반에 걸쳐 사용 가능
 - 워크플로우 패턴이 저장되고 재사용 가능
 - 구현 기록이 향후 명령어 결정 안내
@@ -234,9 +234,9 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 - 메모리 파일 무결성 및 형식 검증
 
 **세션 간 컨텍스트 손실**:
-- 세션을 종료하기 전에 항상 `/sc:save` 사용
+- 세션을 종료하기 전에 항상 `/airis:save` 사용
 - 쉬운 검색을 위해 설명적인 메모리 이름 사용
-- 메모리 완전성을 검증하기 위한 정기적인 `/sc:reflect`
+- 메모리 완전성을 검증하기 위한 정기적인 `/airis:reflect`
 - 중요한 메모리 파일을 주기적으로 백업
 
 **메모리 충돌**:
@@ -249,20 +249,20 @@ Airis Agent는 Serena MCP 서버를 통해 영구 세션 관리를 제공하여 
 
 **세션 상태 재설정**:
 ```bash
-/sc:load --fresh  # 이전 컨텍스트 없이 시작
-/sc:reflect       # 현재 상태 평가
+/airis:load --fresh  # 이전 컨텍스트 없이 시작
+/airis:reflect       # 현재 상태 평가
 ```
 
 **메모리 정리**:
 ```bash
-/sc:reflect --cleanup  # 오래된 메모리 제거
-/sc:save --consolidate # 관련 메모리 병합
+/airis:reflect --cleanup  # 오래된 메모리 제거
+/airis:save --consolidate # 관련 메모리 병합
 ```
 
 **컨텍스트 복구**:
 ```bash
-/sc:load --recent     # 최근 메모리 로드
-/sc:reflect --repair  # 컨텍스트 격차 식별 및 수정
+/airis:load --recent     # 최근 메모리 로드
+/airis:reflect --repair  # 컨텍스트 격차 식별 및 수정
 ```
 
 ## 고급 영구 세션 패턴

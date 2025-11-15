@@ -13,19 +13,19 @@ Before using this guide, verify agent selection works:
 # Example behavior: Python expert responds with detailed explanation
 
 # Test security agent auto-activation
-/sc:implement "JWT authentication"
+/airis:implement "JWT authentication"
 # Example behavior: Security engineer should activate automatically
 
 # Test frontend agent auto-activation
-/sc:implement "responsive navigation component"  
+/airis:implement "responsive navigation component"  
 # Example behavior: Frontend architect + Magic MCP should activate
 
 # Test systematic analysis
-/sc:troubleshoot "slow API performance"
+/airis:troubleshoot "slow API performance"
 # Example behavior: Root-cause analyst + performance engineer activation
 
 # Test combining manual and auto
-/sc:analyze src/
+/airis:analyze src/
 @agent-refactoring-expert "suggest improvements"
 # Example behavior: Analysis followed by refactoring suggestions
 ```
@@ -60,9 +60,9 @@ Before using this guide, verify agent selection works:
 
 ```bash
 # These commands auto-activate relevant agents
-/sc:implement "JWT authentication"  # → security-engineer auto-activates
-/sc:design "React dashboard"        # → frontend-architect auto-activates
-/sc:troubleshoot "memory leak"      # → performance-engineer auto-activates
+/airis:implement "JWT authentication"  # → security-engineer auto-activates
+/airis:design "React dashboard"        # → frontend-architect auto-activates
+/airis:troubleshoot "memory leak"      # → performance-engineer auto-activates
 ```
 
 **MCP Servers** provide enhanced capabilities through specialized tools like Context7 (documentation), Sequential (analysis), Magic (UI), Playwright (testing), and Morphllm (code transformation).
@@ -110,23 +110,23 @@ Task Analysis →
 ### Automatic Agent Coordination
 ```bash
 # Commands that trigger auto-activation
-/sc:implement "JWT authentication with rate limiting"
+/airis:implement "JWT authentication with rate limiting"
 # → Triggers: security-engineer + backend-architect + quality-engineer
 
-/sc:design "accessible React dashboard with documentation"
+/airis:design "accessible React dashboard with documentation"
 # → Triggers: frontend-architect + learning-guide + technical-writer  
 
-/sc:troubleshoot "slow deployment pipeline with intermittent failures"
+/airis:troubleshoot "slow deployment pipeline with intermittent failures"
 # → Triggers: devops-architect + performance-engineer + root-cause-analyst
 
-/sc:audit "payment processing security vulnerabilities"
+/airis:audit "payment processing security vulnerabilities"
 # → Triggers: security-engineer + quality-engineer + refactoring-expert
 ```
 
 ### Combining Manual and Auto Approaches
 ```bash
 # Start with command (auto-activation)
-/sc:implement "user profile system"
+/airis:implement "user profile system"
 
 # Then explicitly add specialist review
 @agent-security "review the profile system for OWASP compliance"
@@ -147,7 +147,7 @@ Task Analysis →
 - **Mistake Detection**: Immediate analysis when errors or bugs occur
 - **Monthly Maintenance**: Regular documentation health reviews
 - **Knowledge Gap**: When patterns emerge requiring documentation
-- Commands: Automatically activates after `/sc:implement`, `/sc:build`, `/sc:improve` completions
+- Commands: Automatically activates after `/airis:implement`, `/airis:build`, `/airis:improve` completions
 
 **Capabilities**:
 - **Implementation Documentation**: Record new patterns, architectural decisions, edge cases discovered
@@ -237,7 +237,7 @@ Task Flow:
 - [ ] Includes scalability and reliability considerations
 - [ ] Provides technology stack recommendations
 
-**Verify:** `/sc:design "microservices platform"` should activate system-architect  
+**Verify:** `/airis:design "microservices platform"` should activate system-architect  
 **Test:** Output should include service decomposition and integration patterns  
 **Check:** Should coordinate with devops-architect for infrastructure concerns
 
@@ -322,7 +322,7 @@ Task Flow:
 
 **Auto-Activation**:
 - Keywords: "research", "investigate", "discover", "explore", "find out", "search for", "latest", "current"
-- Commands: `/sc:research` automatically activates this agent
+- Commands: `/airis:research` automatically activates this agent
 - Context: Complex queries requiring thorough research, current information needs, fact-checking
 - Complexity: Questions spanning multiple domains or requiring iterative exploration
 
@@ -341,9 +341,9 @@ Task Flow:
 - **Exhaustive**: Maximum depth, 5 hops, complete investigation
 
 **Examples**:
-1. **Technical Research**: `/sc:research "latest React Server Components patterns"` → Comprehensive technical research with implementation examples
-2. **Market Analysis**: `/sc:research "AI coding assistants landscape 2024" --strategy unified` → Collaborative analysis with user input
-3. **Academic Investigation**: `/sc:research "quantum computing breakthroughs" --depth exhaustive` → Comprehensive literature review with evidence chains
+1. **Technical Research**: `/airis:research "latest React Server Components patterns"` → Comprehensive technical research with implementation examples
+2. **Market Analysis**: `/airis:research "AI coding assistants landscape 2024" --strategy unified` → Collaborative analysis with user input
+3. **Academic Investigation**: `/airis:research "quantum computing breakthroughs" --depth exhaustive` → Comprehensive literature review with evidence chains
 
 **Workflow Pattern** (6-Phase):
 1. **Understand** (5-10%): Assess query complexity
@@ -615,7 +615,7 @@ For troubleshooting help, see:
 ### Common Issues
 - **No agent activation**: Use domain keywords: "security", "performance", "frontend"
 - **Wrong agents selected**: Check trigger keywords in agent documentation
-- **Too many agents**: Focus keywords on primary domain or use `/sc:focus [domain]`
+- **Too many agents**: Focus keywords on primary domain or use `/airis:focus [domain]`
 - **Agents not coordinating**: Increase task complexity or use multi-domain keywords
 - **Agent expertise mismatch**: Use more specific technical terminology
 
@@ -623,7 +623,7 @@ For troubleshooting help, see:
 - **Force agent activation**: Use explicit domain keywords in requests
 - **Reset agent selection**: Restart Claude Code session to reset agent state
 - **Check agent patterns**: Review trigger keywords in agent documentation
-- **Test basic activation**: Try `/sc:implement "security auth"` to test security-engineer
+- **Test basic activation**: Try `/airis:implement "security auth"` to test security-engineer
 
 ### Agent-Specific Troubleshooting
 
@@ -705,7 +705,7 @@ After applying agent fixes, test with:
 
 **Too Many Agents?**
 - Focus keywords on primary domain needs
-- Use `/sc:focus [domain]` to limit scope
+- Use `/airis:focus [domain]` to limit scope
 - Start with specific agents, expand as needed
 
 **Wrong Agents?**
@@ -738,15 +738,15 @@ After applying agent fixes, test with:
 
 | Command | Primary Agents | Supporting Agents |
 |---------|----------------|-------------------|
-| `/sc:implement` | Domain architects (frontend, backend) | security-engineer, quality-engineer |
-| `/sc:analyze` | quality-engineer, security-engineer | performance-engineer, root-cause-analyst |
-| `/sc:troubleshoot` | root-cause-analyst | Domain specialists, performance-engineer |
-| `/sc:improve` | refactoring-expert | quality-engineer, performance-engineer |
-| `/sc:document` | technical-writer | Domain specialists, learning-guide |
-| `/sc:design` | system-architect | Domain architects, requirements-analyst |
-| `/sc:test` | quality-engineer | security-engineer, performance-engineer |
-| `/sc:explain` | learning-guide | technical-writer, domain specialists |
-| `/sc:research` | deep-research-agent | Technical specialists, learning-guide |
+| `/airis:implement` | Domain architects (frontend, backend) | security-engineer, quality-engineer |
+| `/airis:analyze` | quality-engineer, security-engineer | performance-engineer, root-cause-analyst |
+| `/airis:troubleshoot` | root-cause-analyst | Domain specialists, performance-engineer |
+| `/airis:improve` | refactoring-expert | quality-engineer, performance-engineer |
+| `/airis:document` | technical-writer | Domain specialists, learning-guide |
+| `/airis:design` | system-architect | Domain architects, requirements-analyst |
+| `/airis:test` | quality-engineer | security-engineer, performance-engineer |
+| `/airis:explain` | learning-guide | technical-writer, domain specialists |
+| `/airis:research` | deep-research-agent | Technical specialists, learning-guide |
 
 ### Effective Agent Combinations
 
@@ -797,30 +797,30 @@ After applying agent fixes, test with:
 **Development Workflows:**
 ```bash
 # Full-stack feature development
-/sc:implement "responsive user dashboard with real-time notifications"
+/airis:implement "responsive user dashboard with real-time notifications"
 # → frontend-architect + backend-architect + performance-engineer
 
 # API development with documentation
-/sc:create "REST API for payment processing with comprehensive docs"  
+/airis:create "REST API for payment processing with comprehensive docs"  
 # → backend-architect + security-engineer + technical-writer + quality-engineer
 
 # Performance optimization investigation
-/sc:troubleshoot "slow database queries affecting user experience"
+/airis:troubleshoot "slow database queries affecting user experience"
 # → performance-engineer + root-cause-analyst + backend-architect
 ```
 
 **Analysis Workflows:**
 ```bash
 # Security assessment
-/sc:analyze "authentication system for GDPR compliance vulnerabilities"
+/airis:analyze "authentication system for GDPR compliance vulnerabilities"
 # → security-engineer + quality-engineer + requirements-analyst
 
 # Code quality review  
-/sc:review "legacy codebase for modernization opportunities"
+/airis:review "legacy codebase for modernization opportunities"
 # → refactoring-expert + system-architect + quality-engineer + technical-writer
 
 # Learning and explanation
-/sc:explain "microservices patterns with hands-on examples"
+/airis:explain "microservices patterns with hands-on examples"
 # → system-architect + learning-guide + technical-writer
 ```
 
@@ -844,7 +844,7 @@ After applying agent fixes, test with:
 
 **Problem: Too many agents**
 - Solution: Focus on primary domain with specific technical terms
-- Example: Use "/sc:focus backend" to limit scope
+- Example: Use "/airis:focus backend" to limit scope
 
 ### Quality-Driven Development
 
@@ -933,4 +933,4 @@ Master multi-domain requests that trigger optimal agent combinations. Leverage t
 **The Airis Agent Advantage:**
 Experience the power of 14 specialized AI experts working in coordinated response, all through simple, natural language requests. No configuration, no management, just intelligent collaboration that scales with your needs.
 
-🎯 **Ready to experience intelligent agent coordination? Start with `/sc:implement` and discover the magic of specialized AI collaboration.**
+🎯 **Ready to experience intelligent agent coordination? Start with `/airis:implement` and discover the magic of specialized AI collaboration.**

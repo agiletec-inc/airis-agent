@@ -26,8 +26,8 @@
     }
   },
   "core_modules": {
-    "pm_agent": {
-      "path": "src/airis_agent/pm_agent/",
+    "airis_agent": {
+      "path": "src/airis_agent/airis_agent/",
       "modules": {
         "confidence": {
           "file": "confidence.py",
@@ -160,16 +160,16 @@
       "integration"
     ],
     "test_files": [
-      "tests/pm_agent/test_confidence_check.py",
-      "tests/pm_agent/test_self_check_protocol.py",
-      "tests/pm_agent/test_reflexion_pattern.py",
-      "tests/pm_agent/test_token_budget.py",
+      "tests/airis_agent_core/test_confidence_check.py",
+      "tests/airis_agent_core/test_self_check_protocol.py",
+      "tests/airis_agent_core/test_reflexion_pattern.py",
+      "tests/airis_agent_core/test_token_budget.py",
       "tests/test_pytest_plugin.py",
       "tests/conftest.py"
     ],
     "commands": {
       "all_tests": "uv run pytest",
-      "specific_directory": "uv run pytest tests/pm_agent/ -v",
+      "specific_directory": "uv run pytest tests/airis_agent_core/ -v",
       "by_marker": "uv run pytest -m confidence_check",
       "with_coverage": "uv run pytest --cov=superagent"
     }
@@ -211,7 +211,7 @@
       "after": "3,000 tokens (reading this index)",
       "reduction": "94% (55,000 tokens saved per session)"
     },
-    "pm_agent_roi": {
+    "airis_agent_roi": {
       "confidence_check_cost": "100-200 tokens",
       "savings": "5,000-50,000 tokens",
       "roi": "25-250x token savings",

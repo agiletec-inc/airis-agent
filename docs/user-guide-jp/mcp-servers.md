@@ -55,11 +55,11 @@ MCP（モデルコンテキストプロトコル）サーバーは、専用ツ�
 
 ```shell
 # Automatic activation
-/sc:implement "React authentication system"
+/airis:implement "React authentication system"
 # → Provides official React patterns
 
 # Manual activation  
-/sc:analyze auth-system/ --c7
+/airis:analyze auth-system/ --c7
 ```
 
 ### 連続思考 🧠
@@ -70,11 +70,11 @@ MCP（モデルコンテキストプロトコル）サーバーは、専用ツ�
 
 ```shell
 # Automatic activation
-/sc:troubleshoot "API performance issues"
+/airis:troubleshoot "API performance issues"
 # → Enables systematic root cause analysis
 
 # Manual activation
-/sc:analyze --think-hard architecture/
+/airis:analyze --think-hard architecture/
 ```
 
 ### 魔法✨
@@ -85,7 +85,7 @@ MCP（モデルコンテキストプロトコル）サーバーは、専用ツ�
 
 ```shell
 # Automatic activation
-/sc:implement "responsive dashboard component"
+/airis:implement "responsive dashboard component"
 # → Generates accessible UI with modern patterns
 
 # API key setup
@@ -100,11 +100,11 @@ export TWENTYFIRST_API_KEY="your_key_here"
 
 ```shell
 # Automatic activation
-/sc:test --type e2e "user login flow"
+/airis:test --type e2e "user login flow"
 # → Enables browser automation testing
 
 # Manual activation
-/sc:validate "accessibility compliance" --play
+/airis:validate "accessibility compliance" --play
 ```
 
 ### morphllm-fast-apply 🔄
@@ -115,7 +115,7 @@ export TWENTYFIRST_API_KEY="your_key_here"
 
 ```shell
 # Automatic activation
-/sc:improve legacy-codebase/ --focus maintainability
+/airis:improve legacy-codebase/ --focus maintainability
 # → Applies consistent patterns across files
 
 # API key setup
@@ -130,11 +130,11 @@ export MORPH_API_KEY="your_key_here"
 
 ```shell
 # Automatic activation  
-/sc:load existing-project/
+/airis:load existing-project/
 # → Builds project understanding and memory
 
 # Manual activation
-/sc:refactor "extract UserService" --serena
+/airis:refactor "extract UserService" --serena
 ```
 
 ## 構成
@@ -184,20 +184,20 @@ export MORPH_API_KEY="your_key_here"
 
 ```shell
 # Enable specific servers
-/sc:analyze codebase/ --c7 --seq
+/airis:analyze codebase/ --c7 --seq
 
 # Disable all MCP servers
-/sc:implement "simple function" --no-mcp
+/airis:implement "simple function" --no-mcp
 
 # Enable all servers
-/sc:design "complex architecture" --all-mcp
+/airis:design "complex architecture" --all-mcp
 ```
 
 **マルチサーバー調整:**
 
 ```shell
 # Full-stack development
-/sc:implement "e-commerce checkout"
+/airis:implement "e-commerce checkout"
 # → Sequential: workflow analysis
 # → Context7: payment patterns  
 # → Magic: UI components
@@ -226,7 +226,7 @@ export MORPH_API_KEY="your_key_here"
 node --version  # Should show v16+
 
 # Test without MCP
-/sc:command --no-mcp
+/airis:command --no-mcp
 
 # Check configuration
 ls ~/.claude.json

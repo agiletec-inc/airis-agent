@@ -2,9 +2,9 @@
 
 ## Problem Statement
 
-**Current Issue**: PM Agent functionality requires manual `/sc:pm` command invocation, making it easy to forget and inconsistently applied.
+**Current Issue**: PM Agent functionality requires manual `/airis:pm` command invocation, making it easy to forget and inconsistently applied.
 
-**User Concern**: "今は、/sc:pmコマンドを毎回叩かないと、PM-modeやってくれないきがする"
+**User Concern**: "今は、/airis:pmコマンドを毎回叩かないと、PM-modeやってくれないきがする"
 
 ## Solution: Behavior-Based Auto-Activation
 
@@ -81,7 +81,7 @@ Checkpoint - Confidence Check (200 tokens):
     → Request user clarification
 ```
 
-**Key Change**: This happens **automatically** at session start, not via `/sc:pm` command.
+**Key Change**: This happens **automatically** at session start, not via `/airis:pm` command.
 
 ### 2. Documentation Guardian (Continuous)
 
@@ -299,15 +299,15 @@ Mistake Handler Protocol:
 
 **Key Change**: Immediate automatic activation when errors detected, no manual trigger.
 
-## Removal of Manual `/sc:pm` Command
+## Removal of Manual `/airis:pm` Command
 
 ### Current State
-- `/sc:pm` command in `~/.claude/commands/sc/pm.md`
+- `/airis:pm` command in `~/.claude/commands/sc/pm.md`
 - Requires user to manually invoke every session
 - Inconsistent application
 
 ### Proposed Change
-- **Remove** `/sc:pm` command entirely
+- **Remove** `/airis:pm` command entirely
 - **Replace** with behavior-based auto-activation
 - **Keep** pm-agent persona for all behaviors
 
@@ -315,16 +315,16 @@ Mistake Handler Protocol:
 
 ```yaml
 Step 1 - Update pm-agent.md:
-  Remove: "Manual Invocation: /sc:pm command"
+  Remove: "Manual Invocation: /airis:pm command"
   Add: "Auto-Activation: Behavior-based triggers (see below)"
 
-Step 2 - Delete /sc:pm command:
+Step 2 - Delete /airis:pm command:
   File: ~/.claude/commands/sc/pm.md
   Action: Archive or delete (functionality now in persona)
 
 Step 3 - Update rules.md:
   Agent Orchestration section:
-  - Remove references to /sc:pm command
+  - Remove references to /airis:pm command
   - Add auto-activation trigger documentation
 
 Step 4 - Test Auto-Activation:
@@ -359,7 +359,7 @@ Step 4 - Test Auto-Activation:
 ## Token Budget Impact
 
 ```yaml
-Current (Manual /sc:pm):
+Current (Manual /airis:pm):
   If forgotten: 0 tokens (no PM functionality)
   If remembered: 200-500 tokens per invocation
   Average: Inconsistent, user-dependent
@@ -383,7 +383,7 @@ Proposed (Auto-Activation):
 ```yaml
 Phase 1 - Core Auto-Activation:
   - [ ] Update pm-agent.md with auto-activation triggers
-  - [ ] Remove session start from /sc:pm command
+  - [ ] Remove session start from /airis:pm command
   - [ ] Test session start auto-restoration
   - [ ] Verify token budget calculations
 
@@ -412,7 +412,7 @@ Phase 5 - Mistake Handler:
   - [ ] Verify prevention checklist updates
 
 Phase 6 - Cleanup:
-  - [ ] Archive /sc:pm command
+  - [ ] Archive /airis:pm command
   - [ ] Update all documentation
   - [ ] Remove manual invocation references
   - [ ] Final integration testing
@@ -447,9 +447,9 @@ User Session:
    Claude: [Updates docs/patterns/authentication-token-validation.md]
    Claude: ✅ Task complete with documentation updated
 
-User: [Never had to invoke /sc:pm manually]
+User: [Never had to invoke /airis:pm manually]
 ```
 
 ## Conclusion
 
-This architecture ensures PM Agent functionality is **always active** through behavior-based triggers, eliminating the need for manual `/sc:pm` command invocation while maintaining clear responsibility separation and guaranteed documentation quality.
+This architecture ensures PM Agent functionality is **always active** through behavior-based triggers, eliminating the need for manual `/airis:pm` command invocation while maintaining clear responsibility separation and guaranteed documentation quality.

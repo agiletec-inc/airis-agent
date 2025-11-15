@@ -17,7 +17,7 @@ Claude Code startup: Reads all files automatically
 ```
 ~/.claude/skills/pm/
 ├── SKILL.md              # ~50 tokens (description only)
-├── implementation.md     # ~2,500 tokens (loaded on /sc:pm)
+├── implementation.md     # ~2,500 tokens (loaded on /airis:pm)
 └── modules/*.md          # Loaded with implementation
 
 Claude Code startup: Reads SKILL.md only (if at all)
@@ -30,15 +30,15 @@ Claude Code startup: Reads SKILL.md only (if at all)
 - After: 0 tokens (skills not loaded at startup)
 - **Savings**: 100%
 
-### When Using /sc:pm
+### When Using /airis:pm
 - Load skill description: ~50 tokens
 - Load implementation: ~2,500 tokens
 - **Total**: ~2,550 tokens (first time)
 - **Subsequent**: Cached
 
 ### Net Benefit
-- Sessions WITHOUT /sc:pm: 2,500 tokens saved
-- Sessions WITH /sc:pm: 50 tokens overhead (2% increase)
+- Sessions WITHOUT /airis:pm: 2,500 tokens saved
+- Sessions WITH /airis:pm: 50 tokens overhead (2% increase)
 - **Break-even**: If >2% of sessions don't use PM, net positive
 
 ## Test Procedure
@@ -65,11 +65,11 @@ mkdir -p ~/.claude/skills/pm
 
 ### 4. Test Execution
 ```bash
-# Test 1: Startup without /sc:pm
+# Test 1: Startup without /airis:pm
 # - Verify no PM agent loaded
 # - Check token usage in system notification
 
-# Test 2: Execute /sc:pm
+# Test 2: Execute /airis:pm
 # - Verify skill loads on-demand
 # - Verify full functionality works
 # - Check token usage increase
@@ -86,7 +86,7 @@ mkdir -p ~/.claude/skills/pm
 - [ ] modules/ copied to skill directory
 - [ ] Slash command updated (skill: pm)
 - [ ] Startup test: No PM agent loaded
-- [ ] Execution test: /sc:pm loads skill
+- [ ] Execution test: /airis:pm loads skill
 - [ ] Functionality test: All features work
 - [ ] Token measurement: Confirm savings
 - [ ] Cache test: Subsequent uses don't reload
@@ -94,7 +94,7 @@ mkdir -p ~/.claude/skills/pm
 ## Success Criteria
 
 ✅ Startup tokens: 0 (PM not loaded)
-✅ /sc:pm tokens: ~2,550 (description + implementation)
+✅ /airis:pm tokens: ~2,550 (description + implementation)
 ✅ Functionality: 100% preserved
 ✅ Token savings: >90% for non-PM sessions
 

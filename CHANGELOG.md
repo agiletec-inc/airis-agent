@@ -6,11 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `airis-agent-mcp` CLI entry point exposing confidence, repo index, and deep research ABI endpoints through the Model Context Protocol.
+- Claude Code plugin manifest now declares an `airis-agent` MCP server (auto-started via `uvx`) so `/airis:*` commands can delegate to real tools.
+- Documentation updates (README, CLAUDE.md, command and skill guides) describing how to call the MCP tools with `use_tool`.
+
+### Changed
+- Session start hook now reports MCP availability instead of attempting a repo-relative launch, preventing broken paths inside packaged plugins.
 
 ## [4.2.0] - 2025-09-18
 ### Added
 - **Deep Research System** - Complete implementation of autonomous web research capabilities
-  - New `/sc:research` command for intelligent web research with DR Agent architecture
+  - New `/airis:research` command for intelligent web research with DR Agent architecture
   - `deep-research-agent` - 15th specialized agent for research orchestration
   - `MODE_DeepResearch` - 7th behavioral mode for research workflows
   - Tavily MCP integration (7th MCP server) for real-time web search
@@ -24,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated agent count from 14 to 15 (added deep-research-agent)
 - Updated mode count from 6 to 7 (added MODE_DeepResearch)
 - Updated MCP server count from 6 to 7 (added Tavily)
-- Updated command count from 24 to 25 (added /sc:research)
+- Updated command count from 24 to 25 (added /airis:research)
 - Enhanced MCP component with remote server support for Tavily
 - Added `_install_remote_mcp_server` method to handle remote MCP configurations
 
@@ -40,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.1.5] - 2025-09-26
 ### Added
-- Comprehensive flag documentation integrated into `/sc:help` command
+- Comprehensive flag documentation integrated into `/airis:help` command
 - All 25 Airis Agent framework flags now discoverable from help system
 - Practical usage examples and flag priority rules
 
@@ -103,9 +110,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **BREAKING**: Agent system restructured to 14 specialized agents
-- **BREAKING**: Commands now use `/sc:` namespace to avoid conflicts with user custom commands
+- **BREAKING**: Commands now use `/airis:` namespace to avoid conflicts with user custom commands
 - Commands are now installed in `~/.claude/commands/sc/` subdirectory
-- All 21 commands updated: `/analyze` → `/sc:analyze`, `/build` → `/sc:build`, etc.
+- All 21 commands updated: `/analyze` → `/airis:analyze`, `/build` → `/airis:build`, etc.
 - Automatic migration from old command locations to new `sc/` subdirectory
 - **BREAKING**: Documentation reorganization - docs/ directory renamed to Guides/
 
@@ -116,7 +123,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - quality-engineer.md, refactoring-expert.md, requirements-analyst.md
   - root-cause-analyst.md, security-engineer.md, socratic-mentor.md
 - **NEW MODE**: MODE_Orchestration.md for intelligent tool selection mindset (5 total behavioral modes)
-- **NEW COMMAND**: `/sc:implement` for feature and code implementation (addresses v2 user feedback)
+- **NEW COMMAND**: `/airis:implement` for feature and code implementation (addresses v2 user feedback)
 - **NEW FILE**: CLAUDE.md for project-specific Claude Code instructions
 - Migration logic to move existing commands to new namespace automatically
 - Enhanced uninstaller to handle both old and new command locations
@@ -136,10 +143,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Better agent specialization and domain expertise focus
 
 ### Technical Details
-- Commands now accessible as `/sc:analyze`, `/sc:build`, `/sc:improve`, etc.
+- Commands now accessible as `/airis:analyze`, `/airis:build`, `/airis:improve`, etc.
 - Migration preserves existing functionality while preventing naming conflicts
 - Installation process detects and migrates existing commands automatically
-- Tab completion support for `/sc:` prefix to discover all Airis Agent commands
+- Tab completion support for `/airis:` prefix to discover all Airis Agent commands
 - Guides/ directory replaces docs/ for improved organization
 
 ## [4.0.6] - 2025-08-23
@@ -160,8 +167,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **Agent System**: 13 specialized domain experts replacing personas
 - **Behavioral Modes**: 4 intelligent modes for different workflows (Brainstorming, Introspection, Task Management, Token Efficiency)
-- **Session Lifecycle**: /sc:load and /sc:save for cross-session persistence with Serena MCP
-- **New Commands**: /sc:brainstorm, /sc:reflect, /sc:save, /sc:select-tool (21 total commands)
+- **Session Lifecycle**: /airis:load and /airis:save for cross-session persistence with Serena MCP
+- **New Commands**: /airis:brainstorm, /airis:reflect, /airis:save, /airis:select-tool (21 total commands)
 - **Serena MCP**: Semantic code analysis and memory management
 - **Morphllm MCP**: Intelligent file editing with Fast Apply capability
 - **Core Components**: Python-based framework integration (completely redesigned and implemented)

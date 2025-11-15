@@ -34,7 +34,7 @@ MCP (Model Context Protocol) 서버는 전문 도구를 통해 Claude Code의 �
 | `test`, `e2e`, `browser` | **playwright** |
 | 다중 파일 편집, 리팩토링 | **morphllm-fast-apply** |
 | 대규모 프로젝트, 세션 | **serena** |
-| `/sc:research`, `latest`, `current` | **tavily** |
+| `/airis:research`, `latest`, `current` | **tavily** |
 | `performance`, `debug`, `LCP` | **chrome-devtools** |
 
 ## 서버 세부정보
@@ -46,11 +46,11 @@ MCP (Model Context Protocol) 서버는 전문 도구를 통해 Claude Code의 �
 
 ```bash
 # 자동 활성화
-/sc:implement "React 인증 시스템"
+/airis:implement "React 인증 시스템"
 # → 공식 React 패턴 제공
 
 # 수동 활성화
-/sc:analyze auth-system/ --c7
+/airis:analyze auth-system/ --c7
 ```
 
 ### sequential-thinking 🧠
@@ -60,11 +60,11 @@ MCP (Model Context Protocol) 서버는 전문 도구를 통해 Claude Code의 �
 
 ```bash
 # 자동 활성화
-/sc:troubleshoot "API 성능 문제"
+/airis:troubleshoot "API 성능 문제"
 # → 체계적인 근본 원인 분석 활성화
 
 # 수동 활성화
-/sc:analyze --think-hard architecture/
+/airis:analyze --think-hard architecture/
 ```
 
 ### magic ✨
@@ -74,7 +74,7 @@ MCP (Model Context Protocol) 서버는 전문 도구를 통해 Claude Code의 �
 
 ```bash
 # 자동 활성화
-/sc:implement "반응형 대시보드 컴포넌트"
+/airis:implement "반응형 대시보드 컴포넌트"
 # → 현대적인 패턴으로 접근 가능한 UI 생성
 
 # API 키 설정
@@ -88,11 +88,11 @@ export TWENTYFIRST_API_KEY="your_key_here"
 
 ```bash
 # 자동 활성화
-/sc:test --type e2e "사용자 로그인 흐름"
+/airis:test --type e2e "사용자 로그인 흐름"
 # → 브라우저 자동화 테스팅 활성화
 
 # 수동 활성화
-/sc:validate "접근성 규정 준수" --play
+/airis:validate "접근성 규정 준수" --play
 ```
 
 ### morphllm-fast-apply 🔄
@@ -102,7 +102,7 @@ export TWENTYFIRST_API_KEY="your_key_here"
 
 ```bash
 # 자동 활성화
-/sc:improve legacy-codebase/ --focus maintainability
+/airis:improve legacy-codebase/ --focus maintainability
 # → 파일 전반에 일관된 패턴 적용
 
 # API 키 설정
@@ -116,25 +116,25 @@ export MORPH_API_KEY="your_key_here"
 
 ```bash
 # 자동 활성화
-/sc:load existing-project/
+/airis:load existing-project/
 # → 프로젝트 이해 및 메모리 구축
 
 # 수동 활성화
-/sc:refactor "UserService 추출" --serena
+/airis:refactor "UserService 추출" --serena
 ```
 
 ### tavily 🔍
 **목적**: 연구를 위한 웹 검색 및 실시간 정보 검색
-**트리거**: `/sc:research` 명령어, "최신" 정보 요청, 최신 이벤트, 사실 확인
+**트리거**: `/airis:research` 명령어, "최신" 정보 요청, 최신 이벤트, 사실 확인
 **요구사항**: Node.js 16+, TAVILY_API_KEY (https://app.tavily.com에서 무료 티어 사용 가능)
 
 ```bash
 # 자동 활성화
-/sc:research "2024년 최신 AI 개발"
+/airis:research "2024년 최신 AI 개발"
 # → 지능형 웹 연구 수행
 
 # 수동 활성화
-/sc:analyze "시장 트렌드" --tavily
+/airis:analyze "시장 트렌드" --tavily
 
 # API 키 설정 (https://app.tavily.com에서 무료 키 받기)
 export TAVILY_API_KEY="tvly-your_api_key_here"
@@ -147,11 +147,11 @@ export TAVILY_API_KEY="tvly-your_api_key_here"
 
 ```bash
 # 자동 활성화
-/sc:debug "페이지 로딩이 느림"
+/airis:debug "페이지 로딩이 느림"
 # → Chrome DevTools로 성능 분석 활성화
 
 # 수동 활성화
-/sc:analyze --performance "홈페이지"
+/airis:analyze --performance "홈페이지"
 ```
 
 **기능:**
@@ -217,19 +217,19 @@ export TAVILY_API_KEY="tvly-your_api_key_here"
 **서버 제어:**
 ```bash
 # 특정 서버 활성화
-/sc:analyze codebase/ --c7 --seq
+/airis:analyze codebase/ --c7 --seq
 
 # 모든 MCP 서버 비활성화
-/sc:implement "간단한 함수" --no-mcp
+/airis:implement "간단한 함수" --no-mcp
 
 # 모든 서버 활성화
-/sc:design "복잡한 아키텍처" --all-mcp
+/airis:design "복잡한 아키텍처" --all-mcp
 ```
 
 **다중 서버 조정:**
 ```bash
 # 풀스택 개발
-/sc:implement "전자상거래 체크아웃"
+/airis:implement "전자상거래 체크아웃"
 # → Sequential: 워크플로우 분석
 # → Context7: 결제 패턴
 # → Magic: UI 컴포넌트
@@ -254,7 +254,7 @@ export TAVILY_API_KEY="tvly-your_api_key_here"
 node --version  # v16+ 표시되어야 함
 
 # MCP 없이 테스트
-/sc:command --no-mcp
+/airis:command --no-mcp
 
 # 구성 확인
 ls ~/.claude.json

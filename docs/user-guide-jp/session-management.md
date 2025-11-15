@@ -8,13 +8,13 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#core-session-commands-with-persistent-memory)
 
-### `/sc:load`- 永続メモリによるコンテキストの読み込み
+### `/airis:load`- 永続メモリによるコンテキストの読み込み
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#scload---context-loading-with-persistent-memory)
 
 **目的**: 以前のセッションからのプロジェクトコンテキストと永続メモリを使用してセッションを初期化します。MCP  
 **統合**: Serena MCP をトリガーして、保存されたプロジェクトメモリを読み取ります。  
-**構文**:`/sc:load [project_path]`
+**構文**:`/airis:load [project_path]`
 
 **何が起こるのですか**：
 
@@ -27,22 +27,22 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 ```shell
 # Load existing project context from persistent memory
-/sc:load src/
+/airis:load src/
 
 # Resume specific project work with full history
-/sc:load "authentication-system"
+/airis:load "authentication-system"
 
 # Initialize with codebase analysis and previous insights
-/sc:load . --analyze
+/airis:load . --analyze
 ```
 
-### `/sc:save`- メモリへのセッションの永続性
+### `/airis:save`- メモリへのセッションの永続性
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#scsave---session-persistence-to-memory)
 
 **目的**: 現在のセッション状態と決定を永続メモリ  
 **MCP に保存します。統合**: Serena MCP をトリガーしてメモリ ファイルに書き込みます。  
-**構文**:`/sc:save "session_description"`
+**構文**:`/airis:save "session_description"`
 
 **何が起こるのですか**：
 
@@ -55,22 +55,22 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 ```shell
 # Save completed feature work for future reference
-/sc:save "user authentication implemented with JWT"
+/airis:save "user authentication implemented with JWT"
 
 # Checkpoint during complex work
-/sc:save "API design phase complete, ready for implementation"
+/airis:save "API design phase complete, ready for implementation"
 
 # Store architectural decisions permanently
-/sc:save "microservices architecture decided, service boundaries defined"
+/airis:save "microservices architecture decided, service boundaries defined"
 ```
 
-### `/sc:reflect`- メモリコンテキストによる進捗状況の評価
+### `/airis:reflect`- メモリコンテキストによる進捗状況の評価
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#screflect---progress-assessment-with-memory-context)
 
 **目的**: 保存されたメモリに対して現在の進行状況を分析し、セッションの完全性を検証する  
 **MCP 統合**: Serena MCP を使用して、保存されたメモリと現在の状態を比較する  
-**構文**:`/sc:reflect [--scope project|session]`
+**構文**:`/airis:reflect [--scope project|session]`
 
 **何が起こるのですか**：
 
@@ -83,13 +83,13 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 ```shell
 # Assess project progress against stored milestones
-/sc:reflect --scope project
+/airis:reflect --scope project
 
 # Validate current session completeness
-/sc:reflect
+/airis:reflect
 
 # Check if ready to move to next phase based on memory
-/sc:reflect --scope session
+/airis:reflect --scope session
 ```
 
 ## 永続メモリアーキテクチャ
@@ -131,16 +131,16 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 ```shell
 # 1. Start fresh project
-/sc:brainstorm "e-commerce platform requirements"
+/airis:brainstorm "e-commerce platform requirements"
 
 # 2. Save initial decisions to persistent memory
-/sc:save "project scope and requirements defined"
+/airis:save "project scope and requirements defined"
 
 # 3. Begin implementation planning
-/sc:workflow "user authentication system"
+/airis:workflow "user authentication system"
 
 # 4. Save architectural decisions permanently
-/sc:save "auth architecture: JWT + refresh tokens + rate limiting"
+/airis:save "auth architecture: JWT + refresh tokens + rate limiting"
 ```
 
 ### 既存の作業の再開（クロス会話）
@@ -149,16 +149,16 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 ```shell
 # 1. Load previous context from persistent memory
-/sc:load "e-commerce-project"
+/airis:load "e-commerce-project"
 
 # 2. Assess current state against stored progress
-/sc:reflect --scope project  
+/airis:reflect --scope project  
 
 # 3. Continue with next phase using stored context
-/sc:implement "payment processing integration"
+/airis:implement "payment processing integration"
 
 # 4. Save progress checkpoint to memory
-/sc:save "payment system integrated with Stripe API"
+/airis:save "payment system integrated with Stripe API"
 ```
 
 ### 長期プロジェクト管理
@@ -167,15 +167,15 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 ```shell
 # Weekly checkpoint pattern with persistence
-/sc:load project-name
-/sc:reflect --scope project
+/airis:load project-name
+/airis:reflect --scope project
 # ... work on features ...
-/sc:save "week N progress: features X, Y, Z completed"
+/airis:save "week N progress: features X, Y, Z completed"
 
 # Phase completion pattern with memory
-/sc:reflect --scope project
-/sc:save "Phase 1 complete: core authentication and user management"
-/sc:workflow "Phase 2: payment and order processing"
+/airis:reflect --scope project
+/airis:save "Phase 1 complete: core authentication and user management"
+/airis:workflow "Phase 2: payment and order processing"
 ```
 
 ## クロス会話の継続性
@@ -191,7 +191,7 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 1. **自動コンテキスト復元**
     
     ```shell
-    /sc:load project-name
+    /airis:load project-name
     # Automatically restores all previous context, decisions, and progress
     ```
     
@@ -239,8 +239,8 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#session-start-protocol)
 
-1. `/sc:load`既存のプロジェクトの場合は常に
-2. `/sc:reflect`記憶から現在の状態を理解するために使用する
+1. `/airis:load`既存のプロジェクトの場合は常に
+2. `/airis:reflect`記憶から現在の状態を理解するために使用する
 3. 永続的なコンテキストと保存されたパターンに基づいて作業を計画する
 4. 過去の決定とアーキテクチャの選択に基づいて構築する
 
@@ -248,8 +248,8 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#session-end-protocol)
 
-1. `/sc:reflect`保存された目標に対する完全性を評価するために使用します
-2. 重要な決定を`/sc:save`将来のセッションのために保存する
+1. `/airis:reflect`保存された目標に対する完全性を評価するために使用します
+2. 重要な決定を`/airis:save`将来のセッションのために保存する
 3. 次のステップと未解決の質問を記憶に記録する
 4. 将来のシームレスな継続のためにコンテキストを保存する
 
@@ -288,7 +288,7 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/session-management.md#command-integration-with-persistence)
 
-- すべての`/sc:`コマンドは永続的なコンテキストを参照し、そのコンテキストに基づいて構築できます。
+- すべての`/airis:`コマンドは永続的なコンテキストを参照し、そのコンテキストに基づいて構築できます。
 - 以前のコマンド出力と決定はセッション間で利用可能
 - ワークフローパターンは保存され、再利用できる
 - 実装履歴は将来の指揮決定を導く
@@ -310,9 +310,9 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 
 **セッション間のコンテキスト損失**:
 
-- `/sc:save`セッションを終了する前に必ず使用してください
+- `/airis:save`セッションを終了する前に必ず使用してください
 - 簡単に検索できるように、わかりやすいメモリ名を使用する
-- メモリの完全性を定期的`/sc:reflect`に検証する
+- メモリの完全性を定期的`/airis:reflect`に検証する
 - 重要なメモリファイルを定期的にバックアップする
 
 **メモリの競合**:
@@ -329,22 +329,22 @@ Airis Agent は、Serena MCP サーバーを通じて永続的なセッション
 **セッション状態をリセット**:
 
 ```shell
-/sc:load --fresh  # Start without previous context
-/sc:reflect       # Assess current state
+/airis:load --fresh  # Start without previous context
+/airis:reflect       # Assess current state
 ```
 
 **メモリクリーンアップ**:
 
 ```shell
-/sc:reflect --cleanup  # Remove obsolete memories
-/sc:save --consolidate # Merge related memories
+/airis:reflect --cleanup  # Remove obsolete memories
+/airis:save --consolidate # Merge related memories
 ```
 
 **コンテキスト回復**:
 
 ```shell
-/sc:load --recent     # Load most recent memories
-/sc:reflect --repair  # Identify and fix context gaps
+/airis:load --recent     # Load most recent memories
+/airis:reflect --repair  # Identify and fix context gaps
 ```
 
 ## 高度な永続セッションパターン

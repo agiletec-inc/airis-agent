@@ -122,7 +122,7 @@ superagent/                 # リポジトリ
 - ✅ パッケージングツールが期待する標準形式
 
 **デメリット**:
-- ❌ パス が長い: `src/airis_agent/pm_agent/confidence.py`
+- ❌ パス が長い: `src/airis_agent/airis_agent/confidence.py`
 - ❌ 一見冗長に見える
 
 ---

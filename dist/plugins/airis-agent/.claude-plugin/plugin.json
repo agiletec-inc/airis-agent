@@ -9,6 +9,17 @@
   "repository": "https://github.com/agiletec-inc/airis-agent",
   "license": "MIT",
   "keywords": ["airis", "airis-agent", "agent", "deep-research", "repo-index", "confidence-check", "claude-code"],
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "mcpServers": {
+    "airis-agent": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/agiletec-inc/airis-agent",
+        "airis-agent-mcp"
+      ],
+      "description": "Airis Agent MCP Server - Confidence Check, Repo Index, Deep Research"
+    }
+  }
 }
 

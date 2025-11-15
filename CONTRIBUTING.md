@@ -32,11 +32,11 @@ Airis Agent transforms Claude Code into a structured development platform throug
 - Claude Code: 1.5.2
 - Python: 3.9.7
 
-**Issue:** `/sc:implement` command fails with ModuleNotFoundError
+**Issue:** `/airis:implement` command fails with ModuleNotFoundError
 
 **Steps to Reproduce:**
 1. Run `Airis Agent install --components core`
-2. Execute `/sc:implement "user login"`
+2. Execute `/airis:implement "user login"`
 3. Error appears: ModuleNotFoundError: No module named 'requests'
 
 **Expected:** Command should execute implementation workflow

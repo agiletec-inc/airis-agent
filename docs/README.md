@@ -6,7 +6,7 @@
 
 ### How It Works
 1. **Installation**: Python CLI installs context files to `~/.claude/`
-2. **Commands**: Type `/sc:analyze` → Claude Code reads `analyze.md` instruction file
+2. **Commands**: Type `/airis:analyze` → Claude Code reads `analyze.md` instruction file
 3. **Behavior**: Claude adopts behaviors defined in context files
 4. **Result**: Enhanced development workflows through context switching
 
@@ -20,7 +20,7 @@ pipx install Airis Agent && Airis Agent install
 # Traditional method
 pip install Airis Agent && Airis Agent install
 
-# Then try: /sc:brainstorm "web app idea" in Claude Code
+# Then try: /airis:brainstorm "web app idea" in Claude Code
 ```
 
 **Having Issues**: [Quick Fixes →](reference/common-issues.md) | [Troubleshooting →](reference/troubleshooting.md)
@@ -32,12 +32,12 @@ pip install Airis Agent && Airis Agent install
 |-------|---------|
 | **[Quick Start](getting-started/quick-start.md)** | Setup and first commands |
 | **[Installation](getting-started/installation.md)** | Detailed setup instructions |
-| **[Commands Guide](user-guide/commands.md)** | All 21 `/sc:` commands |
+| **[Commands Guide](user-guide/commands.md)** | All 21 `/airis:` commands |
 
 ### 🌿 Daily Usage (Regular Users)
 | Guide | Purpose | Use For |
 |-------|---------|---------|
-| **[Commands Guide](user-guide/commands.md)** | Master all `/sc:` commands | Daily development |
+| **[Commands Guide](user-guide/commands.md)** | Master all `/airis:` commands | Daily development |
 | **[Agents Guide](user-guide/agents.md)** | 14 domain specialists (`@agent-*`) | Expert assistance |
 | **[Flags Guide](user-guide/flags.md)** | Command behavior modification | Optimization |
 | **[Modes Guide](user-guide/modes.md)** | 5 behavioral modes | Workflow optimization |
@@ -63,7 +63,7 @@ pip install Airis Agent && Airis Agent install
 - **MCP Configurations** - Optional external tool settings
 
 ### Framework Components
-- **21 Commands** (`/sc:*`) - Workflow automation patterns
+- **21 Commands** (`/airis:*`) - Workflow automation patterns
 - **14 Agents** (`@agent-*`) - Domain specialists
 - **5 Modes** - Behavioral modification patterns
 - **6 MCP Servers** - Optional external tools
@@ -85,9 +85,9 @@ python3 -m Airis Agent --version  # Check installation
 
 ### In Claude Code (Usage)
 ```bash
-/sc:brainstorm "project idea"              # Start new project
-/sc:implement "feature"                    # Build features
-/sc:analyze src/                           # Analyze code
+/airis:brainstorm "project idea"              # Start new project
+/airis:implement "feature"                    # Build features
+/airis:analyze src/                           # Analyze code
 @agent-python-expert "optimize this"      # Manual specialist
 @agent-security "review authentication"   # Security review
 ```

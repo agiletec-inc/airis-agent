@@ -13,19 +13,19 @@ Airis Agent 提供了 14 个领域专业智能体，Claude Code 可以调用它�
 # 期望行为：Python 专家提供详细解释
 
 # 测试安全智能体自动激活
-/sc:implement "JWT authentication"
+/airis:implement "JWT authentication"
 # 期望行为：安全工程师应自动激活
 
 # 测试前端智能体自动激活
-/sc:implement "responsive navigation component"
+/airis:implement "responsive navigation component"
 # 期望行为：前端架构师 + Magic MCP 应激活
 
 # 测试系统分析
-/sc:troubleshoot "slow API performance"
+/airis:troubleshoot "slow API performance"
 # 期望行为：根因分析师 + 性能工程师激活
 
 # 测试手动和自动结合
-/sc:analyze src/
+/airis:analyze src/
 @agent-refactoring-expert "suggest improvements"
 # 期望行为：分析后跟随重构建议
 ```
@@ -59,9 +59,9 @@ Airis Agent 提供了 14 个领域专业智能体，Claude Code 可以调用它�
 
 ```bash
 # 这些命令自动激活相关智能体
-/sc:implement "JWT authentication"  # → security-engineer 自动激活
-/sc:design "React dashboard"        # → frontend-architect 自动激活
-/sc:troubleshoot "memory leak"      # → performance-engineer 自动激活
+/airis:implement "JWT authentication"  # → security-engineer 自动激活
+/airis:design "React dashboard"        # → frontend-architect 自动激活
+/airis:troubleshoot "memory leak"      # → performance-engineer 自动激活
 ```
 
 **MCP 服务器** 通过专业工具提供增强功能，如 Context7（文档）、Sequential（分析）、Magic（UI）、Playwright（测试）和 Morphllm（代码转换）。
@@ -109,23 +109,23 @@ Task Analysis →
 ### 自动智能体协调
 ```bash
 # 触发自动激活的命令
-/sc:implement "JWT authentication with rate limiting"
+/airis:implement "JWT authentication with rate limiting"
 # → 触发：security-engineer + backend-architect + quality-engineer
 
-/sc:design "accessible React dashboard with documentation"
+/airis:design "accessible React dashboard with documentation"
 # → 触发：frontend-architect + learning-guide + technical-writer
 
-/sc:troubleshoot "slow deployment pipeline with intermittent failures"
+/airis:troubleshoot "slow deployment pipeline with intermittent failures"
 # → 触发：devops-architect + performance-engineer + root-cause-analyst
 
-/sc:audit "payment processing security vulnerabilities"
+/airis:audit "payment processing security vulnerabilities"
 # → 触发：security-engineer + quality-engineer + refactoring-expert
 ```
 
 ### 结合手动和自动方式
 ```bash
 # 以命令开始（自动激活）
-/sc:implement "user profile system"
+/airis:implement "user profile system"
 
 # 然后显式添加专家审查
 @agent-security "review the profile system for OWASP compliance"
@@ -164,7 +164,7 @@ Task Analysis →
 - [ ] 包含可扩展性和可靠性考虑
 - [ ] 提供技术栈建议
 
-**验证：** `/sc:design "microservices platform"` 应该激活 system-architect
+**验证：** `/airis:design "microservices platform"` 应该激活 system-architect
 **测试：** 输出应包含服务分解和集成模式
 **检查：** 应与 devops-architect 协调处理基础架构问题
 
@@ -500,7 +500,7 @@ Task Analysis →
 ### 常见问题
 - **无智能体激活**: 使用领域关键词："security"、"performance"、"frontend"
 - **选择了错误的智能体**: 检查智能体文档中的触发关键词
-- **智能体过多**: 将关键词聚焦在主要领域或使用 `/sc:focus [领域]`
+- **智能体过多**: 将关键词聚焦在主要领域或使用 `/airis:focus [领域]`
 - **智能体不协调**: 增加任务复杂性或使用多领域关键词
 - **智能体专业知识不匹配**: 使用更具体的技术术语
 
@@ -508,7 +508,7 @@ Task Analysis →
 - **强制激活智能体**: 在请求中使用明确的领域关键词
 - **重置智能体选择**: 重启 Claude Code 会话以重置智能体状态
 - **检查智能体模式**: 查看智能体文档中的触发关键词
-- **测试基本激活**: 尝试 `/sc:implement "security auth"` 测试 security-engineer
+- **测试基本激活**: 尝试 `/airis:implement "security auth"` 测试 security-engineer
 
 ### 特定智能体故障排除
 
@@ -590,7 +590,7 @@ Task Analysis →
 
 **智能体过多？**
 - 将关键词聚焦在主要领域需求上
-- 使用 `/sc:focus [领域]` 限制范围
+- 使用 `/airis:focus [领域]` 限制范围
 - 从特定智能体开始，按需扩展
 
 **错误的智能体？**
@@ -622,14 +622,14 @@ Task Analysis →
 
 | 命令 | 主要智能体 | 支持智能体 |
 |---------|----------------|-------------------|
-| `/sc:implement` | Domain architects (frontend, backend) | security-engineer, quality-engineer |
-| `/sc:analyze` | quality-engineer, security-engineer | performance-engineer, root-cause-analyst |
-| `/sc:troubleshoot` | root-cause-analyst | Domain specialists, performance-engineer |
-| `/sc:improve` | refactoring-expert | quality-engineer, performance-engineer |
-| `/sc:document` | technical-writer | Domain specialists, learning-guide |
-| `/sc:design` | system-architect | Domain architects, requirements-analyst |
-| `/sc:test` | quality-engineer | security-engineer, performance-engineer |
-| `/sc:explain` | learning-guide | technical-writer, domain specialists |
+| `/airis:implement` | Domain architects (frontend, backend) | security-engineer, quality-engineer |
+| `/airis:analyze` | quality-engineer, security-engineer | performance-engineer, root-cause-analyst |
+| `/airis:troubleshoot` | root-cause-analyst | Domain specialists, performance-engineer |
+| `/airis:improve` | refactoring-expert | quality-engineer, performance-engineer |
+| `/airis:document` | technical-writer | Domain specialists, learning-guide |
+| `/airis:design` | system-architect | Domain architects, requirements-analyst |
+| `/airis:test` | quality-engineer | security-engineer, performance-engineer |
+| `/airis:explain` | learning-guide | technical-writer, domain specialists |
 
 ### 有效的智能体组合
 
@@ -680,30 +680,30 @@ Task Analysis →
 **开发工作流：**
 ```bash
 # 全栈功能开发
-/sc:implement "具有实时通知的响应式用户仪表板"
+/airis:implement "具有实时通知的响应式用户仪表板"
 # → frontend-architect + backend-architect + performance-engineer
 
 # 带文档的 API 开发
-/sc:create "带有综合文档的支付处理 REST API"
+/airis:create "带有综合文档的支付处理 REST API"
 # → backend-architect + security-engineer + technical-writer + quality-engineer
 
 # 性能优化调查
-/sc:troubleshoot "影响用户体验的数据库查询缓慢"
+/airis:troubleshoot "影响用户体验的数据库查询缓慢"
 # → performance-engineer + root-cause-analyst + backend-architect
 ```
 
 **分析工作流：**
 ```bash
 # 安全评估
-/sc:analyze "身份验证系统的 GDPR 合规漏洞"
+/airis:analyze "身份验证系统的 GDPR 合规漏洞"
 # → security-engineer + quality-engineer + requirements-analyst
 
 # 代码质量审查
-/sc:review "遗留代码库的现代化机会"
+/airis:review "遗留代码库的现代化机会"
 # → refactoring-expert + system-architect + quality-engineer + technical-writer
 
 # 学习和解释
-/sc:explain "带实践示例的微服务模式"
+/airis:explain "带实践示例的微服务模式"
 # → system-architect + learning-guide + technical-writer
 ```
 
@@ -727,7 +727,7 @@ Task Analysis →
 
 **问题：智能体过多**
 - 解决方案：使用具体技术术语聚焦于主要领域
-- 示例：使用 "/sc:focus backend" 来限制范围
+- 示例：使用 "/airis:focus backend" 来限制范围
 
 ### 质量驱动开发
 
@@ -816,4 +816,4 @@ Task Analysis →
 **Airis Agent 优势：**
 体验 14 个专业 AI 专家协调响应的威力，所有这一切都通过简单的自然语言请求实现。无需配置，无需管理，只有随您的需求而扩展的智能协作。
 
-🎯 **准备体验智能智能体协调？从 `/sc:implement` 开始，发现专业 AI 协作的魔力。**
+🎯 **准备体验智能智能体协调？从 `/airis:implement` 开始，发现专业 AI 协作的魔力。**

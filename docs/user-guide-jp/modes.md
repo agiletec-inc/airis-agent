@@ -6,7 +6,7 @@
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/modes.md#-quick-verification)
 
-コマンドを使用してモードをテストします`/sc:`。モードはタスクの複雑さに基づいて自動的にアクティブになります。コマンドの完全なリファレンスについては、[コマンドガイド](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md)をご覧ください。
+コマンドを使用してモードをテストします`/airis:`。モードはタスクの複雑さに基づいて自動的にアクティブになります。コマンドの完全なリファレンスについては、[コマンドガイド](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md)をご覧ください。
 
 ## クイックリファレンステーブル
 
@@ -32,8 +32,8 @@
 
 ```shell
 # Automatic activation examples
-/sc:brainstorm "mobile app"        # → Socratic discovery questions
-/sc:implement "auth system"        # → Multi-phase coordination  
+/airis:brainstorm "mobile app"        # → Socratic discovery questions
+/airis:implement "auth system"        # → Multi-phase coordination  
 "--uc analyze large-codebase/"     # → Compressed symbol output
 ```
 
@@ -92,7 +92,7 @@ Brainstorming Approach:
 - [ ] 発見プロセス全体を通じて協力的な姿勢を維持する
 - [ ] 結果として構造化された要件または技術概要を作成します
 
-**検証:** `/sc:brainstorm "web app"`ユーザー、機能、テクノロジーについて質問する必要があります。  
+**検証:** `/airis:brainstorm "web app"`ユーザー、機能、テクノロジーについて質問する必要があります。  
 **テスト:**漠然としたリクエストは、推測ではなく発見のための質問を引き起こす必要があります。  
 **チェック:**モードは、同じ会話内のフォローアップの質問でも維持される必要があります。
 
@@ -329,12 +329,12 @@ Standard Approach: Consistent, professional baseline for all tasks
 
 ```shell
 # Discovery → Planning → Implementation
-/sc:brainstorm "microservices architecture" --task-manage
+/airis:brainstorm "microservices architecture" --task-manage
 # → Brainstorming: requirement discovery
 # → Task Management: multi-phase coordination
 
 # Analysis with transparency and efficiency
-/sc:analyze legacy-system/ --introspect --uc
+/airis:analyze legacy-system/ --introspect --uc
 # → Introspection: transparent reasoning
 # → Token Efficiency: compressed output
 ```
@@ -355,7 +355,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 
 ```shell
 # Force brainstorming on "clear" requirements
-/sc:implement "user login" --brainstorm
+/airis:implement "user login" --brainstorm
 
 # Add reasoning transparency to debugging
 # 認証問題を透明な推理でデバッグ
@@ -402,12 +402,12 @@ Standard Approach: Consistent, professional baseline for all tasks
 → 📝 Structured requirements brief
 
 # Phase 2: Planning (Task Management Mode auto-activates)  
-/sc:implement "core productivity features"
+/airis:implement "core productivity features"
 → 📋 Multi-phase breakdown with dependencies
 → 🎯 Phase coordination with quality gates
 
 # Phase 3: Implementation (Orchestration Mode coordinates tools)
-/sc:implement "frontend and backend systems"
+/airis:implement "frontend and backend systems"
 → 🎯 Magic (UI) + Context7 (patterns) + Sequential (architecture)
 → ⚡ Parallel execution optimization
 ```
@@ -436,7 +436,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 
 ```shell
 # Large refactoring with multiple constraints
-/sc:improve legacy-system/ --introspect --uc --orchestrate
+/airis:improve legacy-system/ --introspect --uc --orchestrate
 → 🔍 Transparent reasoning (Introspection)
 → ⚡ Compressed communication (Token Efficiency)  
 → 🎯 Optimal tool coordination (Orchestration)
@@ -468,15 +468,15 @@ Standard Approach: Consistent, professional baseline for all tasks
 
 ```shell
 # Force specific mode behaviors
-/sc:command --brainstorm    # Collaborative discovery
-/sc:command --introspect    # Reasoning transparency
-/sc:command --task-manage   # Hierarchical coordination
-/sc:command --orchestrate   # Tool optimization
-/sc:command --uc           # Token compression
+/airis:command --brainstorm    # Collaborative discovery
+/airis:command --introspect    # Reasoning transparency
+/airis:command --task-manage   # Hierarchical coordination
+/airis:command --orchestrate   # Tool optimization
+/airis:command --uc           # Token compression
 
 # Combine multiple modes
-/sc:command --introspect --uc    # Transparent + efficient
-/sc:command --task-manage --orchestrate  # Coordinated + optimized
+/airis:command --introspect --uc    # Transparent + efficient
+/airis:command --task-manage --orchestrate  # Coordinated + optimized
 ```
 
 ---
@@ -518,7 +518,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```shell
 # Problem: Mode gives solutions instead of asking questions
 # Quick Fix: Check request clarity and use explicit flag
-/sc:brainstorm "web app" --brainstorm         # Force discovery mode
+/airis:brainstorm "web app" --brainstorm         # Force discovery mode
 "I have a vague idea about..."                # Use uncertainty language
 "Maybe we could build..."                     # Trigger exploration
 ```
@@ -528,8 +528,8 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```shell
 # Problem: Simple tasks getting complex coordination
 # Quick Fix: Reduce scope or use simpler commands
-/sc:implement "function" --no-task-manage     # Disable coordination
-/sc:troubleshoot bug.js                       # Use basic commands
+/airis:implement "function" --no-task-manage     # Disable coordination
+/airis:troubleshoot bug.js                       # Use basic commands
 # Check if task really is complex (>3 files, >2 directories)
 ```
 
@@ -538,8 +538,8 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```shell
 # Problem: Output too compressed or unclear
 # Quick Fix: Disable compression for clarity
-/sc:command --no-uc                           # Disable compression
-/sc:command --verbose                         # Force detailed output
+/airis:command --no-uc                           # Disable compression
+/airis:command --verbose                         # Force detailed output
 # Use when clarity is more important than efficiency
 ```
 
@@ -548,7 +548,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```shell
 # Problem: Too much meta-commentary, not enough action
 # Quick Fix: Disable introspection for direct work
-/sc:command --no-introspect                   # Direct execution
+/airis:command --no-introspect                   # Direct execution
 # Use introspection only for learning and debugging
 ```
 
@@ -557,8 +557,8 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```shell
 # Problem: Tool coordination causing confusion
 # Quick Fix: Simplify tool usage
-/sc:command --no-mcp                          # Native tools only
-/sc:command --simple                          # Basic execution
+/airis:command --no-mcp                          # Native tools only
+/airis:command --simple                          # Basic execution
 # Check if task complexity justifies orchestration
 ```
 
@@ -591,8 +591,8 @@ Standard Approach: Consistent, professional baseline for all tasks
 
 ```shell
 # Mode-specific diagnostics
-/sc:help modes                            # List all available modes
-/sc:reflect --type mode-status            # Check current mode state
+/airis:help modes                            # List all available modes
+/airis:reflect --type mode-status            # Check current mode state
 # Review request complexity and triggers
 ```
 
@@ -652,10 +652,10 @@ Airis Agent install --diagnose
 **Q: 特定のモードを強制できますか?** A: はい、手動フラグを使用して自動検出をオーバーライドします。
 
 ```shell
-/sc:command --brainstorm     # Force discovery
-/sc:command --introspect     # Add transparency
-/sc:command --task-manage    # Enable coordination
-/sc:command --uc            # Compress output
+/airis:command --brainstorm     # Force discovery
+/airis:command --introspect     # Add transparency
+/airis:command --task-manage    # Enable coordination
+/airis:command --uc            # Compress output
 ```
 
 **Q: モードは実行に影響しますか?** A: モードは調整を通じてツールの使用を最適化します。

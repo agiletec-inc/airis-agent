@@ -139,6 +139,18 @@ Quality checks:
 /airis:index-repo mode=quick
 ```
 
+**MCP Tool Invocation** (preferred for reproducible output):
+
+```
+use_tool("airis-agent", "repo_index", {
+  "repo_path": "{{workspaceRoot}}",
+  "mode": "full",
+  "include_docs": true,
+  "include_tests": true,
+  "output_dir": "{{workspaceRoot}}"
+})
+```
+
 ---
 
 ## Token Efficiency

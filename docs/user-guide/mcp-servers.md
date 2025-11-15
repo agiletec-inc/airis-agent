@@ -34,7 +34,7 @@ MCP (Model Context Protocol) servers extend Claude Code's capabilities through s
 | `test`, `e2e`, `browser` | **playwright** |
 | Multi-file edits, refactoring | **morphllm-fast-apply** |
 | Large projects, sessions | **serena** |
-| `/sc:research`, `latest`, `current` | **tavily** |
+| `/airis:research`, `latest`, `current` | **tavily** |
 | `performance`, `debug`, `LCP` | **chrome-devtools** |
 
 ## Server Details
@@ -46,11 +46,11 @@ MCP (Model Context Protocol) servers extend Claude Code's capabilities through s
 
 ```bash
 # Automatic activation
-/sc:implement "React authentication system"
+/airis:implement "React authentication system"
 # → Provides official React patterns
 
 # Manual activation  
-/sc:analyze auth-system/ --c7
+/airis:analyze auth-system/ --c7
 ```
 
 ### sequential-thinking 🧠
@@ -60,11 +60,11 @@ MCP (Model Context Protocol) servers extend Claude Code's capabilities through s
 
 ```bash
 # Automatic activation
-/sc:troubleshoot "API performance issues"
+/airis:troubleshoot "API performance issues"
 # → Enables systematic root cause analysis
 
 # Manual activation
-/sc:analyze --think-hard architecture/
+/airis:analyze --think-hard architecture/
 ```
 
 ### magic ✨
@@ -74,7 +74,7 @@ MCP (Model Context Protocol) servers extend Claude Code's capabilities through s
 
 ```bash
 # Automatic activation
-/sc:implement "responsive dashboard component"
+/airis:implement "responsive dashboard component"
 # → Generates accessible UI with modern patterns
 
 # API key setup
@@ -88,11 +88,11 @@ export TWENTYFIRST_API_KEY="your_key_here"
 
 ```bash
 # Automatic activation
-/sc:test --type e2e "user login flow"
+/airis:test --type e2e "user login flow"
 # → Enables browser automation testing
 
 # Manual activation
-/sc:validate "accessibility compliance" --play
+/airis:validate "accessibility compliance" --play
 ```
 
 ### morphllm-fast-apply 🔄
@@ -102,7 +102,7 @@ export TWENTYFIRST_API_KEY="your_key_here"
 
 ```bash
 # Automatic activation
-/sc:improve legacy-codebase/ --focus maintainability
+/airis:improve legacy-codebase/ --focus maintainability
 # → Applies consistent patterns across files
 
 # API key setup
@@ -116,25 +116,25 @@ export MORPH_API_KEY="your_key_here"
 
 ```bash
 # Automatic activation  
-/sc:load existing-project/
+/airis:load existing-project/
 # → Builds project understanding and memory
 
 # Manual activation
-/sc:refactor "extract UserService" --serena
+/airis:refactor "extract UserService" --serena
 ```
 
 ### tavily 🔍
 **Purpose**: Web search and real-time information retrieval for research
-**Triggers**: `/sc:research` commands, "latest" information requests, current events, fact-checking
+**Triggers**: `/airis:research` commands, "latest" information requests, current events, fact-checking
 **Requirements**: Node.js 16+, TAVILY_API_KEY (free tier available at https://app.tavily.com)
 
 ```bash
 # Automatic activation
-/sc:research "latest AI developments 2024"
+/airis:research "latest AI developments 2024"
 # → Performs intelligent web research
 
 # Manual activation  
-/sc:analyze "market trends" --tavily
+/airis:analyze "market trends" --tavily
 
 # API key setup (get free key at https://app.tavily.com)
 export TAVILY_API_KEY="tvly-your_api_key_here"
@@ -147,11 +147,11 @@ export TAVILY_API_KEY="tvly-your_api_key_here"
 
 ```bash
 # Automatic activation
-/sc:debug "page is loading slowly"
+/airis:debug "page is loading slowly"
 # → Enables performance analysis with Chrome DevTools
 
 # Manual activation
-/sc:analyze --performance "homepage"
+/airis:analyze --performance "homepage"
 ```
 
 **Capabilities:**
@@ -217,19 +217,19 @@ export TAVILY_API_KEY="tvly-your_api_key_here"
 **Server Control:**
 ```bash
 # Enable specific servers
-/sc:analyze codebase/ --c7 --seq
+/airis:analyze codebase/ --c7 --seq
 
 # Disable all MCP servers
-/sc:implement "simple function" --no-mcp
+/airis:implement "simple function" --no-mcp
 
 # Enable all servers
-/sc:design "complex architecture" --all-mcp
+/airis:design "complex architecture" --all-mcp
 ```
 
 **Multi-Server Coordination:**
 ```bash
 # Full-stack development
-/sc:implement "e-commerce checkout"
+/airis:implement "e-commerce checkout"
 # → Sequential: workflow analysis
 # → Context7: payment patterns  
 # → Magic: UI components
@@ -254,7 +254,7 @@ export TAVILY_API_KEY="tvly-your_api_key_here"
 node --version  # Should show v16+
 
 # Test without MCP
-/sc:command --no-mcp
+/airis:command --no-mcp
 
 # Check configuration
 ls ~/.claude.json

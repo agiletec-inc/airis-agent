@@ -40,14 +40,14 @@
 
 ## 명령어별 플래그
 
-### 분석 명령어 플래그 (`/sc:analyze`)
+### 분석 명령어 플래그 (`/airis:analyze`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--focus` | 특정 도메인 대상 | `security`, `performance`, `quality`, `architecture` |
 | `--depth` | 분석 철저함 | `quick`, `deep` |
 | `--format` | 출력 형식 | `text`, `json`, `report` |
 
-### 빌드 명령어 플래그 (`/sc:build`)
+### 빌드 명령어 플래그 (`/airis:build`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--type` | 빌드 구성 | `dev`, `prod`, `test` |
@@ -55,20 +55,20 @@
 | `--optimize` | 최적화 활성화 | 불린 |
 | `--verbose` | 상세 출력 | 불린 |
 
-### 디자인 명령어 플래그 (`/sc:design`)
+### 디자인 명령어 플래그 (`/airis:design`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--type` | 디자인 대상 | `architecture`, `api`, `component`, `database` |
 | `--format` | 출력 형식 | `diagram`, `spec`, `code` |
 
-### 설명 명령어 플래그 (`/sc:explain`)
+### 설명 명령어 플래그 (`/airis:explain`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--level` | 복잡성 수준 | `basic`, `intermediate`, `advanced` |
 | `--format` | 설명 스타일 | `text`, `examples`, `interactive` |
 | `--context` | 도메인 컨텍스트 | 모든 도메인 (예: `react`, `security`) |
 
-### 개선 명령어 플래그 (`/sc:improve`)
+### 개선 명령어 플래그 (`/airis:improve`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--type` | 개선 초점 | `quality`, `performance`, `maintainability`, `style`, `security` |
@@ -76,28 +76,28 @@
 | `--interactive` | 사용자 안내 | 불린 |
 | `--preview` | 실행 없이 표시 | 불린 |
 
-### 작업 명령어 플래그 (`/sc:task`)
+### 작업 명령어 플래그 (`/airis:task`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--strategy` | 작업 접근법 | `systematic`, `agile`, `enterprise` |
 | `--parallel` | 병렬 실행 | 불린 |
 | `--delegate` | 하위 에이전트 조정 | 불린 |
 
-### 워크플로우 명령어 플래그 (`/sc:workflow`)
+### 워크플로우 명령어 플래그 (`/airis:workflow`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--strategy` | 워크플로우 접근법 | `systematic`, `agile`, `enterprise` |
 | `--depth` | 분석 깊이 | `shallow`, `normal`, `deep` |
 | `--parallel` | 병렬 조정 | 불린 |
 
-### 문제 해결 명령어 플래그 (`/sc:troubleshoot`)
+### 문제 해결 명령어 플래그 (`/airis:troubleshoot`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--type` | 문제 카테고리 | `bug`, `build`, `performance`, `deployment` |
 | `--trace` | 추적 분석 포함 | 불린 |
 | `--fix` | 수정 적용 | 불린 |
 
-### 정리 명령어 플래그 (`/sc:cleanup`)
+### 정리 명령어 플래그 (`/airis:cleanup`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--type` | 정리 대상 | `code`, `imports`, `files`, `all` |
@@ -105,45 +105,45 @@
 | `--interactive` | 사용자 안내 | 불린 |
 | `--preview` | 실행 없이 표시 | 불린 |
 
-### 추정 명령어 플래그 (`/sc:estimate`)
+### 추정 명령어 플래그 (`/airis:estimate`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--type` | 추정 초점 | `time`, `effort`, `complexity` |
 | `--unit` | 시간 단위 | `hours`, `days`, `weeks` |
 | `--breakdown` | 상세 분해 | 불린 |
 
-### 인덱스 명령어 플래그 (`/sc:index`)
+### 인덱스 명령어 플래그 (`/airis:index`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--type` | 인덱스 대상 | `docs`, `api`, `structure`, `readme` |
 | `--format` | 출력 형식 | `md`, `json`, `yaml` |
 
-### 성찰 명령어 플래그 (`/sc:reflect`)
+### 성찰 명령어 플래그 (`/airis:reflect`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--type` | 성찰 범위 | `task`, `session`, `completion` |
 | `--analyze` | 분석 포함 | 불린 |
 | `--validate` | 완전성 검증 | 불린 |
 
-### 스폰 명령어 플래그 (`/sc:spawn`)
+### 스폰 명령어 플래그 (`/airis:spawn`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--strategy` | 조정 접근법 | `sequential`, `parallel`, `adaptive` |
 | `--depth` | 분석 깊이 | `normal`, `deep` |
 
-### Git 명령어 플래그 (`/sc:git`)
+### Git 명령어 플래그 (`/airis:git`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--smart-commit` | 커밋 메시지 생성 | 불린 |
 | `--interactive` | 안내 작업 | 불린 |
 
-### 도구 선택 명령어 플래그 (`/sc:select-tool`)
+### 도구 선택 명령어 플래그 (`/airis:select-tool`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--analyze` | 도구 분석 | 불린 |
 | `--explain` | 선택 설명 | 불린 |
 
-### 테스트 명령어 플래그 (`/sc:test`)
+### 테스트 명령어 플래그 (`/airis:test`)
 | 플래그 | 목적 | 값 |
 |------|---------|--------|
 | `--coverage` | 커버리지 포함 | 불린 |
@@ -183,34 +183,34 @@
 
 ### 프론트엔드 개발
 ```bash
-/sc:implement "반응형 대시보드" --magic --c7
-/sc:design component-library --type component --format code
-/sc:test ui-components/ --magic --play
-/sc:improve legacy-ui/ --magic --morph --validate
+/airis:implement "반응형 대시보드" --magic --c7
+/airis:design component-library --type component --format code
+/airis:test ui-components/ --magic --play
+/airis:improve legacy-ui/ --magic --morph --validate
 ```
 
 ### 백엔드 개발
 ```bash
-/sc:analyze api/ --focus performance --seq --think
-/sc:design payment-api --type api --format spec
-/sc:troubleshoot "API 타임아웃" --type performance --trace
-/sc:improve auth-service --type security --validate
+/airis:analyze api/ --focus performance --seq --think
+/airis:design payment-api --type api --format spec
+/airis:troubleshoot "API 타임아웃" --type performance --trace
+/airis:improve auth-service --type security --validate
 ```
 
 ### 대규모 프로젝트
 ```bash
-/sc:analyze . --ultrathink --all-mcp --safe-mode
-/sc:workflow enterprise-system --strategy enterprise --depth deep
-/sc:cleanup . --type all --safe --interactive
-/sc:estimate "마이크로서비스로 마이그레이션" --type complexity --breakdown
+/airis:analyze . --ultrathink --all-mcp --safe-mode
+/airis:workflow enterprise-system --strategy enterprise --depth deep
+/airis:cleanup . --type all --safe --interactive
+/airis:estimate "마이크로서비스로 마이그레이션" --type complexity --breakdown
 ```
 
 ### 품질 및 유지보수
 ```bash
-/sc:improve src/ --type quality --safe --interactive
-/sc:cleanup imports --type imports --preview
-/sc:reflect --type completion --validate
-/sc:git commit --smart-commit
+/airis:improve src/ --type quality --safe --interactive
+/airis:cleanup imports --type imports --preview
+/airis:reflect --type completion --validate
+/airis:git commit --smart-commit
 ```
 
 ## 플래그 상호작용
@@ -244,16 +244,16 @@
 
 ### 디버그 플래그
 ```bash
-/sc:analyze . --verbose                      # 결정 로직 및 플래그 활성화 표시
-/sc:select-tool "작업" --explain              # 도구 선택 과정 설명
-/sc:reflect --type session --analyze         # 현재 세션 결정 검토
+/airis:analyze . --verbose                      # 결정 로직 및 플래그 활성화 표시
+/airis:select-tool "작업" --explain              # 도구 선택 과정 설명
+/airis:reflect --type session --analyze         # 현재 세션 결정 검토
 ```
 
 ### 빠른 수정
 ```bash
-/sc:analyze . --help                         # 명령어에 사용 가능한 플래그 표시
-/sc:analyze . --no-mcp                       # 네이티브 실행만
-/sc:cleanup . --preview                      # 정리될 내용 표시
+/airis:analyze . --help                         # 명령어에 사용 가능한 플래그 표시
+/airis:analyze . --no-mcp                       # 네이티브 실행만
+/airis:cleanup . --preview                      # 정리될 내용 표시
 ```
 
 ## 플래그 우선순위 규칙

@@ -13,14 +13,14 @@ Airis Agent install --list-components
 **Command Issues:**
 ```bash
 # Test in Claude Code:
-/sc:brainstorm "test project"        # Should ask discovery questions
+/airis:brainstorm "test project"        # Should ask discovery questions
 
 # If no response: Restart Claude Code session
 ```
 
 **Resolution Checklist:**
 - [ ] Version commands work and show 4.1.5
-- [ ] `/sc:` commands respond in Claude Code  
+- [ ] `/airis:` commands respond in Claude Code  
 - [ ] MCP servers listed: `Airis Agent install --list-components | grep mcp`
 
 ## Common Issues
@@ -64,16 +64,16 @@ python3 -m Airis Agent install --components core commands agents modes --force
 **Commands Not Recognized:**
 1. Restart Claude Code completely
 2. Verify: `python3 -m Airis Agent --version`
-3. Test: `/sc:brainstorm "test"`
+3. Test: `/airis:brainstorm "test"`
 
 **Agents Not Activating:**
-- Use specific keywords: `/sc:implement "secure JWT authentication"`
+- Use specific keywords: `/airis:implement "secure JWT authentication"`
 - Manual activation: `@agent-security "review auth code"`
 
 **Slow Performance:**
 ```bash
-/sc:analyze . --no-mcp               # Test without MCP servers
-/sc:analyze src/ --scope file        # Limit scope
+/airis:analyze . --no-mcp               # Test without MCP servers
+/airis:analyze src/ --scope file        # Limit scope
 ```
 
 ### MCP Server Issues
@@ -89,7 +89,7 @@ Airis Agent install --components mcp --force
 ```bash
 export TWENTYFIRST_API_KEY="your_key"
 export MORPH_API_KEY="your_key"
-# Or use: /sc:command --no-mcp
+# Or use: /airis:command --no-mcp
 ```
 
 ## Advanced Diagnostics

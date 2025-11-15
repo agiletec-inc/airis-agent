@@ -199,7 +199,7 @@ if [ -f "$FILE" ]; then
     fi
     
     # Check for command pattern
-    if grep -q "/sc:$COMMAND" "$FILE"; then
+    if grep -q "/airis:$COMMAND" "$FILE"; then
         echo "✅ Contains command pattern"
     else
         echo "⚠️ Missing command pattern"

@@ -2,7 +2,7 @@
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#superagent-commands-guide)
 
-`/sc:*`Airis Agent は、ワークフロー用コマンドと`@agent-*`スペシャリスト用コマンドの 21 個の Claude Code コマンドを提供します。
+`/airis:*`Airis Agent は、ワークフロー用コマンドと`@agent-*`スペシャリスト用コマンドの 21 個の Claude Code コマンドを提供します。
 
 ## コマンドの種類
 
@@ -10,7 +10,7 @@
 
 |タイプ|使用場所|形式|例|
 |---|---|---|---|
-|**スラッシュコマンド**|クロード・コード|`/sc:[command]`|`/sc:implement "feature"`|
+|**スラッシュコマンド**|クロード・コード|`/airis:[command]`|`/airis:implement "feature"`|
 |**エージェント**|クロード・コード|`@agent-[name]`|`@agent-security "review"`|
 |**インストール**|ターミナル|`Airis Agent [command]`|`Airis Agent install`|
 
@@ -24,11 +24,11 @@ python3 -m Airis Agent --version
 # Claude Code CLI verification: claude --version
 
 # Claude Code: Test commands
-/sc:brainstorm "test project"    # Should ask discovery questions
-/sc:analyze README.md           # Should provide analysis
+/airis:brainstorm "test project"    # Should ask discovery questions
+/airis:analyze README.md           # Should provide analysis
 ```
 
-**ワークフロー**：`/sc:brainstorm "idea"`→→`/sc:implement "feature"`​`/sc:test`
+**ワークフロー**：`/airis:brainstorm "idea"`→→`/airis:implement "feature"`​`/airis:test`
 
 ## 🎯 Airis Agent コマンドの理解
 
@@ -38,7 +38,7 @@ python3 -m Airis Agent --version
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#how-superagent-works)
 
-Airis Agent は、Claude Code が特殊な動作を実行するために読み込む動作コンテキストファイルを提供します。 と入力すると`/sc:implement`、Claude Code は`implement.md`コンテキストファイルを読み込み、その動作指示に従います。
+Airis Agent は、Claude Code が特殊な動作を実行するために読み込む動作コンテキストファイルを提供します。 と入力すると`/airis:implement`、Claude Code は`implement.md`コンテキストファイルを読み込み、その動作指示に従います。
 
 **Airis Agent コマンドはソフトウェアによって実行されるのではなく**、フレームワークから特殊な命令ファイルを読み取ることで Claude コードの動作を変更するコンテキスト トリガーです。
 
@@ -46,7 +46,7 @@ Airis Agent は、Claude Code が特殊な動作を実行するために読み�
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#command-types-1)
 
-- **スラッシュコマンド**（`/sc:*`）：ワークフローパターンと動作​​モードをトリガーする
+- **スラッシュコマンド**（`/airis:*`）：ワークフローパターンと動作​​モードをトリガーする
 - **エージェントの呼び出し**（`@agent-*`）：特定のドメインスペシャリストを手動で起動する
 - **フラグ**（`--think`、`--safe-mode`）：コマンドの動作と深さを変更する
 
@@ -54,7 +54,7 @@ Airis Agent は、Claude Code が特殊な動作を実行するために読み�
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#the-context-mechanism)
 
-1. **ユーザー入力**: 入力する`/sc:implement "auth system"`
+1. **ユーザー入力**: 入力する`/airis:implement "auth system"`
 2. **コンテキスト読み込み**: クロードコード読み取り`~/.claude/superagent/Commands/implement.md`
 3. **行動の採用**：クロードはドメインの専門知識、ツールの選択、検証パターンを適用します
 4. **強化された出力**: セキュリティ上の考慮事項とベストプラクティスを備えた構造化された実装
@@ -74,12 +74,12 @@ Airis Agent は、Claude Code が特殊な動作を実行するために読み�
 
 **💬 クロード コード コマンド**(コンテキスト トリガー):
 
-- `/sc:brainstorm`- 要件検出コンテキストをアクティブ化します
-- `/sc:implement`- 機能開発コンテキストをアクティブ化します
+- `/airis:brainstorm`- 要件検出コンテキストをアクティブ化します
+- `/airis:implement`- 機能開発コンテキストをアクティブ化します
 - `@agent-security`- セキュリティスペシャリストのコンテキストをアクティブ化します
 - すべてのコマンドはClaude Codeチャットインターフェース内でのみ機能します
 
-> **クイック スタート**: `/sc:brainstorm "your project idea"`→ `/sc:implement "feature name"`→を試して`/sc:test`、コア ワークフローを体験してください。
+> **クイック スタート**: `/airis:brainstorm "your project idea"`→ `/airis:implement "feature name"`→を試して`/airis:test`、コア ワークフローを体験してください。
 
 ## 🧪 セットアップのテスト
 
@@ -107,12 +107,12 @@ python3 -m Airis Agent install --list-components | grep mcp
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#-claude-code-testing-type-in-claude-code-chat)
 
 ```
-# Test basic /sc: command
-/sc:brainstorm "test project"
+# Test basic /airis: command
+/airis:brainstorm "test project"
 # Example behavior: Interactive requirements discovery starts
 
 # Test command help
-/sc:help
+/airis:help
 # Example behavior: List of available commands
 ```
 
@@ -126,11 +126,11 @@ python3 -m Airis Agent install --list-components | grep mcp
 |---|---|---|---|---|
 |**🖥️ インストール**|ターミナル/CMD|`Airis Agent [command]`|セットアップとメンテナンス|`Airis Agent install`|
 |**🔧 構成**|ターミナル/CMD|`python3 -m Airis Agent [command]`|高度な設定|`python3 -m Airis Agent --version`|
-|**💬 スラッシュコマンド**|クロード・コード|`/sc:[command]`|ワークフロー自動化|`/sc:implement "feature"`|
+|**💬 スラッシュコマンド**|クロード・コード|`/airis:[command]`|ワークフロー自動化|`/airis:implement "feature"`|
 |**🤖 エージェントの呼び出し**|クロード・コード|`@agent-[name]`|手動スペシャリストの有効化|`@agent-security "review"`|
-|**⚡ 強化されたフラグ**|クロード・コード|`/sc:[command] --flags`|行動修正|`/sc:analyze --think-hard`|
+|**⚡ 強化されたフラグ**|クロード・コード|`/airis:[command] --flags`|行動修正|`/airis:analyze --think-hard`|
 
-> **注意**：すべての`/sc:`コマンドと`@agent-`呼び出しは、ターミナルではなくClaude Codeチャット内で動作します。これらのコマンドと呼び出しは、Claude CodeがAiris Agentフレームワークから特定のコンテキストファイルを読み取るようにトリガーします。
+> **注意**：すべての`/airis:`コマンドと`@agent-`呼び出しは、ターミナルではなくClaude Codeチャット内で動作します。これらのコマンドと呼び出しは、Claude CodeがAiris Agentフレームワークから特定のコンテキストファイルを読み取るようにトリガーします。
 
 ## 目次
 
@@ -150,110 +150,110 @@ python3 -m Airis Agent install --list-components | grep mcp
 
 **即時の生産性向上のためのコアワークフロー コマンド:**
 
-### `/sc:brainstorm`- プロジェクト発見
+### `/airis:brainstorm`- プロジェクト発見
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#scbrainstorm---project-discovery)
 
 **目的**: 対話型の要件検出とプロジェクト計画  
-**構文**:`/sc:brainstorm "your idea"` `[--strategy systematic|creative]`
+**構文**:`/airis:brainstorm "your idea"` `[--strategy systematic|creative]`
 
 **ユースケース**:
 
-- 新しいプロジェクトの計画:`/sc:brainstorm "e-commerce platform"`
-- 機能の探索:`/sc:brainstorm "user authentication system"`
-- 問題解決:`/sc:brainstorm "slow database queries"`
+- 新しいプロジェクトの計画:`/airis:brainstorm "e-commerce platform"`
+- 機能の探索:`/airis:brainstorm "user authentication system"`
+- 問題解決:`/airis:brainstorm "slow database queries"`
 
-### `/sc:implement`- 機能開発
+### `/airis:implement`- 機能開発
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#scimplement---feature-development)
 
 **目的**: インテリジェントなスペシャリストルーティングによるフルスタック機能の実装  
-**構文**:`/sc:implement "feature description"` `[--type frontend|backend|fullstack] [--focus security|performance]`
+**構文**:`/airis:implement "feature description"` `[--type frontend|backend|fullstack] [--focus security|performance]`
 
 **ユースケース**:
 
-- 認証:`/sc:implement "JWT login system"`
-- UI コンポーネント:`/sc:implement "responsive dashboard"`
-- API:`/sc:implement "REST user endpoints"`
-- データベース:`/sc:implement "user schema with relationships"`
+- 認証:`/airis:implement "JWT login system"`
+- UI コンポーネント:`/airis:implement "responsive dashboard"`
+- API:`/airis:implement "REST user endpoints"`
+- データベース:`/airis:implement "user schema with relationships"`
 
-### `/sc:analyze`- コード評価
+### `/airis:analyze`- コード評価
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#scanalyze---code-assessment)
 
 **目的**: 品質、セキュリティ、パフォーマンスにわたる包括的なコード分析  
-**構文**:`/sc:analyze [path]` `[--focus quality|security|performance|architecture]`
+**構文**:`/airis:analyze [path]` `[--focus quality|security|performance|architecture]`
 
 **ユースケース**:
 
-- プロジェクトの健全性:`/sc:analyze .`
-- セキュリティ監査:`/sc:analyze --focus security`
-- パフォーマンスレビュー:`/sc:analyze --focus performance`
+- プロジェクトの健全性:`/airis:analyze .`
+- セキュリティ監査:`/airis:analyze --focus security`
+- パフォーマンスレビュー:`/airis:analyze --focus performance`
 
-### `/sc:troubleshoot`- 問題診断
+### `/airis:troubleshoot`- 問題診断
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#sctroubleshoot---problem-diagnosis)
 
 **目的**: 根本原因分析による体系的な問題診断  
-**構文**:`/sc:troubleshoot "issue description"` `[--type build|runtime|performance]`
+**構文**:`/airis:troubleshoot "issue description"` `[--type build|runtime|performance]`
 
 **ユースケース**:
 
-- ランタイムエラー:`/sc:troubleshoot "500 error on login"`
-- ビルドの失敗:`/sc:troubleshoot --type build`
-- パフォーマンスの問題:`/sc:troubleshoot "slow page load"`
+- ランタイムエラー:`/airis:troubleshoot "500 error on login"`
+- ビルドの失敗:`/airis:troubleshoot --type build`
+- パフォーマンスの問題:`/airis:troubleshoot "slow page load"`
 
-### `/sc:test`- 品質保証
+### `/airis:test`- 品質保証
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#sctest---quality-assurance)
 
 **目的**: カバレッジ分析による包括的なテスト  
-**構文**:`/sc:test` `[--type unit|integration|e2e] [--coverage] [--fix]`
+**構文**:`/airis:test` `[--type unit|integration|e2e] [--coverage] [--fix]`
 
 **ユースケース**:
 
-- 完全なテストスイート:`/sc:test --coverage`
-- ユニットテスト:`/sc:test --type unit --watch`
-- E2E検証:`/sc:test --type e2e`
+- 完全なテストスイート:`/airis:test --coverage`
+- ユニットテスト:`/airis:test --type unit --watch`
+- E2E検証:`/airis:test --type e2e`
 
-### `/sc:improve`- コード強化
+### `/airis:improve`- コード強化
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#scimprove---code-enhancement)
 
 **目的**: 体系的なコードの改善と最適化を適用する  
-**構文**:`/sc:improve [path]` `[--type performance|quality|security] [--preview]`
+**構文**:`/airis:improve [path]` `[--type performance|quality|security] [--preview]`
 
 **ユースケース**:
 
-- 一般的な改善点:`/sc:improve src/`
-- パフォーマンスの最適化:`/sc:improve --type performance`
-- セキュリティ強化:`/sc:improve --type security`
+- 一般的な改善点:`/airis:improve src/`
+- パフォーマンスの最適化:`/airis:improve --type performance`
+- セキュリティ強化:`/airis:improve --type security`
 
-### `/sc:document`- ドキュメント生成
+### `/airis:document`- ドキュメント生成
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#scdocument---documentation-generation)
 
 **目的**: コードとAPIの包括的なドキュメントを生成する  
-**構文**:`/sc:document [path]` `[--type api|user-guide|technical] [--format markdown|html]`
+**構文**:`/airis:document [path]` `[--type api|user-guide|technical] [--format markdown|html]`
 
 **ユースケース**:
 
-- APIドキュメント:`/sc:document --type api`
-- ユーザーガイド:`/sc:document --type user-guide`
-- 技術ドキュメント:`/sc:document --type technical`
+- APIドキュメント:`/airis:document --type api`
+- ユーザーガイド:`/airis:document --type user-guide`
+- 技術ドキュメント:`/airis:document --type technical`
 
-### `/sc:workflow`- 実装計画
+### `/airis:workflow`- 実装計画
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#scworkflow---implementation-planning)
 
 **目的**: 要件から構造化された実装計画を生成する  
-**構文**:`/sc:workflow "feature description"` `[--strategy agile|waterfall] [--format markdown]`
+**構文**:`/airis:workflow "feature description"` `[--strategy agile|waterfall] [--format markdown]`
 
 **ユースケース**:
 
-- 機能計画:`/sc:workflow "user authentication"`
-- スプリント計画:`/sc:workflow --strategy agile`
-- アーキテクチャ計画：`/sc:workflow "microservices migration"`
+- 機能計画:`/airis:workflow "user authentication"`
+- スプリント計画:`/airis:workflow --strategy agile`
+- アーキテクチャ計画：`/airis:workflow "microservices migration"`
 
 ---
 
@@ -268,9 +268,9 @@ python3 -m Airis Agent install --list-components | grep mcp
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#new-project-setup)
 
 ```shell
-/sc:brainstorm "project concept"      # Define requirements
-/sc:design "system architecture"      # Create technical design  
-/sc:workflow "implementation plan"    # Generate development roadmap
+/airis:brainstorm "project concept"      # Define requirements
+/airis:design "system architecture"      # Create technical design  
+/airis:workflow "implementation plan"    # Generate development roadmap
 ```
 
 ### 機能開発
@@ -278,9 +278,9 @@ python3 -m Airis Agent install --list-components | grep mcp
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#feature-development)
 
 ```shell
-/sc:implement "feature name"          # Build the feature
-/sc:test --coverage                   # Validate with tests
-/sc:document --type api               # Generate documentation  
+/airis:implement "feature name"          # Build the feature
+/airis:test --coverage                   # Validate with tests
+/airis:document --type api               # Generate documentation  
 ```
 
 ### コード品質の改善
@@ -288,9 +288,9 @@ python3 -m Airis Agent install --list-components | grep mcp
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#code-quality-improvement)
 
 ```shell
-/sc:analyze --focus quality           # Assess current state
-/sc:improve --preview                 # Preview improvements
-/sc:test --coverage                   # Validate changes
+/airis:analyze --focus quality           # Assess current state
+/airis:improve --preview                 # Preview improvements
+/airis:test --coverage                   # Validate changes
 ```
 
 ### バグ調査
@@ -298,9 +298,9 @@ python3 -m Airis Agent install --list-components | grep mcp
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/commands.md#bug-investigation)
 
 ```shell
-/sc:troubleshoot "issue description"  # Diagnose the problem
-/sc:analyze --focus problem-area      # Deep analysis
-/sc:improve --fix --safe-mode         # Apply targeted fixes
+/airis:troubleshoot "issue description"  # Diagnose the problem
+/airis:analyze --focus problem-area      # Deep analysis
+/airis:improve --fix --safe-mode         # Apply targeted fixes
 ```
 
 ## 完全なコマンドリファレンス
@@ -402,7 +402,7 @@ python3 -m Airis Agent install --list-components | grep mcp
 
 **クイックフィックス:**
 
-- セッションをリセット:`/sc:load`再初期化する
+- セッションをリセット:`/airis:load`再初期化する
 - ステータスを確認:`Airis Agent install --list-components`
 - ヘルプ:[トラブルシューティングガイド](https://github.com/khayashi4337/superagent/blob/master/docs/reference/troubleshooting.md)
 

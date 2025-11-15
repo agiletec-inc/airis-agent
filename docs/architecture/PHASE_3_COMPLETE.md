@@ -115,7 +115,7 @@ uv run airis-agent doctor --verbose
 
 **PM Agent Tests**:
 ```bash
-$ uv run pytest tests/pm_agent/ -v
+$ uv run pytest tests/airis_agent_core/ -v
 ======================== 79 passed, 1 warning in 0.03s =========================
 ```
 
@@ -446,7 +446,7 @@ def test_with_pm_agent(confidence_checker, token_budget):
 **Skills PM Agent** (Upstream):
 ```bash
 # Claude Code session start
-/sc:pm  # Auto-loads from ~/.claude/skills/pm/
+/airis:pm  # Auto-loads from ~/.claude/skills/pm/
 # Output: 🟢 [integration] | 2M 103D | 68%
 ```
 

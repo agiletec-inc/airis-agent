@@ -239,7 +239,7 @@ Total:                         ~11K tokens
 
 ```bash
 # Before/After同一テストスイート
-uv run pytest tests/pm_agent/ -v
+uv run pytest tests/airis_agent_core/ -v
 
 Result: 79 passed ✅
 ```
@@ -293,14 +293,14 @@ Result:
 **現在**:
 ```python
 # pytest起動時に全モジュールimport
-from airis_agent.pm_agent import confidence, self_check, reflexion, token_budget
+from airis_agent.airis_agent import confidence, self_check, reflexion, token_budget
 ```
 
 **提案**:
 ```python
 # 使用時のみimport
 def confidence_checker():
-    from airis_agent.pm_agent.confidence import ConfidenceChecker
+    from airis_agent.airis_agent.confidence import ConfidenceChecker
     return ConfidenceChecker()
 ```
 

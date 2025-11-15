@@ -42,11 +42,11 @@ MCP（模型上下文协议）服务器通过专业工具扩展 Claude Code 的�
 
 ```bash
 # 自动激活
-/sc:implement "React authentication system"
+/airis:implement "React authentication system"
 # → 提供官方 React 模式
 
 # 手动激活
-/sc:analyze auth-system/ --c7
+/airis:analyze auth-system/ --c7
 ```
 
 ### sequential-thinking 🧠
@@ -56,11 +56,11 @@ MCP（模型上下文协议）服务器通过专业工具扩展 Claude Code 的�
 
 ```bash
 # 自动激活
-/sc:troubleshoot "API performance issues"
+/airis:troubleshoot "API performance issues"
 # → 启用系统性根因分析
 
 # 手动激活
-/sc:analyze --think-hard architecture/
+/airis:analyze --think-hard architecture/
 ```
 
 ### magic ✨
@@ -70,7 +70,7 @@ MCP（模型上下文协议）服务器通过专业工具扩展 Claude Code 的�
 
 ```bash
 # 自动激活
-/sc:implement "responsive dashboard component"
+/airis:implement "responsive dashboard component"
 # → 使用现代模式生成可访问的 UI
 
 # API 密钥设置
@@ -84,11 +84,11 @@ export TWENTYFIRST_API_KEY="your_key_here"
 
 ```bash
 # 自动激活
-/sc:test --type e2e "user login flow"
+/airis:test --type e2e "user login flow"
 # → 启用浏览器自动化测试
 
 # 手动激活
-/sc:validate "accessibility compliance" --play
+/airis:validate "accessibility compliance" --play
 ```
 
 ### morphllm-fast-apply 🔄
@@ -98,7 +98,7 @@ export TWENTYFIRST_API_KEY="your_key_here"
 
 ```bash
 # 自动激活
-/sc:improve legacy-codebase/ --focus maintainability
+/airis:improve legacy-codebase/ --focus maintainability
 # → 在文件中应用一致的模式
 
 # API 密钥设置
@@ -112,11 +112,11 @@ export MORPH_API_KEY="your_key_here"
 
 ```bash
 # 自动激活
-/sc:load existing-project/
+/airis:load existing-project/
 # → 构建项目理解和内存
 
 # 手动激活
-/sc:refactor "extract UserService" --serena
+/airis:refactor "extract UserService" --serena
 ```
 
 ## 配置
@@ -160,19 +160,19 @@ export MORPH_API_KEY="your_key_here"
 **服务器控制：**
 ```bash
 # 启用特定服务器
-/sc:analyze codebase/ --c7 --seq
+/airis:analyze codebase/ --c7 --seq
 
 # 禁用所有 MCP 服务器
-/sc:implement "simple function" --no-mcp
+/airis:implement "simple function" --no-mcp
 
 # 启用所有服务器
-/sc:design "complex architecture" --all-mcp
+/airis:design "complex architecture" --all-mcp
 ```
 
 **多服务器协调：**
 ```bash
 # 全栈开发
-/sc:implement "e-commerce checkout"
+/airis:implement "e-commerce checkout"
 # → Sequential：工作流分析
 # → Context7：支付模式
 # → Magic：UI 组件
@@ -197,7 +197,7 @@ export MORPH_API_KEY="your_key_here"
 node --version  # 应该显示 v16+
 
 # 不使用 MCP 测试
-/sc:command --no-mcp
+/airis:command --no-mcp
 
 # 检查配置
 ls ~/.claude.json

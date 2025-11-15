@@ -15,7 +15,7 @@
 
 ### This PR - Core型PM Agent
 
-**場所**: `src/airis_agent/pm_agent/` Pythonパッケージ
+**場所**: `src/airis_agent/airis_agent/` Pythonパッケージ
 **形式**: Pure Python modules
 **読み込み**: pytest実行時のみ、import必要分だけ
 
@@ -41,7 +41,7 @@ superagent/
 ├── agents/
 │   └── pm-agent.md                      # ~50KB - Agent定義
 ├── commands/
-│   └── pm.md                            # ~5KB - /sc:pm command
+│   └── pm.md                            # ~5KB - /airis:pm command
 └── core/
     └── pm_init/                         # Python init hooks
         ├── __init__.py
@@ -72,7 +72,7 @@ src/airis_agent/
     ├── reflexion.py                     # ~12KB - Error learning
     └── token_budget.py                  # ~10KB - Budget management
 
-tests/pm_agent/
+tests/airis_agent_core/
 ├── test_confidence_check.py             # 18 tests
 ├── test_self_check_protocol.py          # 16 tests
 ├── test_reflexion_pattern.py            # 16 tests
@@ -115,7 +115,7 @@ Token Cost: ~8K (memory files) + 200 (confidence)
 #### This PR
 ```python
 # 自動実行なし - 手動で呼び出し
-from airis_agent.pm_agent.confidence import ConfidenceChecker
+from airis_agent.airis_agent.confidence import ConfidenceChecker
 
 checker = ConfidenceChecker()
 confidence = checker.assess(context)
@@ -147,7 +147,7 @@ Location: Agent definition内
 
 #### This PR
 ```python
-# src/airis_agent/pm_agent/confidence.py
+# src/airis_agent/airis_agent/confidence.py
 
 class ConfidenceChecker:
     def assess(self, context: Dict[str, Any]) -> float:
@@ -198,7 +198,7 @@ Output: docs/pdca/[feature]/check.md
 
 #### This PR
 ```python
-# src/airis_agent/pm_agent/self_check.py
+# src/airis_agent/airis_agent/self_check.py
 
 class SelfCheckProtocol:
     def validate(self, implementation: Dict[str, Any])
@@ -243,7 +243,7 @@ class ReflexionMemory:
 
 #### This PR
 ```python
-# src/airis_agent/pm_agent/reflexion.py
+# src/airis_agent/airis_agent/reflexion.py
 
 class ReflexionPattern:
     """
@@ -283,7 +283,7 @@ Enforcement: 手動
 
 #### This PR
 ```python
-# src/airis_agent/pm_agent/token_budget.py
+# src/airis_agent/airis_agent/token_budget.py
 
 class TokenBudgetManager:
     BUDGETS = {
@@ -357,7 +357,7 @@ EVERY session start:
 **This PR**:
 ```python
 # Manual activation required
-from airis_agent.pm_agent.confidence import ConfidenceChecker
+from airis_agent.airis_agent.confidence import ConfidenceChecker
 checker = ConfidenceChecker()
 ```
 
@@ -422,7 +422,7 @@ superagent install-skill pm-agent
 ```
 
 **Result**:
-- Pytest fixtures: `src/airis_agent/pm_agent/`
+- Pytest fixtures: `src/airis_agent/airis_agent/`
 - Auto-activation: `~/.claude/skills/pm/`
 - **両方利用可能**
 

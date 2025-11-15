@@ -45,16 +45,16 @@ pip install pytest pytest-cov scipy
 **Commands**:
 ```bash
 # 全テスト実行
-pytest tests/pm_agent/ -v
+pytest tests/airis_agent_core/ -v
 
 # マーカー別実行
-pytest tests/pm_agent/ -m unit           # Unit tests
-pytest tests/pm_agent/ -m integration    # Integration tests
-pytest tests/pm_agent/ -m hallucination  # Hallucination detection
-pytest tests/pm_agent/ -m performance    # Performance tests
+pytest tests/airis_agent_core/ -m unit           # Unit tests
+pytest tests/airis_agent_core/ -m integration    # Integration tests
+pytest tests/airis_agent_core/ -m hallucination  # Hallucination detection
+pytest tests/airis_agent_core/ -m performance    # Performance tests
 
 # カバレッジレポート
-pytest tests/pm_agent/ --cov=. --cov-report=html
+pytest tests/airis_agent_core/ --cov=. --cov-report=html
 ```
 
 **Expected Results**:
@@ -225,7 +225,7 @@ Metrics:
 ## 🛠️ Tools & Scripts Ready
 
 **Testing**:
-- ✅ `tests/pm_agent/` (2,760行)
+- ✅ `tests/airis_agent_core/` (2,760行)
 - ✅ `pytest.ini` (configuration)
 - ✅ `conftest.py` (fixtures)
 

@@ -75,14 +75,14 @@
 ## Verified Commands Reference
 
 **Core Commands**:
-- `/sc:brainstorm` - Interactive requirements discovery
-- `/sc:analyze` - Codebase analysis and assessment
-- `/sc:implement` - Feature implementation with best practices
-- `/sc:troubleshoot` - Systematic problem diagnosis
-- `/sc:test` - Comprehensive testing and validation
-- `/sc:spawn` - Complex multi-agent coordination
-- `/sc:load` / `/sc:save` - Session management
-- `/sc:reflect` - Context analysis and optimization
+- `/airis:brainstorm` - Interactive requirements discovery
+- `/airis:analyze` - Codebase analysis and assessment
+- `/airis:implement` - Feature implementation with best practices
+- `/airis:troubleshoot` - Systematic problem diagnosis
+- `/airis:test` - Comprehensive testing and validation
+- `/airis:spawn` - Complex multi-agent coordination
+- `/airis:load` / `/airis:save` - Session management
+- `/airis:reflect` - Context analysis and optimization
 
 **Verified Flags**:
 - `--think`, `--think-hard`, `--ultrathink` - Analysis depth control

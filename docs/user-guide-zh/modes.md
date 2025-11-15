@@ -1,7 +1,7 @@
 # Airis Agent 行为模式指南 🧠
 
 ## ✅ 快速验证
-使用 `/sc:` 命令测试模式 - 它们会根据任务复杂性自动激活。有关完整命令参考，请参阅 [命令指南](commands.md)。
+使用 `/airis:` 命令测试模式 - 它们会根据任务复杂性自动激活。有关完整命令参考，请参阅 [命令指南](commands.md)。
 
 ## 快速参考表
 
@@ -23,8 +23,8 @@
 **快速示例：**
 ```bash
 # 自动激活示例
-/sc:brainstorm "mobile app"        # → 苏格拉底式发现问题
-/sc:implement "authentication system"        # → 多阶段协调
+/airis:brainstorm "mobile app"        # → 苏格拉底式发现问题
+/airis:implement "authentication system"        # → 多阶段协调
 "--uc analyze large-codebase/"     # → 压缩符号输出
 ```
 
@@ -72,7 +72,7 @@ Brainstorming Approach:
 - [ ] 在整个发现过程中保持协作语调
 - [ ] 产生结构化需求或技术简介作为结果
 
-**验证：** `/sc:brainstorm "web app"` 应该询问用户、功能、技术相关问题
+**验证：** `/airis:brainstorm "web app"` 应该询问用户、功能、技术相关问题
 **测试：** 模糊请求应该触发发现性问题，而不是假设
 **检查：** 模式应该在同一会话的后续问题中保持一致
 
@@ -272,12 +272,12 @@ Standard Approach: Consistent, professional baseline for all tasks
 **多模式工作流：**
 ```bash
 # 发现 → 规划 → 实现
-/sc:brainstorm "microservices architecture" --task-manage
+/airis:brainstorm "microservices architecture" --task-manage
 # → 头脑风暴：需求发现
 # → 任务管理：多阶段协调
 
 # 透明和高效的分析
-/sc:analyze legacy-system/ --introspect --uc
+/airis:analyze legacy-system/ --introspect --uc
 # → 内省：透明推理
 # → 令牌效率：压缩输出
 ```
@@ -294,7 +294,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 **覆盖示例：**
 ```bash
 # 对“明确”的需求强制头脑风暴
-/sc:implement "user login" --brainstorm
+/airis:implement "user login" --brainstorm
 
 # 为调试添加推理透明度
 # 使用透明推理调试认证问题
@@ -332,12 +332,12 @@ Standard Approach: Consistent, professional baseline for all tasks
 → 📝 结构化需求简报
 
 # 阶段 2：规划（任务管理模式自动激活）
-/sc:implement "core productivity features"
+/airis:implement "core productivity features"
 → 📋 带依赖关系的多阶段分解
 → 🎯 带质量门控的阶段协调
 
 # 阶段 3：实现（编排模式协调工具）
-/sc:implement "frontend and backend systems"
+/airis:implement "frontend and backend systems"
 → 🎯 Magic (UI) + Context7 (模式) + Sequential (架构)
 → ⚡ 并行执行优化
 ```
@@ -362,7 +362,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 **高复杂度场景：**
 ```bash
 # 带多重约束的大型重构
-/sc:improve legacy-system/ --introspect --uc --orchestrate
+/airis:improve legacy-system/ --introspect --uc --orchestrate
 → 🔍 透明推理introspect（内省）
 → ⚡ 压缩通信uc（令牌效率）
 → 🎯 最优工具协调orchestrate（编排）
@@ -388,15 +388,15 @@ Standard Approach: Consistent, professional baseline for all tasks
 
 ```bash
 # 强制特定模式行为
-/sc:command --brainstorm    # 协作发现
-/sc:command --introspect    # 推理透明度
-/sc:command --task-manage   # 分层协调
-/sc:command --orchestrate   # 工具优化
-/sc:command --uc            # 令牌压缩
+/airis:command --brainstorm    # 协作发现
+/airis:command --introspect    # 推理透明度
+/airis:command --task-manage   # 分层协调
+/airis:command --orchestrate   # 工具优化
+/airis:command --uc            # 令牌压缩
 
 # 组合多种模式
-/sc:command --introspect --uc    # 透明 + 高效
-/sc:command --task-manage --orchestrate  # 协调 + 优化
+/airis:command --introspect --uc    # 透明 + 高效
+/airis:command --task-manage --orchestrate  # 协调 + 优化
 ```
 
 ---
@@ -426,7 +426,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```bash
 # 问题：模式给出解决方案而不是问题
 # 快速修复：检查请求清晰度并使用显式标志
-/sc:brainstorm "web app" --brainstorm         # 强制发现模式
+/airis:brainstorm "web app" --brainstorm         # 强制发现模式
 "I have a vague idea about..."                # 使用不确定语言
 "Maybe we could build..."                     # 触发探索
 ```
@@ -435,8 +435,8 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```bash
 # 问题：简单任务得到复杂协调
 # 快速修复：减少范围或使用更简单的命令
-/sc:implement "function" --no-task-manage     # 禁用协调
-/sc:troubleshoot bug.js                       # 使用基本命令
+/airis:implement "function" --no-task-manage     # 禁用协调
+/airis:troubleshoot bug.js                       # 使用基本命令
 # 检查任务是否真正复杂（>3 文件，>2 目录）
 ```
 
@@ -444,8 +444,8 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```bash
 # 问题：输出过于压缩或不清楚
 # 快速修复：禁用压缩以提高清晰度
-/sc:command --no-uc                           # 禁用压缩
-/sc:command --verbose                         # 强制详细输出
+/airis:command --no-uc                           # 禁用压缩
+/airis:command --verbose                         # 强制详细输出
 # 当清晰度比效率更重要时使用
 ```
 
@@ -453,7 +453,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```bash
 # 问题：过多元评论，行动不足
 # 快速修复：为直接工作禁用内省
-/sc:command --no-introspect                   # 直接执行
+/airis:command --no-introspect                   # 直接执行
 # 仅在学习和调试时使用内省
 ```
 
@@ -461,8 +461,8 @@ Standard Approach: Consistent, professional baseline for all tasks
 ```bash
 # 问题：工具协调造成混乱
 # 快速修复：简化工具使用
-/sc:command --no-mcp                          # 仅使用原生工具
-/sc:command --simple                          # 基本执行
+/airis:command --no-mcp                          # 仅使用原生工具
+/airis:command --simple                          # 基本执行
 # 检查任务复杂度是否需要编排
 ```
 
@@ -489,8 +489,8 @@ Standard Approach: Consistent, professional baseline for all tasks
 **级别 2：详细帮助（5-15 分钟）**
 ```bash
 # 特定模式诊断
-/sc:help modes                            # 列出所有可用模式
-/sc:reflect --type mode-status            # 检查当前模式状态
+/airis:help modes                            # 列出所有可用模式
+/airis:reflect --type mode-status            # 检查当前模式状态
 # 检查请求复杂性和触发器
 ```
 - 有关模式安装问题，请参阅[常见问题指南](../reference/common-issues.md)
@@ -538,10 +538,10 @@ Airis Agent install --diagnose
 **问：我可以强制特定模式吗？**
 答：是的，使用手动标志覆盖自动检测：
 ```bash
-/sc:command --brainstorm     # 强制发现模式
-/sc:command --introspect     # 增加透明性
-/sc:command --task-manage    # 启用协调
-/sc:command --uc             # 压缩输出
+/airis:command --brainstorm     # 强制发现模式
+/airis:command --introspect     # 增加透明性
+/airis:command --task-manage    # 启用协调
+/airis:command --uc             # 压缩输出
 ```
 
 **问：模式会影响执行吗？**

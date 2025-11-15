@@ -94,7 +94,7 @@ Use src/ layout for Airis Agent:
 superagent/pm_agent/confidence.py
 
 # New structure (PEP 517 compliant)
-src/airis_agent/pm_agent/confidence.py
+src/airis_agent/airis_agent/confidence.py
 ```
 
 **Evidence 3: pytest plugin auto-discovery**
@@ -222,7 +222,7 @@ $ git branch --all | grep typescript-impl
 File: commands/agent.md
 
 # SC Agent Activation
-🚀 **SC Agent online** — this plugin launches `/sc:agent` automatically at session start.
+🚀 **SC Agent online** — this plugin launches `/airis:agent` automatically at session start.
 ```
 - Markdown is readable
 - Natively supported by Claude Code

@@ -14,7 +14,7 @@
 | `estimate` | 工数/リスク見積もり | ❌ | プロダクトマネジメント寄り。保持推奨。 |
 | `explain` | 仕様/コード説明生成 | ⚠️ | 標準 `/explain` と役割が近い。独自の証跡・自己チェックがあるか確認要。 |
 | `git` | Git 操作ガイドライン | ✅ | Claude 標準の Git コマンド群と機能的に重複。削除候補。 |
-| `help` | Airis Agent コマンド一覧 | ✅ | `/sc:help` 専用。最小構成には必要。 |
+| `help` | Airis Agent コマンド一覧 | ✅ | `/airis:help` 専用。最小構成には必要。 |
 | `implement` | 実装フェーズ全体の進行管理 | ⚠️ | 標準 `/implement` よりテレメトリ・証跡要求が厳密。差分把握の上で統合/維持を判断。 |
 | `improve` | 改善・リファクタリング提案 | ⚠️ | 構造は標準 `/improve` に類似だが、confidence 連動が追加。 |
 | `index` | リポジトリ理解/探索指針 | ❌ | インデックス生成や利用まで含む。保持推奨。 |
@@ -72,7 +72,7 @@
 
 | Command | Source of truth | 推奨ハンドリング | 補足 |
 |---------|-----------------|-------------------|------|
-| `analyze` | Airis Agent オリジナル | Airis Agent が自動発火（必要なら `/sc:analyze` も維持） | 調査フェーズ開始時に自動診断として呼び出し候補。 |
+| `analyze` | Airis Agent オリジナル | Airis Agent が自動発火（必要なら `/airis:analyze` も維持） | 調査フェーズ開始時に自動診断として呼び出し候補。 |
 | `brainstorm` | Airis Agent オリジナル | Airis Agent 内部モードへ吸収 | 初動ヒアリング時に自動呼び出し、ユーザー入力は任意化。 |
 | `build` | Claude 標準名 + Airis Agent拡張 | Airis Agent 内部（CI/CD 監視に連動） | 人手で呼ぶより build wave 中に自動判断させる。 |
 | `business-panel` | Airis Agent オリジナル | Airis Agent から選択的に提示 | 経営観点レビューが必要なときだけ案内。 |
@@ -82,20 +82,20 @@
 | `estimate` | Airis Agent オリジナル | 明示コマンド維持 + Airis Agent から提案 | 工数見積り要求時の専用エントリ。 |
 | `explain` | Claude 標準名 + 拡張版 | Airis Agent が教育モードとして起動 | 学習支援目的なら明示コマンドも残す。 |
 | `git` | Claude 標準そのもの | 削除候補 | 標準 `/git` へ誘導。 |
-| `help` | Airis Agent 専用 | 維持必須 | `/sc:*` 列挙のトップレベル。 |
+| `help` | Airis Agent 専用 | 維持必須 | `/airis:*` 列挙のトップレベル。 |
 | `implement` | Claude 標準名 + 拡張版 | Airis Agent 実装フェーズのコアとして保持 | ユーザーにはフェーズ説明のみ提示。 |
 | `improve` | Claude 標準名 + 拡張版 | Reflexion / Self-review ループに統合 | メンテナンスモードで自動使用。 |
-| `index` | Airis Agent オリジナル | `/sc:index-repo` として維持 | インデックス生成専用。 |
+| `index` | Airis Agent オリジナル | `/airis:index-repo` として維持 | インデックス生成専用。 |
 | `load` | Airis Agent オリジナル | Airis Agent SessionStart に統合 | 手動コマンド不要化。 |
 | `pm` | Airis Agent オリジナル | Airis Agent 起動プロトコル（非公開） | 仕様書としては保持するが slash コマンドは廃止方向。 |
 | `reflect` | Airis Agent オリジナル | Reflexion ループへ統合 | 状況に応じ自動で回す。 |
-| `research` | Claude 標準名 + 拡張版 | `/sc:research` 維持（深度指定付き） | 深堀り案件で Airis Agent が推奨。 |
+| `research` | Claude 標準名 + 拡張版 | `/airis:research` 維持（深度指定付き） | 深堀り案件で Airis Agent が推奨。 |
 | `save` | Airis Agent オリジナル | Airis Agent 完了処理に統合 | 終了時に自動実行。 |
 | `select-tool` | Airis Agent オリジナル | Airis Agent の MCP 選定ロジック内で活用 | 手動入力は廃止方向。 |
 | `spawn` | Airis Agent オリジナル | Airis Agent のサブエージェント管理で利用 | 並列タスク時だけ内部的に使用。 |
 | `spec-panel` | Airis Agent オリジナル | エキスパートレビュー要請時に Airis Agent が提示 | slash コマンドはオプションとして残す。 |
 | `task` | Claude 標準名 + 拡張版 | Airis Agent の計画フェーズで利用 | 直接コマンドは軽量版に統合検討。 |
-| `test` | Claude 標準名 + 拡張版 | 実装波後に自動実行 | 明示 `/sc:test` は e2e/coverage 指定が必要な場合のみ案内。 |
+| `test` | Claude 標準名 + 拡張版 | 実装波後に自動実行 | 明示 `/airis:test` は e2e/coverage 指定が必要な場合のみ案内。 |
 | `troubleshoot` | Airis Agent オリジナル | インシデント時の自動ハンドラー | slash コマンドも残しつつ、失敗検知で自動案内。 |
 | `workflow` | Airis Agent オリジナル | Airis Agent の全体フレーム説明用に保持 | 参考ドキュメントとして提示。 |
 
@@ -104,22 +104,22 @@
 | Agent | 役割 | Claude 標準重複 | 推奨ハンドリング |
 |-------|------|-----------------|-------------------|
 | backend-architect | バックエンド設計 | ❌ | Airis Agent 内で必要時に招集 |
-| business-panel-experts | ビジネス視点パネル | ❌ | `/sc:business-panel` 連動 or Airis Agent 推奨 |
-| deep-research-agent | 深掘り調査 | ❌ | `/sc:research` の中核（既に再配置済み） |
+| business-panel-experts | ビジネス視点パネル | ❌ | `/airis:business-panel` 連動 or Airis Agent 推奨 |
+| deep-research-agent | 深掘り調査 | ❌ | `/airis:research` の中核（既に再配置済み） |
 | devops-architect | DevOps 専門家 | ❌ | build/CI 流れで自動呼び出し |
 | frontend-architect | フロント設計 | ❌ | UI 系タスクで Airis Agent がアサイン |
-| learning-guide | 学習支援 | ❌ | `/sc:explain` の補助エージェント |
-| performance-engineer | 性能最適化 | ❌ | `/sc:analyze` / `/sc:improve` で使用 |
+| learning-guide | 学習支援 | ❌ | `/airis:explain` の補助エージェント |
+| performance-engineer | 性能最適化 | ❌ | `/airis:analyze` / `/airis:improve` で使用 |
 | pm-agent | PM オーケストレータ | ❌ | Airis Agent 自身として再定義済み |
 | python-expert | Python 専門家 | ❌ | 実装対象言語に応じ自動招集 |
 | quality-engineer | 品質管理 | ❌ | テスト/レビュー段階で起動 |
-| refactoring-expert | リファクタ専門家 | ❌ | `/sc:improve` 内部に吸収 |
+| refactoring-expert | リファクタ専門家 | ❌ | `/airis:improve` 内部に吸収 |
 | requirements-analyst | 要件分析 | ❌ | 初期探索で自動呼び出し |
-| root-cause-analyst | 根本原因分析 | ❌ | `/sc:troubleshoot` に組み込み |
+| root-cause-analyst | 根本原因分析 | ❌ | `/airis:troubleshoot` に組み込み |
 | security-engineer | セキュリティ | ❌ | 高リスクタスクで招集 |
-| socratic-mentor | 問答法ガイド | ❌ | `/sc:brainstorm` 補助 |
+| socratic-mentor | 問答法ガイド | ❌ | `/airis:brainstorm` 補助 |
 | system-architect | システム全体設計 | ❌ | 大規模設計で自動招集 |
-| technical-writer | 技術ライター | ❌ | `/sc:document` や完了報告で使用 |
+| technical-writer | 技術ライター | ❌ | `/airis:document` や完了報告で使用 |
 
 - 現時点で Framework 側に戻したのは `deep-research`, `repo-index`, `self-review` の 3 件のみ。  
 - 他エージェントは Airis Agent のモジュール化計画と合わせて `plugins/airis-agent/agents/` へ随時再配置する。
@@ -132,7 +132,7 @@
    - しきい値（例: 7 日超または変更ファイル 20 超）でステータスを `fresh|warning|stale` 判定。
 2. **着手前スカフォールド**  
    - ステータスをユーザーへ表示（例: `📊 Repo index freshness: warning (last updated 9 days ago)`）。  
-   - `warning/stale` なら `/sc:index-repo` 提案、同時に差分ドキュメント一覧を提示。  
+   - `warning/stale` なら `/airis:index-repo` 提案、同時に差分ドキュメント一覧を提示。  
    - Memory（例: `docs/memory/*.md`）の更新日時と最終利用時刻を比較し、古いものをリストアップ。
 3. **ドキュメント検証ループ**  
    - タスクで参照した docs/ ファイルごとに `mtime` を記録。  
@@ -149,7 +149,7 @@
   - 例: `🧪 Skill: confidence-check → score=0.92 (proceed)`  
 - **自己評価ループ**: `confidence >= 0.9` で進行、閾値未満なら自動で再調査フェーズへ遷移  
   - ループ開始時に `🔁 Reflection loop #2 (reason=confidence 0.64)` のように表示。  
-- **出力レベル**: デフォルトは簡潔表示、`/sc:agent --debug` 等で詳細ログ（投入パラメータ、MCP 応答要約）を追加。  
+- **出力レベル**: デフォルトは簡潔表示、`/airis:agent --debug` 等で詳細ログ（投入パラメータ、MCP 応答要約）を追加。  
 - **HUD メトリクス**: タスク完了報告に最新 confidence/self-check/reflection 状態をまとめる  
   - `Confidence: 0.93 ✅ | Reflexion iterations: 1 | Evidence: tests+docs`
 

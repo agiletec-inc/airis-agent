@@ -1,9 +1,22 @@
 {
+  "extraKnownMarketplaces": {
+    "agiletec": {
+      "source": {
+        "source": "github",
+        "repo": "agiletec-inc/airis-agent"
+      }
+    }
+  },
+  "enabledPlugins": [
+    "airis-agent@agiletec"
+  ],
   "hooks": {
     "SessionStart": [
       {
         "matchers": [
-          {"source": "startup"}
+          {
+            "source": "startup"
+          }
         ],
         "hooks": [
           {

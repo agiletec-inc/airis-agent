@@ -78,6 +78,37 @@ make build-plugin
 /plugin install airis-agent
 ```
 
+### Install the complete Airis Suite (OSS)
+
+After installing `airis-agent`, you can clone every public Airis Suite component in a single shot (SSH URLs by default so no PAT prompt shows up):
+
+```bash
+uv run airis-agent install-suite
+```
+
+Airis Agent acts as the conductor for the full OSS Airis Suite, so this command ensures your workspace has every major component ready. By default, repositories are cloned into `~/github`:
+
+- `airis-mcp-gateway` (includes the Supabase self-host deployment under `servers/`)
+- `airis-workspace`
+- `airiscode`
+- `mindbase`
+
+Useful flags:
+
+```bash
+# Pull the latest changes if the repositories already exist
+uv run airis-agent install-suite --update
+
+# Remove the existing directories and clone again
+uv run airis-agent install-suite --force
+
+# Clone via HTTPS instead of SSH
+uv run airis-agent install-suite --protocol https
+
+# Choose a different base directory
+uv run airis-agent install-suite --base-dir /path/to/workdir
+```
+
 ### Verification
 
 ```bash
@@ -86,6 +117,24 @@ make build-plugin
 
 # You should see: airis-agent@agiletec-inc (enabled)
 ```
+
+### MCP Server (ABI Bridge)
+
+Airis Agent exposes its Python runtime through the `airis-agent-mcp` CLI so Claude Code (and any MCP-capable IDE) can call the full confidence, repo index, and deep research ABI.
+
+```bash
+# Run directly from the repo (development)
+uv run airis-agent-mcp
+
+# Or fetch the latest published version (used by the plugin manifest)
+uvx --from git+https://github.com/agiletec-inc/airis-agent airis-agent-mcp
+```
+
+You will be prompted once inside Claude Code to allow the `airis-agent` MCP server. After granting access, the `/airis:*` commands delegate real work to these tools:
+
+- `confidence_check` — wraps `ConfidenceChecker` (pre-implementation gate)
+- `repo_index` — generates PROJECT_INDEX.{md,json}
+- `deep_research` — creates wave-based research plans with evidence tracking
 
 ---
 
@@ -189,6 +238,11 @@ Airis Agent's `SessionStart` hook automatically checks:
 
 ### Team-Wide Installation
 
+```bash
+# One-time setup: register marketplace + auto-enable plugin
+uv run airis-agent install-claude-plugin
+```
+
 Add to your project's `.claude/settings.json`:
 
 ```json
@@ -259,7 +313,7 @@ make build-plugin
 make test
 
 # Run specific tests
-uv run pytest tests/airis_agent/ -v
+uv run pytest tests/airis_agent_core/ -v
 
 # With coverage
 make test-coverage
@@ -282,8 +336,8 @@ airis-agent/
 │   ├── api/                   # Public API (confidence, research, index)
 │   ├── cli/                   # CLI commands
 │   ├── execution/             # Parallel execution, reflexion
-│   └── pm_agent/              # PM Agent patterns
-├── tests/airis_agent/         # Test suite
+│   └── airis_agent/           # Core Airis Agent patterns
+├── tests/airis_agent_core/         # Test suite
 └── dist/plugins/airis-agent/  # Built plugin (generated)
 ```
 

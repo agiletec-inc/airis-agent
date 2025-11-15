@@ -45,7 +45,7 @@ $ uv run pytest tests/test_pytest_plugin.py -v
 
 **All 79 PM Agent tests passing**:
 ```bash
-$ uv run pytest tests/pm_agent/ -v
+$ uv run pytest tests/airis_agent_core/ -v
 ======================== 79 passed, 1 warning in 0.03s =========================
 ```
 
@@ -276,7 +276,7 @@ The pytest plugin architecture is **working as designed**:
 
 ### Clean Separation ✅
 
-- **Core (PM Agent)**: Business logic in `src/airis_agent/pm_agent/`
+- **Core (PM Agent)**: Business logic in `src/airis_agent/airis_agent/`
 - **Plugin**: pytest integration in `src/airis_agent/pytest_plugin.py`
 - **Tests**: Use plugin fixtures without knowing implementation
 

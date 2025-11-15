@@ -1,7 +1,7 @@
 # Airis Agent Behavioral Modes Guide 🧠
 
 ## ✅ Quick Verification
-Test modes by using `/sc:` commands - they activate automatically based on task complexity. For full command reference, see [Commands Guide](commands.md).
+Test modes by using `/airis:` commands - they activate automatically based on task complexity. For full command reference, see [Commands Guide](commands.md).
 
 ## Quick Reference Table
 
@@ -9,7 +9,7 @@ Test modes by using `/sc:` commands - they activate automatically based on task 
 |------|---------|---------------|---------------|---------------|
 | **🧠 Brainstorming** | Interactive discovery | "brainstorm", "maybe", vague requests | Socratic questions, requirement elicitation | New project planning, unclear requirements |
 | **🔍 Introspection** | Meta-cognitive analysis | Error recovery, "analyze reasoning" | Transparent thinking markers (🤔, 🎯, 💡) | Debugging, learning, optimization |
-| **🔬 Deep Research** | Systematic investigation mindset | `/sc:research`, investigation keywords | 6-phase workflow, evidence-based reasoning | Technical research, current events, market analysis |
+| **🔬 Deep Research** | Systematic investigation mindset | `/airis:research`, investigation keywords | 6-phase workflow, evidence-based reasoning | Technical research, current events, market analysis |
 | **📋 Task Management** | Complex coordination | >3 steps, >2 directories | Phase breakdown, memory persistence | Multi-step operations, project management |
 | **🎯 Orchestration** | Intelligent tool selection | Multi-tool ops, high resource usage | Optimal tool routing, parallel execution | Complex analysis, performance optimization |
 | **⚡ Token Efficiency** | Compressed communication | High context usage, `--uc` flag | Symbol systems, estimated 30-50% token reduction | Resource constraints, large operations |
@@ -24,8 +24,8 @@ Test modes by using `/sc:` commands - they activate automatically based on task 
 **Quick Examples:**
 ```bash
 # Automatic activation examples
-/sc:brainstorm "mobile app"        # → Socratic discovery questions
-/sc:implement "auth system"        # → Multi-phase coordination  
+/airis:brainstorm "mobile app"        # → Socratic discovery questions
+/airis:implement "auth system"        # → Multi-phase coordination  
 "--uc analyze large-codebase/"     # → Compressed symbol output
 ```
 
@@ -73,7 +73,7 @@ Brainstorming Approach:
 - [ ] Maintains collaborative tone throughout discovery process
 - [ ] Produces structured requirements or technical brief as outcome
 
-**Verify:** `/sc:brainstorm "web app"` should ask about users, features, technology  
+**Verify:** `/airis:brainstorm "web app"` should ask about users, features, technology  
 **Test:** Vague requests should trigger discovery questions, not assumptions  
 **Check:** Mode should persist across follow-up questions in same conversation
 
@@ -126,7 +126,7 @@ Introspective Approach:
 **Purpose**: Research mindset for systematic investigation and evidence-based reasoning.
 
 **Auto-Activation Triggers:**
-- `/sc:research` command invocation
+- `/airis:research` command invocation
 - Research-related keywords: investigate, explore, discover, analyze
 - Questions requiring current information beyond knowledge cutoff
 - Complex research requirements
@@ -164,7 +164,7 @@ Deep Research Mode:
 - [ ] Reports saved to docs/research/ with proper structure
 - [ ] Clear methodology and evidence presentation
 
-**Verify:** `/sc:research "test topic"` should create TodoWrite and execute systematically
+**Verify:** `/airis:research "test topic"` should create TodoWrite and execute systematically
 **Test:** All research should include confidence scores and citations
 **Check:** Reports should be saved to docs/research/ automatically
 
@@ -328,12 +328,12 @@ Standard Approach: Consistent, professional baseline for all tasks
 **Multi-Mode Workflows:**
 ```bash
 # Discovery → Planning → Implementation
-/sc:brainstorm "microservices architecture" --task-manage
+/airis:brainstorm "microservices architecture" --task-manage
 # → Brainstorming: requirement discovery
 # → Task Management: multi-phase coordination
 
 # Analysis with transparency and efficiency
-/sc:analyze legacy-system/ --introspect --uc
+/airis:analyze legacy-system/ --introspect --uc
 # → Introspection: transparent reasoning
 # → Token Efficiency: compressed output
 ```
@@ -350,7 +350,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 **Override Examples:**
 ```bash
 # Force brainstorming on "clear" requirements
-/sc:implement "user login" --brainstorm
+/airis:implement "user login" --brainstorm
 
 # Add reasoning transparency to debugging
 # Debug authentication issue with transparent reasoning
@@ -388,12 +388,12 @@ Standard Approach: Consistent, professional baseline for all tasks
 → 📝 Structured requirements brief
 
 # Phase 2: Planning (Task Management Mode auto-activates)  
-/sc:implement "core productivity features"
+/airis:implement "core productivity features"
 → 📋 Multi-phase breakdown with dependencies
 → 🎯 Phase coordination with quality gates
 
 # Phase 3: Implementation (Orchestration Mode coordinates tools)
-/sc:implement "frontend and backend systems"
+/airis:implement "frontend and backend systems"
 → 🎯 Magic (UI) + Context7 (patterns) + Sequential (architecture)
 → ⚡ Parallel execution optimization
 ```
@@ -418,7 +418,7 @@ Standard Approach: Consistent, professional baseline for all tasks
 **High-Complexity Scenarios:**
 ```bash
 # Large refactoring with multiple constraints
-/sc:improve legacy-system/ --introspect --uc --orchestrate
+/airis:improve legacy-system/ --introspect --uc --orchestrate
 → 🔍 Transparent reasoning (Introspection)
 → ⚡ Compressed communication (Token Efficiency)  
 → 🎯 Optimal tool coordination (Orchestration)
@@ -444,15 +444,15 @@ Standard Approach: Consistent, professional baseline for all tasks
 
 ```bash
 # Force specific mode behaviors
-/sc:command --brainstorm    # Collaborative discovery
-/sc:command --introspect    # Reasoning transparency
-/sc:command --task-manage   # Hierarchical coordination
-/sc:command --orchestrate   # Tool optimization
-/sc:command --uc           # Token compression
+/airis:command --brainstorm    # Collaborative discovery
+/airis:command --introspect    # Reasoning transparency
+/airis:command --task-manage   # Hierarchical coordination
+/airis:command --orchestrate   # Tool optimization
+/airis:command --uc           # Token compression
 
 # Combine multiple modes
-/sc:command --introspect --uc    # Transparent + efficient
-/sc:command --task-manage --orchestrate  # Coordinated + optimized
+/airis:command --introspect --uc    # Transparent + efficient
+/airis:command --task-manage --orchestrate  # Coordinated + optimized
 ```
 
 ---
@@ -482,7 +482,7 @@ For troubleshooting help, see:
 ```bash
 # Problem: Mode gives solutions instead of asking questions
 # Quick Fix: Check request clarity and use explicit flag
-/sc:brainstorm "web app" --brainstorm         # Force discovery mode
+/airis:brainstorm "web app" --brainstorm         # Force discovery mode
 "I have a vague idea about..."                # Use uncertainty language
 "Maybe we could build..."                     # Trigger exploration
 ```
@@ -491,8 +491,8 @@ For troubleshooting help, see:
 ```bash
 # Problem: Simple tasks getting complex coordination
 # Quick Fix: Reduce scope or use simpler commands
-/sc:implement "function" --no-task-manage     # Disable coordination
-/sc:troubleshoot bug.js                       # Use basic commands
+/airis:implement "function" --no-task-manage     # Disable coordination
+/airis:troubleshoot bug.js                       # Use basic commands
 # Check if task really is complex (>3 files, >2 directories)
 ```
 
@@ -500,8 +500,8 @@ For troubleshooting help, see:
 ```bash
 # Problem: Output too compressed or unclear
 # Quick Fix: Disable compression for clarity
-/sc:command --no-uc                           # Disable compression
-/sc:command --verbose                         # Force detailed output
+/airis:command --no-uc                           # Disable compression
+/airis:command --verbose                         # Force detailed output
 # Use when clarity is more important than efficiency
 ```
 
@@ -509,7 +509,7 @@ For troubleshooting help, see:
 ```bash
 # Problem: Too much meta-commentary, not enough action
 # Quick Fix: Disable introspection for direct work
-/sc:command --no-introspect                   # Direct execution
+/airis:command --no-introspect                   # Direct execution
 # Use introspection only for learning and debugging
 ```
 
@@ -517,8 +517,8 @@ For troubleshooting help, see:
 ```bash
 # Problem: Tool coordination causing confusion
 # Quick Fix: Simplify tool usage
-/sc:command --no-mcp                          # Native tools only
-/sc:command --simple                          # Basic execution
+/airis:command --no-mcp                          # Native tools only
+/airis:command --simple                          # Basic execution
 # Check if task complexity justifies orchestration
 ```
 
@@ -545,8 +545,8 @@ For troubleshooting help, see:
 **Level 2: Detailed Help (5-15 min)**
 ```bash
 # Mode-specific diagnostics
-/sc:help modes                            # List all available modes
-/sc:reflect --type mode-status            # Check current mode state
+/airis:help modes                            # List all available modes
+/airis:reflect --type mode-status            # Check current mode state
 # Review request complexity and triggers
 ```
 - See [Common Issues Guide](../reference/common-issues.md) for mode installation problems
@@ -594,10 +594,10 @@ A: Look for these indicators in communication patterns:
 **Q: Can I force specific modes?**
 A: Yes, use manual flags to override automatic detection:
 ```bash
-/sc:command --brainstorm     # Force discovery
-/sc:command --introspect     # Add transparency
-/sc:command --task-manage    # Enable coordination
-/sc:command --uc            # Compress output
+/airis:command --brainstorm     # Force discovery
+/airis:command --introspect     # Add transparency
+/airis:command --task-manage    # Enable coordination
+/airis:command --uc            # Compress output
 ```
 
 **Q: Do modes affect execution?**

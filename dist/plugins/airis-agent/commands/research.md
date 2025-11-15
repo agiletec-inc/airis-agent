@@ -104,6 +104,18 @@ Output format:
 **Primary**: Tavily (web search + extraction)
 **Secondary**: Context7 (official docs), Sequential (reasoning), Playwright (JS content)
 
+Use the Airis Agent MCP server to bootstrap the plan before web calls:
+
+```
+use_tool("airis-agent", "deep_research", {
+  "query": "{user_question}",
+  "depth": "standard",
+  "constraints": ["official docs first"]
+})
+```
+
+The response provides a multi-wave plan, findings list, and citations scaffold—feed that back into Tavily/Context7 execution.
+
 ---
 
 ## Parallel Execution

@@ -111,14 +111,31 @@ If Total < 0.70:   ❌ STOP - Request more context
 
 ## Implementation Details
 
-The Python implementation is available in `src/airis_agent/pm_agent/confidence.py`:
+The Python implementation is available in `src/airis_agent/airis_agent/confidence.py`:
 
 - `ConfidenceChecker.assess(context)` - Main assessment function
 - Detailed check implementations (5 checks with weighted scoring)
-- Usage: `uv run python -m airis_agent.pm_agent.confidence` or via pytest fixture
+- Usage: `uv run python -m airis_agent.airis_agent.confidence` or via pytest fixture
 
 ## ROI
 
 **Token Savings**: Spend 100-200 tokens on confidence check to save 5,000-50,000 tokens on wrong-direction work.
 
 **Success Rate**: 100% precision and recall in production testing.
+
+## MCP Invocation
+
+Call the `confidence_check` tool on the `airis-agent` MCP server to execute the ABI directly:
+
+```
+use_tool("airis-agent", "confidence_check", {
+  "task": "{describe current assignment}",
+  "duplicate_check_complete": true,
+  "architecture_check_complete": true,
+  "official_docs_verified": true,
+  "oss_reference_complete": true,
+  "root_cause_identified": false
+})
+```
+
+The response includes `score`, `action`, and the human-readable checklist above.
