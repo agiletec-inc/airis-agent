@@ -1,6 +1,6 @@
 {
   "plugin_name": "airis-agent",
-  "plugin_version": "1.0.0",
+  "plugin_version": "1.1.0",
   "plugin_description": "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)",
   "author_name": "Agiletec",
   "author_email": "kazuki.nakai@agiletec.net",
