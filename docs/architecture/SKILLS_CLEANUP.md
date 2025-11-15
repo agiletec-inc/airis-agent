@@ -36,7 +36,7 @@ $ wc -c ~/.claude/skills/*/implementation.md ~/.claude/skills/*/SKILL.md
 
 ### 新アーキテクチャ
 
-**PM Agent Core** → `src/airis_agent/pm_agent/`
+**PM Agent Core** → `src/airis_agent/airis_agent/`
 - Python modulesとして実装
 - pytest fixturesで利用
 - `~/.claude/` 汚染なし
@@ -65,7 +65,7 @@ Result: 64KB = 約15K tokens消費
 ### 影響
 
 現在のローカル環境では：
-- ✅ `src/airis_agent/pm_agent/` - 新実装（使用中）
+- ✅ `src/airis_agent/airis_agent/` - 新実装（使用中）
 - ❌ `~/.claude/skills/pm/` - 古いSkill（残骸）
 - ❌ `~/.claude/skills/*-mode/` - 他のSkills（残骸）
 
@@ -154,7 +154,7 @@ rm -rf ~/.claude/skills/pm.backup
 ```bash
 # 新PM Agentが動作することを確認
 make verify
-uv run pytest tests/pm_agent/ -v
+uv run pytest tests/airis_agent_core/ -v
 ```
 
 **4. トークン削減確認**

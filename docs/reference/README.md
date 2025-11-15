@@ -96,8 +96,8 @@ Advanced Analysis: diagnostic-reference.md
 
 | Command Pattern | Purpose | Example |
 |----------------|---------|---------|
-| `/sc:load` | Restore session context | `/sc:load project_name` |
-| `/sc:save` | Preserve session state | `/sc:save "milestone checkpoint"` |
+| `/airis:load` | Restore session context | `/airis:load project_name` |
+| `/airis:save` | Preserve session state | `/airis:save "milestone checkpoint"` |
 | `--think` | Enable structured analysis | `--think analyze performance bottlenecks` |
 | `--brainstorm` | Collaborative requirement discovery | `--brainstorm new authentication system` |
 | `--task-manage` | Multi-step operation orchestration | `--task-manage refactor user module` |
@@ -159,7 +159,7 @@ Advanced Analysis: diagnostic-reference.md
 
 ### Immediate Issues
 - **Command not working**: Check [common-issues.md](./common-issues.md) → Common Airis Agent Problems
-- **Session lost**: Use `/sc:load` → See [Session Management](../user-guide/session-management.md)
+- **Session lost**: Use `/airis:load` → See [Session Management](../user-guide/session-management.md)
 - **Flag confusion**: Check [basic-examples.md](./basic-examples.md) → Flag Usage Examples
 
 ### Development Blockers
@@ -201,7 +201,7 @@ Found outdated information or broken examples?
 ## Expert Tips for Maximum Productivity
 
 ### Daily Workflow Optimization
-1. **Session Management**: Always start with `/sc:load`, end with `/sc:save`
+1. **Session Management**: Always start with `/airis:load`, end with `/airis:save`
 2. **Flag Combinations**: Combine complementary flags: `--think --c7` for documented analysis
 3. **Progressive Complexity**: Start simple, add sophistication incrementally
 4. **Tool Specialization**: Match tools to tasks: Magic for UI, Sequential for analysis

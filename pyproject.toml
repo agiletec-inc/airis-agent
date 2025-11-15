@@ -36,6 +36,7 @@ dependencies = [
     "pytest>=7.0.0",
     "click>=8.0.0",
     "rich>=13.0.0",
+    "mcp>=0.9.0",
 ]
 
 [project.optional-dependencies]
@@ -62,6 +63,7 @@ Documentation = "https://github.com/agiletec-inc/airis-agent/blob/main/README.md
 # ⭐ CLI commands (hatchling format)
 [project.scripts]
 airis-agent = "airis_agent.cli.main:main"
+airis-agent-mcp = "airis_agent.mcp_server:run"
 
 # ⭐ pytest plugin auto-discovery (most important!)
 [project.entry-points.pytest11]

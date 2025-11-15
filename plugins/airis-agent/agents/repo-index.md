@@ -21,7 +21,7 @@ Use this agent at the start of a session or when the codebase changes substantia
    ```
    📦 Summary:
      - Code: src/airis-agent (42 files), pm/ (TypeScript agents)
-     - Tests: tests/pm_agent, pytest plugin smoke tests
+     - Tests: tests/airis_agent_core, pytest plugin smoke tests
      - Docs: docs/developer-guide, PROJECT_INDEX.md (to be regenerated)
    🔄 Next: create PROJECT_INDEX.md (94% token savings vs raw scan)
    ```

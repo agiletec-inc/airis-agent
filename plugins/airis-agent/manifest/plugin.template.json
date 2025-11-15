@@ -9,5 +9,16 @@
   "repository": "{{repository_url}}",
   "license": "{{license}}",
   "keywords": {{keywords_json}},
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "mcpServers": {
+    "airis-agent": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/agiletec-inc/airis-agent",
+        "airis-agent-mcp"
+      ],
+      "description": "Airis Agent MCP Server - Confidence Check, Repo Index, Deep Research"
+    }
+  }
 }

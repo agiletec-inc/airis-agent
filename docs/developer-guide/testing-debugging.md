@@ -143,7 +143,7 @@ npx -y @upstash/context7-mcp@latest --help 2>/dev/null && echo "✅ Context7 ava
 
 ### Issue: Commands Not Working
 
-**Symptom**: `/sc:` context triggers don't produce expected Claude Code behavior
+**Symptom**: `/airis:` context triggers don't produce expected Claude Code behavior
 
 **Verification**:
 ```bash

@@ -4,10 +4,10 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 
 ## 具有持久内存的核心会话命令
 
-### `/sc:load` - 具有持久内存的上下文加载
+### `/airis:load` - 具有持久内存的上下文加载
 **目的**：使用项目上下文和以前会话的持久内存初始化会话
 **MCP 集成**：触发 Serena MCP 读取存储的项目内存
-**语法**：`/sc:load [project_path]`
+**语法**：`/airis:load [project_path]`
 
 **发生什么**：
 - Serena MCP 从以前的会话中读取持久内存文件
@@ -18,19 +18,19 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 **使用案例**：
 ```bash
 # 从持久内存加载现有项目上下文
-/sc:load src/
+/airis:load src/
 
 # 恢复特定项目工作及其完整历史
-/sc:load "authentication system"
+/airis:load "authentication system"
 
 # 使用代码库分析和先前见解初始化
-/sc:load . --analyze
+/airis:load . --analyze
 ```
 
-### `/sc:save` - 会话持久化到内存
+### `/airis:save` - 会话持久化到内存
 **目的**：将当前会话状态和决策保存到持久内存
 **MCP 集成**：触发 Serena MCP 写入内存文件
-**语法**：`/sc:save "会话描述"`
+**语法**：`/airis:save "会话描述"`
 
 **发生什么**：
 - 当前上下文和决策被写入 Serena 内存
@@ -41,19 +41,19 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 **使用案例**：
 ```bash
 # 保存已完成的特性工作以供未来参考
-/sc:save "user authentication implemented with JWT"
+/airis:save "user authentication implemented with JWT"
 
 # 复杂工作期间的检查点
-/sc:save "API design phase complete, ready for implementation"
+/airis:save "API design phase complete, ready for implementation"
 
 # 永久存储架构决策
-/sc:save "microservices architecture decided, service boundaries defined"
+/airis:save "microservices architecture decided, service boundaries defined"
 ```
 
-### `/sc:reflect` - 带有内存上下文的进度评估
+### `/airis:reflect` - 带有内存上下文的进度评估
 **目的**：根据存储的内存分析当前进度并验证会话完整性
 **MCP 集成**：使用 Serena MCP 将当前状态与存储的内存进行比较
-**语法**：`/sc:reflect [--scope project|session]`
+**语法**：`/airis:reflect [--scope project|session]`
 
 **发生什么**：
 - Serena MCP 读取以前的内存和当前上下文
@@ -64,13 +64,13 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 **使用案例**：
 ```bash
 # 根据存储的里程碑评估项目进度
-/sc:reflect --scope project
+/airis:reflect --scope project
 
 # 验证当前会话完整性
-/sc:reflect
+/airis:reflect
 
 # 根据内存检查是否准备进入下一阶段
-/sc:reflect --scope session
+/airis:reflect --scope session
 ```
 
 ## 持久内存架构
@@ -100,45 +100,45 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 ### 新项目初始化
 ```bash
 # 1. 开始全新项目
-/sc:brainstorm "e-commerce platform requirements"
+/airis:brainstorm "e-commerce platform requirements"
 
 # 2. 将初始决策保存到持久内存
-/sc:save "project scope and requirements defined"
+/airis:save "project scope and requirements defined"
 
 # 3. 开始实现规划
-/sc:workflow "user authentication system"
+/airis:workflow "user authentication system"
 
 # 4. 永久保存架构决策
-/sc:save "authentication architecture: JWT + refresh tokens + rate limiting"
+/airis:save "authentication architecture: JWT + refresh tokens + rate limiting"
 ```
 
 ### 恢复现有工作（跨对话）
 ```bash
 # 1. 从持久内存加载以前的上下文
-/sc:load "e-commerce project"
+/airis:load "e-commerce project"
 
 # 2. 根据存储的进度评估当前状态
-/sc:reflect --scope project
+/airis:reflect --scope project
 
 # 3. 使用存储的上下文继续下一阶段
-/sc:implement "payment processing integration"
+/airis:implement "payment processing integration"
 
 # 4. 将进度检查点保存到内存
-/sc:save "payment system integrated with Stripe API"
+/airis:save "payment system integrated with Stripe API"
 ```
 
 ### 长期项目管理
 ```bash
 # 具有持久性的周检查点模式
-/sc:load project-name
-/sc:reflect --scope project
+/airis:load project-name
+/airis:reflect --scope project
 # ... 处理特性 ...
-/sc:save "week N progress: features X, Y, Z completed"
+/airis:save "week N progress: features X, Y, Z completed"
 
 # 具有内存的阶段完成模式
-/sc:reflect --scope project
-/sc:save "phase 1 complete: core authentication and user management"
-/sc:workflow "phase 2: payment and order processing"
+/airis:reflect --scope project
+/airis:save "phase 1 complete: core authentication and user management"
+/airis:workflow "phase 2: payment and order processing"
 ```
 
 ## 跨对话连续性
@@ -149,7 +149,7 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 
 1. **自动上下文恢复**
    ```bash
-   /sc:load project-name
+   /airis:load project-name
    # 自动恢复所有以前的上下文、决策和进度
    ```
 
@@ -186,14 +186,14 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 ## 持久会话的最佳实践
 
 ### 会话开始协议
-1. 对于现有项目始终以 `/sc:load` 开始
-2. 使用 `/sc:reflect` 从内存中了解当前状态
+1. 对于现有项目始终以 `/airis:load` 开始
+2. 使用 `/airis:reflect` 从内存中了解当前状态
 3. 根据持久上下文和存储的模式规划工作
 4. 基于以前的决策和架构选择构建
 
 ### 会话结束协议
-1. 使用 `/sc:reflect` 根据存储的目标评估完整性
-2. 使用 `/sc:save` 保存关键决策以供未来会话
+1. 使用 `/airis:reflect` 根据存储的目标评估完整性
+2. 使用 `/airis:save` 保存关键决策以供未来会话
 3. 在内存中记录下一步和未解决的问题
 4. 为无缝的未来继续保存上下文
 
@@ -218,7 +218,7 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 - 基于项目历史的一致专家建议
 
 ### 命令与持久化的集成
-- 所有 `/sc:` 命令都可以引用和构建持久上下文
+- 所有 `/airis:` 命令都可以引用和构建持久上下文
 - 先前的命令输出和决策在跨会话中可用
 - 工作流程模式被存储和重用
 - 实现历史指导未来的命令决策
@@ -234,9 +234,9 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 - 验证内存文件完整性和格式
 
 **会话间上下文丢失**：
-- 在结束会话前始终使用 `/sc:save`
+- 在结束会话前始终使用 `/airis:save`
 - 使用描述性内存名称以便于检索
-- 定期使用 `/sc:reflect` 验证内存完整性
+- 定期使用 `/airis:reflect` 验证内存完整性
 - 定期备份重要的内存文件
 
 **内存冲突**：
@@ -249,20 +249,20 @@ Airis Agent 通过 Serena MCP 服务器提供持久会话管理，实现在 Clau
 
 **重置会话状态**：
 ```bash
-/sc:load --fresh  # 不带先前上下文开始
-/sc:reflect       # 评估当前状态
+/airis:load --fresh  # 不带先前上下文开始
+/airis:reflect       # 评估当前状态
 ```
 
 **内存清理**：
 ```bash
-/sc:reflect --cleanup  # 删除过时的内存
-/sc:save --consolidate # 合并相关内存
+/airis:reflect --cleanup  # 删除过时的内存
+/airis:save --consolidate # 合并相关内存
 ```
 
 **上下文恢复**：
 ```bash
-/sc:load --recent     # 加载最近的内存
-/sc:reflect --repair  # 识别并修复上下文空白
+/airis:load --recent     # 加载最近的内存
+/airis:reflect --repair  # 识别并修复上下文空白
 ```
 
 ## 高级持久会话模式

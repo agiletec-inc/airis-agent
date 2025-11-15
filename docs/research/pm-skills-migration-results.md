@@ -24,7 +24,7 @@ Total:        3,115 words ≈ 4,049 tokens
 Startup:
   SKILL.md:      67 words ≈    87 tokens  (description only)
 
-When using /sc:pm:
+When using /airis:pm:
   Full load:  3,182 words ≈ 4,136 tokens  (implementation + modules)
 ```
 
@@ -76,7 +76,7 @@ Break-even point: >3% of sessions using PM = net neutral
 - [x] Token calculations verified
 
 ### ⏳ Pending (Next Session)
-- [ ] Test /sc:pm execution with Skills loading
+- [ ] Test /airis:pm execution with Skills loading
 - [ ] Verify on-demand loading works
 - [ ] Confirm caching on subsequent uses
 - [ ] Validate all PM features work identically
@@ -89,7 +89,7 @@ Break-even point: >3% of sessions using PM = net neutral
 - **Result**: PM Agent doesn't pollute global context
 
 ### 2. On-Demand Loading
-- **Trigger**: Only when `/sc:pm` is explicitly called
+- **Trigger**: Only when `/airis:pm` is explicitly called
 - **Benefit**: Pay token cost only when actually using PM
 - **Cache**: Subsequent uses don't reload (Claude Code caching)
 
@@ -135,7 +135,7 @@ Net savings: ~25,500 tokens (98% reduction)
 5. ⏳ Document results (this file)
 
 ### Next Session
-1. Test `/sc:pm` execution
+1. Test `/airis:pm` execution
 2. Verify functionality preserved
 3. Confirm token measurements match predictions
 4. If successful → Migrate task-agent
@@ -158,7 +158,7 @@ Net savings: ~25,500 tokens (98% reduction)
 - [x] Rollback plan in place
 
 ### ⏳ Pending Validation
-- [ ] /sc:pm loads implementation on-demand
+- [ ] /airis:pm loads implementation on-demand
 - [ ] All PM features work identically
 - [ ] Token usage matches predictions
 - [ ] Caching works on repeated use

@@ -1,12 +1,12 @@
 # Airis Agent Commands Guide
 
-Airis Agent provides 25 commands for Claude Code: `/sc:*` commands for workflows and `@agent-*` for specialists.
+Airis Agent provides 25 commands for Claude Code: `/airis:*` commands for workflows and `@agent-*` for specialists.
 
 ## Command Types
 
 | Type | Where Used | Format | Example |
 |------|------------|--------|---------|
-| **Slash Commands** | Claude Code | `/sc:[command]` | `/sc:implement "feature"` |
+| **Slash Commands** | Claude Code | `/airis:[command]` | `/airis:implement "feature"` |
 | **Agents** | Claude Code | `@agent-[name]` | `@agent-security "review"` |
 | **Installation** | Terminal | `Airis Agent [command]` | `Airis Agent install` |
 
@@ -17,27 +17,27 @@ python3 -m Airis Agent --version
 # Claude Code CLI verification: claude --version
 
 # Claude Code: Test commands
-/sc:brainstorm "test project"    # Should ask discovery questions
-/sc:analyze README.md           # Should provide analysis
+/airis:brainstorm "test project"    # Should ask discovery questions
+/airis:analyze README.md           # Should provide analysis
 ```
 
-**Workflow**: `/sc:brainstorm "idea"` → `/sc:implement "feature"` → `/sc:test`
+**Workflow**: `/airis:brainstorm "idea"` → `/airis:implement "feature"` → `/airis:test`
 
 ## 🎯 Understanding Airis Agent Commands
 
 ## How Airis Agent Works
 
-Airis Agent provides behavioral context files that Claude Code reads to adopt specialized behaviors. When you type `/sc:implement`, Claude Code reads the `implement.md` context file and follows its behavioral instructions.
+Airis Agent provides behavioral context files that Claude Code reads to adopt specialized behaviors. When you type `/airis:implement`, Claude Code reads the `implement.md` context file and follows its behavioral instructions.
 
 **Airis Agent commands are NOT executed by software** - they are context triggers that modify Claude Code's behavior through reading specialized instruction files from the framework.
 
 ### Command Types:
-- **Slash Commands** (`/sc:*`): Trigger workflow patterns and behavioral modes
+- **Slash Commands** (`/airis:*`): Trigger workflow patterns and behavioral modes
 - **Agent Invocations** (`@agent-*`): Manually activate specific domain specialists
 - **Flags** (`--think`, `--safe-mode`): Modify command behavior and depth
 
 ### The Context Mechanism:
-1. **User Input**: You type `/sc:implement "auth system"`
+1. **User Input**: You type `/airis:implement "auth system"`
 2. **Context Loading**: Claude Code reads `~/.claude/superagent/Commands/implement.md`
 3. **Behavior Adoption**: Claude applies domain expertise, tool selection, and validation patterns
 4. **Enhanced Output**: Structured implementation with security considerations and best practices
@@ -53,13 +53,13 @@ Airis Agent provides behavioral context files that Claude Code reads to adopt sp
 - `python3 -m Airis Agent --version` - Check installation status
 
 **💬 Claude Code Commands** (Context triggers):
-- `/sc:brainstorm` - Activates requirements discovery context
-- `/sc:implement` - Activates feature development context
+- `/airis:brainstorm` - Activates requirements discovery context
+- `/airis:implement` - Activates feature development context
 - `@agent-security` - Activates security specialist context
 - All commands work inside Claude Code chat interface only
 
 
-> **Quick Start**: Try `/sc:brainstorm "your project idea"` → `/sc:implement "feature name"` → `/sc:test` to experience the core workflow.
+> **Quick Start**: Try `/airis:brainstorm "your project idea"` → `/airis:implement "feature name"` → `/airis:test` to experience the core workflow.
 
 ## 🧪 Testing Your Setup
 
@@ -79,12 +79,12 @@ python3 -m Airis Agent install --list-components | grep mcp
 
 ### 💬 Claude Code Testing (Type in Claude Code Chat)
 ```
-# Test basic /sc: command
-/sc:brainstorm "test project"
+# Test basic /airis: command
+/airis:brainstorm "test project"
 # Example behavior: Interactive requirements discovery starts
 
 # Test command help
-/sc:help
+/airis:help
 # Example behavior: List of available commands
 ```
 
@@ -96,11 +96,11 @@ python3 -m Airis Agent install --list-components | grep mcp
 |-------------|--------------|--------|---------|----------|
 | **🖥️ Installation** | Terminal/CMD | `Airis Agent [command]` | Setup and maintenance | `Airis Agent install` |
 | **🔧 Configuration** | Terminal/CMD | `python3 -m Airis Agent [command]` | Advanced configuration | `python3 -m Airis Agent --version` |
-| **💬 Slash Commands** | Claude Code | `/sc:[command]` | Workflow automation | `/sc:implement "feature"` |
+| **💬 Slash Commands** | Claude Code | `/airis:[command]` | Workflow automation | `/airis:implement "feature"` |
 | **🤖 Agent Invocation** | Claude Code | `@agent-[name]` | Manual specialist activation | `@agent-security "review"` |
-| **⚡ Enhanced Flags** | Claude Code | `/sc:[command] --flags` | Behavior modification | `/sc:analyze --think-hard` |
+| **⚡ Enhanced Flags** | Claude Code | `/airis:[command] --flags` | Behavior modification | `/airis:analyze --think-hard` |
 
-> **Remember**: All `/sc:` commands and `@agent-` invocations work inside Claude Code chat, not your terminal. They trigger Claude Code to read specific context files from the Airis Agent framework.
+> **Remember**: All `/airis:` commands and `@agent-` invocations work inside Claude Code chat, not your terminal. They trigger Claude Code to read specific context files from the Airis Agent framework.
 
 ## Table of Contents
 
@@ -116,32 +116,32 @@ python3 -m Airis Agent install --list-components | grep mcp
 
 **Core workflow commands for immediate productivity:**
 
-### `/sc:brainstorm` - Project Discovery
+### `/airis:brainstorm` - Project Discovery
 **Purpose**: Interactive requirements discovery and project planning  
-**Syntax**: `/sc:brainstorm "your idea"` `[--strategy systematic|creative]`  
+**Syntax**: `/airis:brainstorm "your idea"` `[--strategy systematic|creative]`  
 
 **Use Cases**: 
-- New project planning: `/sc:brainstorm "e-commerce platform"`
-- Feature exploration: `/sc:brainstorm "user authentication system"`  
-- Problem solving: `/sc:brainstorm "slow database queries"`
+- New project planning: `/airis:brainstorm "e-commerce platform"`
+- Feature exploration: `/airis:brainstorm "user authentication system"`  
+- Problem solving: `/airis:brainstorm "slow database queries"`
 
-### `/sc:help` - Command Reference
+### `/airis:help` - Command Reference
 **Purpose**: Displays a list of all available `/sc` commands and their descriptions.
-**Syntax**: `/sc:help`
+**Syntax**: `/airis:help`
 
 **Use Cases**:
-- Discovering available commands: `/sc:help`
-- Getting a quick reminder of command names: `/sc:help`
+- Discovering available commands: `/airis:help`
+- Getting a quick reminder of command names: `/airis:help`
 
-### `/sc:research` - Deep Research Command
+### `/airis:research` - Deep Research Command
 **Purpose**: Comprehensive web research with adaptive planning and intelligent search  
-**Syntax**: `/sc:research "[query]"` `[--depth quick|standard|deep|exhaustive] [--strategy planning|intent|unified]`
+**Syntax**: `/airis:research "[query]"` `[--depth quick|standard|deep|exhaustive] [--strategy planning|intent|unified]`
 
 **Use Cases**:
-- Technical research: `/sc:research "latest React 19 features" --depth deep`
-- Market analysis: `/sc:research "AI coding assistant landscape 2024" --strategy unified`
-- Academic investigation: `/sc:research "quantum computing breakthroughs" --depth exhaustive`
-- Current events: `/sc:research "latest AI developments 2024"`
+- Technical research: `/airis:research "latest React 19 features" --depth deep`
+- Market analysis: `/airis:research "AI coding assistant landscape 2024" --strategy unified`
+- Academic investigation: `/airis:research "quantum computing breakthroughs" --depth exhaustive`
+- Current events: `/airis:research "latest AI developments 2024"`
 
 **Key Capabilities**:
 - **6-Phase Workflow**: Understand → Plan → TodoWrite → Execute → Track → Validate
@@ -151,94 +151,94 @@ python3 -m Airis Agent install --list-components | grep mcp
 - **Evidence Management**: Clear citations with relevance scoring
 - **Output Standards**: Reports saved to `docs/research/[topic]_[timestamp].md`
 
-### `/sc:implement` - Feature Development  
+### `/airis:implement` - Feature Development  
 **Purpose**: Full-stack feature implementation with intelligent specialist routing  
-**Syntax**: `/sc:implement "feature description"` `[--type frontend|backend|fullstack] [--focus security|performance]`  
+**Syntax**: `/airis:implement "feature description"` `[--type frontend|backend|fullstack] [--focus security|performance]`  
 
 **Use Cases**:
-- Authentication: `/sc:implement "JWT login system"`
-- UI components: `/sc:implement "responsive dashboard"`
-- APIs: `/sc:implement "REST user endpoints"`
-- Database: `/sc:implement "user schema with relationships"`
+- Authentication: `/airis:implement "JWT login system"`
+- UI components: `/airis:implement "responsive dashboard"`
+- APIs: `/airis:implement "REST user endpoints"`
+- Database: `/airis:implement "user schema with relationships"`
 
-### `/sc:analyze` - Code Assessment
+### `/airis:analyze` - Code Assessment
 **Purpose**: Comprehensive code analysis across quality, security, and performance  
-**Syntax**: `/sc:analyze [path]` `[--focus quality|security|performance|architecture]`
+**Syntax**: `/airis:analyze [path]` `[--focus quality|security|performance|architecture]`
 
 **Use Cases**:
-- Project health: `/sc:analyze .`
-- Security audit: `/sc:analyze --focus security`
-- Performance review: `/sc:analyze --focus performance`
+- Project health: `/airis:analyze .`
+- Security audit: `/airis:analyze --focus security`
+- Performance review: `/airis:analyze --focus performance`
 
-### `/sc:business-panel` - Strategic Business Analysis
+### `/airis:business-panel` - Strategic Business Analysis
 **Purpose**: Multi-expert business strategy analysis with 9 renowned thought leaders  
-**Syntax**: `/sc:business-panel "content"` `[--mode discussion|debate|socratic] [--experts "name1,name2"]`
+**Syntax**: `/airis:business-panel "content"` `[--mode discussion|debate|socratic] [--experts "name1,name2"]`
 
 **Use Cases**:
-- Strategy evaluation: `/sc:business-panel "our go-to-market strategy"`
-- Competitive analysis: `/sc:business-panel @competitor_analysis.pdf --mode debate`
-- Innovation assessment: `/sc:business-panel "AI product idea" --experts "christensen,drucker"`
-- Strategic learning: `/sc:business-panel "competitive strategy" --mode socratic`
+- Strategy evaluation: `/airis:business-panel "our go-to-market strategy"`
+- Competitive analysis: `/airis:business-panel @competitor_analysis.pdf --mode debate`
+- Innovation assessment: `/airis:business-panel "AI product idea" --experts "christensen,drucker"`
+- Strategic learning: `/airis:business-panel "competitive strategy" --mode socratic`
 
 **Expert Panel**: Christensen, Porter, Drucker, Godin, Kim/Mauborgne, Collins, Taleb, Meadows, Doumont
 
-### `/sc:spec-panel` - Expert Specification Review
+### `/airis:spec-panel` - Expert Specification Review
 **Purpose**: Multi-expert specification review and improvement using renowned specification and software engineering experts  
-**Syntax**: `/sc:spec-panel [content|@file]` `[--mode discussion|critique|socratic] [--focus requirements|architecture|testing|compliance]`
+**Syntax**: `/airis:spec-panel [content|@file]` `[--mode discussion|critique|socratic] [--focus requirements|architecture|testing|compliance]`
 
 **Use Cases**:
-- Specification review: `/sc:spec-panel @api_spec.yml --mode critique --focus requirements,architecture`
-- Requirements workshop: `/sc:spec-panel "user story content" --mode discussion`
-- Architecture validation: `/sc:spec-panel @microservice.spec.yml --mode socratic --focus architecture`
-- Compliance review: `/sc:spec-panel @security_requirements.yml --focus compliance`
-- Iterative improvement: `/sc:spec-panel @complex_system.spec.yml --iterations 3`
+- Specification review: `/airis:spec-panel @api_spec.yml --mode critique --focus requirements,architecture`
+- Requirements workshop: `/airis:spec-panel "user story content" --mode discussion`
+- Architecture validation: `/airis:spec-panel @microservice.spec.yml --mode socratic --focus architecture`
+- Compliance review: `/airis:spec-panel @security_requirements.yml --focus compliance`
+- Iterative improvement: `/airis:spec-panel @complex_system.spec.yml --iterations 3`
 
 **Expert Panel**: Wiegers, Adzic, Cockburn, Fowler, Nygard, Newman, Hohpe, Crispin, Gregory, Hightower
 
-### `/sc:troubleshoot` - Problem Diagnosis
+### `/airis:troubleshoot` - Problem Diagnosis
 **Purpose**: Systematic issue diagnosis with root cause analysis  
-**Syntax**: `/sc:troubleshoot "issue description"` `[--type build|runtime|performance]`
+**Syntax**: `/airis:troubleshoot "issue description"` `[--type build|runtime|performance]`
 
 **Use Cases**:
-- Runtime errors: `/sc:troubleshoot "500 error on login"`
-- Build failures: `/sc:troubleshoot --type build`
-- Performance problems: `/sc:troubleshoot "slow page load"`
+- Runtime errors: `/airis:troubleshoot "500 error on login"`
+- Build failures: `/airis:troubleshoot --type build`
+- Performance problems: `/airis:troubleshoot "slow page load"`
 
-### `/sc:test` - Quality Assurance
+### `/airis:test` - Quality Assurance
 **Purpose**: Comprehensive testing with coverage analysis  
-**Syntax**: `/sc:test` `[--type unit|integration|e2e] [--coverage] [--fix]`
+**Syntax**: `/airis:test` `[--type unit|integration|e2e] [--coverage] [--fix]`
 
 **Use Cases**:
-- Full test suite: `/sc:test --coverage`
-- Unit testing: `/sc:test --type unit --watch`
-- E2E validation: `/sc:test --type e2e`
+- Full test suite: `/airis:test --coverage`
+- Unit testing: `/airis:test --type unit --watch`
+- E2E validation: `/airis:test --type e2e`
 
-### `/sc:improve` - Code Enhancement  
+### `/airis:improve` - Code Enhancement  
 **Purpose**: Apply systematic code improvements and optimizations  
-**Syntax**: `/sc:improve [path]` `[--type performance|quality|security] [--preview]`
+**Syntax**: `/airis:improve [path]` `[--type performance|quality|security] [--preview]`
 
 **Use Cases**:
-- General improvements: `/sc:improve src/`
-- Performance optimization: `/sc:improve --type performance`
-- Security hardening: `/sc:improve --type security`
+- General improvements: `/airis:improve src/`
+- Performance optimization: `/airis:improve --type performance`
+- Security hardening: `/airis:improve --type security`
 
-### `/sc:document` - Documentation Generation
+### `/airis:document` - Documentation Generation
 **Purpose**: Generate comprehensive documentation for code and APIs  
-**Syntax**: `/sc:document [path]` `[--type api|user-guide|technical] [--format markdown|html]`
+**Syntax**: `/airis:document [path]` `[--type api|user-guide|technical] [--format markdown|html]`
 
 **Use Cases**:
-- API docs: `/sc:document --type api`
-- User guides: `/sc:document --type user-guide`
-- Technical docs: `/sc:document --type technical`
+- API docs: `/airis:document --type api`
+- User guides: `/airis:document --type user-guide`
+- Technical docs: `/airis:document --type technical`
 
-### `/sc:workflow` - Implementation Planning
+### `/airis:workflow` - Implementation Planning
 **Purpose**: Generate structured implementation plans from requirements  
-**Syntax**: `/sc:workflow "feature description"` `[--strategy agile|waterfall] [--format markdown]`
+**Syntax**: `/airis:workflow "feature description"` `[--strategy agile|waterfall] [--format markdown]`
 
 **Use Cases**:
-- Feature planning: `/sc:workflow "user authentication"`
-- Sprint planning: `/sc:workflow --strategy agile`
-- Architecture planning: `/sc:workflow "microservices migration"`
+- Feature planning: `/airis:workflow "user authentication"`
+- Sprint planning: `/airis:workflow --strategy agile`
+- Architecture planning: `/airis:workflow "microservices migration"`
 
 ---
 
@@ -248,37 +248,37 @@ python3 -m Airis Agent install --list-components | grep mcp
 
 ### New Project Setup
 ```bash
-/sc:brainstorm "project concept"      # Define requirements
-/sc:design "system architecture"      # Create technical design  
-/sc:workflow "implementation plan"    # Generate development roadmap
+/airis:brainstorm "project concept"      # Define requirements
+/airis:design "system architecture"      # Create technical design  
+/airis:workflow "implementation plan"    # Generate development roadmap
 ```
 
 ### Feature Development
 ```bash
-/sc:implement "feature name"          # Build the feature
-/sc:test --coverage                   # Validate with tests
-/sc:document --type api               # Generate documentation  
+/airis:implement "feature name"          # Build the feature
+/airis:test --coverage                   # Validate with tests
+/airis:document --type api               # Generate documentation  
 ```
 
 ### Code Quality Improvement
 ```bash
-/sc:analyze --focus quality           # Assess current state
-/sc:improve --preview                 # Preview improvements
-/sc:test --coverage                   # Validate changes
+/airis:analyze --focus quality           # Assess current state
+/airis:improve --preview                 # Preview improvements
+/airis:test --coverage                   # Validate changes
 ```
 
 ### Bug Investigation
 ```bash
-/sc:troubleshoot "issue description"  # Diagnose the problem
-/sc:analyze --focus problem-area      # Deep analysis
-/sc:improve --fix --safe-mode         # Apply targeted fixes
+/airis:troubleshoot "issue description"  # Diagnose the problem
+/airis:analyze --focus problem-area      # Deep analysis
+/airis:improve --fix --safe-mode         # Apply targeted fixes
 ```
 
 ### Specification Development
 ```bash
-/sc:spec-panel @existing_spec.yml --mode critique  # Expert review
-/sc:spec-panel @improved_spec.yml --iterations 2    # Iterative refinement
-/sc:document --type technical                        # Generate documentation
+/airis:spec-panel @existing_spec.yml --mode critique  # Expert review
+/airis:spec-panel @improved_spec.yml --iterations 2    # Iterative refinement
+/airis:document --type technical                        # Generate documentation
 ```
 
 ## Full Command Reference
@@ -356,7 +356,7 @@ python3 -m Airis Agent install --list-components | grep mcp
 - **Processing delays**: Use `--no-mcp` to test without MCP servers
 
 **Quick Fixes:**
-- Reset session: `/sc:load` to reinitialize
+- Reset session: `/airis:load` to reinitialize
 - Check status: `Airis Agent install --list-components`
 - Get help: [Troubleshooting Guide](../reference/troubleshooting.md)
 

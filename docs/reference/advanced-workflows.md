@@ -29,15 +29,15 @@
 @agent-security "define security requirements for payments"
 
 # Step 3: Backend implementation
-/sc:implement "API with authentication and payment processing"
+/airis:implement "API with authentication and payment processing"
 # Claude uses accumulated context from previous steps
 
 # Step 4: Frontend implementation
 @agent-frontend-architect "design responsive UI"
-/sc:implement "React frontend with TypeScript"
+/airis:implement "React frontend with TypeScript"
 
 # Step 5: Review
-/sc:analyze . --focus quality
+/airis:analyze . --focus quality
 
 # Note: Each step builds context within the conversation
 # No actual coordination or parallel execution occurs
@@ -48,17 +48,17 @@
 ```bash
 # Complex troubleshooting approach
 # Step 1: Problem understanding
-/sc:troubleshoot "application performance issues"
+/airis:troubleshoot "application performance issues"
 
 # Step 2: Expert analysis
 @agent-performance-engineer "analyze potential bottlenecks"
 @agent-backend-architect "review architecture for issues"
 
 # Step 3: Solution design
-/sc:design "performance improvement plan"
+/airis:design "performance improvement plan"
 
 # Step 4: Implementation
-/sc:implement "performance optimizations"
+/airis:implement "performance optimizations"
 
 # Context accumulates but doesn't execute
 ```
@@ -70,16 +70,16 @@
 ```bash
 # Starting a new project
 # Discovery phase
-/sc:brainstorm "project concept"
+/airis:brainstorm "project concept"
 # Claude explores requirements
 
 # Planning phase
-/sc:design "system architecture"
+/airis:design "system architecture"
 @agent-system-architect "review and refine"
 
 # Documentation
-/sc:document --type architecture
-/sc:save "project-plan"
+/airis:document --type architecture
+/airis:save "project-plan"
 # Creates summary for your records (not persistent storage)
 ```
 
@@ -88,16 +88,16 @@
 ```bash
 # Building features incrementally
 # Feature 1: Authentication
-/sc:implement "user authentication"
-/sc:test --focus security
-/sc:document --type api
+/airis:implement "user authentication"
+/airis:test --focus security
+/airis:document --type api
 
 # Feature 2: User Profiles (builds on auth context)
-/sc:implement "user profile management"
-/sc:test --focus functionality
+/airis:implement "user profile management"
+/airis:test --focus functionality
 
 # Feature 3: Admin Dashboard (uses previous context)
-/sc:implement "admin dashboard"
+/airis:implement "admin dashboard"
 @agent-frontend-architect "ensure consistency"
 
 # Each feature builds on conversation context
@@ -108,21 +108,21 @@
 ```bash
 # Legacy system migration
 # Phase 1: Analysis
-/sc:load legacy-system/
-/sc:analyze . --focus architecture --verbose
+/airis:load legacy-system/
+/airis:analyze . --focus architecture --verbose
 # Claude builds understanding
 
 # Phase 2: Planning
 @agent-system-architect "design migration strategy"
-/sc:workflow "create migration plan"
+/airis:workflow "create migration plan"
 
 # Phase 3: Implementation
-/sc:implement "compatibility layer"
-/sc:implement "new system components"
+/airis:implement "compatibility layer"
+/airis:implement "new system components"
 
 # Phase 4: Validation
-/sc:test --focus compatibility
-/sc:document --type migration
+/airis:test --focus compatibility
+/airis:document --type migration
 
 # Manual phases, not automated workflow
 ```
@@ -134,17 +134,17 @@
 ```bash
 # Systematic analysis of large projects
 # Overview
-/sc:analyze . --overview
+/airis:analyze . --overview
 # Get high-level understanding
 
 # Focused analysis by module
-/sc:analyze auth-module/ --focus security
-/sc:analyze api-module/ --focus quality
-/sc:analyze frontend/ --focus performance
+/airis:analyze auth-module/ --focus security
+/airis:analyze api-module/ --focus quality
+/airis:analyze frontend/ --focus performance
 
 # Synthesis
 @agent-system-architect "synthesize findings"
-/sc:workflow "improvement recommendations"
+/airis:workflow "improvement recommendations"
 
 # Note: Sequential analysis, not parallel
 ```
@@ -155,18 +155,18 @@
 # Projects with diverse tech stacks
 # Backend (Python)
 @agent-python-expert "implement FastAPI backend"
-/sc:implement "Python API with async support"
+/airis:implement "Python API with async support"
 
 # Frontend (React)
 @agent-frontend-architect "implement React frontend"
-/sc:implement "TypeScript React application"
+/airis:implement "TypeScript React application"
 
 # Mobile (React Native)
-/sc:implement "React Native mobile app"
+/airis:implement "React Native mobile app"
 
 # Infrastructure
 @agent-devops-architect "design deployment"
-/sc:implement "Docker configuration"
+/airis:implement "Docker configuration"
 
 # Each technology addressed sequentially
 ```
@@ -178,11 +178,11 @@
 ```bash
 # Multi-aspect code review
 # Quality review
-/sc:analyze . --focus quality
+/airis:analyze . --focus quality
 @agent-quality-engineer "identify improvements"
 
 # Security review
-/sc:analyze . --focus security
+/airis:analyze . --focus security
 @agent-security "check for vulnerabilities"
 
 # Architecture review
@@ -192,7 +192,7 @@
 @agent-performance-engineer "suggest optimizations"
 
 # Consolidated improvements
-/sc:improve . --fix
+/airis:improve . --fix
 
 # Sequential reviews, not parallel analysis
 ```
@@ -202,22 +202,22 @@
 ```bash
 # Comprehensive testing approach
 # Test planning
-/sc:design "testing strategy"
+/airis:design "testing strategy"
 
 # Unit tests
-/sc:test --type unit
+/airis:test --type unit
 # Claude generates unit test code
 
 # Integration tests
-/sc:test --type integration
+/airis:test --type integration
 # Claude generates integration test code
 
 # E2E tests
-/sc:test --type e2e
+/airis:test --type e2e
 # Claude suggests E2E test scenarios
 
 # Documentation
-/sc:document --type testing
+/airis:document --type testing
 
 # Test code generation, not execution
 ```
@@ -229,22 +229,22 @@
 ```bash
 # Managing context in long conversations
 # Start with context
-/sc:load project/
+/airis:load project/
 
 # Work progressively
-/sc:implement "feature A"
-/sc:implement "feature B"
+/airis:implement "feature A"
+/airis:implement "feature B"
 # Context accumulates
 
 # Create checkpoint
-/sc:save "session-checkpoint"
+/airis:save "session-checkpoint"
 # Creates summary for your notes
 
 # Continue work
-/sc:implement "feature C"
+/airis:implement "feature C"
 
 # Final summary
-/sc:reflect
+/airis:reflect
 # Reviews conversation progress
 ```
 
@@ -253,16 +253,16 @@
 ```bash
 # When conversation gets too long
 # Save current state
-/sc:save "work-complete"
+/airis:save "work-complete"
 # Copy output for next conversation
 
 # In new conversation:
-/sc:load project/
+/airis:load project/
 "Previous work: [paste summary]"
 # Manually restore context
 
 # Continue work
-/sc:implement "next feature"
+/airis:implement "next feature"
 ```
 
 ## Important Clarifications
@@ -287,7 +287,7 @@
 
 1. **Keep Related Work Together**: Don't split related tasks across conversations
 2. **Build Context Progressively**: Start broad, then focus
-3. **Document Key Decisions**: Use `/sc:save` for important points
+3. **Document Key Decisions**: Use `/airis:save` for important points
 4. **Manage Conversation Length**: Start new conversation if too long
 
 ### Command Sequencing

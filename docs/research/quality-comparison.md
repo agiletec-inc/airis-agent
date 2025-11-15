@@ -201,7 +201,7 @@ The TypeScript refactoring is **production-ready** and demonstrates:
 
 ### Python
 ```bash
-uv run python -m pytest tests/pm_agent/ -v
+uv run python -m pytest tests/airis_agent_core/ -v
 # Result: 56 passed, 1 warning in 0.06s
 ```
 

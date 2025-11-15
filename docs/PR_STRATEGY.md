@@ -157,7 +157,7 @@ $ make verify
 ### Phase 2完了証拠
 
 ```bash
-$ uv run pytest tests/pm_agent/ tests/test_pytest_plugin.py -v
+$ uv run pytest tests/airis_agent_core/ tests/test_pytest_plugin.py -v
 ======================== 97 passed in 0.05s =========================
 
 PM Agent Tests:        79 passed ✅
@@ -168,7 +168,7 @@ Plugin Integration:    18 passed ✅
 
 **PM Agent読み込み比較**:
 - Before: `setup/components/` 展開 → 約15K tokens
-- After: `src/airis_agent/pm_agent/` import → 約3K tokens
+- After: `src/airis_agent/airis_agent/` import → 約3K tokens
 - **削減率**: 80%
 
 ---

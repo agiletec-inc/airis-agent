@@ -211,7 +211,7 @@ Pattern 4: Dual Storage Strategy
   - テストスイート実行
 
 - [ ] **テスト実行 & 検証**
-  - 全テスト実行: `pytest tests/pm_agent/ -v`
+  - 全テスト実行: `pytest tests/airis_agent_core/ -v`
   - 94%ハルシネーション検出率確認
   - パフォーマンスベンチマーク検証
 
@@ -261,7 +261,7 @@ Pattern 4: Dual Storage Strategy
 
 ```yaml
 Complete:
-  ✅ tests/pm_agent/ (2,760行)
+  ✅ tests/airis_agent_core/ (2,760行)
   ✅ docs/memory/WORKFLOW_METRICS_SCHEMA.md
   ✅ docs/memory/workflow_metrics.jsonl (初期化)
   ✅ scripts/analyze_workflow_metrics.py

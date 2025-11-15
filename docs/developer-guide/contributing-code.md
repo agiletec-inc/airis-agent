@@ -60,7 +60,7 @@ superagent/
 ├── superagent/           # Framework components (the source of truth)
 │   ├── Core/             # PRINCIPLES.md, RULES.md, FLAGS.md
 │   ├── Agents/           # 15 specialized domain experts
-│   ├── Commands/         # 21 context trigger patterns (/sc: behavioral instructions)
+│   ├── Commands/         # 21 context trigger patterns (/airis: behavioral instructions)
 │   ├── Modes/            # 6 behavioral modification patterns
 │   └── MCP/              # 6 MCP server configurations
 ├── setup/                # Python installation system
@@ -81,7 +81,7 @@ superagent/
 User Input → Claude Code → Reads Airis Agent Context → Modified Behavior → Enhanced Output
 ```
 
-1. User types `/sc:implement "auth system"` **in Claude Code conversation** (not terminal)
+1. User types `/airis:implement "auth system"` **in Claude Code conversation** (not terminal)
 2. Claude Code reads `superagent/Commands/implement.md`
 3. Command activates security-engineer agent context
 4. Context7 MCP provides authentication patterns
@@ -259,7 +259,7 @@ mcp-servers: [context7, sequential]
 personas: [architect, engineer]
 ---
 
-# /sc:command-name
+# /airis:command-name
 
 ## Triggers
 - When to use this command
@@ -268,7 +268,7 @@ personas: [architect, engineer]
 ## Usage
 Type in Claude Code conversation:
 ```
-/sc:command-name [target] [--options]
+/airis:command-name [target] [--options]
 ```
 **Note**: This is a context trigger pattern, not a terminal command.
 

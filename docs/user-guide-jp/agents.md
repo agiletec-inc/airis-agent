@@ -16,19 +16,19 @@ Airis Agent は、Claude Code が専門知識を得るために呼び出すこ�
 # Example behavior: Python expert responds with detailed explanation
 
 # Test security agent auto-activation
-/sc:implement "JWT authentication"
+/airis:implement "JWT authentication"
 # Example behavior: Security engineer should activate automatically
 
 # Test frontend agent auto-activation
-/sc:implement "responsive navigation component"  
+/airis:implement "responsive navigation component"  
 # Example behavior: Frontend architect + Magic MCP should activate
 
 # Test systematic analysis
-/sc:troubleshoot "slow API performance"
+/airis:troubleshoot "slow API performance"
 # Example behavior: Root-cause analyst + performance engineer activation
 
 # Test combining manual and auto
-/sc:analyze src/
+/airis:analyze src/
 @agent-refactoring-expert "suggest improvements"
 # Example behavior: Analysis followed by refactoring suggestions
 ```
@@ -72,9 +72,9 @@ Airis Agent は、Claude Code が専門知識を得るために呼び出すこ�
 
 ```shell
 # These commands auto-activate relevant agents
-/sc:implement "JWT authentication"  # → security-engineer auto-activates
-/sc:design "React dashboard"        # → frontend-architect auto-activates
-/sc:troubleshoot "memory leak"      # → performance-engineer auto-activates
+/airis:implement "JWT authentication"  # → security-engineer auto-activates
+/airis:design "React dashboard"        # → frontend-architect auto-activates
+/airis:troubleshoot "memory leak"      # → performance-engineer auto-activates
 ```
 
 **MCP サーバーは**、Context7 (ドキュメント作成)、Sequential (分析)、Magic (UI)、Playwright (テスト)、Morphllm (コード変換) などの専用ツールを通じて拡張機能を提供します。
@@ -135,16 +135,16 @@ Task Analysis →
 
 ```shell
 # Commands that trigger auto-activation
-/sc:implement "JWT authentication with rate limiting"
+/airis:implement "JWT authentication with rate limiting"
 # → Triggers: security-engineer + backend-architect + quality-engineer
 
-/sc:design "accessible React dashboard with documentation"
+/airis:design "accessible React dashboard with documentation"
 # → Triggers: frontend-architect + learning-guide + technical-writer  
 
-/sc:troubleshoot "slow deployment pipeline with intermittent failures"
+/airis:troubleshoot "slow deployment pipeline with intermittent failures"
 # → Triggers: devops-architect + performance-engineer + root-cause-analyst
 
-/sc:audit "payment processing security vulnerabilities"
+/airis:audit "payment processing security vulnerabilities"
 # → Triggers: security-engineer + quality-engineer + refactoring-expert
 ```
 
@@ -154,7 +154,7 @@ Task Analysis →
 
 ```shell
 # Start with command (auto-activation)
-/sc:implement "user profile system"
+/airis:implement "user profile system"
 
 # Then explicitly add specialist review
 @agent-security "review the profile system for OWASP compliance"
@@ -206,7 +206,7 @@ Task Analysis →
 - [ ] スケーラビリティと信頼性の考慮を含む
 - [ ] テクノロジースタックの推奨事項を提供する
 
-**検証:** `/sc:design "microservices platform"`システム アーキテクトをアクティブ化する必要があります。  
+**検証:** `/airis:design "microservices platform"`システム アーキテクトをアクティブ化する必要があります。  
 **テスト:**出力には、サービスの分解と統合パターンが含まれている必要があります。  
 **チェック:**インフラストラクチャに関する懸念事項については、DevOps アーキテクトと調整する必要があります。
 
@@ -638,7 +638,7 @@ Task Analysis →
 
 - **エージェントのアクティベーションなし**: ドメインキーワード「セキュリティ」、「パフォーマンス」、「フロントエンド」を使用します
 - **間違ったエージェントが選択されました**: エージェントのドキュメントでトリガーキーワードを確認してください
-- **エージェントが多すぎる場合**：主要ドメインのキーワードに焦点を当てるか、`/sc:focus [domain]`
+- **エージェントが多すぎる場合**：主要ドメインのキーワードに焦点を当てるか、`/airis:focus [domain]`
 - **エージェントが連携していない**: タスクの複雑さを増やすか、マルチドメインキーワードを使用する
 - **エージェントの専門知識の不一致**: より具体的な技術用語を使用する
 
@@ -649,7 +649,7 @@ Task Analysis →
 - **エージェントの強制アクティベーション**: リクエストで明示的なドメインキーワードを使用する
 - **エージェントの選択をリセット**: エージェントの状態をリセットするには、Claude Code セッションを再起動します。
 - **エージェントのパターンを確認する**: エージェントのドキュメントでトリガーキーワードを確認する
-- **基本的なアクティベーションをテストする**:`/sc:implement "security auth"`セキュリティエンジニアのテストを試みる
+- **基本的なアクティベーションをテストする**:`/airis:implement "security auth"`セキュリティエンジニアのテストを試みる
 
 ### エージェント固有のトラブルシューティング
 
@@ -751,7 +751,7 @@ Task Analysis →
 **エージェントが多すぎますか?**
 
 - 主要なドメインのニーズにキーワードを集中させる
-- `/sc:focus [domain]`範囲を制限するために使用する
+- `/airis:focus [domain]`範囲を制限するために使用する
 - 特定のエージェントから始めて、必要に応じて拡張します
 
 **エージェントが間違っていますか?**
@@ -790,14 +790,14 @@ Task Analysis →
 
 |指示|主な薬剤|サポートエージェント|
 |---|---|---|
-|`/sc:implement`|ドメインアーキテクト（フロントエンド、バックエンド）|セキュリティエンジニア、品質エンジニア|
-|`/sc:analyze`|品質エンジニア、セキュリティエンジニア|パフォーマンスエンジニア、根本原因アナリスト|
-|`/sc:troubleshoot`|根本原因分析者|ドメインスペシャリスト、パフォーマンスエンジニア|
-|`/sc:improve`|リファクタリングの専門家|品質エンジニア、パフォーマンスエンジニア|
-|`/sc:document`|テクニカルライター|ドメインスペシャリスト、学習ガイド|
-|`/sc:design`|システムアーキテクト|ドメインアーキテクト、要件アナリスト|
-|`/sc:test`|品質エンジニア|セキュリティエンジニア、パフォーマンスエンジニア|
-|`/sc:explain`|学習ガイド|テクニカルライター、ドメインスペシャリスト|
+|`/airis:implement`|ドメインアーキテクト（フロントエンド、バックエンド）|セキュリティエンジニア、品質エンジニア|
+|`/airis:analyze`|品質エンジニア、セキュリティエンジニア|パフォーマンスエンジニア、根本原因アナリスト|
+|`/airis:troubleshoot`|根本原因分析者|ドメインスペシャリスト、パフォーマンスエンジニア|
+|`/airis:improve`|リファクタリングの専門家|品質エンジニア、パフォーマンスエンジニア|
+|`/airis:document`|テクニカルライター|ドメインスペシャリスト、学習ガイド|
+|`/airis:design`|システムアーキテクト|ドメインアーキテクト、要件アナリスト|
+|`/airis:test`|品質エンジニア|セキュリティエンジニア、パフォーマンスエンジニア|
+|`/airis:explain`|学習ガイド|テクニカルライター、ドメインスペシャリスト|
 
 ### 効果的な薬剤の組み合わせ
 
@@ -865,15 +865,15 @@ Task Analysis →
 
 ```shell
 # Full-stack feature development
-/sc:implement "responsive user dashboard with real-time notifications"
+/airis:implement "responsive user dashboard with real-time notifications"
 # → frontend-architect + backend-architect + performance-engineer
 
 # API development with documentation
-/sc:create "REST API for payment processing with comprehensive docs"  
+/airis:create "REST API for payment processing with comprehensive docs"  
 # → backend-architect + security-engineer + technical-writer + quality-engineer
 
 # Performance optimization investigation
-/sc:troubleshoot "slow database queries affecting user experience"
+/airis:troubleshoot "slow database queries affecting user experience"
 # → performance-engineer + root-cause-analyst + backend-architect
 ```
 
@@ -881,15 +881,15 @@ Task Analysis →
 
 ```shell
 # Security assessment
-/sc:analyze "authentication system for GDPR compliance vulnerabilities"
+/airis:analyze "authentication system for GDPR compliance vulnerabilities"
 # → security-engineer + quality-engineer + requirements-analyst
 
 # Code quality review  
-/sc:review "legacy codebase for modernization opportunities"
+/airis:review "legacy codebase for modernization opportunities"
 # → refactoring-expert + system-architect + quality-engineer + technical-writer
 
 # Learning and explanation
-/sc:explain "microservices patterns with hands-on examples"
+/airis:explain "microservices patterns with hands-on examples"
 # → system-architect + learning-guide + technical-writer
 ```
 
@@ -919,7 +919,7 @@ Task Analysis →
 **問題: エージェントが多すぎる**
 
 - 解決策: 特定の技術用語を含む主要ドメインに焦点を当てる
-- 例: スコープを制限するには「/sc:focus backend」を使用します
+- 例: スコープを制限するには「/airis:focus backend」を使用します
 
 ### 品質重視の開発
 
@@ -1026,4 +1026,4 @@ Task Analysis →
 
 **Airis Agentのメリット：** 14名の専門AIエキスパートが、シンプルな自然言語によるリクエストに連携して対応します。設定や管理は不要で、ニーズに合わせて拡張できるインテリジェントな連携を実現します。
 
-🎯**インテリジェントエージェントコーディネーションを体験する準備はできましたか？まずは`/sc:implement`、専門的な AI コラボレーションの魔法を発見してください。**
+🎯**インテリジェントエージェントコーディネーションを体験する準備はできましたか？まずは`/airis:implement`、専門的な AI コラボレーションの魔法を発見してください。**

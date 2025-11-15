@@ -4,7 +4,7 @@
 
 | Area | Current Repo | Target Location (Framework) | Notes |
 |------|--------------|-----------------------------|-------|
-| Agent docs (`agents/*.md`) | `Airis Agent_Plugin/agents/` | `plugins/airis-agent/agents/` | Markdown instructions consumed by `/sc:*` commands. |
+| Agent docs (`agents/*.md`) | `Airis Agent_Plugin/agents/` | `plugins/airis-agent/agents/` | Markdown instructions consumed by `/airis:*` commands. |
 | Command definitions (`commands/*.md`) | `Airis Agent_Plugin/commands/` | `plugins/airis-agent/commands/` | YAML frontmatter + markdown bodies. |
 | Hook config | `Airis Agent_Plugin/hooks/hooks.json` | `plugins/airis-agent/hooks/hooks.json` | SessionStart automation. |
 | Skill source (`skills/confidence-check/`) | Divergent copies in both repos | **Single canonical copy in Framework** under `plugins/airis-agent/skills/confidence-check/` | Replace plugin repo copy with build artefact. |
@@ -50,4 +50,4 @@ plugins/
 - [ ] Port existing assets from `Airis Agent_Plugin` into the Framework layout.
 - [ ] Update Framework docs (CLAUDE.md, README) to reference the new build commands.
 - [ ] Strip direct edits in `Airis Agent_Plugin` by adding a readme banner (“generated – do not edit”) and optional CI guard.
-- [ ] Define the roadmap for expanding `/sc:*` commands (identify which legacy flows warrant reintroduction as optional modules).
+- [ ] Define the roadmap for expanding `/airis:*` commands (identify which legacy flows warrant reintroduction as optional modules).

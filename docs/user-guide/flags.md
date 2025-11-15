@@ -42,14 +42,14 @@
 
 ## Command-Specific Flags
 
-### Analysis Command Flags (`/sc:analyze`)
+### Analysis Command Flags (`/airis:analyze`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--focus` | Target specific domain | `security`, `performance`, `quality`, `architecture` |
 | `--depth` | Analysis thoroughness | `quick`, `deep` |
 | `--format` | Output format | `text`, `json`, `report` |
 
-### Build Command Flags (`/sc:build`)
+### Build Command Flags (`/airis:build`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--type` | Build configuration | `dev`, `prod`, `test` |
@@ -57,20 +57,20 @@
 | `--optimize` | Enable optimizations | Boolean |
 | `--verbose` | Detailed output | Boolean |
 
-### Design Command Flags (`/sc:design`)
+### Design Command Flags (`/airis:design`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--type` | Design target | `architecture`, `api`, `component`, `database` |
 | `--format` | Output format | `diagram`, `spec`, `code` |
 
-### Explain Command Flags (`/sc:explain`)
+### Explain Command Flags (`/airis:explain`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--level` | Complexity level | `basic`, `intermediate`, `advanced` |
 | `--format` | Explanation style | `text`, `examples`, `interactive` |
 | `--context` | Domain context | Any domain (e.g., `react`, `security`) |
 
-### Improve Command Flags (`/sc:improve`)
+### Improve Command Flags (`/airis:improve`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--type` | Improvement focus | `quality`, `performance`, `maintainability`, `style`, `security` |
@@ -78,28 +78,28 @@
 | `--interactive` | User guidance | Boolean |
 | `--preview` | Show without executing | Boolean |
 
-### Task Command Flags (`/sc:task`)
+### Task Command Flags (`/airis:task`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--strategy` | Task approach | `systematic`, `agile`, `enterprise` |
 | `--parallel` | Parallel execution | Boolean |
 | `--delegate` | Sub-agent coordination | Boolean |
 
-### Workflow Command Flags (`/sc:workflow`)
+### Workflow Command Flags (`/airis:workflow`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--strategy` | Workflow approach | `systematic`, `agile`, `enterprise` |
 | `--depth` | Analysis depth | `shallow`, `normal`, `deep` |
 | `--parallel` | Parallel coordination | Boolean |
 
-### Troubleshoot Command Flags (`/sc:troubleshoot`)
+### Troubleshoot Command Flags (`/airis:troubleshoot`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--type` | Issue category | `bug`, `build`, `performance`, `deployment` |
 | `--trace` | Include trace analysis | Boolean |
 | `--fix` | Apply fixes | Boolean |
 
-### Cleanup Command Flags (`/sc:cleanup`)
+### Cleanup Command Flags (`/airis:cleanup`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--type` | Cleanup target | `code`, `imports`, `files`, `all` |
@@ -107,45 +107,45 @@
 | `--interactive` | User guidance | Boolean |
 | `--preview` | Show without executing | Boolean |
 
-### Estimate Command Flags (`/sc:estimate`)
+### Estimate Command Flags (`/airis:estimate`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--type` | Estimate focus | `time`, `effort`, `complexity` |
 | `--unit` | Time unit | `hours`, `days`, `weeks` |
 | `--breakdown` | Detailed breakdown | Boolean |
 
-### Index Command Flags (`/sc:index`)
+### Index Command Flags (`/airis:index`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--type` | Index target | `docs`, `api`, `structure`, `readme` |
 | `--format` | Output format | `md`, `json`, `yaml` |
 
-### Reflect Command Flags (`/sc:reflect`)
+### Reflect Command Flags (`/airis:reflect`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--type` | Reflection scope | `task`, `session`, `completion` |
 | `--analyze` | Include analysis | Boolean |
 | `--validate` | Validate completeness | Boolean |
 
-### Spawn Command Flags (`/sc:spawn`)
+### Spawn Command Flags (`/airis:spawn`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--strategy` | Coordination approach | `sequential`, `parallel`, `adaptive` |
 | `--depth` | Analysis depth | `normal`, `deep` |
 
-### Git Command Flags (`/sc:git`)
+### Git Command Flags (`/airis:git`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--smart-commit` | Generate commit message | Boolean |
 | `--interactive` | Guided operations | Boolean |
 
-### Select-Tool Command Flags (`/sc:select-tool`)
+### Select-Tool Command Flags (`/airis:select-tool`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--analyze` | Tool analysis | Boolean |
 | `--explain` | Explain selection | Boolean |
 
-### Test Command Flags (`/sc:test`)
+### Test Command Flags (`/airis:test`)
 | Flag | Purpose | Values |
 |------|---------|--------|
 | `--coverage` | Include coverage | Boolean |
@@ -186,34 +186,34 @@
 
 ### Frontend Development
 ```bash
-/sc:implement "responsive dashboard" --magic --c7
-/sc:design component-library --type component --format code
-/sc:test ui-components/ --magic --play
-/sc:improve legacy-ui/ --magic --morph --validate
+/airis:implement "responsive dashboard" --magic --c7
+/airis:design component-library --type component --format code
+/airis:test ui-components/ --magic --play
+/airis:improve legacy-ui/ --magic --morph --validate
 ```
 
 ### Backend Development
 ```bash
-/sc:analyze api/ --focus performance --seq --think
-/sc:design payment-api --type api --format spec
-/sc:troubleshoot "API timeout" --type performance --trace
-/sc:improve auth-service --type security --validate
+/airis:analyze api/ --focus performance --seq --think
+/airis:design payment-api --type api --format spec
+/airis:troubleshoot "API timeout" --type performance --trace
+/airis:improve auth-service --type security --validate
 ```
 
 ### Large Projects
 ```bash
-/sc:analyze . --ultrathink --all-mcp --safe-mode
-/sc:workflow enterprise-system --strategy enterprise --depth deep
-/sc:cleanup . --type all --safe --interactive
-/sc:estimate "migrate to microservices" --type complexity --breakdown
+/airis:analyze . --ultrathink --all-mcp --safe-mode
+/airis:workflow enterprise-system --strategy enterprise --depth deep
+/airis:cleanup . --type all --safe --interactive
+/airis:estimate "migrate to microservices" --type complexity --breakdown
 ```
 
 ### Quality & Maintenance
 ```bash
-/sc:improve src/ --type quality --safe --interactive
-/sc:cleanup imports --type imports --preview
-/sc:reflect --type completion --validate
-/sc:git commit --smart-commit
+/airis:improve src/ --type quality --safe --interactive
+/airis:cleanup imports --type imports --preview
+/airis:reflect --type completion --validate
+/airis:git commit --smart-commit
 ```
 
 ## Flag Interactions
@@ -247,16 +247,16 @@
 
 ### Debug Flags
 ```bash
-/sc:analyze . --verbose                      # Shows decision logic and flag activation
-/sc:select-tool "operation" --explain        # Explains tool selection process
-/sc:reflect --type session --analyze         # Reviews current session decisions
+/airis:analyze . --verbose                      # Shows decision logic and flag activation
+/airis:select-tool "operation" --explain        # Explains tool selection process
+/airis:reflect --type session --analyze         # Reviews current session decisions
 ```
 
 ### Quick Fixes
 ```bash
-/sc:analyze . --help                         # Shows available flags for command
-/sc:analyze . --no-mcp                       # Native execution only
-/sc:cleanup . --preview                      # Shows what would be cleaned
+/airis:analyze . --help                         # Shows available flags for command
+/airis:analyze . --no-mcp                       # Native execution only
+/airis:cleanup . --preview                      # Shows what would be cleaned
 ```
 
 ## Flag Priority Rules

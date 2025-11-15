@@ -502,7 +502,7 @@ async def generate_repo_index(repo_path: str) -> str:
 @mcp.resource("airis-agent://reflexion/{error_id}")
 async def get_error_pattern(error_id: str):
     """Access learned error patterns"""
-    from airis_agent.pm_agent import reflexion
+    from airis_agent.airis_agent import reflexion
     return await reflexion.get_pattern(error_id)
 ```
 

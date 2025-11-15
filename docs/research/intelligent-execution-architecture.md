@@ -401,7 +401,7 @@ Result: Massive token waste
 ### New Architecture (Python + Skills)
 ```
 Startup: 0 tokens (Skills not loaded)
-On-demand: ~2,500 tokens (when /sc:pm called)
+On-demand: ~2,500 tokens (when /airis:pm called)
 Python engines: 0 tokens (already compiled)
 Result: 97% token savings
 ```

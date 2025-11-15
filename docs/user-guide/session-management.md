@@ -4,10 +4,10 @@ Airis Agent provides persistent session management through the Serena MCP server
 
 ## Core Session Commands with Persistent Memory
 
-### `/sc:load` - Context Loading with Persistent Memory
+### `/airis:load` - Context Loading with Persistent Memory
 **Purpose**: Initialize session with project context and persistent memory from previous sessions  
 **MCP Integration**: Triggers Serena MCP to read stored project memories  
-**Syntax**: `/sc:load [project_path]`
+**Syntax**: `/airis:load [project_path]`
 
 **What Happens**:
 - Serena MCP reads persistent memory files from previous sessions
@@ -18,19 +18,19 @@ Airis Agent provides persistent session management through the Serena MCP server
 **Use Cases**:
 ```bash
 # Load existing project context from persistent memory
-/sc:load src/
+/airis:load src/
 
 # Resume specific project work with full history
-/sc:load "authentication-system"
+/airis:load "authentication-system"
 
 # Initialize with codebase analysis and previous insights
-/sc:load . --analyze
+/airis:load . --analyze
 ```
 
-### `/sc:save` - Session Persistence to Memory
+### `/airis:save` - Session Persistence to Memory
 **Purpose**: Save current session state and decisions to persistent memory  
 **MCP Integration**: Triggers Serena MCP to write memory files  
-**Syntax**: `/sc:save "session_description"`
+**Syntax**: `/airis:save "session_description"`
 
 **What Happens**:
 - Current context and decisions are written to Serena memory
@@ -41,19 +41,19 @@ Airis Agent provides persistent session management through the Serena MCP server
 **Use Cases**:
 ```bash
 # Save completed feature work for future reference
-/sc:save "user authentication implemented with JWT"
+/airis:save "user authentication implemented with JWT"
 
 # Checkpoint during complex work
-/sc:save "API design phase complete, ready for implementation"
+/airis:save "API design phase complete, ready for implementation"
 
 # Store architectural decisions permanently
-/sc:save "microservices architecture decided, service boundaries defined"
+/airis:save "microservices architecture decided, service boundaries defined"
 ```
 
-### `/sc:reflect` - Progress Assessment with Memory Context
+### `/airis:reflect` - Progress Assessment with Memory Context
 **Purpose**: Analyze current progress against stored memories and validate session completeness  
 **MCP Integration**: Uses Serena MCP to compare current state against stored memories  
-**Syntax**: `/sc:reflect [--scope project|session]`
+**Syntax**: `/airis:reflect [--scope project|session]`
 
 **What Happens**:
 - Serena MCP reads previous memories and current context
@@ -64,13 +64,13 @@ Airis Agent provides persistent session management through the Serena MCP server
 **Use Cases**:
 ```bash
 # Assess project progress against stored milestones
-/sc:reflect --scope project
+/airis:reflect --scope project
 
 # Validate current session completeness
-/sc:reflect
+/airis:reflect
 
 # Check if ready to move to next phase based on memory
-/sc:reflect --scope session
+/airis:reflect --scope session
 ```
 
 ## Persistent Memory Architecture
@@ -100,45 +100,45 @@ Airis Agent provides persistent session management through the Serena MCP server
 ### New Project Initialization
 ```bash
 # 1. Start fresh project
-/sc:brainstorm "e-commerce platform requirements"
+/airis:brainstorm "e-commerce platform requirements"
 
 # 2. Save initial decisions to persistent memory
-/sc:save "project scope and requirements defined"
+/airis:save "project scope and requirements defined"
 
 # 3. Begin implementation planning
-/sc:workflow "user authentication system"
+/airis:workflow "user authentication system"
 
 # 4. Save architectural decisions permanently
-/sc:save "auth architecture: JWT + refresh tokens + rate limiting"
+/airis:save "auth architecture: JWT + refresh tokens + rate limiting"
 ```
 
 ### Resuming Existing Work (Cross-Conversation)
 ```bash
 # 1. Load previous context from persistent memory
-/sc:load "e-commerce-project"
+/airis:load "e-commerce-project"
 
 # 2. Assess current state against stored progress
-/sc:reflect --scope project  
+/airis:reflect --scope project  
 
 # 3. Continue with next phase using stored context
-/sc:implement "payment processing integration"
+/airis:implement "payment processing integration"
 
 # 4. Save progress checkpoint to memory
-/sc:save "payment system integrated with Stripe API"
+/airis:save "payment system integrated with Stripe API"
 ```
 
 ### Long-Term Project Management
 ```bash
 # Weekly checkpoint pattern with persistence
-/sc:load project-name
-/sc:reflect --scope project
+/airis:load project-name
+/airis:reflect --scope project
 # ... work on features ...
-/sc:save "week N progress: features X, Y, Z completed"
+/airis:save "week N progress: features X, Y, Z completed"
 
 # Phase completion pattern with memory
-/sc:reflect --scope project
-/sc:save "Phase 1 complete: core authentication and user management"
-/sc:workflow "Phase 2: payment and order processing"
+/airis:reflect --scope project
+/airis:save "Phase 1 complete: core authentication and user management"
+/airis:workflow "Phase 2: payment and order processing"
 ```
 
 ## Cross-Conversation Continuity
@@ -149,7 +149,7 @@ When starting a new Claude Code conversation, the persistent memory system allow
 
 1. **Automatic Context Restoration**
    ```bash
-   /sc:load project-name
+   /airis:load project-name
    # Automatically restores all previous context, decisions, and progress
    ```
 
@@ -186,14 +186,14 @@ When starting a new Claude Code conversation, the persistent memory system allow
 ## Best Practices for Persistent Sessions
 
 ### Session Start Protocol
-1. Always begin with `/sc:load` for existing projects
-2. Use `/sc:reflect` to understand current state from memory
+1. Always begin with `/airis:load` for existing projects
+2. Use `/airis:reflect` to understand current state from memory
 3. Plan work based on persistent context and stored patterns
 4. Build on previous decisions and architectural choices
 
 ### Session End Protocol
-1. Use `/sc:reflect` to assess completeness against stored goals
-2. Save key decisions with `/sc:save` for future sessions
+1. Use `/airis:reflect` to assess completeness against stored goals
+2. Save key decisions with `/airis:save` for future sessions
 3. Document next steps and open questions in memory
 4. Preserve context for seamless future continuation
 
@@ -218,7 +218,7 @@ When starting a new Claude Code conversation, the persistent memory system allow
 - Consistent specialist recommendations based on project history
 
 ### Command Integration with Persistence
-- All `/sc:` commands can reference and build on persistent context
+- All `/airis:` commands can reference and build on persistent context
 - Previous command outputs and decisions are available across sessions
 - Workflow patterns are stored and reusable
 - Implementation history guides future command decisions
@@ -234,9 +234,9 @@ When starting a new Claude Code conversation, the persistent memory system allow
 - Validate memory file integrity and format
 
 **Context Loss Between Sessions**:  
-- Always use `/sc:save` before ending sessions
+- Always use `/airis:save` before ending sessions
 - Use descriptive memory names for easy retrieval
-- Regular `/sc:reflect` to validate memory completeness
+- Regular `/airis:reflect` to validate memory completeness
 - Backup important memory files periodically
 
 **Memory Conflicts**:
@@ -249,20 +249,20 @@ When starting a new Claude Code conversation, the persistent memory system allow
 
 **Reset Session State**:
 ```bash
-/sc:load --fresh  # Start without previous context
-/sc:reflect       # Assess current state
+/airis:load --fresh  # Start without previous context
+/airis:reflect       # Assess current state
 ```
 
 **Memory Cleanup**:
 ```bash
-/sc:reflect --cleanup  # Remove obsolete memories
-/sc:save --consolidate # Merge related memories
+/airis:reflect --cleanup  # Remove obsolete memories
+/airis:save --consolidate # Merge related memories
 ```
 
 **Context Recovery**:
 ```bash
-/sc:load --recent     # Load most recent memories
-/sc:reflect --repair  # Identify and fix context gaps
+/airis:load --recent     # Load most recent memories
+/airis:reflect --repair  # Identify and fix context gaps
 ```
 
 ## Advanced Persistent Session Patterns

@@ -81,7 +81,7 @@ class TestFixtureFunctionality:
     ])
     def test_token_budget_complexity_levels(self, request, complexity, expected_min):
         """Test token budget varies by complexity"""
-        from airis_agent.pm_agent.token_budget import TokenBudgetManager
+        from airis_agent.airis_agent.token_budget import TokenBudgetManager
 
         manager = TokenBudgetManager(complexity=complexity)
         remaining = manager.remaining

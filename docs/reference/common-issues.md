@@ -6,9 +6,9 @@
 
 ### 1. Commands Not Working in Claude Code ⚡
 ```
-Problem: /sc:brainstorm doesn't work
+Problem: /airis:brainstorm doesn't work
 Solution: Restart Claude Code completely
-Test: /sc:brainstorm "test" should ask questions
+Test: /airis:brainstorm "test" should ask questions
 ```
 
 ### 2. Installation Verification
@@ -41,7 +41,7 @@ sudo chown -R $USER ~/.claude
 
 ### 4. MCP Server Issues
 ```bash
-/sc:analyze . --no-mcp              # Test without MCP servers
+/airis:analyze . --no-mcp              # Test without MCP servers
 node --version                      # Check Node.js 16+ if needed
 ```
 
@@ -72,7 +72,7 @@ pip3 install Airis Agent
 
 ## Verification Checklist
 - [ ] `python3 -m Airis Agent --version` returns 4.1.5
-- [ ] `/sc:brainstorm "test"` works in Claude Code
+- [ ] `/airis:brainstorm "test"` works in Claude Code
 - [ ] `Airis Agent install --list-components` shows components
 
 ## When Quick Fixes Don't Work

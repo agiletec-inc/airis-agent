@@ -13,12 +13,12 @@ superagent/
 ├── src/airis_agent/          # Python package (3,002 LOC)
 │   ├── api/                  # ABI surface (confidence, repo index, deep research)
 │   ├── cli/                  # Typer CLI commands
-│   ├── pm_agent/             # PM Agent core (confidence/self_check/reflexion/token_budget)
+│   ├── airis_agent/          # Airis Agent core (confidence/self_check/reflexion/token_budget)
 │   ├── execution/            # Execution patterns (parallel/reflection/self_correction)
 │   ├── pytest_plugin.py      # Auto-loaded pytest integration
 │   └── skills/               # TypeScript skills (confidence-check)
 ├── tests/                    # Test suite (7 files)
-│   ├── pm_agent/             # PM Agent tests (confidence, self_check, reflexion)
+│   ├── airis_agent/          # Airis Agent tests (confidence, self_check, reflexion)
 │   └── conftest.py           # Shared fixtures
 ├── docs/                     # Documentation (90+ files)
 │   ├── user-guide/           # User guides (en, ja, kr, zh)
@@ -58,7 +58,7 @@ superagent/
 
 ## 📦 Core Modules
 
-### PM Agent (src/airis_agent/pm_agent/)
+### PM Agent (src/airis_agent/airis_agent/)
 Core patterns for AI-enhanced development:
 
 #### ConfidenceChecker (`confidence.py`)
@@ -180,7 +180,7 @@ Core patterns for AI-enhanced development:
 ## 🧪 Test Coverage
 
 ### Structure
-- **Unit tests**: 7 files in `tests/pm_agent/`
+- **Unit tests**: 7 files in `tests/airis_agent_core/`
 - **Test framework**: pytest ≥7.0.0
 - **Coverage tool**: pytest-cov ≥4.0.0
 - **Markers**: confidence_check, self_check, reflexion, unit, integration
@@ -198,7 +198,7 @@ Core patterns for AI-enhanced development:
 uv run pytest
 
 # Specific directory
-uv run pytest tests/pm_agent/ -v
+uv run pytest tests/airis_agent_core/ -v
 
 # By marker
 uv run pytest -m confidence_check

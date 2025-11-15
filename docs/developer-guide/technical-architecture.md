@@ -99,7 +99,7 @@ operational directories, not part of Airis Agent framework content.
 
 | File Type | Purpose | Activation | Example |
 |-----------|---------|------------|---------|
-| **Commands** | Define workflow patterns | `/sc:[command]` (context trigger) | User types `/sc:implement` → reads `implement.md` |
+| **Commands** | Define workflow patterns | `/airis:[command]` (context trigger) | User types `/airis:implement` → reads `implement.md` |
 | **Agents** | Provide domain expertise | `@agent-[name]` or auto | `@agent-security` → reads `security-engineer.md` |
 | **Modes** | Modify interaction style | Flags or triggers | `--brainstorm` → activates brainstorming mode |
 | **Core** | Set fundamental rules | Always active | `RULES.md` always loaded |
@@ -198,14 +198,14 @@ mcp-servers: [context7, sequential]
 personas: [architect, engineer]
 ---
 
-# /sc:command-name
+# /airis:command-name
 
 ## Triggers
 - When to use this command
 - Context indicators
 
 ## Usage
-/sc:command-name [target] [--options]
+/airis:command-name [target] [--options]
 
 ## Workflow Pattern
 1. Step 1: Initial action
@@ -218,7 +218,7 @@ Practical usage examples
 
 ### Command Processing
 
-When user types `/sc:implement "feature"` in Claude Code conversation:
+When user types `/airis:implement "feature"` in Claude Code conversation:
 1. Claude reads `commands/sc/implement.md`
 2. Adopts implementation workflow pattern
 3. May auto-activate related agents
@@ -280,7 +280,7 @@ MCP servers are configured in `~/.claude.json` (NOT part of Airis Agent context)
 ### Context Loading Sequence
 
 ```
-User Input (in Claude Code): "/sc:analyze src/ --focus security"
+User Input (in Claude Code): "/airis:analyze src/ --focus security"
                     ↓
 1. Parse Command: identify 'analyze' command
                     ↓
@@ -297,7 +297,7 @@ User Input (in Claude Code): "/sc:analyze src/ --focus security"
 
 ### Context Priority
 
-1. **Explicit Commands**: `/sc:` commands take precedence
+1. **Explicit Commands**: `/airis:` commands take precedence
 2. **Manual Agents**: `@agent-` override auto-activation
 3. **Flags**: Modify behavior of commands/agents
 4. **Auto-Activation**: Based on keywords/context

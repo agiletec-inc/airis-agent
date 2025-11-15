@@ -12,19 +12,19 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 # 예상 동작: Python 전문가가 자세한 설명으로 응답
 
 # 보안 에이전트 자동 활성화 테스트
-/sc:implement "JWT 인증"
+/airis:implement "JWT 인증"
 # 예상 동작: 보안 엔지니어가 자동으로 활성화되어야 함
 
 # 프론트엔드 에이전트 자동 활성화 테스트
-/sc:implement "반응형 네비게이션 컴포넌트"
+/airis:implement "반응형 네비게이션 컴포넌트"
 # 예상 동작: 프론트엔드 아키텍트 + Magic MCP가 활성화되어야 함
 
 # 체계적 분석 테스트
-/sc:troubleshoot "느린 API 성능"
+/airis:troubleshoot "느린 API 성능"
 # 예상 동작: 근본 원인 분석가 + 성능 엔지니어 활성화
 
 # 수동 및 자동 결합 테스트
-/sc:analyze src/
+/airis:analyze src/
 @agent-refactoring-expert "개선 사항 제안해줘"
 # 예상 동작: 분석 후 리팩토링 제안
 ```
@@ -60,9 +60,9 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 
 ```bash
 # 이러한 명령은 관련 에이전트를 자동 활성화합니다
-/sc:implement "JWT 인증"          # → security-engineer 자동 활성화
-/sc:design "React 대시보드"        # → frontend-architect 자동 활성화
-/sc:troubleshoot "메모리 누수"     # → performance-engineer 자동 활성화
+/airis:implement "JWT 인증"          # → security-engineer 자동 활성화
+/airis:design "React 대시보드"        # → frontend-architect 자동 활성화
+/airis:troubleshoot "메모리 누수"     # → performance-engineer 자동 활성화
 ```
 
 **MCP 서버**는 Context7(문서), Sequential(분석), Magic(UI), Playwright(테스팅), Morphllm(코드 변환)과 같은 전문 도구를 통해 향상된 기능을 제공합니다.
@@ -110,23 +110,23 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 ### 자동 에이전트 조정
 ```bash
 # 자동 활성화를 트리거하는 명령
-/sc:implement "속도 제한이 있는 JWT 인증"
+/airis:implement "속도 제한이 있는 JWT 인증"
 # → 트리거: security-engineer + backend-architect + quality-engineer
 
-/sc:design "접근 가능한 React 대시보드와 문서"
+/airis:design "접근 가능한 React 대시보드와 문서"
 # → 트리거: frontend-architect + learning-guide + technical-writer
 
-/sc:troubleshoot "간헐적 실패가 있는 느린 배포 파이프라인"
+/airis:troubleshoot "간헐적 실패가 있는 느린 배포 파이프라인"
 # → 트리거: devops-architect + performance-engineer + root-cause-analyst
 
-/sc:audit "결제 처리 보안 취약점"
+/airis:audit "결제 처리 보안 취약점"
 # → 트리거: security-engineer + quality-engineer + refactoring-expert
 ```
 
 ### 수동 및 자동 접근 방식 결합
 ```bash
 # 명령으로 시작 (자동 활성화)
-/sc:implement "사용자 프로필 시스템"
+/airis:implement "사용자 프로필 시스템"
 
 # 그런 다음 전문가 검토를 명시적으로 추가
 @agent-security "프로필 시스템의 OWASP 규정 준수 검토해줘"
@@ -165,7 +165,7 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 - [ ] 확장성 및 신뢰성 고려사항 포함
 - [ ] 기술 스택 권장사항 제공
 
-**검증:** `/sc:design "마이크로서비스 플랫폼"`은 system-architect를 활성화해야 함
+**검증:** `/airis:design "마이크로서비스 플랫폼"`은 system-architect를 활성화해야 함
 **테스트:** 출력에 서비스 분해 및 통합 패턴이 포함되어야 함
 **확인:** 인프라 문제에 대해 devops-architect와 조정해야 함
 
@@ -250,7 +250,7 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 
 **자동 활성화**:
 - 키워드: "research", "investigate", "discover", "explore", "find out", "search for", "latest", "current"
-- 명령어: `/sc:research`가 자동으로 이 에이전트를 활성화
+- 명령어: `/airis:research`가 자동으로 이 에이전트를 활성화
 - 컨텍스트: 철저한 조사가 필요한 복잡한 쿼리, 최신 정보 필요, 사실 확인
 - 복잡성: 여러 도메인에 걸쳐 있거나 반복적 탐색이 필요한 질문
 
@@ -269,9 +269,9 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 - **Exhaustive**: 최대 깊이, 5홉, 완전한 조사
 
 **예제**:
-1. **기술 연구**: `/sc:research "최신 React Server Components 패턴"` → 구현 예제를 포함한 포괄적인 기술 연구
-2. **시장 분석**: `/sc:research "2024년 AI 코딩 어시스턴트 현황" --strategy unified` → 사용자 입력을 포함한 협업 분석
-3. **학술 조사**: `/sc:research "양자 컴퓨팅 돌파구" --depth exhaustive` → 증거 체인을 포함한 포괄적인 문헌 검토
+1. **기술 연구**: `/airis:research "최신 React Server Components 패턴"` → 구현 예제를 포함한 포괄적인 기술 연구
+2. **시장 분석**: `/airis:research "2024년 AI 코딩 어시스턴트 현황" --strategy unified` → 사용자 입력을 포함한 협업 분석
+3. **학술 조사**: `/airis:research "양자 컴퓨팅 돌파구" --depth exhaustive` → 증거 체인을 포함한 포괄적인 문헌 검토
 
 **워크플로우 패턴** (6단계):
 1. **이해** (5-10%): 쿼리 복잡성 평가
@@ -543,7 +543,7 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 ### 일반적인 문제
 - **에이전트 활성화 없음**: 도메인 키워드 사용: "security", "performance", "frontend"
 - **잘못된 에이전트 선택**: 에이전트 문서의 트리거 키워드 확인
-- **너무 많은 에이전트**: 주요 도메인에 키워드 집중 또는 `/sc:focus [domain]` 사용
+- **너무 많은 에이전트**: 주요 도메인에 키워드 집중 또는 `/airis:focus [domain]` 사용
 - **에이전트가 조정하지 않음**: 작업 복잡성 증가 또는 다중 도메인 키워드 사용
 - **에이전트 전문 지식 불일치**: 더 구체적인 기술 용어 사용
 
@@ -551,7 +551,7 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 - **에이전트 활성화 강제**: 요청에 명시적 도메인 키워드 사용
 - **에이전트 선택 재설정**: Claude Code 세션을 재시작하여 에이전트 상태 재설정
 - **에이전트 패턴 확인**: 에이전트 문서의 트리거 키워드 검토
-- **기본 활성화 테스트**: `/sc:implement "security auth"`로 security-engineer 테스트
+- **기본 활성화 테스트**: `/airis:implement "security auth"`로 security-engineer 테스트
 
 ### 에이전트별 문제 해결
 
@@ -633,7 +633,7 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 
 **너무 많은 에이전트?**
 - 주요 도메인 필요에 키워드 집중
-- `/sc:focus [domain]`을 사용하여 범위 제한
+- `/airis:focus [domain]`을 사용하여 범위 제한
 - 특정 에이전트로 시작하고 필요에 따라 확장
 
 **잘못된 에이전트?**
@@ -666,15 +666,15 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 
 | 명령어 | 주요 에이전트 | 지원 에이전트 |
 |---------|----------------|-------------------|
-| `/sc:implement` | 도메인 아키텍트 (frontend, backend) | security-engineer, quality-engineer |
-| `/sc:analyze` | quality-engineer, security-engineer | performance-engineer, root-cause-analyst |
-| `/sc:troubleshoot` | root-cause-analyst | 도메인 전문가, performance-engineer |
-| `/sc:improve` | refactoring-expert | quality-engineer, performance-engineer |
-| `/sc:document` | technical-writer | 도메인 전문가, learning-guide |
-| `/sc:design` | system-architect | 도메인 아키텍트, requirements-analyst |
-| `/sc:test` | quality-engineer | security-engineer, performance-engineer |
-| `/sc:explain` | learning-guide | technical-writer, 도메인 전문가 |
-| `/sc:research` | deep-research-agent | 기술 전문가, learning-guide |
+| `/airis:implement` | 도메인 아키텍트 (frontend, backend) | security-engineer, quality-engineer |
+| `/airis:analyze` | quality-engineer, security-engineer | performance-engineer, root-cause-analyst |
+| `/airis:troubleshoot` | root-cause-analyst | 도메인 전문가, performance-engineer |
+| `/airis:improve` | refactoring-expert | quality-engineer, performance-engineer |
+| `/airis:document` | technical-writer | 도메인 전문가, learning-guide |
+| `/airis:design` | system-architect | 도메인 아키텍트, requirements-analyst |
+| `/airis:test` | quality-engineer | security-engineer, performance-engineer |
+| `/airis:explain` | learning-guide | technical-writer, 도메인 전문가 |
+| `/airis:research` | deep-research-agent | 기술 전문가, learning-guide |
 
 ### 효과적인 에이전트 조합
 
@@ -725,30 +725,30 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 **개발 워크플로우:**
 ```bash
 # 풀스택 기능 개발
-/sc:implement "실시간 알림이 있는 반응형 사용자 대시보드"
+/airis:implement "실시간 알림이 있는 반응형 사용자 대시보드"
 # → frontend-architect + backend-architect + performance-engineer
 
 # 문서화를 포함한 API 개발
-/sc:create "포괄적인 문서가 있는 결제 처리를 위한 REST API"
+/airis:create "포괄적인 문서가 있는 결제 처리를 위한 REST API"
 # → backend-architect + security-engineer + technical-writer + quality-engineer
 
 # 성능 최적화 조사
-/sc:troubleshoot "사용자 경험에 영향을 미치는 느린 데이터베이스 쿼리"
+/airis:troubleshoot "사용자 경험에 영향을 미치는 느린 데이터베이스 쿼리"
 # → performance-engineer + root-cause-analyst + backend-architect
 ```
 
 **분석 워크플로우:**
 ```bash
 # 보안 평가
-/sc:analyze "GDPR 규정 준수 취약점에 대한 인증 시스템"
+/airis:analyze "GDPR 규정 준수 취약점에 대한 인증 시스템"
 # → security-engineer + quality-engineer + requirements-analyst
 
 # 코드 품질 검토
-/sc:review "현대화 기회를 위한 레거시 코드베이스"
+/airis:review "현대화 기회를 위한 레거시 코드베이스"
 # → refactoring-expert + system-architect + quality-engineer + technical-writer
 
 # 학습 및 설명
-/sc:explain "실습 예제가 있는 마이크로서비스 패턴"
+/airis:explain "실습 예제가 있는 마이크로서비스 패턴"
 # → system-architect + learning-guide + technical-writer
 ```
 
@@ -772,7 +772,7 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 
 **문제: 에이전트가 너무 많음**
 - 해결책: 구체적인 기술 용어로 주요 도메인에 집중
-- 예제: 범위를 제한하기 위해 "/sc:focus backend" 사용
+- 예제: 범위를 제한하기 위해 "/airis:focus backend" 사용
 
 ### 품질 중심 개발
 
@@ -861,5 +861,5 @@ Airis Agent는 Claude Code가 전문 지식을 위해 호출할 수 있는 15개
 **Airis Agent 이점:**
 간단하고 자연스러운 언어 요청을 통해 조정된 응답으로 작동하는 14명의 전문 AI 전문가의 힘을 경험하세요. 구성도, 관리도 필요 없이, 필요에 따라 확장되는 지능적인 협업만 있습니다.
 
-🎯 **지능적인 에이전트 조정을 경험할 준비가 되셨나요? `/sc:implement`로 시작하여 전문 AI 협업의 마법을 발견하세요.**
+🎯 **지능적인 에이전트 조정을 경험할 준비가 되셨나요? `/airis:implement`로 시작하여 전문 AI 협업의 마법을 발견하세요.**
 

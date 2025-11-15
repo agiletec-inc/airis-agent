@@ -281,8 +281,8 @@ Airis Agent install --list-components
 
 ```bash
 # Open Claude Code and try these commands:
-/sc:brainstorm "test project"     # Should trigger discovery questions
-/sc:analyze README.md              # Should provide structured analysis
+/airis:brainstorm "test project"     # Should trigger discovery questions
+/airis:analyze README.md              # Should provide structured analysis
 @agent-security "review code"     # Should activate security specialist
 ```
 
@@ -471,7 +471,7 @@ brew install python3
 **First Week:**
 - [Quick Start Guide](quick-start.md)
 - [Commands Reference](../user-guide/commands.md)
-- Try `/sc:brainstorm`
+- Try `/airis:brainstorm`
 
 </td>
 <td valign="top">
@@ -507,7 +507,7 @@ You now have access to:
   <b>21 Commands</b> • <b>14 AI Agents</b> • <b>6 Behavioral Modes</b> • <b>6 MCP Servers</b>
 </p>
 
-**Ready to start?** Try `/sc:brainstorm` in Claude Code for your first Airis Agent experience!
+**Ready to start?** Try `/airis:brainstorm` in Claude Code for your first Airis Agent experience!
 
 <p align="center">
   <a href="quick-start.md">

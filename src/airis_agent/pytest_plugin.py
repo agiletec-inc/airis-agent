@@ -12,10 +12,10 @@ Entry point registered in pyproject.toml:
 
 import pytest
 
-from .pm_agent.confidence import ConfidenceChecker
-from .pm_agent.reflexion import ReflexionPattern
-from .pm_agent.self_check import SelfCheckProtocol
-from .pm_agent.token_budget import TokenBudgetManager
+from .airis_agent.confidence import ConfidenceChecker
+from .airis_agent.reflexion import ReflexionPattern
+from .airis_agent.self_check import SelfCheckProtocol
+from .airis_agent.token_budget import TokenBudgetManager
 
 
 def pytest_configure(config):

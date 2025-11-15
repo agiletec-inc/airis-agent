@@ -19,7 +19,7 @@
 
 ```bash
 # React development with appropriate context
-/sc:implement "React 18 application with TypeScript" --c7
+/airis:implement "React 18 application with TypeScript" --c7
 # Context7 MCP can provide React documentation if available
 # Magic MCP can help with UI components if configured
 
@@ -30,10 +30,10 @@
 
 # Component development pattern
 @agent-frontend-architect "design component architecture"
-/sc:implement "reusable component library"
+/airis:implement "reusable component library"
 
 # Testing pattern for React
-/sc:test --focus react
+/airis:test --focus react
 # Claude will suggest React Testing Library patterns
 ```
 
@@ -41,7 +41,7 @@
 
 ```bash
 # Node.js backend development patterns
-/sc:implement "Express.js API with TypeScript" --c7
+/airis:implement "Express.js API with TypeScript" --c7
 # Claude will create Express API following Node.js patterns
 
 # What This Means:
@@ -50,11 +50,11 @@
 # - NOT running or optimizing any code
 
 # Database integration pattern
-/sc:implement "database models with Prisma"
+/airis:implement "database models with Prisma"
 @agent-backend-architect "review database schema"
 
 # API testing pattern
-/sc:test --focus api
+/airis:test --focus api
 # Claude suggests API testing approaches
 ```
 
@@ -62,7 +62,7 @@
 
 ```bash
 # Python web development
-/sc:implement "FastAPI application" --c7
+/airis:implement "FastAPI application" --c7
 @agent-python-expert "review implementation"
 
 # What Happens:
@@ -71,12 +71,12 @@
 # - Generates code (doesn't run it)
 
 # Data science context
-/sc:implement "data analysis pipeline"
+/airis:implement "data analysis pipeline"
 @agent-python-expert "optimize pandas operations"
 # Claude provides optimization suggestions (not actual optimization)
 
 # Testing patterns
-/sc:test --focus python
+/airis:test --focus python
 # Claude suggests pytest patterns
 ```
 
@@ -84,19 +84,19 @@
 
 ```bash
 # Full-stack application pattern
-/sc:brainstorm "full-stack application architecture"
+/airis:brainstorm "full-stack application architecture"
 @agent-system-architect "design system components"
 
 # Frontend implementation
-/sc:implement "React frontend with TypeScript"
+/airis:implement "React frontend with TypeScript"
 @agent-frontend-architect "review component structure"
 
 # Backend implementation
-/sc:implement "Node.js API with authentication"
+/airis:implement "Node.js API with authentication"
 @agent-backend-architect "review API design"
 
 # Integration
-/sc:implement "connect frontend to backend API"
+/airis:implement "connect frontend to backend API"
 ```
 
 ## Tool Coordination Patterns
@@ -105,19 +105,19 @@
 
 ```bash
 # Context7 for documentation
-/sc:explain "React hooks" --c7
+/airis:explain "React hooks" --c7
 # If Context7 is configured, it may fetch React docs
 
 # Sequential for complex reasoning
-/sc:troubleshoot "complex bug" --seq
+/airis:troubleshoot "complex bug" --seq
 # Sequential MCP helps with structured problem-solving
 
 # Magic for UI components
-/sc:implement "UI components" --magic
+/airis:implement "UI components" --magic
 # Magic MCP can help generate modern UI patterns
 
 # No MCP for simple tasks
-/sc:implement "utility function" --no-mcp
+/airis:implement "utility function" --no-mcp
 # Uses only Claude's built-in knowledge
 ```
 
@@ -126,18 +126,18 @@
 ```bash
 # Security-focused development
 @agent-security "review authentication requirements"
-/sc:implement "secure authentication system"
-/sc:analyze --focus security
+/airis:implement "secure authentication system"
+/airis:analyze --focus security
 
 # Quality-focused workflow
-/sc:implement "new feature"
+/airis:implement "new feature"
 @agent-quality-engineer "review code quality"
-/sc:test --focus quality
+/airis:test --focus quality
 
 # Architecture-focused approach
 @agent-system-architect "design microservices"
-/sc:design "service boundaries"
-/sc:implement "service communication"
+/airis:design "service boundaries"
+/airis:implement "service communication"
 ```
 
 ## Common Integration Patterns
@@ -146,16 +146,16 @@
 
 ```bash
 # Step 1: Design
-/sc:design "REST API structure"
+/airis:design "REST API structure"
 
 # Step 2: Implementation
-/sc:implement "API endpoints with validation"
+/airis:implement "API endpoints with validation"
 
 # Step 3: Documentation
-/sc:document --type api
+/airis:document --type api
 
 # Step 4: Testing
-/sc:test --focus api
+/airis:test --focus api
 ```
 
 ### Database Integration Pattern
@@ -165,10 +165,10 @@
 @agent-backend-architect "design database schema"
 
 # Model implementation
-/sc:implement "database models"
+/airis:implement "database models"
 
 # Migration creation
-/sc:implement "database migrations"
+/airis:implement "database migrations"
 
 # Query optimization suggestions
 @agent-backend-architect "suggest query optimizations"
@@ -179,16 +179,16 @@
 
 ```bash
 # Test planning
-/sc:design "testing strategy"
+/airis:design "testing strategy"
 
 # Unit tests
-/sc:test --type unit
+/airis:test --type unit
 
 # Integration tests
-/sc:test --type integration
+/airis:test --type integration
 
 # E2E test suggestions
-/sc:test --type e2e
+/airis:test --type e2e
 # Claude provides test code, not execution
 ```
 
@@ -198,33 +198,33 @@
 
 ```bash
 # Project setup guidance
-/sc:implement "React TypeScript project structure"
+/airis:implement "React TypeScript project structure"
 
 # Component development
-/sc:implement "TypeScript React components with props validation"
+/airis:implement "TypeScript React components with props validation"
 
 # State management
 @agent-frontend-architect "recommend state management approach"
-/sc:implement "state management with Zustand/Redux"
+/airis:implement "state management with Zustand/Redux"
 
 # Testing
-/sc:test --focus react --type unit
+/airis:test --focus react --type unit
 ```
 
 ### Python FastAPI Pattern
 
 ```bash
 # API structure
-/sc:implement "FastAPI project structure"
+/airis:implement "FastAPI project structure"
 
 # Endpoint development
 @agent-python-expert "implement async endpoints"
 
 # Database integration
-/sc:implement "SQLAlchemy models with Alembic"
+/airis:implement "SQLAlchemy models with Alembic"
 
 # Testing
-/sc:test --focus python --type integration
+/airis:test --focus python --type integration
 ```
 
 ### Node.js Microservices Pattern
@@ -234,14 +234,14 @@
 @agent-system-architect "design microservices architecture"
 
 # Service implementation
-/sc:implement "user service with Express"
-/sc:implement "auth service with JWT"
+/airis:implement "user service with Express"
+/airis:implement "auth service with JWT"
 
 # Inter-service communication
-/sc:implement "service communication patterns"
+/airis:implement "service communication patterns"
 
 # Testing approach
-/sc:test --focus microservices
+/airis:test --focus microservices
 ```
 
 ## Troubleshooting Patterns
@@ -250,23 +250,23 @@
 
 ```bash
 # Problem analysis
-/sc:troubleshoot "describe the issue"
+/airis:troubleshoot "describe the issue"
 
 # Root cause investigation
 @agent-root-cause-analyst "analyze symptoms"
 
 # Solution implementation
-/sc:implement "fix based on analysis"
+/airis:implement "fix based on analysis"
 
 # Verification
-/sc:test --validate
+/airis:test --validate
 ```
 
 ### Code Review Pattern
 
 ```bash
 # Code analysis
-/sc:analyze code/ --focus quality
+/airis:analyze code/ --focus quality
 
 # Security review
 @agent-security "review for vulnerabilities"
@@ -276,7 +276,7 @@
 # Note: Suggestions only, no actual performance measurement
 
 # Implementation of improvements
-/sc:improve code/ --fix
+/airis:improve code/ --fix
 ```
 
 ## Important Clarifications
@@ -300,11 +300,11 @@
 
 ### Effective Pattern Usage
 
-1. **Start with context**: Use `/sc:load` to establish project understanding
+1. **Start with context**: Use `/airis:load` to establish project understanding
 2. **Layer expertise**: Combine general commands with specific agents
 3. **Focus appropriately**: Use `--focus` flags for targeted results
 4. **Manage scope**: Work on specific modules rather than entire codebases
-5. **Document decisions**: Use `/sc:save` to create summaries
+5. **Document decisions**: Use `/airis:save` to create summaries
 
 ### Pattern Selection
 

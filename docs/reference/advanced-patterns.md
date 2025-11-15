@@ -25,7 +25,7 @@
 # Security-focused backend development
 @agent-security "define authentication requirements"
 @agent-backend-architect "design API with security requirements"
-/sc:implement "secure API endpoints"
+/airis:implement "secure API endpoints"
 
 # What happens:
 # 1. Security context loaded first
@@ -38,7 +38,7 @@
 ```bash
 # Comprehensive frontend development
 @agent-frontend-architect "design component architecture"
-/sc:implement "accessible React components" --magic
+/airis:implement "accessible React components" --magic
 @agent-quality-engineer "review accessibility compliance"
 
 # Context layering:
@@ -56,14 +56,14 @@
 # Only Python context, no auto-activation
 
 # vs Automatic selection
-/sc:implement "Python data pipeline"
+/airis:implement "Python data pipeline"
 # May activate multiple agents based on keywords
 ```
 
 **Override Auto-Selection:**
 ```bash
 # Prevent unwanted agent activation
-/sc:implement "simple utility" --no-mcp
+/airis:implement "simple utility" --no-mcp
 @agent-backend-architect "keep it simple"
 # Limits context to specified agent only
 ```
@@ -74,13 +74,13 @@
 
 ```bash
 # Start broad, then focus
-/sc:analyze project/
+/airis:analyze project/
 # General analysis
 
-/sc:analyze project/core/ --focus architecture
+/airis:analyze project/core/ --focus architecture
 # Focused on structure
 
-/sc:analyze project/core/auth/ --focus security --think-hard
+/airis:analyze project/core/auth/ --focus security --think-hard
 # Deep security analysis
 
 # Each command builds on previous context within the conversation
@@ -90,19 +90,19 @@
 
 ```bash
 # Complete feature development flow
-/sc:brainstorm "feature idea"
+/airis:brainstorm "feature idea"
 # Explores requirements
 
-/sc:design "feature architecture"
+/airis:design "feature architecture"
 # Creates structure
 
 @agent-backend-architect "review design"
 # Expert review
 
-/sc:implement "feature based on design"
+/airis:implement "feature based on design"
 # Implementation follows design
 
-/sc:test --validate
+/airis:test --validate
 # Verification approach
 ```
 
@@ -110,16 +110,16 @@
 
 ```bash
 # Multiple improvement passes
-/sc:analyze code/ --focus quality
+/airis:analyze code/ --focus quality
 # Identify issues
 
-/sc:improve code/ --fix
+/airis:improve code/ --fix
 # First improvement pass
 
 @agent-refactoring-expert "suggest further improvements"
 # Expert suggestions
 
-/sc:improve code/ --fix --focus maintainability
+/airis:improve code/ --fix --focus maintainability
 # Refined improvements
 ```
 
@@ -129,19 +129,19 @@
 
 ```bash
 # Quick overview
-/sc:analyze . --overview --uc
+/airis:analyze . --overview --uc
 # Fast, compressed output
 
 # Standard analysis
-/sc:analyze . --think
+/airis:analyze . --think
 # Structured thinking
 
 # Deep analysis
-/sc:analyze . --think-hard --verbose
+/airis:analyze . --think-hard --verbose
 # Comprehensive analysis
 
 # Maximum depth (use sparingly)
-/sc:analyze . --ultrathink
+/airis:analyze . --ultrathink
 # Exhaustive analysis
 ```
 
@@ -149,15 +149,15 @@
 
 ```bash
 # Selective MCP usage
-/sc:implement "React component" --magic --c7
+/airis:implement "React component" --magic --c7
 # Only Magic and Context7 MCP
 
 # Disable all MCP
-/sc:implement "simple function" --no-mcp
+/airis:implement "simple function" --no-mcp
 # Pure Claude context only
 
 # All available MCP
-/sc:analyze complex-system/ --all-mcp
+/airis:analyze complex-system/ --all-mcp
 # Maximum tool availability (if configured)
 ```
 
@@ -168,17 +168,17 @@
 ```bash
 # Systematic exploration of large projects
 # Step 1: Structure understanding
-/sc:load project/
-/sc:analyze . --overview --focus architecture
+/airis:load project/
+/airis:analyze . --overview --focus architecture
 
 # Step 2: Identify problem areas
 @agent-quality-engineer "identify high-risk modules"
 
 # Step 3: Deep dive into specific areas
-/sc:analyze high-risk-module/ --think-hard --focus quality
+/airis:analyze high-risk-module/ --think-hard --focus quality
 
 # Step 4: Implementation plan
-/sc:workflow "improvement plan based on analysis"
+/airis:workflow "improvement plan based on analysis"
 ```
 
 ### Multi-Module Development
@@ -186,15 +186,15 @@
 ```bash
 # Developing interconnected modules
 # Frontend module
-/sc:implement "user interface module"
+/airis:implement "user interface module"
 @agent-frontend-architect "ensure consistency"
 
 # Backend module
-/sc:implement "API module"
+/airis:implement "API module"
 @agent-backend-architect "ensure compatibility"
 
 # Integration layer
-/sc:implement "frontend-backend integration"
+/airis:implement "frontend-backend integration"
 # Context from both previous implementations guides this
 ```
 
@@ -212,7 +212,7 @@
 @agent-devops-architect "create deployment configuration"
 
 # Integration documentation
-/sc:document --type integration
+/airis:document --type integration
 ```
 
 ## Migration Patterns
@@ -221,13 +221,13 @@
 
 ```bash
 # Understanding legacy systems
-/sc:load legacy-system/
-/sc:analyze . --focus architecture --verbose
+/airis:load legacy-system/
+/airis:analyze . --focus architecture --verbose
 
 @agent-refactoring-expert "identify modernization opportunities"
 @agent-system-architect "propose migration strategy"
 
-/sc:workflow "create migration plan"
+/airis:workflow "create migration plan"
 ```
 
 ### Incremental Migration
@@ -235,16 +235,16 @@
 ```bash
 # Step-by-step migration approach
 # Phase 1: Analysis
-/sc:analyze legacy-module/ --comprehensive
+/airis:analyze legacy-module/ --comprehensive
 
 # Phase 2: Design new architecture
 @agent-system-architect "design modern replacement"
 
 # Phase 3: Implementation
-/sc:implement "modern module with compatibility layer"
+/airis:implement "modern module with compatibility layer"
 
 # Phase 4: Validation
-/sc:test --focus compatibility
+/airis:test --focus compatibility
 ```
 
 ## Review and Audit Patterns
@@ -253,20 +253,20 @@
 
 ```bash
 # Comprehensive security review
-/sc:analyze . --focus security --think-hard
+/airis:analyze . --focus security --think-hard
 @agent-security "review authentication and authorization"
 @agent-security "check for OWASP vulnerabilities"
-/sc:document --type security-audit
+/airis:document --type security-audit
 ```
 
 ### Code Quality Review
 
 ```bash
 # Multi-aspect quality review
-/sc:analyze src/ --focus quality
+/airis:analyze src/ --focus quality
 @agent-quality-engineer "review test coverage"
 @agent-refactoring-expert "identify code smells"
-/sc:improve --fix --preview
+/airis:improve --fix --preview
 ```
 
 ### Architecture Review
@@ -274,9 +274,9 @@
 ```bash
 # System architecture assessment
 @agent-system-architect "review current architecture"
-/sc:analyze . --focus architecture --think-hard
+/airis:analyze . --focus architecture --think-hard
 @agent-performance-engineer "identify bottlenecks"
-/sc:design "optimization recommendations"
+/airis:design "optimization recommendations"
 ```
 
 ## Important Clarifications
@@ -308,7 +308,7 @@
 
 1. **Progress Logically**: Broad → Specific → Implementation
 2. **Reuse Context**: Later commands benefit from earlier context
-3. **Document Decisions**: Use `/sc:save` for important summaries
+3. **Document Decisions**: Use `/airis:save` for important summaries
 4. **Scope Appropriately**: Focus on manageable chunks
 
 ### Flag Usage

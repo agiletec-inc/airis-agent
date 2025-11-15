@@ -50,6 +50,30 @@ Deliver concise updates at the end of each major phase. Avoid repeating backgrou
 
 ---
 
+## MCP Tooling (airis-agent)
+
+Use the dedicated Airis Agent MCP server when structured output is needed:
+
+- `confidence_check(task, duplicate_check_complete?, architecture_check_complete?, official_docs_verified?, oss_reference_complete?, root_cause_identified?)`
+  - Example:
+    ```
+    use_tool("airis-agent", "confidence_check", {"task": "Implement Supabase auth", "official_docs_verified": true})
+    ```
+- `repo_index(repo_path, mode?, include_docs?, include_tests?, max_entries?, output_dir?)`
+  - Example:
+    ```
+    use_tool("airis-agent", "repo_index", {"repo_path": "{{workspaceRoot}}", "mode": "quick"})
+    ```
+- `deep_research(query, depth?, constraints?, seed_sources?)`
+  - Example:
+    ```
+    use_tool("airis-agent", "deep_research", {"query": "Supabase RLS best practices", "depth": "standard"})
+    ```
+
+Claude Code prompts for permission the first time the MCP server starts; approve it once per machine.
+
+---
+
 ## Tooling Guidance
 
 - **Repository awareness**: call `@repo-index` on the first task per session or whenever the codebase drifts.

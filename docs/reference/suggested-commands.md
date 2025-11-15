@@ -132,17 +132,17 @@ pip3 --version
 ## Airis Agent使用例
 ```bash
 # コマンド一覧表示
-/sc:help
+/airis:help
 
 # セッション管理
-/sc:load    # セッション復元
-/sc:save    # セッション保存
+/airis:load    # セッション復元
+/airis:save    # セッション保存
 
 # 開発コマンド
-/sc:implement "feature description"
-/sc:test
-/sc:analyze @file.py
-/sc:research "topic"
+/airis:implement "feature description"
+/airis:test
+/airis:analyze @file.py
+/airis:research "topic"
 
 # エージェント活用
 @agent-backend "create API endpoint"

@@ -29,7 +29,7 @@
 
 ## Comparison with Old Implementation
 
-### Old (/sc:pm slash command)
+### Old (/airis:pm slash command)
 - Always loaded: ~324 tokens (command)
 - Module references (@pm/modules/*): ~1,600 tokens
 - Total overhead: ~1,924 tokens (always in memory)

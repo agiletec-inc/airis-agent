@@ -1,7 +1,7 @@
 # Airis Agent 행동 모드 가이드 🧠
 
 ## ✅ 빠른 확인
-`/sc:` 명령어를 사용하여 모드를 테스트하세요 - 작업 복잡성에 따라 자동으로 활성화됩니다. 전체 명령어 참조는 [명령어 가이드](commands.md)를 참조하세요.
+`/airis:` 명령어를 사용하여 모드를 테스트하세요 - 작업 복잡성에 따라 자동으로 활성화됩니다. 전체 명령어 참조는 [명령어 가이드](commands.md)를 참조하세요.
 
 ## 빠른 참조 표
 
@@ -9,7 +9,7 @@
 |------|---------|---------------|---------------|---------------|
 | **🧠 브레인스토밍** | 대화형 발견 | "brainstorm", "maybe", 모호한 요청 | 소크라테스식 질문, 요구사항 도출 | 새 프로젝트 계획, 불명확한 요구사항 |
 | **🔍 내성** | 메타인지 분석 | 오류 복구, "추론 분석" | 투명한 사고 마커 (🤔, 🎯, 💡) | 디버깅, 학습, 최적화 |
-| **🔬 심층 연구** | 체계적 조사 마인드셋 | `/sc:research`, 조사 키워드 | 6단계 워크플로우, 증거 기반 추론 | 기술 연구, 최신 이벤트, 시장 분석 |
+| **🔬 심층 연구** | 체계적 조사 마인드셋 | `/airis:research`, 조사 키워드 | 6단계 워크플로우, 증거 기반 추론 | 기술 연구, 최신 이벤트, 시장 분석 |
 | **📋 작업 관리** | 복잡한 조정 | >3단계, >2개 디렉토리 | 단계 분해, 메모리 지속성 | 다단계 작업, 프로젝트 관리 |
 | **🎯 오케스트레이션** | 지능형 도구 선택 | 다중 도구 작업, 높은 리소스 사용 | 최적의 도구 라우팅, 병렬 실행 | 복잡한 분석, 성능 최적화 |
 | **⚡ 토큰 효율성** | 압축 커뮤니케이션 | 높은 컨텍스트 사용, `--uc` 플래그 | 심볼 시스템, 예상 30-50% 토큰 감소 | 리소스 제약, 대규모 작업 |
@@ -23,8 +23,8 @@
 **빠른 예제:**
 ```bash
 # 자동 활성화 예제
-/sc:brainstorm "모바일 앱"        # → 소크라테스식 발견 질문
-/sc:implement "인증 시스템"        # → 다단계 조정
+/airis:brainstorm "모바일 앱"        # → 소크라테스식 발견 질문
+/airis:implement "인증 시스템"        # → 다단계 조정
 "--uc analyze large-codebase/"     # → 압축된 심볼 출력
 ```
 
@@ -72,7 +72,7 @@
 - [ ] 발견 과정 전반에 걸쳐 협업적 어조 유지
 - [ ] 결과로 구조화된 요구사항 또는 기술 브리프 생성
 
-**검증:** `/sc:brainstorm "웹 앱"`은 사용자, 기능, 기술에 대해 질문해야 함
+**검증:** `/airis:brainstorm "웹 앱"`은 사용자, 기능, 기술에 대해 질문해야 함
 **테스트:** 모호한 요청은 가정이 아닌 발견 질문을 트리거해야 함
 **확인:** 동일한 대화에서 후속 질문 전반에 걸쳐 모드가 지속되어야 함
 
@@ -125,7 +125,7 @@
 **목적**: 체계적 조사 및 증거 기반 추론을 위한 연구 마인드셋
 
 **자동 활성화 트리거:**
-- `/sc:research` 명령어 호출
+- `/airis:research` 명령어 호출
 - 연구 관련 키워드: investigate, explore, discover, analyze
 - 지식 컷오프를 넘어선 최신 정보가 필요한 질문
 - 복잡한 연구 요구사항
@@ -163,7 +163,7 @@
 - [ ] 적절한 구조로 docs/research/에 보고서 저장
 - [ ] 명확한 방법론 및 증거 제시
 
-**검증:** `/sc:research "테스트 주제"`는 TodoWrite를 생성하고 체계적으로 실행해야 함
+**검증:** `/airis:research "테스트 주제"`는 TodoWrite를 생성하고 체계적으로 실행해야 함
 **테스트:** 모든 연구에 신뢰도 점수 및 인용이 포함되어야 함
 **확인:** 보고서가 자동으로 docs/research/에 저장되어야 함
 
@@ -326,12 +326,12 @@
 **다중 모드 워크플로우:**
 ```bash
 # 발견 → 계획 → 구현
-/sc:brainstorm "마이크로서비스 아키텍처" --task-manage
+/airis:brainstorm "마이크로서비스 아키텍처" --task-manage
 # → 브레인스토밍: 요구사항 발견
 # → 작업 관리: 다단계 조정
 
 # 투명성 및 효율성을 갖춘 분석
-/sc:analyze legacy-system/ --introspect --uc
+/airis:analyze legacy-system/ --introspect --uc
 # → 내성: 투명한 추론
 # → 토큰 효율성: 압축된 출력
 ```
@@ -348,7 +348,7 @@
 **재정의 예제:**
 ```bash
 # "명확한" 요구사항에 브레인스토밍 강제
-/sc:implement "사용자 로그인" --brainstorm
+/airis:implement "사용자 로그인" --brainstorm
 
 # 디버깅에 추론 투명성 추가
 # 투명한 추론으로 인증 문제 디버그
@@ -386,12 +386,12 @@
 → 📝 구조화된 요구사항 브리프
 
 # 2단계: 계획 (작업 관리 모드 자동 활성화)
-/sc:implement "핵심 생산성 기능"
+/airis:implement "핵심 생산성 기능"
 → 📋 종속성이 있는 다단계 분해
 → 🎯 품질 게이트를 갖춘 단계 조정
 
 # 3단계: 구현 (오케스트레이션 모드가 도구 조정)
-/sc:implement "프론트엔드 및 백엔드 시스템"
+/airis:implement "프론트엔드 및 백엔드 시스템"
 → 🎯 Magic (UI) + Context7 (패턴) + Sequential (아키텍처)
 → ⚡ 병렬 실행 최적화
 ```
@@ -416,7 +416,7 @@
 **높은 복잡성 시나리오:**
 ```bash
 # 여러 제약이 있는 대규모 리팩토링
-/sc:improve legacy-system/ --introspect --uc --orchestrate
+/airis:improve legacy-system/ --introspect --uc --orchestrate
 → 🔍 투명한 추론 (내성)
 → ⚡ 압축 커뮤니케이션 (토큰 효율성)
 → 🎯 최적의 도구 조정 (오케스트레이션)
@@ -442,15 +442,15 @@
 
 ```bash
 # 특정 모드 동작 강제
-/sc:command --brainstorm    # 협업 발견
-/sc:command --introspect    # 추론 투명성
-/sc:command --task-manage   # 계층적 조정
-/sc:command --orchestrate   # 도구 최적화
-/sc:command --uc           # 토큰 압축
+/airis:command --brainstorm    # 협업 발견
+/airis:command --introspect    # 추론 투명성
+/airis:command --task-manage   # 계층적 조정
+/airis:command --orchestrate   # 도구 최적화
+/airis:command --uc           # 토큰 압축
 
 # 여러 모드 결합
-/sc:command --introspect --uc    # 투명 + 효율적
-/sc:command --task-manage --orchestrate  # 조정 + 최적화
+/airis:command --introspect --uc    # 투명 + 효율적
+/airis:command --task-manage --orchestrate  # 조정 + 최적화
 ```
 
 ---
@@ -480,7 +480,7 @@
 ```bash
 # 문제: 모드가 질문 대신 솔루션 제공
 # 빠른 수정: 요청 명확성 확인 및 명시적 플래그 사용
-/sc:brainstorm "웹 앱" --brainstorm         # 발견 모드 강제
+/airis:brainstorm "웹 앱" --brainstorm         # 발견 모드 강제
 "...에 대한 모호한 아이디어가 있어요"        # 불확실성 언어 사용
 "...를 구축할 수 있을까요"                   # 탐색 트리거
 ```
@@ -489,8 +489,8 @@
 ```bash
 # 문제: 간단한 작업이 복잡한 조정을 받음
 # 빠른 수정: 범위 줄이기 또는 더 간단한 명령어 사용
-/sc:implement "함수" --no-task-manage     # 조정 비활성화
-/sc:troubleshoot bug.js                   # 기본 명령어 사용
+/airis:implement "함수" --no-task-manage     # 조정 비활성화
+/airis:troubleshoot bug.js                   # 기본 명령어 사용
 # 작업이 정말 복잡한지 확인 (>3개 파일, >2개 디렉토리)
 ```
 
@@ -498,8 +498,8 @@
 ```bash
 # 문제: 출력이 너무 압축되거나 불명확함
 # 빠른 수정: 명확성을 위해 압축 비활성화
-/sc:command --no-uc                           # 압축 비활성화
-/sc:command --verbose                         # 상세 출력 강제
+/airis:command --no-uc                           # 압축 비활성화
+/airis:command --verbose                         # 상세 출력 강제
 # 명확성이 효율성보다 중요할 때 사용
 ```
 
@@ -507,7 +507,7 @@
 ```bash
 # 문제: 너무 많은 메타 주석, 충분한 행동 없음
 # 빠른 수정: 직접 작업을 위해 내성 비활성화
-/sc:command --no-introspect                   # 직접 실행
+/airis:command --no-introspect                   # 직접 실행
 # 학습 및 디버깅에만 내성 사용
 ```
 
@@ -515,8 +515,8 @@
 ```bash
 # 문제: 도구 조정이 혼란 야기
 # 빠른 수정: 도구 사용 단순화
-/sc:command --no-mcp                          # 네이티브 도구만
-/sc:command --simple                          # 기본 실행
+/airis:command --no-mcp                          # 네이티브 도구만
+/airis:command --simple                          # 기본 실행
 # 작업 복잡성이 오케스트레이션을 정당화하는지 확인
 ```
 
@@ -543,8 +543,8 @@
 **수준 2: 상세 도움말 (5-15분)**
 ```bash
 # 모드별 진단
-/sc:help modes                            # 사용 가능한 모든 모드 나열
-/sc:reflect --type mode-status            # 현재 모드 상태 확인
+/airis:help modes                            # 사용 가능한 모든 모드 나열
+/airis:reflect --type mode-status            # 현재 모드 상태 확인
 # 요청 복잡성 및 트리거 검토
 ```
 - 모드 설치 문제는 [일반적인 문제 가이드](../reference/common-issues.md) 참조
@@ -592,10 +592,10 @@ A: 커뮤니케이션 패턴에서 이러한 지표를 찾으세요:
 **Q: 특정 모드를 강제할 수 있나요?**
 A: 예, 자동 감지를 재정의하려면 수동 플래그 사용:
 ```bash
-/sc:command --brainstorm     # 발견 강제
-/sc:command --introspect     # 투명성 추가
-/sc:command --task-manage    # 조정 활성화
-/sc:command --uc            # 출력 압축
+/airis:command --brainstorm     # 발견 강제
+/airis:command --introspect     # 투명성 추가
+/airis:command --task-manage    # 조정 활성화
+/airis:command --uc            # 출력 압축
 ```
 
 **Q: 모드가 실행에 영향을 미치나요?**

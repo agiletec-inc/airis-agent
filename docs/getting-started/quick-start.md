@@ -31,7 +31,7 @@
 | **Commands** | **AI Agents** | **Behavioral Modes** | **MCP Servers** |
 |:------------:|:-------------:|:-------------------:|:---------------:|
 | **21** | **14** | **6** | **6** |
-| `/sc:` triggers | Domain specialists | Context adaptation | Tool integration |
+| `/airis:` triggers | Domain specialists | Context adaptation | Tool integration |
 
 </div>
 
@@ -46,7 +46,7 @@
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
 │  User Input     │────>│   Claude Code    │────>│  Context Files  │
-│  /sc:command    │     │  Reads Context   │     │  (.md behaviors)│
+│  /airis:command    │     │  Reads Context   │     │  (.md behaviors)│
 └─────────────────┘     └──────────────────┘     └─────────────────┘
                                │                          │
                                ▼                          ▼
@@ -56,7 +56,7 @@
 └─────────────────┘      └──────────────────┘     └─────────────────┘
 ```
 
-**The Magic**: When you type `/sc:brainstorm`, Claude reads behavioral instructions from installed `.md` files and responds with enhanced capabilities
+**The Magic**: When you type `/airis:brainstorm`, Claude reads behavioral instructions from installed `.md` files and responds with enhanced capabilities
 
 </div>
 
@@ -94,13 +94,13 @@ npm install -g @agiletec/airis-agent && airis-agent install
 
 ```text
 # Interactive discovery
-/sc:brainstorm "web app for task management"
+/airis:brainstorm "web app for task management"
 
 # Analyze existing code
-/sc:analyze src/
+/airis:analyze src/
 
 # Generate implementation
-/sc:implement "user authentication"
+/airis:implement "user authentication"
 
 # Activate specialist
 @agent-security "review auth flow"
@@ -114,7 +114,7 @@ npm install -g @agiletec/airis-agent && airis-agent install
 <summary><b>🎥 What Happens Behind the Scenes</b></summary>
 
 1. **Context Loading**: Claude Code imports behavioral `.md` files via `CLAUDE.md`
-2. **Pattern Recognition**: Recognizes `/sc:` and `@agent-` trigger patterns
+2. **Pattern Recognition**: Recognizes `/airis:` and `@agent-` trigger patterns
 3. **Behavioral Activation**: Applies corresponding instructions from context files
 4. **MCP Integration**: Uses configured external tools when available
 5. **Response Enhancement**: Follows framework patterns for comprehensive responses
@@ -138,10 +138,10 @@ npm install -g @agiletec/airis-agent && airis-agent install
 
 **Slash Commands**
 
-`/sc:brainstorm`  
-`/sc:implement`  
-`/sc:analyze`  
-`/sc:workflow`
+`/airis:brainstorm`  
+`/airis:implement`  
+`/airis:analyze`  
+`/airis:workflow`
 
 *Workflow automation*
 
@@ -216,37 +216,37 @@ Playwright (testing)
 </tr>
 <tr>
 <td><b>1. Discovery</b></td>
-<td><code>/sc:brainstorm "e-commerce app"</code></td>
+<td><code>/airis:brainstorm "e-commerce app"</code></td>
 <td>Interactive requirements exploration</td>
 </tr>
 <tr>
 <td><b>2. Load Context</b></td>
-<td><code>/sc:load src/</code></td>
+<td><code>/airis:load src/</code></td>
 <td>Import existing project structure</td>
 </tr>
 <tr>
 <td><b>3. Analysis</b></td>
-<td><code>/sc:analyze --focus architecture</code></td>
+<td><code>/airis:analyze --focus architecture</code></td>
 <td>Deep architectural review</td>
 </tr>
 <tr>
 <td><b>4. Planning</b></td>
-<td><code>/sc:workflow "payment integration"</code></td>
+<td><code>/airis:workflow "payment integration"</code></td>
 <td>Generate implementation roadmap</td>
 </tr>
 <tr>
 <td><b>5. Implementation</b></td>
-<td><code>/sc:implement "Stripe checkout"</code></td>
+<td><code>/airis:implement "Stripe checkout"</code></td>
 <td>Build with best practices</td>
 </tr>
 <tr>
 <td><b>6. Validation</b></td>
-<td><code>/sc:test --coverage</code></td>
+<td><code>/airis:test --coverage</code></td>
 <td>Comprehensive testing</td>
 </tr>
 <tr>
 <td><b>7. Save Session</b></td>
-<td><code>/sc:save "payment-complete"</code></td>
+<td><code>/airis:save "payment-complete"</code></td>
 <td>Persist for next session</td>
 </tr>
 </table>
@@ -337,9 +337,9 @@ Playwright (testing)
 <td align="center"><b>1</b><br/>🌱</td>
 <td><b>Core Commands</b></td>
 <td>
-• <code>/sc:brainstorm</code><br/>
-• <code>/sc:analyze</code><br/>
-• <code>/sc:implement</code>
+• <code>/airis:brainstorm</code><br/>
+• <code>/airis:analyze</code><br/>
+• <code>/airis:implement</code>
 </td>
 <td>Complete first project</td>
 </tr>
@@ -438,7 +438,7 @@ Start simple with basic commands. Complexity emerges naturally as needed.
 - [Commands Reference](../user-guide/commands.md)
 - [Examples Cookbook](../reference/examples-cookbook.md)
 
-Start with `/sc:brainstorm`
+Start with `/airis:brainstorm`
 
 </td>
 <td valign="top">
@@ -482,7 +482,7 @@ Create custom workflows
 ### **🎉 Ready to Transform Your Development Workflow?**
 
 <p align="center">
-  <b>Start now with</b> <code>/sc:brainstorm</code> <b>in Claude Code!</b>
+  <b>Start now with</b> <code>/airis:brainstorm</code> <b>in Claude Code!</b>
 </p>
 
 <p align="center">

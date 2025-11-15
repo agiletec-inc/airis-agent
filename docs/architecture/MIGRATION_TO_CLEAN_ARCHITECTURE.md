@@ -176,10 +176,10 @@ import pytest
 from pathlib import Path
 from typing import Dict, Any
 
-from .pm_agent.confidence import ConfidenceChecker
-from .pm_agent.self_check import SelfCheckProtocol
-from .pm_agent.reflexion import ReflexionPattern
-from .pm_agent.token_budget import TokenBudgetManager
+from .airis_agent.confidence import ConfidenceChecker
+from .airis_agent.self_check import SelfCheckProtocol
+from .airis_agent.reflexion import ReflexionPattern
+from .airis_agent.token_budget import TokenBudgetManager
 
 
 def pytest_configure(config):
@@ -282,7 +282,7 @@ def pytest_runtest_makereport(item, call):
 
 ### 2. PM Agent Core Modules
 
-**File**: `src/airis_agent/pm_agent/confidence.py`
+**File**: `src/airis_agent/airis_agent/confidence.py`
 
 ```python
 """
@@ -364,7 +364,7 @@ class ConfidenceChecker:
         return True
 ```
 
-**File**: `src/airis_agent/pm_agent/self_check.py`
+**File**: `src/airis_agent/airis_agent/self_check.py`
 
 ```python
 """

@@ -188,7 +188,7 @@ class PMAgent:
 
 **Token Savings**:
 - Before: 16,201 bytes (4,050 tokens) every session
-- After: Import only when `/sc:pm` used (~100 tokens)
+- After: Import only when `/airis:pm` used (~100 tokens)
 - Savings: 97%
 
 ### Phase 4: Skills API Migration (Future)
@@ -202,7 +202,7 @@ skills/pm-mode/
   validators.py (8KB)      # Validation gates
 
 Session start: 200 bytes loaded
-/sc:pm used: Full 29KB loaded on-demand
+/airis:pm used: Full 29KB loaded on-demand
 Never used: Forever 200 bytes
 ```
 
@@ -219,7 +219,7 @@ Savings: 98.8% with Skills API
 
 ### Immediate (This Week)
 
-1. ✅ **Index Command** (`/sc:index-repo`)
+1. ✅ **Index Command** (`/airis:index-repo`)
    - Already created
    - Auto-runs on setup
    - 94% token savings

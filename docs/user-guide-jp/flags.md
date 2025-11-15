@@ -58,7 +58,7 @@
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#command-specific-flags)
 
-### 分析コマンドフラグ（`/sc:analyze`）
+### 分析コマンドフラグ（`/airis:analyze`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#analysis-command-flags-scanalyze)
 
@@ -68,7 +68,7 @@
 |`--depth`|分析の徹底性|`quick`、`deep`|
 |`--format`|出力形式|`text`、、`json`​`report`|
 
-### ビルドコマンドフラグ（`/sc:build`）
+### ビルドコマンドフラグ（`/airis:build`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#build-command-flags-scbuild)
 
@@ -79,7 +79,7 @@
 |`--optimize`|最適化を有効にする|ブール値|
 |`--verbose`|詳細な出力|ブール値|
 
-### 設計コマンドフラグ（`/sc:design`）
+### 設計コマンドフラグ（`/airis:design`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#design-command-flags-scdesign)
 
@@ -88,7 +88,7 @@
 |`--type`|設計目標|`architecture`、、、、`api`​`component`​`database`|
 |`--format`|出力形式|`diagram`、、`spec`​`code`|
 
-### コマンドフラグの説明（`/sc:explain`）
+### コマンドフラグの説明（`/airis:explain`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#explain-command-flags-scexplain)
 
@@ -98,7 +98,7 @@
 |`--format`|説明スタイル|`text`、、`examples`​`interactive`|
 |`--context`|ドメインコンテキスト|任意のドメイン（例：`react`、`security`）|
 
-### コマンドフラグの改善（`/sc:improve`）
+### コマンドフラグの改善（`/airis:improve`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#improve-command-flags-scimprove)
 
@@ -109,7 +109,7 @@
 |`--interactive`|ユーザーガイダンス|ブール値|
 |`--preview`|実行せずに表示する|ブール値|
 
-### タスクコマンドフラグ（`/sc:task`）
+### タスクコマンドフラグ（`/airis:task`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#task-command-flags-sctask)
 
@@ -119,7 +119,7 @@
 |`--parallel`|並列実行|ブール値|
 |`--delegate`|サブエージェントの調整|ブール値|
 
-### ワークフローコマンドフラグ（`/sc:workflow`）
+### ワークフローコマンドフラグ（`/airis:workflow`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#workflow-command-flags-scworkflow)
 
@@ -129,7 +129,7 @@
 |`--depth`|分析の深さ|`shallow`、、`normal`​`deep`|
 |`--parallel`|並列調整|ブール値|
 
-### コマンドフラグのトラブルシューティング ( `/sc:troubleshoot`)
+### コマンドフラグのトラブルシューティング ( `/airis:troubleshoot`)
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#troubleshoot-command-flags-sctroubleshoot)
 
@@ -139,7 +139,7 @@
 |`--trace`|トレース分析を含める|ブール値|
 |`--fix`|修正を適用する|ブール値|
 
-### クリーンアップコマンドフラグ（`/sc:cleanup`）
+### クリーンアップコマンドフラグ（`/airis:cleanup`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#cleanup-command-flags-sccleanup)
 
@@ -150,7 +150,7 @@
 |`--interactive`|ユーザーガイダンス|ブール値|
 |`--preview`|実行せずに表示する|ブール値|
 
-### コマンドフラグの推定（`/sc:estimate`）
+### コマンドフラグの推定（`/airis:estimate`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#estimate-command-flags-scestimate)
 
@@ -160,7 +160,7 @@
 |`--unit`|時間単位|`hours`、、`days`​`weeks`|
 |`--breakdown`|詳細な内訳|ブール値|
 
-### インデックスコマンドフラグ（`/sc:index`）
+### インデックスコマンドフラグ（`/airis:index`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#index-command-flags-scindex)
 
@@ -169,7 +169,7 @@
 |`--type`|インデックスターゲット|`docs`、、、、`api`​`structure`​`readme`|
 |`--format`|出力形式|`md`、、`json`​`yaml`|
 
-### コマンドフラグを反映する ( `/sc:reflect`)
+### コマンドフラグを反映する ( `/airis:reflect`)
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#reflect-command-flags-screflect)
 
@@ -179,7 +179,7 @@
 |`--analyze`|分析を含める|ブール値|
 |`--validate`|完全性を検証する|ブール値|
 
-### スポーンコマンドフラグ（`/sc:spawn`）
+### スポーンコマンドフラグ（`/airis:spawn`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#spawn-command-flags-scspawn)
 
@@ -188,7 +188,7 @@
 |`--strategy`|調整アプローチ|`sequential`、、`parallel`​`adaptive`|
 |`--depth`|分析の深さ|`normal`、`deep`|
 
-### Gitコマンドフラグ（`/sc:git`）
+### Gitコマンドフラグ（`/airis:git`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#git-command-flags-scgit)
 
@@ -197,7 +197,7 @@
 |`--smart-commit`|コミットメッセージを生成する|ブール値|
 |`--interactive`|ガイド付き操作|ブール値|
 
-### 選択ツールコマンドフラグ ( `/sc:select-tool`)
+### 選択ツールコマンドフラグ ( `/airis:select-tool`)
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#select-tool-command-flags-scselect-tool)
 
@@ -206,7 +206,7 @@
 |`--analyze`|ツール分析|ブール値|
 |`--explain`|選択の説明|ブール値|
 
-### テストコマンドフラグ（`/sc:test`）
+### テストコマンドフラグ（`/airis:test`）
 
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#test-command-flags-sctest)
 
@@ -265,10 +265,10 @@
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#frontend-development)
 
 ```shell
-/sc:implement "responsive dashboard" --magic --c7
-/sc:design component-library --type component --format code
-/sc:test ui-components/ --magic --play
-/sc:improve legacy-ui/ --magic --morph --validate
+/airis:implement "responsive dashboard" --magic --c7
+/airis:design component-library --type component --format code
+/airis:test ui-components/ --magic --play
+/airis:improve legacy-ui/ --magic --morph --validate
 ```
 
 ### バックエンド開発
@@ -276,10 +276,10 @@
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#backend-development)
 
 ```shell
-/sc:analyze api/ --focus performance --seq --think
-/sc:design payment-api --type api --format spec
-/sc:troubleshoot "API timeout" --type performance --trace
-/sc:improve auth-service --type security --validate
+/airis:analyze api/ --focus performance --seq --think
+/airis:design payment-api --type api --format spec
+/airis:troubleshoot "API timeout" --type performance --trace
+/airis:improve auth-service --type security --validate
 ```
 
 ### 大規模プロジェクト
@@ -287,10 +287,10 @@
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#large-projects)
 
 ```shell
-/sc:analyze . --ultrathink --all-mcp --safe-mode
-/sc:workflow enterprise-system --strategy enterprise --depth deep
-/sc:cleanup . --type all --safe --interactive
-/sc:estimate "migrate to microservices" --type complexity --breakdown
+/airis:analyze . --ultrathink --all-mcp --safe-mode
+/airis:workflow enterprise-system --strategy enterprise --depth deep
+/airis:cleanup . --type all --safe --interactive
+/airis:estimate "migrate to microservices" --type complexity --breakdown
 ```
 
 ### 品質とメンテナンス
@@ -298,10 +298,10 @@
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#quality--maintenance)
 
 ```shell
-/sc:improve src/ --type quality --safe --interactive
-/sc:cleanup imports --type imports --preview
-/sc:reflect --type completion --validate
-/sc:git commit --smart-commit
+/airis:improve src/ --type quality --safe --interactive
+/airis:cleanup imports --type imports --preview
+/airis:reflect --type completion --validate
+/airis:git commit --smart-commit
 ```
 
 ## フラグインタラクション
@@ -354,9 +354,9 @@
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#debug-flags)
 
 ```shell
-/sc:analyze . --verbose                      # Shows decision logic and flag activation
-/sc:select-tool "operation" --explain        # Explains tool selection process
-/sc:reflect --type session --analyze         # Reviews current session decisions
+/airis:analyze . --verbose                      # Shows decision logic and flag activation
+/airis:select-tool "operation" --explain        # Explains tool selection process
+/airis:reflect --type session --analyze         # Reviews current session decisions
 ```
 
 ### クイックフィックス
@@ -364,9 +364,9 @@
 [](https://github.com/khayashi4337/superagent/blob/master/docs/user-guide/flags.md#quick-fixes)
 
 ```shell
-/sc:analyze . --help                         # Shows available flags for command
-/sc:analyze . --no-mcp                       # Native execution only
-/sc:cleanup . --preview                      # Shows what would be cleaned
+/airis:analyze . --help                         # Shows available flags for command
+/airis:analyze . --no-mcp                       # Native execution only
+/airis:cleanup . --preview                      # Shows what would be cleaned
 ```
 
 ## フラグの優先ルール

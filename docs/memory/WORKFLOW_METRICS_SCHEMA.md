@@ -398,4 +398,4 @@ find docs/memory/archive/ -name "workflow_metrics_*.jsonl" \
 
 - Specification: `plugins/airis-agent/commands/pm.md` (Line 291-355)
 - Research: `docs/research/llm-agent-token-efficiency-2025.md`
-- Tests: `tests/pm_agent/test_token_budget.py`
+- Tests: `tests/airis_agent_core/test_token_budget.py`

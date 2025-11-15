@@ -40,14 +40,14 @@
 
 ## 特定命令标志
 
-### 分析命令标志 (`/sc:analyze`)
+### 分析命令标志 (`/airis:analyze`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--focus` | 针对特定领域 | `security`, `performance`, `quality`, `architecture` |
 | `--depth` | 分析彻底程度 | `quick`, `deep` |
 | `--format` | 输出格式 | `text`, `json`, `report` |
 
-### 构建命令标志 (`/sc:build`)
+### 构建命令标志 (`/airis:build`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--type` | 构建配置 | `dev`, `prod`, `test` |
@@ -55,20 +55,20 @@
 | `--optimize` | 启用优化 | 布尔值 |
 | `--verbose` | 详细输出 | 布尔值 |
 
-### 设计命令标志 (`/sc:design`)
+### 设计命令标志 (`/airis:design`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--type` | 设计目标 | `architecture`, `api`, `component`, `database` |
 | `--format` | 输出格式 | `diagram`, `spec`, `code` |
 
-### 解释命令标志 (`/sc:explain`)
+### 解释命令标志 (`/airis:explain`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--level` | 复杂度级别 | `basic`, `intermediate`, `advanced` |
 | `--format` | 解释风格 | `text`, `examples`, `interactive` |
 | `--context` | 领域上下文 | 任何领域（如 `react`、`security`）|
 
-### 改进命令标志 (`/sc:improve`)
+### 改进命令标志 (`/airis:improve`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--type` | 改进焦点 | `quality`, `performance`, `maintainability`, `style`, `security` |
@@ -76,28 +76,28 @@
 | `--interactive` | 用户指导 | 布尔值 |
 | `--preview` | 显示但不执行 | 布尔值 |
 
-### 任务命令标志 (`/sc:task`)
+### 任务命令标志 (`/airis:task`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--strategy` | 任务方法 | `systematic`, `agile`, `enterprise` |
 | `--parallel` | 并行执行 | 布尔值 |
 | `--delegate` | 子智能体协调 | 布尔值 |
 
-### 工作流命令标志 (`/sc:workflow`)
+### 工作流命令标志 (`/airis:workflow`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--strategy` | 工作流方法 | `systematic`, `agile`, `enterprise` |
 | `--depth` | 分析深度 | `shallow`, `normal`, `deep` |
 | `--parallel` | 并行协调 | 布尔值 |
 
-### 故障排除命令标志 (`/sc:troubleshoot`)
+### 故障排除命令标志 (`/airis:troubleshoot`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--type` | 问题类别 | `bug`, `build`, `performance`, `deployment` |
 | `--trace` | 包含跟踪分析 | 布尔值 |
 | `--fix` | 执行修复 | 布尔值 |
 
-### 清理命令标志 (`/sc:cleanup`)
+### 清理命令标志 (`/airis:cleanup`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--type` | 清理目标 | `code`, `imports`, `files`, `all` |
@@ -105,45 +105,45 @@
 | `--interactive` | 用户指导 | 布尔值 |
 | `--preview` | 显示但不执行 | 布尔值 |
 
-### 估算命令标志 (`/sc:estimate`)
+### 估算命令标志 (`/airis:estimate`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--type` | 估算焦点 | `time`, `effort`, `complexity` |
 | `--unit` | 时间单位 | `hours`, `days`, `weeks` |
 | `--breakdown` | 详细分解 | 布尔值 |
 
-### 索引命令标志 (`/sc:index`)
+### 索引命令标志 (`/airis:index`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--type` | 索引目标 | `docs`, `api`, `structure`, `readme` |
 | `--format` | 输出格式 | `md`, `json`, `yaml` |
 
-### 反思命令标志 (`/sc:reflect`)
+### 反思命令标志 (`/airis:reflect`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--type` | 反思范围 | `task`, `session`, `completion` |
 | `--analyze` | 包含分析 | 布尔值 |
 | `--validate` | 验证完整性 | 布尔值 |
 
-### 生成命令标志 (`/sc:spawn`)
+### 生成命令标志 (`/airis:spawn`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--strategy` | 协调方法 | `sequential`, `parallel`, `adaptive` |
 | `--depth` | 分析深度 | `normal`, `deep` |
 
-### Git 命令标志 (`/sc:git`)
+### Git 命令标志 (`/airis:git`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--smart-commit` | 生成提交消息 | 布尔值 |
 | `--interactive` | 引导操作 | 布尔值 |
 
-### 工具选择命令标志 (`/sc:select-tool`)
+### 工具选择命令标志 (`/airis:select-tool`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--analyze` | 工具分析 | 布尔值 |
 | `--explain` | 解释选择 | 布尔值 |
 
-### 测试命令标志 (`/sc:test`)
+### 测试命令标志 (`/airis:test`)
 | 标志 | 目的 | 值 |
 |------|---------|--------|
 | `--coverage` | 包含覆盖率 | 布尔值 |
@@ -183,34 +183,34 @@
 
 ### 前端开发
 ```bash
-/sc:implement "responsive dashboard" --magic --c7
-/sc:design component-library --type component --format code
-/sc:test ui-components/ --magic --play
-/sc:improve legacy-ui/ --magic --morph --validate
+/airis:implement "responsive dashboard" --magic --c7
+/airis:design component-library --type component --format code
+/airis:test ui-components/ --magic --play
+/airis:improve legacy-ui/ --magic --morph --validate
 ```
 
 ### 后端开发
 ```bash
-/sc:analyze api/ --focus performance --seq --think
-/sc:design payment-api --type api --format spec
-/sc:troubleshoot "API timeout" --type performance --trace
-/sc:improve auth-service --type security --validate
+/airis:analyze api/ --focus performance --seq --think
+/airis:design payment-api --type api --format spec
+/airis:troubleshoot "API timeout" --type performance --trace
+/airis:improve auth-service --type security --validate
 ```
 
 ### 大型项目
 ```bash
-/sc:analyze . --ultrathink --all-mcp --safe-mode
-/sc:workflow enterprise-system --strategy enterprise --depth deep
-/sc:cleanup . --type all --safe --interactive
-/sc:estimate "migrate to microservices" --type complexity --breakdown
+/airis:analyze . --ultrathink --all-mcp --safe-mode
+/airis:workflow enterprise-system --strategy enterprise --depth deep
+/airis:cleanup . --type all --safe --interactive
+/airis:estimate "migrate to microservices" --type complexity --breakdown
 ```
 
 ### 质量和维护
 ```bash
-/sc:improve src/ --type quality --safe --interactive
-/sc:cleanup imports --type imports --preview
-/sc:reflect --type completion --validate
-/sc:git commit --smart-commit
+/airis:improve src/ --type quality --safe --interactive
+/airis:cleanup imports --type imports --preview
+/airis:reflect --type completion --validate
+/airis:git commit --smart-commit
 ```
 
 ## 标志交互
@@ -244,16 +244,16 @@
 
 ### 调试标志
 ```bash
-/sc:analyze . --verbose                      # 显示决策逻辑和标志激活
-/sc:select-tool "操作" --explain        # 解释工具选择过程
-/sc:reflect --type session --analyze         # 审查当前会话决策
+/airis:analyze . --verbose                      # 显示决策逻辑和标志激活
+/airis:select-tool "操作" --explain        # 解释工具选择过程
+/airis:reflect --type session --analyze         # 审查当前会话决策
 ```
 
 ### 快速修复
 ```bash
-/sc:analyze . --help                         # 显示命令的可用标志
-/sc:analyze . --no-mcp                       # 仅本地执行
-/sc:cleanup . --preview                      # 显示将被清理的内容
+/airis:analyze . --help                         # 显示命令的可用标志
+/airis:analyze . --no-mcp                       # 仅本地执行
+/airis:cleanup . --preview                      # 显示将被清理的内容
 ```
 
 ## 标志优先级规则

@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 # All Python operations must use UV
 uv run pytest                    # Run tests
-uv run pytest tests/pm_agent/   # Run specific tests
+uv run pytest tests/airis_agent_core/   # Run specific tests
 uv pip install package           # Install dependencies
 uv run python script.py          # Execute scripts
 ```
@@ -26,7 +26,7 @@ src/airis_agent/
 ├── api/                 # ABI endpoints (confidence, repo_index, deep_research)
 ├── cli/                 # CLI (doctor, version, install-skill commands)
 ├── execution/           # parallel.py, reflection.py, self_correction.py
-├── pm_agent/            # confidence.py, self_check.py, reflexion.py
+├── airis_agent/         # confidence.py, self_check.py, reflexion.py
 ├── pytest_plugin.py     # Auto-loaded pytest integration
 └── skills/              # TypeScript skills bundled with Python package
 
@@ -60,7 +60,7 @@ make verify           # Verify installation (package, plugin, health)
 
 # Testing
 make test             # Run full test suite
-uv run pytest tests/pm_agent/ -v              # Run specific directory
+uv run pytest tests/airis_agent_core/ -v              # Run specific directory
 uv run pytest tests/test_file.py -v           # Run specific file
 uv run pytest -m confidence_check             # Run by marker
 uv run pytest --cov=airis_agent               # With coverage
@@ -101,15 +101,15 @@ Registered via `pyproject.toml` entry point, automatically available after insta
 
 ### PM Agent - Three Core Patterns
 
-**1. ConfidenceChecker** (src/airis_agent/pm_agent/confidence.py)
+**1. ConfidenceChecker** (src/airis_agent/airis_agent/confidence.py)
 - Pre-execution confidence assessment: ≥90% required, 70-89% present alternatives, <70% ask questions
 - Prevents wrong-direction work, ROI: 25-250x token savings
 
-**2. SelfCheckProtocol** (src/airis_agent/pm_agent/self_check.py)
+**2. SelfCheckProtocol** (src/airis_agent/airis_agent/self_check.py)
 - Post-implementation evidence-based validation
 - No speculation - verify with tests/docs
 
-**3. ReflexionPattern** (src/airis_agent/pm_agent/reflexion.py)
+**3. ReflexionPattern** (src/airis_agent/airis_agent/reflexion.py)
 - Error learning and prevention
 - Cross-session pattern matching
 
@@ -140,6 +140,24 @@ These modules provide the public API surface for Airis Agent runtime:
 - Integrates with Tavily (web search) and Context7 (official docs)
 
 **Usage**: Import and call directly from Python, or expose via MCP gateway for LLM access.
+
+### MCP Server CLI
+
+Use `airis-agent-mcp` to expose all ABI endpoints to Claude Code (or any MCP host):
+
+```bash
+# Local dev, uses current checkout
+uv run airis-agent-mcp
+
+# Latest published version, matches plugin manifest
+uvx --from git+https://github.com/agiletec-inc/airis-agent airis-agent-mcp
+```
+
+Tools exposed:
+
+- `confidence_check` – wraps `ConfidenceRequest`/`evaluate_confidence`
+- `repo_index` – wraps `RepoIndexRequest`/`generate_repo_index`
+- `deep_research` – wraps `ResearchRequest`/`perform_research`
 
 ### Plugin Packaging
 
