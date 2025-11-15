@@ -1,5 +1,5 @@
 {
-  "name": "{{plugin_name}}",
+  "name": "airis",
   "version": "{{plugin_version}}",
   "description": "{{plugin_description}}",
   "author": {

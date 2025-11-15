@@ -1,6 +1,6 @@
 {
-  "name": "airis-agent",
-  "version": "1.1.0",
+  "name": "airis",
+  "version": "1.2.0",
   "description": "Airis Agent — Autonomous AI workflow orchestrator for Claude Code (Deep Research, Repo Index, Confidence Check, Self-Review)",
   "author": {
     "name": "Agiletec"
